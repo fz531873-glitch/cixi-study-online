@@ -11,7 +11,7 @@ function database() {
   const db:any={prepare(sql:string){let params:any[]=[];return {bind(...v:any[]){params=v;return this},async first(){return sqlite.prepare(sql).get(...params)||null},async all(){return {results:sqlite.prepare(sql).all(...params)}},async run(){const r=sqlite.prepare(sql).run(...params);return {meta:{changes:Number(r.changes)}}}}},async batch(statements:any[]){sqlite.exec('BEGIN');try{const result=[];for(const s of statements)result.push(await s.run());sqlite.exec('COMMIT');return result}catch(e){sqlite.exec('ROLLBACK');throw e}}};
   return {db,sqlite,call:(method:string,path:string,value?:any,user='owner')=>dispatch(db,user,method,path,value)};
 }
-const progress={tab:'真题练习',knowledgeId:20002,questionId:19031,answer:['A','C'],confidence:'犹豫',mode:'全部',queue:[],exam:'2019年7月象山事业单位',submittedId:null};
+const progress={tab:'真题练习',knowledgeId:20002,questionId:19031,answer:['A','C'],confidence:'犹豫',mode:'全部',queue:[],exam:'2019年7月象山事业单位',submittedId:null,knowledgeScope:'category'};
 const submission=(questionId:number,answer:string,confidence='确定')=>({questionId,answer,confidence,requestId:crypto.randomUUID()});
 
 test('345题都有判断依据；2019年多选、判断和来源页码正确',()=>{
@@ -93,4 +93,13 @@ test('已提交解析能恢复，其他账号不能读取作答快照',async()=>
 });
 test('北京时间跨日计算正确',()=>{
   assert.equal(today(new Date('2026-11-03T16:01:00Z')),'2026-11-04');assert.equal(today(new Date('2026-11-03T15:59:00Z')),'2026-11-03');
+});
+test('整类学习和指定知识点的范围随学习位置保存，旧草稿兼容',async()=>{
+  const {call}=database();
+  await call('POST','/progress',{...progress,tab:'知识学习',knowledgeId:10135,knowledgeScope:'category'});
+  assert.equal((await call('GET','/bootstrap')).progress.knowledgeScope,'category');
+  await call('POST','/progress',{...progress,tab:'知识学习',knowledgeId:10140,knowledgeScope:'point'});
+  assert.equal((await call('GET','/bootstrap')).progress.knowledgeScope,'point');
+  const {knowledgeScope,...legacy}=progress;await call('POST','/progress',legacy);
+  assert.equal((await call('GET','/bootstrap')).progress.knowledgeScope,'category');
 });
