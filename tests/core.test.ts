@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
 import {readFileSync,readdirSync} from 'node:fs';
 import {dispatch,catalog,today} from '../lib/study.ts';
+import originalCatalog from '../data/catalog.json' with {type:'json'};
+import simulationCatalog from '../data/simulations.json' with {type:'json'};
 
 // 用真实SQLite执行同一份SQL，模拟D1的参数绑定和原子批处理。
 function database() {
@@ -14,8 +16,9 @@ function database() {
 const progress={tab:'真题练习',knowledgeId:20002,questionId:19031,answer:['A','C'],confidence:'犹豫',mode:'全部',queue:[],exam:'2019年7月象山事业单位',submittedId:null,knowledgeScope:'category'};
 const submission=(questionId:number,answer:string,confidence='确定')=>({questionId,answer,confidence,requestId:crypto.randomUUID()});
 
-test('345题都有判断依据；2019年多选、判断和来源页码正确',()=>{
-  assert.equal(catalog.questions.length,345);
+test('535题都有判断依据；原345题及2019年题型和来源不变',()=>{
+  assert.equal(catalog.questions.length,535);
+  assert.deepEqual(catalog.questions.filter(q=>q.id<500000),originalCatalog.questions);
   for(const q of catalog.questions){assert.ok(q.direct.length>=12);assert.ok(q.analysis);assert.ok(q.source_page>0&&q.analysis_page>0)}
   const qs=catalog.questions.filter(q=>q.exam.startsWith('2019'));
   assert.deepEqual(qs.reduce((n:any,q)=>({...n,[q.type]:(n[q.type]||0)+1}),{}),{'单选':30,'多选':5,'判断':20});
@@ -23,15 +26,20 @@ test('345题都有判断依据；2019年多选、判断和来源页码正确',()
 });
 test('未登录拒绝；列表不会泄露答案、直解或争议说明',async()=>{
   const {call}=database();await assert.rejects(call('GET','/bootstrap',undefined,''),/登录/);
-  const b=await call('GET','/bootstrap');assert.equal(b.questions.length,345);
+  const b=await call('GET','/bootstrap');assert.equal(b.questions.length,535);
   for(const q of b.questions)for(const field of ['answer','analysis','direct','note'])assert.ok(!(field in q));
 });
 test('单选、多选、判断正确判定，非法组合和重复答案被拒绝',async()=>{
   const {call}=database();for(const a of [submission(13,'D'),submission(19031,'DCA'),submission(19037,'D')])assert.equal((await call('POST','/attempt',a)).correct,true);
   for(const a of [submission(13,'AB'),submission(19037,'B'),submission(13,'AA'),submission(13,'E')])await assert.rejects(call('POST','/attempt',a));
 });
-test('全部345题能以参考答案完成提交',async()=>{
+test('全部535题能判分；超过600项复习的完整备份可恢复',async()=>{
   const {call}=database();for(const q of catalog.questions)assert.equal((await call('POST','/attempt',submission(q.id,q.answer))).correct,true,`${q.id}`);
+  for(const k of catalog.knowledge)await call('POST','/recall',{knowledgeId:k.id,rating:'记住了'});
+  const backup=await call('GET','/backup');assert.ok(backup.records.review.length>600);
+  assert.ok(new TextEncoder().encode(JSON.stringify(backup)).length<8_000_000);
+  await call('POST','/restore',backup);
+  assert.deepEqual((await call('GET','/backup')).records,backup.records);
 });
 test('同一提交重复请求只记录一次，冲突的提交编号拒绝',async()=>{
   const {call}=database(),a=submission(13,'D');await call('POST','/attempt',a);await call('POST','/attempt',a);
@@ -102,4 +110,39 @@ test('整类学习和指定知识点的范围随学习位置保存，旧草稿�
   assert.equal((await call('GET','/bootstrap')).progress.knowledgeScope,'point');
   const {knowledgeScope,...legacy}=progress;await call('POST','/progress',legacy);
   assert.equal((await call('GET','/bootstrap')).progress.knowledgeScope,'category');
+});
+
+test('190道模拟题按既有15大类关联，补充38张知识卡，标注参考来源',()=>{
+  const mocks=simulationCatalog.questions;
+  assert.deepEqual(catalog.questions.filter(q=>'kind' in q&&q.kind==='模拟题'),mocks);
+  assert.equal(mocks.length,190);assert.equal(catalog.knowledge.length,234);
+  assert.equal(new Set(catalog.questions.map(q=>q.id)).size,535);
+  assert.deepEqual(new Set(catalog.knowledge.map(k=>k.category)),new Set(originalCatalog.knowledge.map(k=>k.category)));
+  const originalIds=new Set(originalCatalog.questions.filter(q=>q.type==='单选').map(q=>q.id));
+  assert.deepEqual(new Set(mocks.map(q=>q.template_question_id)),originalIds);
+  for(const q of mocks){
+    const links=catalog.links.filter(l=>l.question_id===q.id&&l.status==='已确认');
+    assert.equal(links.length,1);assert.ok(q.exam.startsWith('模拟题 · '));
+    assert.equal(catalog.knowledge.find(k=>k.id===links[0].knowledge_id)?.category,q.category);
+    assert.ok(q.note.includes('非历年真题'));assert.equal(q.status,'待核对');
+  }
+});
+
+test('完整535题混合队列和补充知识回忆可保存',async()=>{
+  const {call}=database(),queue=catalog.questions.map(q=>q.id);
+  const p={...progress,questionId:500001,knowledgeId:30001,mode:'混合',exam:'',queue};
+  await call('POST','/progress',p);await call('POST','/recall',{knowledgeId:30001,rating:'记住一部分'});
+  const b=await call('GET','/bootstrap');assert.deepEqual(b.progress,p);
+  assert.ok(b.reviews.some((r:any)=>r.kind==='knowledge'&&r.item_id===30001));
+});
+
+test('旧345题196知识备份仍可恢复，损坏或混搭目录被拒绝',async()=>{
+  const {call}=database();await call('POST','/attempt',submission(13,'D'));
+  const old=await call('GET','/backup');old.catalog=originalCatalog;
+  await call('POST','/attempt',submission(500001,catalog.questions.find(q=>q.id===500001)!.answer));
+  await call('POST','/restore',old);assert.equal((await call('GET','/bootstrap')).attempts.length,1);
+  assert.equal((await call('GET','/bootstrap')).questions.length,535);
+  const bad=structuredClone(old);bad.catalog.questions[0].id=500001;
+  await assert.rejects(call('POST','/restore',bad),/不匹配/);
+  assert.equal((await call('GET','/bootstrap')).attempts.length,1);
 });
