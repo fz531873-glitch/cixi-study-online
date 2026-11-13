@@ -15,6 +15,49 @@
   min-height: 44px;
 }
 
+.practice-option-list {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 20px;
+  max-width: 47rem;
+}
+
+.practice-option-list button {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  padding: 9px 12px;
+  text-align: left;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+  color: #253a36;
+}
+
+.practice-option-list button:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.practice-option-list button:disabled:hover:not(.selected) {
+  border-color: #d7e3db;
+  background: #fff;
+}
+
+.practice-option-letter {
+  display: grid;
+  place-items: center;
+  min-height: 28px;
+  border-radius: 6px;
+  background: #edf1ed;
+  font-weight: 600;
+}
+
+.practice-option-list .selected .practice-option-letter {
+  background: #315a4c;
+  color: #fff;
+}
+
 .practice-panel .qmeta { font-variant-numeric: tabular-nums; }
 .practice-result { background: #f7f7f2; }
 
