@@ -1,6 +1,9 @@
 import { z } from 'zod';
 import seed from '../data/catalog.json' with { type: 'json' };
 import simulations from '../data/simulations.json' with { type: 'json' };
+import { memorySnapshot, Rating, reviewMemory, today } from './memory.ts';
+
+export { today };
 
 export const catalog = {...seed, generated: simulations.generated,
   questions: [...seed.questions, ...simulations.questions],
@@ -27,8 +30,6 @@ export const progressSchema = z.object({tab: z.enum(['今日学习','知识学�
 export type Progress = z.infer<typeof progressSchema>;
 type Row = Record<string, unknown>;
 const tables = ['attempt','recall','review','progress','content_edit','content_history','link_decision'] as const;
-export function today(now = new Date()) { return new Intl.DateTimeFormat('sv-SE', {timeZone: 'Asia/Shanghai'}).format(now); }
-function due(days: number) { return new Date(Date.parse(today()+'T00:00:00Z')+days*86400000).toISOString().slice(0,10); }
 async function rows(db: D1Database, sql: string, ...args: (string|number)[]) { return (await db.prepare(sql).bind(...args).all<Row>()).results; }
 export async function content(db: D1Database, user: string) {
   const changes = await rows(db, 'SELECT kind,item_id,payload,revision FROM content_edit WHERE user_id=?', user);
@@ -49,10 +50,17 @@ function checkAnswer(type: string, value: string) {
   if ((type === '单选' || type === '判断') && value.length !== 1) throw new InputError('本题只能选择一项');
   if (type === '判断' && !['A','D'].includes(value)) throw new InputError('判断题选择A（正确）或D（错误）');
 }
-function schedule(db: D1Database, user: string, kind: string, item: number, passed: boolean, previous: number) {
-  const stage = passed ? Math.min(previous+1, 3) : 0;
-  return db.prepare('INSERT INTO review(user_id,kind,item_id,due_date,stage) VALUES (?,?,?,?,?) ON CONFLICT(user_id,kind,item_id) DO UPDATE SET due_date=excluded.due_date,stage=excluded.stage')
-    .bind(user, kind, item, due([1,3,7,14][stage]), stage);
+async function schedule(db: D1Database, user: string, kind: 'question' | 'knowledge', item: number, grade: Rating.Again | Rating.Hard | Rating.Good, now: string) {
+  const previous = await db.prepare('SELECT memory FROM review WHERE user_id=? AND kind=? AND item_id=?')
+    .bind(user, kind, item).first<{memory: string | null}>();
+  const next = reviewMemory(previous?.memory ?? null, new Date(now), grade);
+  if (!next) return null;
+  // A stale concurrent review must roll back its log instead of replacing newer state.
+  return db.prepare(`INSERT INTO review(user_id,kind,item_id,due_date,stage,memory) VALUES (?,?,?,?,0,?)
+    ON CONFLICT(user_id,kind,item_id) DO UPDATE SET
+      due_date=CASE WHEN review.memory IS ? THEN excluded.due_date END,
+      memory=excluded.memory`)
+    .bind(user, kind, item, next.dueDate, next.memory, previous?.memory ?? null);
 }
 function stripAnswer(q: any) { const {answer, analysis, direct, references, note, ...visible} = q; return visible; }
 const attemptSchema = z.object({questionId: id, answer, confidence: z.enum(['确定','犹豫','猜的']), requestId: z.string().uuid()});
@@ -62,7 +70,7 @@ const backups = z.object({format: z.literal('cixi-study-v1'), version: z.literal
   records: z.object({
     attempt: z.array(z.object({id: z.string().uuid(), question_id: id, answer, confidence: z.enum(['确定','犹豫','猜的']), correct: z.number().int().min(0).max(1), disputed: z.number().int().min(0).max(1), error_reason: z.string().max(400), kind: z.enum(['首次','重复']), snapshot: z.string().max(50000).refine(s=>{try{return questionEdit.safeParse(JSON.parse(s)).success}catch{return false}}, '作答快照无效'), created_at: dateString})).max(10000),
     recall: z.array(z.object({id: z.string().uuid(), knowledge_id: id, rating: z.enum(['记住了','记住一部分','还没记住']), created_at: dateString})).max(10000),
-    review: z.array(z.object({kind: z.enum(['question','knowledge']), item_id: id, due_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), stage: z.number().int().min(0).max(3)})).max(contentLimit),
+    review: z.array(z.object({kind: z.enum(['question','knowledge']), item_id: id, due_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), stage: z.number().int().min(0).max(3), memory: memorySnapshot.nullish()})).max(contentLimit),
     progress: z.array(z.object({payload: z.string().max(12000).refine(s=>{try{return progressSchema.safeParse(JSON.parse(s)).success}catch{return false}}), updated_at: dateString})).max(1),
     content_edit: z.array(z.object({kind:z.enum(['question','knowledge']), item_id:id, payload:z.string().max(60000), revision:id, updated_at:dateString})).max(contentLimit),
     content_history: z.array(z.object({id:z.string().uuid(), kind:z.enum(['question','knowledge']), item_id:id, payload:z.string().max(60000), reason:short, revision:id, created_at:dateString})).max(5000),
@@ -96,11 +104,14 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
       if (existing.question_id!==a.questionId || existing.answer!==[...a.answer].sort().join('') || existing.confidence!==a.confidence) throw new InputError('该提交编号已用于其他作答',409);
       return {...JSON.parse(existing.snapshot), id:existing.id, questionId:existing.question_id, correct:!!existing.correct, disputed:!!existing.disputed};
     }
-    const previous = await db.prepare('SELECT stage FROM review WHERE user_id=? AND kind=? AND item_id=?').bind(user,'question',q.id).first<{stage:number}>();
     const normalized = [...a.answer].sort().join(''), correct = normalized === [...q.answer].sort().join(''), disputed = q.status === '争议';
     const statements = [db.prepare("INSERT INTO attempt(id,user_id,question_id,answer,confidence,correct,disputed,kind,snapshot,created_at) SELECT ?,?,?,?,?,?,?,CASE WHEN EXISTS(SELECT 1 FROM attempt WHERE user_id=? AND question_id=?) THEN '重复' ELSE '首次' END,?,?")
       .bind(a.requestId,user,q.id,normalized,a.confidence,Number(correct),Number(disputed),user,q.id,JSON.stringify(q),now)];
-    if (!disputed) statements.push(schedule(db,user,'question',q.id,correct && a.confidence==='确定',previous?.stage ?? 0));
+    if (!disputed) {
+      const grade = !correct || a.confidence==='猜的' ? Rating.Again : a.confidence==='犹豫' ? Rating.Hard : Rating.Good;
+      const review = await schedule(db,user,'question',q.id,grade,now);
+      if (review) statements.push(review);
+    }
     await db.batch(statements);
     return {...q,id:a.requestId,questionId:q.id,correct,disputed};
   }
@@ -118,8 +129,11 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
   if (method === 'POST' && path === '/recall') {
     const a = z.object({knowledgeId:id, rating:z.enum(['记住了','记住一部分','还没记住'])}).parse(input);
     if (!catalog.knowledge.some(k=>k.id===a.knowledgeId)) throw new InputError('知识不存在',404);
-    const prev = await db.prepare('SELECT stage FROM review WHERE user_id=? AND kind=? AND item_id=?').bind(user,'knowledge',a.knowledgeId).first<{stage:number}>();
-    await db.batch([db.prepare('INSERT INTO recall VALUES (?,?,?,?,?)').bind(crypto.randomUUID(),user,a.knowledgeId,a.rating,now), schedule(db,user,'knowledge',a.knowledgeId,a.rating==='记住了',prev?.stage ?? 0)]);
+    const grade = a.rating==='还没记住' ? Rating.Again : a.rating==='记住一部分' ? Rating.Hard : Rating.Good;
+    const review = await schedule(db,user,'knowledge',a.knowledgeId,grade,now);
+    const statements = [db.prepare('INSERT INTO recall VALUES (?,?,?,?,?)').bind(crypto.randomUUID(),user,a.knowledgeId,a.rating,now)];
+    if (review) statements.push(review);
+    await db.batch(statements);
     return {saved:true};
   }
   if (method === 'GET' && /^\/editor\/question\/\d+$/.test(path)) {
@@ -173,7 +187,7 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
     for (const l of data.records.link_decision) if (!qids.has(l.question_id)||!kids.has(l.knowledge_id)) throw new InputError('备份关联无效');
     const columns: Record<typeof tables[number],string[]> = {
       attempt:['id','question_id','answer','confidence','correct','disputed','error_reason','kind','snapshot','created_at'],
-      recall:['id','knowledge_id','rating','created_at'],review:['kind','item_id','due_date','stage'],progress:['payload','updated_at'],
+      recall:['id','knowledge_id','rating','created_at'],review:['kind','item_id','due_date','stage','memory'],progress:['payload','updated_at'],
       content_edit:['kind','item_id','payload','revision','updated_at'],content_history:['id','kind','item_id','payload','reason','revision','created_at'],
       link_decision:['knowledge_id','question_id','status','reason','updated_at'],
     };

@@ -7,11 +7,15 @@ import originalCatalog from '../data/catalog.json' with {type:'json'};
 import simulationCatalog from '../data/simulations.json' with {type:'json'};
 
 // 用真实SQLite执行同一份SQL，模拟D1的参数绑定和原子批处理。
-function database() {
+function database(upgrade = true) {
   const sqlite=new DatabaseSync(':memory:');
-  for(const file of readdirSync(new URL('../drizzle/',import.meta.url)).filter(f=>f.endsWith('.sql'))) sqlite.exec(readFileSync(new URL('../drizzle/'+file,import.meta.url),'utf8'));
+  const migrations = readdirSync(new URL('../drizzle/',import.meta.url)).filter(f=>f.endsWith('.sql')).sort();
+  const migrate = (files: string[]) => {
+    for (const file of files) sqlite.exec(readFileSync(new URL('../drizzle/'+file,import.meta.url),'utf8'));
+  };
+  migrate(upgrade ? migrations : migrations.slice(0,1));
   const db:any={prepare(sql:string){let params:any[]=[];return {bind(...v:any[]){params=v;return this},async first(){return sqlite.prepare(sql).get(...params)||null},async all(){return {results:sqlite.prepare(sql).all(...params)}},async run(){const r=sqlite.prepare(sql).run(...params);return {meta:{changes:Number(r.changes)}}}}},async batch(statements:any[]){sqlite.exec('BEGIN');try{const result=[];for(const s of statements)result.push(await s.run());sqlite.exec('COMMIT');return result}catch(e){sqlite.exec('ROLLBACK');throw e}}};
-  return {db,sqlite,call:(method:string,path:string,value?:any,user='owner')=>dispatch(db,user,method,path,value)};
+  return {db,sqlite,upgrade:()=>migrate(migrations.slice(1)),call:(method:string,path:string,value?:any,user='owner')=>dispatch(db,user,method,path,value)};
 }
 const progress={tab:'真题练习',knowledgeId:20002,questionId:19031,answer:['A','C'],confidence:'犹豫',mode:'全部',queue:[],exam:'2019年7月象山事业单位',submittedId:null,knowledgeScope:'category'};
 const submission=(questionId:number,answer:string,confidence='确定')=>({questionId,answer,confidence,requestId:crypto.randomUUID()});
@@ -46,10 +50,19 @@ test('同一提交重复请求只记录一次，冲突的提交编号拒绝',asy
   assert.equal((await call('GET','/bootstrap')).attempts.length,1);
   await assert.rejects(call('POST','/attempt',{...a,answer:'A'}),/编号/);
 });
-test('首次和重复分别保存，猜对安排更早复习',async()=>{
-  const {call}=database();await call('POST','/attempt',submission(13,'D','猜的'));let b=await call('GET','/bootstrap');
-  assert.equal(b.reviews[0].stage,0);assert.equal(b.attempts[0].kind,'首次');
-  await call('POST','/attempt',submission(13,'D'));b=await call('GET','/bootstrap');assert.equal(b.reviews[0].stage,1);assert.ok(b.attempts.some((a:any)=>a.kind==='重复'));
+test('猜对次日复习，同日答对不会推迟复习，首次和重复仍分别保存',async()=>{
+  const {call}=database();
+  await call('POST','/attempt',submission(13,'D','猜的'));
+  const before=await call('GET','/backup');
+  const [review]=before.records.review;
+  const card=JSON.parse(review.memory);
+  assert.equal(card.model,'fsrs-6');
+  assert.equal(card.scheduled_days,1);
+  assert.equal(before.records.attempt[0].kind,'首次');
+  await call('POST','/attempt',submission(13,'D'));
+  const after=await call('GET','/backup');
+  assert.deepEqual(after.records.review,[review]);
+  assert.ok(after.records.attempt.some((a:any)=>a.kind==='重复'));
 });
 test('争议题保留资料答案，隔离掌握与复习',async()=>{
   const {call}=database();const r=await call('POST','/attempt',submission(16,'C'));assert.equal(r.disputed,true);assert.ok(r.direct.includes('缺少'));
@@ -139,10 +152,45 @@ test('完整535题混合队列和补充知识回忆可保存',async()=>{
 test('旧345题196知识备份仍可恢复，损坏或混搭目录被拒绝',async()=>{
   const {call}=database();await call('POST','/attempt',submission(13,'D'));
   const old=await call('GET','/backup');old.catalog=originalCatalog;
+  delete old.records.review[0].memory;
+  old.records.review[0].due_date='2026-12-03';
+  old.records.review[0].stage=2;
   await call('POST','/attempt',submission(500001,catalog.questions.find(q=>q.id===500001)!.answer));
   await call('POST','/restore',old);assert.equal((await call('GET','/bootstrap')).attempts.length,1);
   assert.equal((await call('GET','/bootstrap')).questions.length,535);
+  const [restored] = (await call('GET','/backup')).records.review;
+  assert.deepEqual({...restored},{...old.records.review[0],memory:null});
   const bad=structuredClone(old);bad.catalog.questions[0].id=500001;
   await assert.rejects(call('POST','/restore',bad),/不匹配/);
   assert.equal((await call('GET','/bootstrap')).attempts.length,1);
+});
+
+test('旧数据库迁移保留到期日，知识点首次回忆后才建立记忆状态',async()=>{
+  const {call,sqlite,upgrade}=database(false);
+  sqlite.exec("INSERT INTO review(user_id,kind,item_id,due_date,stage) VALUES ('owner','knowledge',20002,'2026-12-03',2)");
+  upgrade();
+  const [old] = (await call('GET','/bootstrap')).reviews;
+  assert.deepEqual({...old},{kind:'knowledge',item_id:20002,due_date:'2026-12-03',stage:2});
+  await call('POST','/recall',{knowledgeId:20002,rating:'记住一部分'});
+  const backup=await call('GET','/backup');
+  assert.equal(JSON.parse(backup.records.review[0].memory).scheduled_days,2);
+  const bad=structuredClone(backup);
+  bad.records.review[0].memory=JSON.stringify({model:'fsrs-6',stability:-1});
+  await assert.rejects(call('POST','/restore',bad));
+  assert.deepEqual((await call('GET','/backup')).records,backup.records);
+});
+
+test('并发更新使记忆状态过期时，回滚这次作答并保留更新后的安排',async()=>{
+  const {call,db,sqlite}=database();
+  await call('POST','/attempt',submission(13,'D'));
+  const batch=db.batch.bind(db);
+  db.batch=(statements: D1PreparedStatement[])=>{
+    sqlite.exec("UPDATE review SET memory=NULL,due_date='2026-12-03' WHERE item_id=13");
+    return batch(statements);
+  };
+  await assert.rejects(call('POST','/attempt',submission(13,'A')),/NOT NULL constraint failed: review.due_date/);
+  const after=await call('GET','/backup');
+  assert.equal(after.records.attempt.length,1);
+  assert.equal(after.records.review[0].due_date,'2026-12-03');
+  assert.equal(after.records.review[0].memory,null);
 });

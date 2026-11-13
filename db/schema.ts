@@ -11,7 +11,7 @@ export const recalls = sqliteTable('recall', {
 });
 export const reviews = sqliteTable('review', {
   user_id: text('user_id').notNull(), kind: text('kind').notNull(), item_id: integer('item_id').notNull(),
-  due_date: text('due_date').notNull(), stage: integer('stage').notNull(),
+  due_date: text('due_date').notNull(), stage: integer('stage').notNull(), memory: text('memory'),
 }, t => [primaryKey({columns: [t.user_id, t.kind, t.item_id]})]);
 export const progress = sqliteTable('progress', {
   user_id: text('user_id').primaryKey(), payload: text('payload').notNull(), updated_at: text('updated_at').notNull(),
