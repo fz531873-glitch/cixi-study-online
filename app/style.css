@@ -76,6 +76,12 @@
 .practice-verdict.disputed { background: #fbf0d9; color: #704c18; }
 
 .practice-actions { margin-top: 16px; }
+.review-progress {
+  flex-direction: row;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+.review-progress p { margin: 0; }
 
 @media (max-width: 720px) {
   .practice-panel .question,

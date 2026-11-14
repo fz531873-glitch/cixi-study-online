@@ -2,6 +2,7 @@ import { z } from 'zod';
 import seed from '../data/catalog.json' with { type: 'json' };
 import simulations from '../data/simulations.json' with { type: 'json' };
 import { memorySnapshot, Rating, reviewMemory, today } from './memory.ts';
+import { reviewBatchLimit, type ReviewBatch } from './review-batch.ts';
 
 export { today };
 
@@ -24,9 +25,20 @@ const questionEdit = z.object({body: z.string().trim().min(10).max(16000), answe
   source_page: id.max(500), analysis_page: id.max(500)});
 const knowledgeEdit = z.object({title: short, content: z.string().trim().min(5).max(20000),
   question: short, status, source: short, page: id.max(500)});
+const reviewBatchSchema: z.ZodType<ReviewBatch> = z.object({
+  items: z.array(z.object({kind: z.enum(['question', 'knowledge']), item_id: id})).min(1).max(reviewBatchLimit),
+  index: z.number().int().nonnegative(),
+  recalled: z.boolean().optional(),
+}).refine(batch => batch.index <= batch.items.length && (!batch.recalled || batch.items[batch.index]?.kind === 'knowledge'))
+  .refine(batch => new Set(batch.items.map(item=>item.kind+':'+item.item_id)).size===batch.items.length &&
+    batch.items.every(({kind,item_id})=>(kind==='question' ? catalog.questions : catalog.knowledge).some(item=>item.id===item_id)),
+    '复习批次包含重复或不存在的项目');
+
 export const progressSchema = z.object({tab: z.enum(['今日学习','知识学习','真题练习','复习中心','学习记录','资料纠错','原始资料']),
   knowledgeId: id, questionId: id, answer: z.array(z.enum(['A','B','C','D'])).max(4),
-  confidence: z.enum(['未选择','确定','犹豫','猜的']), mode: z.enum(['全部','学后','错题','混合']), queue: z.array(id).max(catalog.questions.length), exam: z.string().max(100), submittedId:z.string().uuid().nullable().default(null), knowledgeScope:z.enum(['category','point']).default('category')});
+  confidence: z.enum(['未选择','确定','犹豫','猜的']), mode: z.enum(['全部','学后','错题','混合']), queue: z.array(id).max(catalog.questions.length), exam: z.string().max(100), submittedId:z.string().uuid().nullable().default(null), knowledgeScope:z.enum(['category','point']).default('category'),
+  reviewBatch: reviewBatchSchema.optional(),
+});
 export type Progress = z.infer<typeof progressSchema>;
 type Row = Record<string, unknown>;
 const tables = ['attempt','recall','review','progress','content_edit','content_history','link_decision'] as const;
@@ -82,7 +94,7 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
   const now = new Date().toISOString();
   if (method === 'GET' && path === '/bootstrap') {
     const [{questions,knowledge},links,reviews,attempts,progress] = await Promise.all([
-      content(db,user), decisions(db,user), rows(db,'SELECT kind,item_id,due_date,stage FROM review WHERE user_id=? ORDER BY due_date',user),
+      content(db,user), decisions(db,user), rows(db,'SELECT kind,item_id,due_date,stage FROM review WHERE user_id=? ORDER BY due_date,kind,item_id',user),
       rows(db,'SELECT id,question_id,answer,confidence,correct,disputed,error_reason,kind,created_at FROM attempt WHERE user_id=? ORDER BY created_at DESC',user),
       db.prepare('SELECT payload,updated_at FROM progress WHERE user_id=?').bind(user).first<{payload:string;updated_at:string}>(),
     ]);
