@@ -16,6 +16,8 @@ type Link = {knowledge_id:number; question_id:number; status:string; reason:stri
 type Attempt = {id:string; question_id:number; answer:string; confidence:string; correct:number; disputed:number; error_reason:string; kind:string; created_at:string};
 type Boot = {questions:Q[]; knowledge:K[]; links:Link[]; materials:{id:number;name:string;url:string}[]; reviews:(ReviewItem&{due_date:string;stage:number})[]; attempts:Attempt[]; recalls:{knowledge_id:number;first_at:string;last_at:string}[]; progress:Progress|null; progress_updated_at?:string; today:string};
 type Result = Omit<Q,'id'> & {id:string; questionId:number; correct:boolean; disputed:boolean; answer:string; direct:string; analysis:string; references:{title:string;url:string}[]};
+const confidenceLevels = ['确定','犹豫','猜的'] as const;
+type Submission = {questionId:number; answer:string; confidence:typeof confidenceLevels[number]; requestId:string};
 const initial:Progress = {tab:'今日学习',knowledgeId:20002,questionId:13,answer:[],confidence:'未选择',mode:'全部',queue:[],exam:'2025年上午卷',submittedId:null,knowledgeScope:'category'};
 const tabs = ['今日学习','知识学习','真题练习','复习中心','学习记录','资料纠错','原始资料'] as const;
 const navIcons = [CalendarDays,BookOpen,Layers,RefreshCw,BarChart3,TriangleAlert,FileText];
@@ -52,7 +54,7 @@ export default function Study({userName}:{userName:string}) {
   const [search,setSearch]=useState(''), [future,setFuture]=useState(false), [material,setMaterial]=useState(0);
   const [editKind,setEditKind]=useState<'question'|'knowledge'>('question'), [editor,setEditor]=useState<any>(null), [reason,setReason]=useState('');
   const [linkQ,setLinkQ]=useState(24012), [linkReason,setLinkReason]=useState(''), [pending,setPending]=useState<any>(null);
-  const [history,setHistory]=useState<any[]>([]), requestId=useRef(''), progressRef=useRef(p), dirty=useRef(false);
+  const [history,setHistory]=useState<any[]>([]), pendingSubmission=useRef<Submission|null>(null), progressRef=useRef(p), dirty=useRef(false);
   const storageKey='cixi-v1-progress:'+userName;
   const refreshVersion=useRef(0);
   const refresh=async()=>{const version=++refreshVersion.current;const b=await api<Boot>('/bootstrap');if(version===refreshVersion.current)setData(b);return b};
@@ -97,7 +99,7 @@ export default function Study({userName}:{userName:string}) {
   const run=async(action:()=>Promise<void>)=>{setBusy(true);setMessage('');try{await action()}catch(e){setMessage(e instanceof Error?e.message:'操作失败')}finally{setBusy(false)}};
   const patch=(v:Partial<Progress>)=>{setP(prev=>({...prev,...v}));setMessage('')};
   const chooseK=(id:number,recall=false,scope:Progress['knowledgeScope']='point')=>{patch({knowledgeId:id,tab:'知识学习',knowledgeScope:scope,reviewBatch:undefined});setHideAnalysis(true);setSearch('');setPhase(recall?'recall':'read')};
-  const go=(id:number,opts:Partial<Progress>={})=>{patch({questionId:id,tab:'真题练习',answer:[],confidence:'未选择',submittedId:null,reviewBatch:undefined,...(opts.mode==='学后'?{exam:''}:{}),...opts});setResult(null);setSetup(false);setShowGrid(false);requestId.current='';};
+  const go=(id:number,opts:Partial<Progress>={})=>{patch({questionId:id,tab:'真题练习',answer:[],confidence:'未选择',submittedId:null,reviewBatch:undefined,...(opts.mode==='学后'?{exam:''}:{}),...opts});setResult(null);setSetup(false);setShowGrid(false);pendingSubmission.current=null;};
   const move=(offset:number)=>{
     const item=p.reviewBatch?.items[p.reviewBatch.index];
     if (!data || busy || (item?.kind==='question'&&item.item_id===p.questionId)) return;
@@ -110,7 +112,25 @@ export default function Study({userName}:{userName:string}) {
     setP(previous=>({...previous,answer:type==='多选'?(previous.answer.includes(letter)?previous.answer.filter(x=>x!==letter):[...previous.answer,letter]):[letter]}));
     setMessage('');
   };
-  const submit=()=>run(async()=>{if(viewed.includes(p.questionId))throw new Error('本题已查看解析，请继续下一题。');if(!p.answer.length)throw new Error('请先选择答案。');if(p.confidence==='未选择')throw new Error('请标注本次把握程度。');requestId.current||=crypto.randomUUID();const token=requestId.current;const r=await api<Result>('/attempt',{questionId:p.questionId,answer:p.answer.join(''),confidence:p.confidence,requestId:requestId.current});if(requestId.current===token&&progressRef.current.questionId===r.questionId){setResult(r);patch({submittedId:r.id})}await refresh()});
+  const submit=(confidence:Submission['confidence'])=>run(async()=>{
+    if(viewed.includes(p.questionId))throw new Error('本题已查看解析，请继续下一题。');
+    if(!p.answer.length)throw new Error('请先选择答案。');
+    const answer=[...p.answer].sort().join('');
+    const previous=pendingSubmission.current;
+    // A network error can occur after the server saved the attempt.
+    if(previous?.questionId===p.questionId&&(previous.answer!==answer||previous.confidence!==confidence))
+      throw new Error('上次提交结果未确认，请用原答案 '+previous.answer+' 和「'+previous.confidence+'」重试。');
+    patch({confidence});
+    if(!navigator.onLine)throw new Error('当前离线，联网后请重新提交。');
+    const attempt=previous?.questionId===p.questionId?previous:{questionId:p.questionId,answer,confidence,requestId:crypto.randomUUID()};
+    pendingSubmission.current=attempt;
+    const r=await api<Result>('/attempt',attempt);
+    if(pendingSubmission.current===attempt&&progressRef.current.questionId===r.questionId){
+      pendingSubmission.current=null;
+      setResult(r);patch({submittedId:r.id});
+    }
+    await refresh();
+  });
   const handlePracticeKey=useEffectEvent((event:KeyboardEvent)=>{
     const target=event.target instanceof HTMLElement?event.target:null;
     if (p.tab!=='真题练习'||setup||!ready||!data||busy||event.defaultPrevented||event.isComposing||event.repeat
@@ -124,8 +144,6 @@ export default function Study({userName}:{userName:string}) {
     if (event.key==='ArrowRight' && result && !target?.closest('[aria-label="题号"]')) {
       event.preventDefault();if(reviewingQuestion)nextReview();else move(1);
     }
-    if (event.key==='Enter' && hideAnalysis && !result && !viewed.includes(p.questionId) && p.answer.length && p.confidence!=='未选择'
-      && (!target?.closest('button,a,summary')||target.closest('.practice-answers,.confidence'))) {event.preventDefault();void submit();}
   });
   useEffect(()=>{
     const onKey=(event:KeyboardEvent)=>handlePracticeKey(event);
@@ -211,7 +229,7 @@ export default function Study({userName}:{userName:string}) {
       go(item.item_id,{exam:data.questions.find(q=>q.id===item.item_id)?.exam||'',mode:'全部',queue:[],reviewBatch:nextBatch});
     }else{
       patch({tab:'知识学习',knowledgeId:item.item_id,knowledgeScope:'point',answer:[],confidence:'未选择',submittedId:null,reviewBatch:nextBatch});
-      setResult(null);requestId.current='';setSearch('');setPhase('recall');
+      setResult(null);pendingSubmission.current=null;setSearch('');setPhase('recall');
     }
   };
   const startReview=()=>{
@@ -374,7 +392,7 @@ export default function Study({userName}:{userName:string}) {
           {p.mode==='学后'&&<button className="text-link" onClick={()=>chooseK(p.knowledgeId)}>返回知识</button>}
         </div>
       </div>
-      <p className="source keyboard-hint">A–D / 1–4 选项 · Enter 提交 · → 提交后前进</p>
+      <p className="source keyboard-hint">A–D / 1–4 选项 · 聚焦提交按钮后按 Enter · → 提交后前进</p>
       {showGrid&&<div id="question-grid" className="question-grid" aria-label="题号">
         {available.map((q,i)=><button key={q.id} title={label(q.id)} aria-label={'第'+(i+1)+'项 · '+label(q.id)} aria-current={q.id===p.questionId?'step':undefined} className={latest.has(q.id)?'answered':''} disabled={busy} onClick={()=>q.id===p.questionId?setShowGrid(false):go(q.id)}>{p.mode==='全部'&&p.exam?q.number:i+1}</button>)}
       </div>}
@@ -403,9 +421,6 @@ export default function Study({userName}:{userName:string}) {
         })}
       </div>
       {question.type==='多选'&&!result&&hideAnalysis&&<p className="source">可选择多个选项。</p>}
-      {hideAnalysis&&!result&&!previewed&&<div className="confidence" role="group" aria-label="把握程度">
-        <span>把握程度</span>{(['确定','犹豫','猜的'] as const).map(c=><button key={c} aria-pressed={p.confidence===c} disabled={busy} className={p.confidence===c?'selected':''} onClick={()=>patch({confidence:c})}>{c}</button>)}
-      </div>}
       {hideAnalysis&&previewed&&!result&&<p className="notice">本次已查看解析，可以前往下一题。</p>}
       {!hideAnalysis&&!result&&<div className="result" aria-live="polite">
         <p className="source">查看解析期间无法提交作答。</p>
@@ -439,7 +454,11 @@ export default function Study({userName}:{userName:string}) {
         {!reviewingQuestion&&<button className="text-link" disabled={busy||questionIndex===0} onClick={()=>move(-1)}><ArrowLeft size={18}/> 上一题</button>}
         {!reviewingQuestion&&hideAnalysis&&!previewed&&!result&&questionIndex+1<available.length&&<button className="text-link skip" disabled={busy} onClick={()=>move(1)}>跳过</button>}
         {hideAnalysis&&!previewed&&!result?
-          <button className="primary submit" aria-keyshortcuts="Enter" disabled={busy||!ready||!p.answer.length||p.confidence==='未选择'} onClick={submit}>{busy?'正在提交…':'提交'}</button>:
+          <div className="practice-submitters" role="group" aria-label="选择把握程度并提交">
+            {confidenceLevels.map(level=><button key={level} className="primary" disabled={busy||!p.answer.length} onClick={()=>submit(level)}>
+              {busy&&p.confidence===level?'正在提交…':level+' · 提交'}
+            </button>)}
+          </div>:
           <button className="primary" aria-keyshortcuts={result?'ArrowRight':undefined} disabled={busy} onClick={reviewingQuestion?nextReview:questionIndex+1<available.length?()=>move(1):()=>tabTo('今日学习')}>
             {reviewingQuestion?(previewed&&!result?'跳过本项':'下一项复习'):questionIndex+1<available.length?'下一题':'回到今日'} <ArrowRight size={18}/>
           </button>}
