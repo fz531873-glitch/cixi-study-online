@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { dailyPlan } from '../lib/daily-plan.ts';
+import { nextDate, reviewDateLabel } from '../lib/review-batch.ts';
 
 test('按北京时间统计任务，同题重复、争议题和模拟新题不会虚增今日进度', () => {
   const previous = '2026-11-15T15:59:59.000Z';
@@ -19,4 +20,11 @@ test('按北京时间统计任务，同题重复、争议题和模拟新题不�
   const due = [{kind:'question',item_id:1,due_date:'2026-11-16'},{kind:'knowledge',item_id:22,due_date:'2026-11-16'}];
   const plan=dailyPlan('2026-11-16',questions,attempts,recalls,due);
   assert.deepEqual(plan,{done:3,reviewTotal:3,newTotal:2,fresh:[questions[2]],pending:[due[1]],includesKnowledge:true});
+});
+
+test('复习日期跨月跨年仍按北京时间的日历日期显示', () => {
+  assert.equal(nextDate('2026-12-31',1),'2027-01-01');
+  assert.equal(reviewDateLabel('2027-01-01','2026-12-31'),'明天');
+  assert.equal(reviewDateLabel('2026-12-31','2026-12-31'),'今天');
+  assert.equal(reviewDateLabel('2027-01-02','2026-12-31'),'1月2日');
 });

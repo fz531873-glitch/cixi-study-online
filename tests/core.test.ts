@@ -165,6 +165,25 @@ test('旧345题196知识备份仍可恢复，损坏或混搭目录被拒绝',asy
   assert.equal((await call('GET','/bootstrap')).attempts.length,1);
 });
 
+test('混合复习批次随进度保存和恢复，并拒绝无效项目及索引',async()=>{
+  const {call}=database();
+  const reviewBatch={
+    items:[{kind:'question',item_id:13},{kind:'knowledge',item_id:20002}],
+    index:1,recalled:true,
+  };
+  const current={...progress,tab:'知识学习',reviewBatch};
+  await call('POST','/progress',current);
+  const backup=await call('GET','/backup');
+  await call('POST','/progress',progress);
+  await call('POST','/restore',backup);
+  assert.deepEqual((await call('GET','/bootstrap')).progress,current);
+  await assert.rejects(call('POST','/progress',{...current,reviewBatch:{...reviewBatch,index:3}}));
+  await assert.rejects(call('POST','/progress',{...current,reviewBatch:{...reviewBatch,items:[
+    reviewBatch.items[0],{kind:'knowledge',item_id:13},
+  ]}}));
+  assert.deepEqual((await call('GET','/bootstrap')).progress,current);
+});
+
 test('旧数据库迁移保留到期日，知识点首次回忆后才建立记忆状态',async()=>{
   const {call,sqlite,upgrade}=database(false);
   sqlite.exec("INSERT INTO review(user_id,kind,item_id,due_date,stage) VALUES ('owner','knowledge',20002,'2026-12-03',2)");
