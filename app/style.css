@@ -204,11 +204,12 @@ summary{cursor:pointer;font-size:14px;font-weight:500;padding:8px 0}
 .reasons{margin-top:16px}
 .reasons button{border-radius:20px}
 .practice-actions{display:flex;align-items:center;gap:6px;margin-top:16px}
-.practice-panel .practice-actions{position:sticky;bottom:0;z-index:5;flex-wrap:wrap;padding:7px 0;background:#fff;border-top:1px solid var(--line)}
 .practice-actions .primary{margin-left:auto;min-width:112px}
-.practice-actions .skip{color:var(--muted)}
-.practice-submitters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-left:auto}
-.practice-actions .practice-submitters .primary{margin-left:0;min-width:0;white-space:nowrap}
+.practice-submitters{
+  position:sticky;bottom:0;z-index:5;display:grid;grid-template-columns:repeat(3,minmax(0,112px));justify-content:end;
+  gap:6px;margin-top:16px;padding:7px 0;background:#fff;border-top:1px solid var(--line);
+}
+.practice-next{justify-content:flex-end;margin-bottom:0}
 @media (max-width:760px){
   .shell{display:block}
   .sidebar{display:none}
@@ -248,12 +249,12 @@ summary{cursor:pointer;font-size:14px;font-weight:500;padding:8px 0}
   .panel{padding:14px}
   .filters{grid-template-columns:1fr;gap:0}
   .practice-topline{gap:8px}
-  .practice-tools button,.practice-actions button{padding-inline:8px;min-height:44px}
+  .practice-tools button,.practice-actions button,.practice-submitters button{padding-inline:8px;min-height:44px}
   .practice-tools svg,.practice-actions svg{width:15px}
-  .practice-actions,.practice-panel .practice-actions{
+  .practice-actions{
     position:sticky;bottom:var(--tabs);padding:7px 0;z-index:5;background:#fff;border-top:1px solid var(--line);
   }
-  .practice-submitters{width:100%}
+  .practice-submitters{bottom:var(--tabs);grid-template-columns:repeat(3,minmax(0,1fr))}
   .practice-meta{flex-wrap:wrap}
   .analysis-switch{flex-shrink:0}
   .keyboard-hint{display:none}

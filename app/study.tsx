@@ -194,6 +194,7 @@ export default function Study({userName}:{userName:string}) {
   const reviewingKnowledge=reviewItem?.kind==='knowledge'&&p.tab==='知识学习'&&reviewItem.item_id===p.knowledgeId;
   const reviewingQuestion=reviewItem?.kind==='question'&&p.tab==='真题练习'&&reviewItem.item_id===p.questionId;
   const previewed=viewed.includes(p.questionId);
+  const canSubmit=hideAnalysis&&!previewed&&!result;
   const nextScheduled=result&&!result.disputed?reviews.find(r=>r.kind==='question'&&r.item_id===p.questionId)?.due_date:undefined;
   const memoryTip=result?.direct.match(/^([\s\S]*?)记住[：:]\s*([\s\S]+)$/);
   const first=data.attempts.filter(a=>a.kind==='首次'&&!a.disputed), valid=data.attempts.filter(a=>!a.disputed);
@@ -387,7 +388,9 @@ export default function Study({userName}:{userName:string}) {
       <div className="practice-topline">
         <div><p>{p.mode==='学后'?'学后练习':p.mode==='错题'?'错题与犹豫题':p.mode==='混合'?'混合练习':(p.exam?paperName(p.exam):'全部来源')}</p><strong>{questionIndex+1} <span>/ {available.length}</span></strong></div>
         <div className="practice-tools">
+          <button className="text-link" disabled={busy||questionIndex===0} onClick={()=>move(-1)}><ArrowLeft size={18}/> 上一题</button>
           <button aria-expanded={showGrid} aria-controls="question-grid" onClick={()=>setShowGrid(s=>!s)}>题号 <ChevronDown size={16}/></button>
+          {canSubmit&&questionIndex+1<available.length&&<button className="text-link" disabled={busy} onClick={()=>move(1)}>跳过</button>}
           {p.mode!=='全部'&&<button className="text-link" onClick={()=>openSetup(p.exam,p.mode==='学后'?'全部':p.mode)}>换一组</button>}
           {p.mode==='学后'&&<button className="text-link" onClick={()=>chooseK(p.knowledgeId)}>返回知识</button>}
         </div>
@@ -450,19 +453,15 @@ export default function Study({userName}:{userName:string}) {
         {data.links.some(l=>l.question_id===p.questionId&&l.status==='已确认')&&<div><h4>回去补这个考点</h4><div className="buttons">{data.links.filter(l=>l.question_id===p.questionId&&l.status==='已确认').map(l=><button className="text-link" key={l.knowledge_id} onClick={()=>chooseK(l.knowledge_id)}>{data.knowledge.find(k=>k.id===l.knowledge_id)?.title} <ArrowRight size={16}/></button>)}</div></div>}
         {!reviewingQuestion&&<div className="buttons"><button className="text-link" onClick={()=>go(p.questionId)}>重新独立作答</button><button className="text-link" onClick={()=>{patch({tab:'资料纠错'});setEditKind('question');setEditor(null)}}>解析有疑问</button></div>}
       </div>}
-      <div className="practice-actions" role="group" aria-label="答题操作">
-        {!reviewingQuestion&&<button className="text-link" disabled={busy||questionIndex===0} onClick={()=>move(-1)}><ArrowLeft size={18}/> 上一题</button>}
-        {!reviewingQuestion&&hideAnalysis&&!previewed&&!result&&questionIndex+1<available.length&&<button className="text-link skip" disabled={busy} onClick={()=>move(1)}>跳过</button>}
-        {hideAnalysis&&!previewed&&!result?
-          <div className="practice-submitters" role="group" aria-label="选择把握程度并提交">
-            {confidenceLevels.map(level=><button key={level} className="primary" disabled={busy||!p.answer.length} onClick={()=>submit(level)}>
-              {busy&&p.confidence===level?'正在提交…':level+' · 提交'}
-            </button>)}
-          </div>:
+      {canSubmit?
+        <div className="practice-submitters" role="group" aria-label="选择把握程度并提交" aria-busy={busy}>
+          {confidenceLevels.map(level=><button key={level} className="primary" disabled={busy||!p.answer.length} onClick={()=>submit(level)}>{level}</button>)}
+        </div>:
+        <div className="buttons practice-next">
           <button className="primary" aria-keyshortcuts={result?'ArrowRight':undefined} disabled={busy} onClick={reviewingQuestion?nextReview:questionIndex+1<available.length?()=>move(1):()=>tabTo('今日学习')}>
             {reviewingQuestion?(previewed&&!result?'跳过本项':'下一项复习'):questionIndex+1<available.length?'下一题':'回到今日'} <ArrowRight size={18}/>
-          </button>}
-      </div>
+          </button>
+        </div>}
     </section>
   </>)}
   {p.tab==='复习中心'&&<section className="panel">
