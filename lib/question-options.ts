@@ -1,22 +1,70 @@
 export const optionLetters = ['A', 'B', 'C', 'D'] as const;
+const circled = '①②③④⑤⑥⑦⑧⑨';
+const optionMarker = /(^|\s)([A-Z])[.．、][ \t]*/g;
+const statementMarker = /^[ \t]*(?:([1-9])(?:[.．、)）][ \t]*|[ \t]*(?=[\p{Script=Han}“]))|([①-⑨])[ \t]*)/gmu;
 
-const optionLine = /^[ \t]*([A-D])[.．、][ \t]*(.+)$/;
+function cleanQuestionText(text: string) {
+  return text
+    .replace(/\r\n?/g, '\n')
+    .replace(/(\p{Script=Han})[ \t]+(?=\d)/gu, '$1')
+    .replace(/(\d)[ \t]+(?=[年月日时点分秒岁万亿元人公里项题条章届次个份])/gu, '$1')
+    .replace(/(\d(?:年|月|日))[ \t]+(?=\d)/g, '$1');
+}
 
-export function splitQuestionOptions(body: string) {
-  const lines = body.trimEnd().split(/\r?\n/);
-  const first = lines.findIndex(line => optionLine.test(line));
+function joinLines(text: string) {
+  return text.split(/\n\s*\n/).map(block => {
+    const lines = block.split('\n').map(line => line.trim());
+    return lines.reduce((paragraph, line) => {
+      const space = /[a-z\d]$/i.test(paragraph) && /^[a-z\d]/i.test(line) ? ' ' : '';
+      return paragraph + space + line;
+    }, '');
+  }).join('\n\n');
+}
+
+function punctuation(text: string) {
+  return text
+    .replace(/([,;:?!])(?=\s*[\p{Script=Han}《“①-⑨])|(?<=[\p{Script=Han}》”])([,;:?!])(?![a-z\d])/giu,
+      mark => ({',':'，',';':'；',':':'：','?':'？','!':'！'})[mark]!)
+    .replace(/\([ \t]*\)/g, '（　）')
+    .replace(/\(([\p{Script=Han}，、]+)\)/gu, '（$1）');
+}
+
+export function formatQuestionText(body: string, number?: number) {
+  const text = number === undefined ? body : body.replace(new RegExp('^\\s*'+number+'[、.．]\\s*'), '');
+  return punctuation(cleanQuestionText(joinLines(text.replace(/\r\n?/g, '\n'))));
+}
+
+export function formatQuestionAnalysis(text: string) {
+  return punctuation(cleanQuestionText(text.replace(/([1-9])(?:[.、])?(?=(?:选项)?(?:正确|错误))/g,
+    (match, digit, offset, input) => /\d/.test(input[offset - 1] ?? '') ? match : circled[Number(digit) - 1])));
+}
+
+export function splitQuestionOptions(body: string, number?: number) {
+  const text = body.trim().replace(/\r\n?/g, '\n');
+  const first = text.search(/^[ \t]*A[.．、][ \t]*/m);
   if (first <= 0) return null;
-
-  const stem = lines.slice(0, first).join('\n').trimEnd();
-  const options = lines.slice(first).filter(line => line.trim()).map(line => optionLine.exec(line));
-  // shortcut: only separate four standalone options; support wrapped or inline options once stored separately.
-  if (!stem || options.length !== optionLetters.length) return null;
-
-  const choices: string[] = [];
-  for (const [index, option] of options.entries()) {
-    const text = option?.[2].trim();
-    if (option?.[1] !== optionLetters[index] || !text || /[A-Z][.．、]/.test(text)) return null;
-    choices.push(text);
+  const rest = text.slice(first);
+  const markers = [...rest.matchAll(optionMarker)];
+  if (markers.map(marker => marker[2]).join('') !== 'ABCD') return null;
+  const choices = markers.map((marker, i) => rest.slice(marker.index + marker[0].length, markers[i+1]?.index).trim());
+  // shortcut: an ambiguous ending stays in the source layout until the question is corrected.
+  if (choices.some(choice => !choice || /\n\s*(?:补充材料|【[^】]+】|参考答案)/.test(choice))) return null;
+  const stemText = text.slice(0, first).trimEnd()
+    .replace(/([（(][ \t]*[）)])[ \t]*(?=[1①](?:[\p{Script=Han}“、.)）]|$))/gu, '$1\n');
+  const markersInStem = [...stemText.matchAll(statementMarker)].filter(marker => marker.index>0);
+  const start = markersInStem.findIndex(marker => marker[1]==='1'||marker[2]==='①');
+  const statements = start>=0?markersInStem.slice(start):[];
+  const combination = (value: string) => value.replace(/[\s、，,]/g, '');
+  const grouped = statements.length >= 2 && statements.every((item,i) => item[1] === String(i+1) || item[2] === circled[i])
+    && choices.every(choice => /^[1-9①-⑨]+$/.test(combination(choice)) && [...combination(choice)].every(n => (/[1-9]/.test(n) ? Number(n)-1 : circled.indexOf(n)) < statements.length));
+  if (grouped) {
+    const stem = formatQuestionText(stemText.slice(0,statements[0].index), number);
+    return {
+      stem: [stem, ...statements.map((item,i) =>
+        circled[i]+' '+formatQuestionText(stemText.slice(item.index+item[0].length,statements[i+1]?.index).trim().replace(/\n\s*\n/g,'\n'))
+      )].join('\n'),
+      choices: choices.map(choice => combination(choice).replace(/[1-9]/g,n => circled[Number(n)-1])),
+    };
   }
-  return { stem, choices };
+  return {stem: formatQuestionText(stemText, number), choices: choices.map(choice => formatQuestionText(choice.replace(/\n\s*\n/g,'\n')))};
 }

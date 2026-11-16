@@ -1,0 +1,22 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { dailyPlan } from '../lib/daily-plan.ts';
+
+test('按北京时间统计任务，同题重复、争议题和模拟新题不会虚增今日进度', () => {
+  const previous = '2026-11-15T15:59:59.000Z';
+  const now = '2026-11-15T16:00:00.000Z';
+  const questions = [
+    ...[1,2,3].map(id=>({id,status:'已核对'})),
+    {id:4,status:'争议'}, {id:5,status:'已核对',kind:'模拟题'},
+  ];
+  const attempts = [
+    {question_id:1,kind:'首次',created_at:previous,disputed:0},
+    {question_id:1,kind:'重复',created_at:now,disputed:0},
+    ...[2,4,5].map(question_id=>({question_id,kind:'首次',created_at:now,disputed:Number(question_id===4)})),
+    {question_id:2,kind:'重复',created_at:now,disputed:0},
+  ];
+  const recalls = [{knowledge_id:21,first_at:previous,last_at:now}];
+  const due = [{kind:'question',item_id:1,due_date:'2026-11-16'},{kind:'knowledge',item_id:22,due_date:'2026-11-16'}];
+  const plan=dailyPlan('2026-11-16',questions,attempts,recalls,due);
+  assert.deepEqual(plan,{done:3,reviewTotal:3,newTotal:2,fresh:[questions[2]],pending:[due[1]],includesKnowledge:true});
+});

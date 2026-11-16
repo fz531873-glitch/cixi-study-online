@@ -2,6 +2,7 @@ import { z } from 'zod';
 import seed from '../data/catalog.json' with { type: 'json' };
 import simulations from '../data/simulations.json' with { type: 'json' };
 import { memorySnapshot, Rating, reviewMemory, today } from './memory.ts';
+import { storedMistakeReasons } from './mistake-reasons.ts';
 
 export { today };
 
@@ -81,12 +82,13 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
   if (!user) throw new InputError('请先登录', 401);
   const now = new Date().toISOString();
   if (method === 'GET' && path === '/bootstrap') {
-    const [{questions,knowledge},links,reviews,attempts,progress] = await Promise.all([
+    const [{questions,knowledge},links,reviews,attempts,recalls,progress] = await Promise.all([
       content(db,user), decisions(db,user), rows(db,'SELECT kind,item_id,due_date,stage FROM review WHERE user_id=? ORDER BY due_date',user),
       rows(db,'SELECT id,question_id,answer,confidence,correct,disputed,error_reason,kind,created_at FROM attempt WHERE user_id=? ORDER BY created_at DESC',user),
+      rows(db,'SELECT knowledge_id,MIN(created_at) AS first_at,MAX(created_at) AS last_at FROM recall WHERE user_id=? GROUP BY knowledge_id',user),
       db.prepare('SELECT payload,updated_at FROM progress WHERE user_id=?').bind(user).first<{payload:string;updated_at:string}>(),
     ]);
-    return {questions:questions.map(stripAnswer), knowledge, links, reviews, attempts, materials:catalog.materials,
+    return {questions:questions.map(stripAnswer), knowledge, links, reviews, attempts, recalls, materials:catalog.materials,
       progress:progress ? JSON.parse(progress.payload) : null, progress_updated_at:progress?.updated_at, today:today(), version:catalog.version};
   }
   if (method === 'POST' && path === '/progress') {
@@ -116,7 +118,7 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
     return {...q,id:a.requestId,questionId:q.id,correct,disputed};
   }
   if (method === 'POST' && path === '/reason') {
-    const a = z.object({id:z.string().uuid(), reason:z.enum(['知识没记住','概念混淆','条件理解错误','漏看关键词','推理方法不熟','没有把握','其他'])}).parse(input);
+    const a = z.object({id:z.string().uuid(), reason:z.enum(storedMistakeReasons)}).parse(input);
     const r = await db.prepare('UPDATE attempt SET error_reason=? WHERE id=? AND user_id=?').bind(a.reason,a.id,user).run();
     if (!r.meta.changes) throw new InputError('作答记录不存在',404);
     return {saved:true};
