@@ -39,6 +39,8 @@ export const progressSchema = z.object({tab: z.enum(['今日学习','知识学�
   knowledgeId: id, questionId: id, answer: z.array(z.enum(['A','B','C','D'])).max(4),
   confidence: z.enum(['未选择','确定','犹豫','猜的']), mode: z.enum(['全部','学后','错题','混合']), queue: z.array(id).max(catalog.questions.length), exam: z.string().max(100), submittedId:z.string().uuid().nullable().default(null), knowledgeScope:z.enum(['category','point']).default('category'),
   reviewBatch: reviewBatchSchema.optional(),
+  lastKnowledgeId:id.refine(value=>catalog.knowledge.some(k=>k.id===value),'知识不存在').optional(),
+  introDismissed:z.boolean().optional(),
 });
 export type Progress = z.infer<typeof progressSchema>;
 type Row = Record<string, unknown>;

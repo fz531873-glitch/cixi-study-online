@@ -119,8 +119,10 @@ test('整类学习和指定知识点的范围随学习位置保存，旧草稿�
   const {call}=database();
   await call('POST','/progress',{...progress,tab:'知识学习',knowledgeId:10135,knowledgeScope:'category'});
   assert.equal((await call('GET','/bootstrap')).progress.knowledgeScope,'category');
-  await call('POST','/progress',{...progress,tab:'知识学习',knowledgeId:10140,knowledgeScope:'point'});
-  assert.equal((await call('GET','/bootstrap')).progress.knowledgeScope,'point');
+  const updated={...progress,tab:'知识学习',knowledgeId:10140,knowledgeScope:'point',lastKnowledgeId:10140,introDismissed:true};
+  await call('POST','/progress',updated);
+  assert.deepEqual((await call('GET','/bootstrap')).progress,updated);
+  await assert.rejects(call('POST','/progress',{...updated,lastKnowledgeId:999999}));
   const {knowledgeScope,...legacy}=progress;await call('POST','/progress',legacy);
   assert.equal((await call('GET','/bootstrap')).progress.knowledgeScope,'category');
 });

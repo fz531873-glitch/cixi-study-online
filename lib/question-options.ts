@@ -39,6 +39,16 @@ export function formatQuestionAnalysis(text: string) {
     (match, digit, offset, input) => /\d/.test(input[offset - 1] ?? '') ? match : circled[Number(digit) - 1])));
 }
 
+export function questionSummary(body:string, type:string, number:number) {
+  const source=body.split(/(?:[【\[](?:答案|解析)[】\]]|(?:参考答案|正确答案|答案解析|答案|解析)[：:])/u,1)[0];
+  const parsed=type==='判断'?null:splitQuestionOptions(source,number);
+  const optionStart=source.search(/(?:^|\s)[A-DＡ-Ｄ]\s*[.．、:：)）]/u);
+  if(!parsed&&optionStart<0&&type!=='判断')return '';
+  const stem=parsed?.stem??formatQuestionText(optionStart<0?source:source.slice(0,optionStart),number);
+  const chars=[...stem.replace(/\r?\n\s*/g,' ').trim()];
+  return chars.length>40?chars.slice(0,40).join('')+'…':chars.join('');
+}
+
 export function splitQuestionOptions(body: string, number?: number) {
   const text = body.trim().replace(/\r\n?/g, '\n');
   const first = text.search(/^[ \t]*A[.．、][ \t]*/m);
