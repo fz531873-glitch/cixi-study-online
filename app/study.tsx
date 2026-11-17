@@ -1,5 +1,6 @@
 'use client';
 import {useEffect, useEffectEvent, useRef, useState} from 'react';
+import type {ReactNode} from 'react';
 import {ArrowLeft, ArrowRight, BarChart3, BookOpen, CalendarDays, Check, ChevronDown, FileText, Info, Layers, RefreshCw, TriangleAlert, X} from 'lucide-react';
 import {Switch} from '../components/ui/switch';
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from '../components/ui/select';
@@ -7,6 +8,7 @@ import {groupReviewDates, nextDate, oldestOverdueDays, reviewBatchLimit, reviewD
 import type {Progress} from '../lib/study';
 import {dailyQuote} from '../lib/daily-quote';
 import {dailyPlan} from '../lib/daily-plan';
+import {explanationParts} from '../lib/explanation';
 import {mistakeReasons, storedMistakeReasons} from '../lib/mistake-reasons';
 import {formatQuestionAnalysis, formatQuestionText, optionLetters, questionSummary, splitQuestionOptions} from '../lib/question-options';
 import {mixedCounts, questionsForMix, questionsForPaper, questionTypes, sampleQuestions} from '../lib/practice-selection';
@@ -17,6 +19,7 @@ type Link = {knowledge_id:number; question_id:number; status:string; reason:stri
 type Attempt = {id:string; question_id:number; answer:string; confidence:string; correct:number; disputed:number; error_reason:string; kind:string; created_at:string};
 type Boot = {questions:Q[]; knowledge:K[]; links:Link[]; materials:{id:number;name:string;url:string}[]; reviews:(ReviewItem&{due_date:string;stage:number})[]; attempts:Attempt[]; recalls:{knowledge_id:number;first_at:string;last_at:string}[]; progress:Progress|null; progress_updated_at?:string; today:string};
 type Result = Omit<Q,'id'> & {id:string; questionId:number; correct:boolean; disputed:boolean; answer:string; direct:string; analysis:string; references:{title:string;url:string}[]};
+type Preview = Q & {answer:string; direct:string; analysis:string};
 const confidenceLevels = ['确定','犹豫','猜的'] as const;
 type Submission = {questionId:number; answer:string; confidence:typeof confidenceLevels[number]; requestId:string};
 const initial:Progress = {tab:'今日学习',knowledgeId:20002,questionId:13,answer:[],confidence:'未选择',mode:'全部',queue:[],exam:'2025年上午卷',submittedId:null,knowledgeScope:'category'};
@@ -29,6 +32,18 @@ const reviewTab=(item:ReviewItem)=>item.kind==='question'?'真题练习':'知识
 const tabName=(tab:string)=>tab==='真题练习'?'题库练习':tab;
 const categoryNames:Record<string,string>={'经济学':'经济','管理学':'管理','马克思主义原理':'马原'};
 const categoryName=(category:string)=>categoryNames[category]||category;
+function QuestionExplanation({direct,analysis,children}:{direct:string;analysis:string;children?:ReactNode}) {
+  const {summary,takeaway,full,isExcerpt}=explanationParts(direct,analysis);
+  return <>
+    {summary&&<p className={isExcerpt?'direct explanation-excerpt':'direct'}>{formatQuestionAnalysis(summary)}</p>}
+    {takeaway&&<p className="remember"><b>记住</b> {formatQuestionAnalysis(takeaway)}</p>}
+    {children}
+    {full&&<details className={isExcerpt?'explanation-expanded-replaces':undefined}>
+      <summary>完整解析</summary>
+      <div className="question">{formatQuestionAnalysis(full)}</div>
+    </details>}
+  </>;
+}
 const toggleSelection=(values:string[],value:string)=>values.includes(value)?values.filter(item=>item!==value):[...values,value];
 const recentPerformance=(attempt?:Attempt)=>{
   if(!attempt)return '未作答';
@@ -53,7 +68,7 @@ export default function Study({userName}:{userName:string}) {
   const [setup,setSetup]=useState(false), [setupExam,setSetupExam]=useState(initial.exam);
   const [setupMode,setSetupMode]=useState<Exclude<Progress['mode'],'学后'>>('全部');
   const [showGrid,setShowGrid]=useState(false), [hideAnalysis,setHideAnalysis]=useState(true);
-  const [preview,setPreview]=useState<(Q & {answer:string;direct:string})|null>(null);
+  const [preview,setPreview]=useState<Preview|null>(null);
   const [message,setMessage]=useState(''), [busy,setBusy]=useState(false), [syncError,setSyncError]=useState('');
   const [reviewDate,setReviewDate]=useState('');
   const [mixCategories,setMixCategories]=useState<string[]>([]), [mixTypes,setMixTypes]=useState<string[]>([]);
@@ -162,7 +177,7 @@ export default function Study({userName}:{userName:string}) {
   useEffect(()=>{
     if(hideAnalysis || setup || p.tab!=='真题练习' || result) return;
     let active=true;
-    api<Q & {answer:string;direct:string}>('/editor/question/'+p.questionId).then(q=>{
+    api<Preview>('/editor/question/'+p.questionId).then(q=>{
       if(!active)return;
       setPreview(q);
       setViewed(ids=>{
@@ -202,7 +217,6 @@ export default function Study({userName}:{userName:string}) {
   const previewed=viewed.includes(p.questionId);
   const canSubmit=hideAnalysis&&!previewed&&!result;
   const nextScheduled=result&&!result.disputed?reviews.find(r=>r.kind==='question'&&r.item_id===p.questionId)?.due_date:undefined;
-  const memoryTip=result?.direct.match(/^([\s\S]*?)记住[：:]\s*([\s\S]+)$/);
   const first=data.attempts.filter(a=>a.kind==='首次'&&!a.disputed), valid=data.attempts.filter(a=>!a.disputed);
   const latest=new Map<number,Attempt>();for(const a of data.attempts)if(!latest.has(a.question_id))latest.set(a.question_id,a);
   const weak=[...latest.values()].filter(a=>!a.disputed&&(!a.correct||a.confidence!=='确定')).map(a=>a.question_id);
@@ -452,15 +466,14 @@ export default function Study({userName}:{userName:string}) {
       {hideAnalysis&&previewed&&!result&&<p className="notice">本次已查看解析，可以前往下一题。</p>}
       {!hideAnalysis&&!result&&<div className="result" aria-live="polite">
         <p className="source">查看解析期间无法提交作答。</p>
-        {preview?.id===question.id?<><h3>{question.status==='争议'?'资料参考答案':'正确答案'} {preview.answer}</h3><p className="direct">{formatQuestionAnalysis(preview.direct)}</p><details><summary>出处与核对信息</summary><p className="source">{questionSource} · {question.status}</p></details></>:<p>正在读取解析…</p>}
+        {preview?.id===question.id?<><h3>{question.status==='争议'?'资料参考答案':'正确答案'} {preview.answer}</h3><QuestionExplanation direct={preview.direct} analysis={preview.analysis}/><details><summary>出处与核对信息</summary><p className="source">{questionSource} · {question.status}</p></details></>:<p>正在读取解析…</p>}
       </div>}
       {result&&<div className={'result practice-result '+(result.disputed?'disputed':'')}>
         <div role="status">
           <h3>{result.disputed?'资料参考答案':'正确答案'} {result.answer}{question.type==='判断'?(result.answer==='A'?'（正确）':'（错误）'):''}</h3>
           <p className="muted">{result.disputed?'争议题 · ':''}你选了 {p.answer.join('')} · {p.confidence}</p>
         </div>
-        {(!memoryTip||memoryTip[1].trim())&&<p className="direct">{formatQuestionAnalysis(memoryTip?.[1].trim()??result.direct)}</p>}
-        {memoryTip&&<p className="remember"><b>记住</b> {formatQuestionAnalysis(memoryTip[2])}</p>}
+        <QuestionExplanation direct={result.direct} analysis={result.analysis}>
         {nextScheduled&&<p className="review-confirmation"><CalendarDays size={16}/> {nextScheduled>date?'下次复习 · '+reviewDateLabel(nextScheduled,date):'本题仍在到期复习中'}</p>}
         {(!result.correct||p.confidence!=='确定')&&!result.disputed&&<div className="reasons" role="group" aria-label="错因">
           <h4>{result.correct?'哪里没把握':'这次卡在哪里'}</h4>
@@ -469,7 +482,7 @@ export default function Study({userName}:{userName:string}) {
             return <button key={reason} className={selected?'selected':''} aria-pressed={selected} disabled={busy} onClick={()=>run(async()=>{await api('/reason',{id:result.id,reason});await refresh();setMessage('原因已记录。')})}>{reason}</button>;
           })}</div>
         </div>}
-        <details><summary>完整解析</summary><div className="question">{formatQuestionAnalysis(result.analysis)}</div></details>
+        </QuestionExplanation>
         <details><summary>出处与核对信息</summary>
           <p className="source">{question.status} · 解析来源 {result.explanation_source} · 版本 {result.version}</p>
           {question.kind==='模拟题'&&question.simulation_id&&<p className="source">模拟题编号 {question.simulation_id}</p>}

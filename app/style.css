@@ -209,6 +209,7 @@ summary{cursor:pointer;font-size:14px;font-weight:500;padding:8px 0}
 .result h3{font-size:20px;color:inherit}
 .result details{border-top:1px solid var(--line);margin-top:8px}
 .result .direct{margin:12px 0}
+.result:has(> .explanation-expanded-replaces[open]) > .explanation-excerpt{display:none}
 .reasons{margin-top:16px}
 .reasons button{border-radius:20px}
 .practice-actions{display:flex;align-items:center;gap:6px;margin-top:16px}
