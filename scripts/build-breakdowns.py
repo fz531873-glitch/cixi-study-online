@@ -127,6 +127,24 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
                 {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "“存贷比基准利率”用语不规范，且上调利率通常偏向紧缩而非扩张。", "source_ref": src(8, 2, 7, 3, "第9题D项", "第9题解析"), "rule_id": "RULE-ECON-MONETARY-EXPANSION-01", "rule_statement": "上调政策利率不属扩张性工具，且存贷比不是基准利率。", "knowledge_id": None, "knowledge_gap": True},
             ],
         },
+        23015: {
+            "stem_polarity": "选错误",
+            "items": [
+                {"key": "A", "statement": "任何法律、法规都不得与宪法相抵触", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "宪法具有最高法律效力，法律法规不得与宪法相抵触。", "source_ref": src(3, 3, 3, 10, "第15题A项", "第15题解析"), "rule_id": "RULE-LAW-CONSTITUTION-SUPREMACY-01", "rule_statement": "法律、行政法规和地方性法规不得同宪法相抵触。", "knowledge_id": 20001, "knowledge_gap": False},
+                {"key": "B", "statement": "宪法由全国人民代表大会及其常务委员会制定", "statement_truth": False, "matches_stem": True, "verdict": "入选", "basis": "制宪机关是全国人民代表大会；全国人大常委会负责解释宪法、监督宪法实施，并非共同制宪机关。", "source_ref": src(3, 3, 3, 10, "第15题B项", "第15题解析"), "rule_id": "RULE-LAW-CONSTITUTION-MAKER-01", "rule_statement": "我国宪法由全国人民代表大会制定；全国人大常委会解释宪法并监督宪法实施。", "knowledge_id": 20001, "knowledge_gap": False},
+                {"key": "C", "statement": "我国现行宪法一共有五个修正案", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "截至该题资料时点，现行宪法共通过五个修正案，C表述成立。", "source_ref": src(3, 3, 3, 10, "第15题C项", "第15题解析"), "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01", "rule_statement": "我国现行宪法已通过五个修正案。", "knowledge_id": 20001, "knowledge_gap": False},
+                {"key": "D", "statement": "宪法对我国国旗、国歌、国徽、首都均作出明确规定", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "宪法规定了国家标志和首都，D项表述成立。", "source_ref": src(3, 3, 3, 10, "第15题D项", "第15题解析"), "rule_id": "RULE-LAW-CONSTITUTION-CONTENT-01", "rule_statement": "宪法规定国家根本制度、国家机构以及国旗、国歌、国徽和首都等事项。", "knowledge_id": 20001, "knowledge_gap": False},
+            ],
+        },
+        24012: {
+            "stem_polarity": "选正确",
+            "items": [
+                {"key": "A", "statement": "国务院", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "宪法修改权由全国人民代表大会行使，不属于国务院。", "source_ref": src(5, 3, 5, 18, "第12题A项", "第12题解析"), "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01", "rule_statement": "全国人民代表大会行使修改宪法的职权。", "knowledge_id": 20002, "knowledge_gap": False},
+                {"key": "B", "statement": "省、自治区、直辖市人大及其常委会", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "地方人大及其常委会无权修改国家宪法。", "source_ref": src(5, 3, 5, 18, "第12题B项", "第12题解析"), "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01", "rule_statement": "全国人民代表大会行使修改宪法的职权。", "knowledge_id": 20002, "knowledge_gap": False},
+                {"key": "C", "statement": "全国人民代表大会常务委员会", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "全国人大常委会有权提出修宪议案，但宪法修改权属于全国人民代表大会。", "source_ref": src(5, 3, 5, 18, "第12题C项", "第12题解析"), "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01", "rule_statement": "全国人大常委会可提出修宪议案，宪法修改由全国人民代表大会行使。", "knowledge_id": 20002, "knowledge_gap": False},
+                {"key": "D", "statement": "全国人民代表大会", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "宪法第六十二条规定，全国人民代表大会行使修改宪法的职权。", "source_ref": src(5, 3, 5, 18, "第12题D项", "第12题解析"), "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01", "rule_statement": "全国人民代表大会行使修改宪法的职权。", "knowledge_id": 20002, "knowledge_gap": False},
+            ],
+        },
         13: {
             "stem_polarity": "选正确",
             "combination_map": {"A": ["②", "③"], "B": ["①", "④"], "C": ["①", "②", "③", "④"], "D": ["②", "③", "④"]},
@@ -220,6 +238,8 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
         18: {"A": "会议纪要程序要清楚、目的要明确、中心要突出、层次分明。", "B": "办公会议纪要主要用于传达领导办公会议的决定和决议。", "C": "会议纪要的成文时间一般写在标题之下，正文右下方。", "D": "会议纪要是会议实录，需对全部发言进行原词原句记录。"},
         26: {"A": "人大代表是基层治理的领导核心。", "B": "人大代表联系群众机制畅通社情民意表达渠道。", "C": "人大代表联系群众是行使提案权的最优途径。", "D": "代表履职积分制丰富了选民联系形式。"},
         19025: {"A": "请示", "B": "通知", "C": "申请", "D": "函"},
+        23015: {"A": "任何法律、法规都不得与宪法相抵触", "B": "宪法由全国人民代表大会及其常务委员会制定", "C": "我国现行宪法一共有五个修正案", "D": "宪法对我国国旗、国歌、国徽、首都均作出明确规定"},
+        24012: {"A": "国务院", "B": "省、自治区、直辖市人大及其常委会", "C": "全国人民代表大会常务委员会", "D": "全国人民代表大会"},
     }
     for qid, items in statements.items():
         for item in overrides[qid]["items"]:
@@ -261,7 +281,7 @@ def main() -> None:
             for item in entry["items"]:
                 if "statement" not in item:
                     item["statement"] = q["body"].strip()
-            entry["status"] = "已核对"
+            entry["status"] = q["status"]
             breakdowns.append(entry)
             continue
 
@@ -349,13 +369,12 @@ def main() -> None:
             "exam": q["exam"],
             "number": q["number"],
             "type": q["type"],
-            "status": "争议" if is_disputed else "待核对",
+                "status": q["status"],
             "stem_polarity": polarity,
             **({"combination_map": comb_map} if comb_map else {}),
             "items": items,
         }
         if is_disputed:
-            entry["status"] = "待核对"
             for item in entry["items"]:
                 item["statement_truth"] = None
                 item["matches_stem"] = None

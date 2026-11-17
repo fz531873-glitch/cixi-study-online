@@ -26,10 +26,12 @@ test('345道真题稿件覆盖全部题号、版本号与资料页码定位', ()
     const bd = breakdownsData.breakdowns.find(entry=>entry.question_id===q.id);
     assert.ok(bd, `缺少题目 ${q.id} 的逐项讲解`);
     assert.equal(bd.version, q.version);
+    assert.equal(bd.status, q.status);
     assert.ok(bd.items.length >= 1);
     if (bd.status === '已核对') assert.ok(bd.items.every(item => item.rule_id !== 'RULE-UNVERIFIED'));
-    else if (bd.status === '待核对') assert.ok(bd.items.every(item => item.rule_id === 'RULE-UNVERIFIED'));
+    else assert.ok(bd.items.every(item => item.rule_id === 'RULE-UNVERIFIED') || bd.status !== '已核对');
     for (const item of bd.items) {
+      assert.ok(item.statement?.length, `${q.id}:${item.key} 缺少原题陈述`);
       assert.ok(item.basis.length > 0);
       assert.ok(item.rule_statement.length > 0);
       assert.equal(item.source_ref.question_material.page,q.source_page);

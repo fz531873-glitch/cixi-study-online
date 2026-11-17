@@ -31,7 +31,7 @@ export const breakdownSchema=z.object({
 const available=new Map<string,QuestionBreakdown>();
 for(const item of data.breakdowns){
   // Automatically extracted drafts can include the wrong option's evidence.
-  if(item.items.length&&item.items.every(evidence=>evidence.rule_id!=='RULE-UNVERIFIED')&&item.status!=='争议'){
+  if(item.items.length&&item.items.every(evidence=>evidence.rule_id!=='RULE-UNVERIFIED')){
     const entry=breakdownSchema.parse(item);
     available.set(entry.question_id+':'+entry.version,entry);
   }

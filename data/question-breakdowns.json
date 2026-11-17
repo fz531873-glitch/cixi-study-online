@@ -1694,7 +1694,7 @@
       "exam": "2023年上午卷",
       "number": 15,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选错误",
       "items": [
         {
@@ -1703,24 +1703,23 @@
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "题干选错误项。制宪机关为全国人民代表大会，B把全国人大常委会也列为制宪机关，故选B。常委会可解释宪法、监督宪法实施，并有修宪提案权；不能据此取得制定或通过修改宪法的权力。",
+          "basis": "宪法具有最高法律效力，法律法规不得与宪法相抵触。",
           "source_ref": {
             "question_material": {
               "id": 3,
               "name": "2023年2月26日上午浙江省宁波市余姚、慈溪、奉化事业单位笔试《综合基础知识+主观题》)真题及答案.pdf",
               "page": 3,
-              "location": "第15题A"
+              "location": "第15题A项"
             },
             "analysis_material": {
               "id": 3,
               "name": "2023年2月26日上午浙江省宁波市余姚、慈溪、奉化事业单位笔试《综合基础知识+主观题》)真题及答案.pdf",
               "page": 10,
               "location": "第15题解析"
-            },
-            "external": "https://www.sara.gov.cn/static/content/xxgk/flfg/2018-03-22/1306305917016342528.html"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干选错误项。制宪机关为全国人民代表大会，B把全国人大常委会也列为制宪机关，故选B。常委会可解释宪法、监督宪法实施，并有修宪提案权；不能据此取得制定或通过修改宪法的权力。",
+          "rule_id": "RULE-LAW-CONSTITUTION-SUPREMACY-01",
+          "rule_statement": "法律、行政法规和地方性法规不得同宪法相抵触。",
           "knowledge_id": 20001,
           "knowledge_gap": false
         },
@@ -1730,24 +1729,23 @@
           "statement_truth": false,
           "matches_stem": true,
           "verdict": "入选",
-          "basis": "题干选错误项。制宪机关为全国人民代表大会，B把全国人大常委会也列为制宪机关，故选B。常委会可解释宪法、监督宪法实施，并有修宪提案权；不能据此取得制定或通过修改宪法的权力。",
+          "basis": "制宪机关是全国人民代表大会；全国人大常委会负责解释宪法、监督宪法实施，并非共同制宪机关。",
           "source_ref": {
             "question_material": {
               "id": 3,
               "name": "2023年2月26日上午浙江省宁波市余姚、慈溪、奉化事业单位笔试《综合基础知识+主观题》)真题及答案.pdf",
               "page": 3,
-              "location": "第15题B"
+              "location": "第15题B项"
             },
             "analysis_material": {
               "id": 3,
               "name": "2023年2月26日上午浙江省宁波市余姚、慈溪、奉化事业单位笔试《综合基础知识+主观题》)真题及答案.pdf",
               "page": 10,
               "location": "第15题解析"
-            },
-            "external": "https://www.sara.gov.cn/static/content/xxgk/flfg/2018-03-22/1306305917016342528.html"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干选错误项。制宪机关为全国人民代表大会，B把全国人大常委会也列为制宪机关，故选B。常委会可解释宪法、监督宪法实施，并有修宪提案权；不能据此取得制定或通过修改宪法的权力。",
+          "rule_id": "RULE-LAW-CONSTITUTION-MAKER-01",
+          "rule_statement": "我国宪法由全国人民代表大会制定；全国人大常委会解释宪法并监督宪法实施。",
           "knowledge_id": 20001,
           "knowledge_gap": false
         },
@@ -1757,24 +1755,23 @@
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "题干选错误项。制宪机关为全国人民代表大会，B把全国人大常委会也列为制宪机关，故选B。常委会可解释宪法、监督宪法实施，并有修宪提案权；不能据此取得制定或通过修改宪法的权力。",
+          "basis": "截至该题资料时点，现行宪法共通过五个修正案，C表述成立。",
           "source_ref": {
             "question_material": {
               "id": 3,
               "name": "2023年2月26日上午浙江省宁波市余姚、慈溪、奉化事业单位笔试《综合基础知识+主观题》)真题及答案.pdf",
               "page": 3,
-              "location": "第15题C"
+              "location": "第15题C项"
             },
             "analysis_material": {
               "id": 3,
               "name": "2023年2月26日上午浙江省宁波市余姚、慈溪、奉化事业单位笔试《综合基础知识+主观题》)真题及答案.pdf",
               "page": 10,
               "location": "第15题解析"
-            },
-            "external": "https://www.sara.gov.cn/static/content/xxgk/flfg/2018-03-22/1306305917016342528.html"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干选错误项。制宪机关为全国人民代表大会，B把全国人大常委会也列为制宪机关，故选B。常委会可解释宪法、监督宪法实施，并有修宪提案权；不能据此取得制定或通过修改宪法的权力。",
+          "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01",
+          "rule_statement": "我国现行宪法已通过五个修正案。",
           "knowledge_id": 20001,
           "knowledge_gap": false
         },
@@ -1784,24 +1781,23 @@
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "题干选错误项。制宪机关为全国人民代表大会，B把全国人大常委会也列为制宪机关，故选B。常委会可解释宪法、监督宪法实施，并有修宪提案权；不能据此取得制定或通过修改宪法的权力。",
+          "basis": "宪法规定了国家标志和首都，D项表述成立。",
           "source_ref": {
             "question_material": {
               "id": 3,
               "name": "2023年2月26日上午浙江省宁波市余姚、慈溪、奉化事业单位笔试《综合基础知识+主观题》)真题及答案.pdf",
               "page": 3,
-              "location": "第15题D"
+              "location": "第15题D项"
             },
             "analysis_material": {
               "id": 3,
               "name": "2023年2月26日上午浙江省宁波市余姚、慈溪、奉化事业单位笔试《综合基础知识+主观题》)真题及答案.pdf",
               "page": 10,
               "location": "第15题解析"
-            },
-            "external": "https://www.sara.gov.cn/static/content/xxgk/flfg/2018-03-22/1306305917016342528.html"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干选错误项。制宪机关为全国人民代表大会，B把全国人大常委会也列为制宪机关，故选B。常委会可解释宪法、监督宪法实施，并有修宪提案权；不能据此取得制定或通过修改宪法的权力。",
+          "rule_id": "RULE-LAW-CONSTITUTION-CONTENT-01",
+          "rule_statement": "宪法规定国家根本制度、国家机构以及国旗、国歌、国徽和首都等事项。",
           "knowledge_id": 20001,
           "knowledge_gap": false
         }
@@ -10985,7 +10981,7 @@
       "exam": "2024年上午卷",
       "number": 12,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选正确",
       "items": [
         {
@@ -10994,24 +10990,23 @@
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "宪法修改权属于全国人民代表大会，选D。全国人大常委会具有修宪提案权，宪法修正须由全国人大以全体代表三分之二以上多数通过；提案机关与通过机关要分清。",
+          "basis": "宪法修改权由全国人民代表大会行使，不属于国务院。",
           "source_ref": {
             "question_material": {
               "id": 5,
               "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
               "page": 3,
-              "location": "第12题A"
+              "location": "第12题A项"
             },
             "analysis_material": {
               "id": 5,
               "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
               "page": 18,
               "location": "第12题解析"
-            },
-            "external": "https://www.sara.gov.cn/static/content/xxgk/flfg/2018-03-22/1306305917016342528.html"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "宪法修改权属于全国人民代表大会，选D。全国人大常委会具有修宪提案权，宪法修正须由全国人大以全体代表三分之二以上多数通过；提案机关与通过机关要分清。",
+          "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01",
+          "rule_statement": "全国人民代表大会行使修改宪法的职权。",
           "knowledge_id": 20002,
           "knowledge_gap": false
         },
@@ -11021,24 +11016,23 @@
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "B.省、自治区、直辖市人大及其常委会。",
+          "basis": "地方人大及其常委会无权修改国家宪法。",
           "source_ref": {
             "question_material": {
               "id": 5,
               "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
               "page": 3,
-              "location": "第12题B"
+              "location": "第12题B项"
             },
             "analysis_material": {
               "id": 5,
               "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
               "page": 18,
               "location": "第12题解析"
-            },
-            "external": "https://www.sara.gov.cn/static/content/xxgk/flfg/2018-03-22/1306305917016342528.html"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "宪法修改权属于全国人民代表大会，选D。全国人大常委会具有修宪提案权，宪法修正须由全国人大以全体代表三分之二以上多数通过；提案机关与通过机关要分清。",
+          "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01",
+          "rule_statement": "全国人民代表大会行使修改宪法的职权。",
           "knowledge_id": 20002,
           "knowledge_gap": false
         },
@@ -11048,24 +11042,23 @@
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "C.全国人民代表大会常务委员会。",
+          "basis": "全国人大常委会有权提出修宪议案，但宪法修改权属于全国人民代表大会。",
           "source_ref": {
             "question_material": {
               "id": 5,
               "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
               "page": 3,
-              "location": "第12题C"
+              "location": "第12题C项"
             },
             "analysis_material": {
               "id": 5,
               "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
               "page": 18,
               "location": "第12题解析"
-            },
-            "external": "https://www.sara.gov.cn/static/content/xxgk/flfg/2018-03-22/1306305917016342528.html"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "宪法修改权属于全国人民代表大会，选D。全国人大常委会具有修宪提案权，宪法修正须由全国人大以全体代表三分之二以上多数通过；提案机关与通过机关要分清。",
+          "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01",
+          "rule_statement": "全国人大常委会可提出修宪议案，宪法修改由全国人民代表大会行使。",
           "knowledge_id": 20002,
           "knowledge_gap": false
         },
@@ -11075,24 +11068,23 @@
           "statement_truth": true,
           "matches_stem": true,
           "verdict": "入选",
-          "basis": "D.全国人民代表大会。",
+          "basis": "宪法第六十二条规定，全国人民代表大会行使修改宪法的职权。",
           "source_ref": {
             "question_material": {
               "id": 5,
               "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
               "page": 3,
-              "location": "第12题D"
+              "location": "第12题D项"
             },
             "analysis_material": {
               "id": 5,
               "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
               "page": 18,
               "location": "第12题解析"
-            },
-            "external": "https://www.sara.gov.cn/static/content/xxgk/flfg/2018-03-22/1306305917016342528.html"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "宪法修改权属于全国人民代表大会，选D。全国人大常委会具有修宪提案权，宪法修正须由全国人大以全体代表三分之二以上多数通过；提案机关与通过机关要分清。",
+          "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01",
+          "rule_statement": "全国人民代表大会行使修改宪法的职权。",
           "knowledge_id": 20002,
           "knowledge_gap": false
         }
@@ -17942,7 +17934,7 @@
       "exam": "2025年上午卷",
       "number": 1,
       "type": "单选",
-      "status": "已核对",
+      "status": "待核对",
       "stem_polarity": "选错误",
       "items": [
         {
@@ -18446,7 +18438,7 @@
       "exam": "2025年上午卷",
       "number": 5,
       "type": "单选",
-      "status": "已核对",
+      "status": "待核对",
       "stem_polarity": "选正确",
       "items": [
         {
@@ -18812,7 +18804,7 @@
       "exam": "2025年上午卷",
       "number": 8,
       "type": "单选",
-      "status": "已核对",
+      "status": "待核对",
       "stem_polarity": "选错误",
       "items": [
         {
@@ -18927,7 +18919,7 @@
       "exam": "2025年上午卷",
       "number": 9,
       "type": "单选",
-      "status": "已核对",
+      "status": "待核对",
       "stem_polarity": "选正确",
       "items": [
         {
@@ -19565,7 +19557,7 @@
       "exam": "2025年上午卷",
       "number": 14,
       "type": "单选",
-      "status": "已核对",
+      "status": "争议",
       "stem_polarity": "选正确",
       "items": [
         {
@@ -19801,7 +19793,7 @@
       "exam": "2025年上午卷",
       "number": 16,
       "type": "单选",
-      "status": "已核对",
+      "status": "争议",
       "stem_polarity": "选正确",
       "combination_map": {
         "A": [
@@ -19939,7 +19931,7 @@
       "exam": "2025年上午卷",
       "number": 17,
       "type": "单选",
-      "status": "已核对",
+      "status": "待核对",
       "stem_polarity": "选正确",
       "items": [
         {
@@ -20054,7 +20046,7 @@
       "exam": "2025年上午卷",
       "number": 18,
       "type": "单选",
-      "status": "已核对",
+      "status": "待核对",
       "stem_polarity": "选错误",
       "items": [
         {
@@ -20982,7 +20974,7 @@
       "exam": "2025年上午卷",
       "number": 26,
       "type": "多选",
-      "status": "已核对",
+      "status": "待核对",
       "stem_polarity": "选正确",
       "items": [
         {
@@ -21713,7 +21705,7 @@
       "exam": "2025年上午卷",
       "number": 35,
       "type": "判断",
-      "status": "已核对",
+      "status": "待核对",
       "stem_polarity": "判断正误",
       "items": [
         {
@@ -21936,7 +21928,7 @@
       "exam": "2025年上午卷",
       "number": 41,
       "type": "判断",
-      "status": "已核对",
+      "status": "待核对",
       "stem_polarity": "判断正误",
       "items": [
         {
@@ -25463,7 +25455,8 @@
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "A项符合《工伤保险条例》第十四条规定,属工伤。C项属于“视同工伤”,但不属于题干所要求的“属于工伤”范畴,因此不选。D项为因工外出期间受到事故伤害,应认定为工伤。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "dispute_note": "A项符合《工伤保险条例》第十四条规定,属工伤。"
         },
         {
           "key": "B",
@@ -25489,7 +25482,8 @@
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "A项符合《工伤保险条例》第十四条规定,属工伤。C项属于“视同工伤”,但不属于题干所要求的“属于工伤”范畴,因此不选。D项为因工外出期间受到事故伤害,应认定为工伤。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "dispute_note": "A项符合《工伤保险条例》第十四条规定,属工伤。C项属于“视同工伤”,但不属于题干所要求的“属于工伤”范畴,因此不选。D项为因工外出期间受到事故伤害,应认定为工伤。"
         },
         {
           "key": "C",
@@ -25515,7 +25509,8 @@
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "A项符合《工伤保险条例》第十四条规定,属工伤。C项属于“视同工伤”,但不属于题干所要求的“属于工伤”范畴,因此不选。D项为因工外出期间受到事故伤害,应认定为工伤。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "dispute_note": "C项属于“视同工伤”,但不属于题干所要求的“属于工伤”范畴,因此不选。"
         },
         {
           "key": "D",
@@ -25541,7 +25536,8 @@
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "A项符合《工伤保险条例》第十四条规定,属工伤。C项属于“视同工伤”,但不属于题干所要求的“属于工伤”范畴,因此不选。D项为因工外出期间受到事故伤害,应认定为工伤。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "dispute_note": "D项为因工外出期间受到事故伤害,应认定为工伤。"
         }
       ]
     },
@@ -29100,7 +29096,7 @@
       "exam": "2019年7月象山事业单位",
       "number": 25,
       "type": "单选",
-      "status": "已核对",
+      "status": "待核对",
       "stem_polarity": "选正确",
       "items": [
         {
