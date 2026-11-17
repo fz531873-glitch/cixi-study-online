@@ -1,5 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import { mkdtempSync, copyFileSync, rmSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import catalog from '../data/catalog.json' with { type: 'json' };
 import simulations from '../data/simulations.json' with { type: 'json' };
 import breakdownsData from '../data/question-breakdowns.json' with { type: 'json' };
@@ -125,16 +129,59 @@ test('关联来源完整且候选不混入已确认集合',()=>{
   assert.equal(catalog.links.find(link=>link.question_id===3&&link.knowledge_id===10158&&link.rule_id==='RULE-POL-ETHNIC-RELATIONS-01')?.status,'已确认');
 });
 
-test('生成器只更新目标题目并保护非目标题现有成果', () => {
-  const currentBds = breakdownsData.breakdowns;
-  assert.equal(currentBds.length, 345);
-  // Verify target batch 1 questions are verified
-  for (let qid = 1; qid <= 10; qid++) {
-    const b = currentBds.find(item => item.question_id === qid);
-    assert.equal(b?.status, '已核对');
-    assert.ok(b?.items.every(it => it.rule_id !== 'RULE-UNVERIFIED'));
+test('生成器实际运行且只更新第1—10题并保护第13、18题等非目标题人工成果', () => {
+  const tmpDir = mkdtempSync(join(tmpdir(), 'cixi-build-test-'));
+  try {
+    const tmpBreakdownsPath = join(tmpDir, 'question-breakdowns.json');
+    const tmpMdPath = join(tmpDir, 'breakdowns.md');
+    copyFileSync(join(process.cwd(), 'data', 'question-breakdowns.json'), tmpBreakdownsPath);
+
+    // 模拟人工补入非目标题的依据成果（例如第13题、第18题）
+    const initialContent = JSON.parse(readFileSync(tmpBreakdownsPath, 'utf8'));
+    const q13 = initialContent.breakdowns.find((b: any) => b.question_id === 13);
+    const q18 = initialContent.breakdowns.find((b: any) => b.question_id === 18);
+    assert.ok(q13 && q18);
+
+    const customBasis13 = '【测试人工成果】第13题生态环境法典审议法定依据人工校正';
+    const customBasis18 = '【测试人工成果】第18题公文纪要成文规范人工复核记录';
+    q13.items[0].basis = customBasis13;
+    q18.items[0].basis = customBasis18;
+    writeFileSync(tmpBreakdownsPath, JSON.stringify(initialContent, null, 2), 'utf8');
+
+    // 实际调用并运行生成器脚本
+    const scriptPath = join(process.cwd(), 'scripts', 'build-breakdowns.py');
+    const pyCmd = process.platform === 'win32' ? 'python' : 'python3';
+    execFileSync(pyCmd, [scriptPath], {
+      cwd: process.cwd(),
+      env: {
+        ...process.env,
+        CIXI_BREAKDOWNS_PATH: tmpBreakdownsPath,
+        CIXI_BREAKDOWNS_MD_PATH: tmpMdPath,
+      },
+      stdio: 'pipe',
+    });
+
+    // 读取运行生成器后的结果并断言
+    const updatedContent = JSON.parse(readFileSync(tmpBreakdownsPath, 'utf8'));
+    assert.equal(updatedContent.breakdowns.length, 345);
+
+    // 验证目标题（第1—10题）已核对且有效生成
+    for (let qid = 1; qid <= 10; qid++) {
+      const b = updatedContent.breakdowns.find((item: any) => item.question_id === qid);
+      assert.equal(b?.status, '已核对');
+      assert.ok(b?.items.every((it: any) => it.rule_id !== 'RULE-UNVERIFIED'));
+    }
+
+    // 关键校验：第13题与第18题等非目标题的人工成果必须 100% 保留，严禁被覆盖
+    const updatedQ13 = updatedContent.breakdowns.find((b: any) => b.question_id === 13);
+    const updatedQ18 = updatedContent.breakdowns.find((b: any) => b.question_id === 18);
+    assert.equal(updatedQ13.items[0].basis, customBasis13, '第13题人工补充内容被生成器意外覆盖！');
+    assert.equal(updatedQ18.items[0].basis, customBasis18, '第18题人工补充内容被生成器意外覆盖！');
+
+    // 验证第11题待核对状态保持不变
+    const updatedQ11 = updatedContent.breakdowns.find((b: any) => b.question_id === 11);
+    assert.equal(updatedQ11?.status, '待核对');
+  } finally {
+    rmSync(tmpDir, { recursive: true, force: true });
   }
-  // Verify question 11 remains uncurated draft and is not unexpectedly curated or removed
-  const q11 = currentBds.find(item => item.question_id === 11);
-  assert.equal(q11?.status, '待核对');
 });

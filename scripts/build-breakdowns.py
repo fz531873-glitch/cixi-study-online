@@ -2,14 +2,16 @@
 """Generate structured per-item question breakdowns and verification statistics for all 345 real exam questions."""
 
 import json
+import os
 import re
 import subprocess
+import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-CATALOG_PATH = ROOT / "data" / "catalog.json"
-OUT_JSON = ROOT / "data" / "question-breakdowns.json"
-OUT_MD = ROOT / "data" / "全量真题逐项依据与核对统计.md"
+ROOT = Path(os.environ.get("CIXI_PROJECT_ROOT", Path(__file__).resolve().parent.parent))
+CATALOG_PATH = Path(os.environ.get("CIXI_CATALOG_PATH", ROOT / "data" / "catalog.json"))
+OUT_JSON = Path(os.environ.get("CIXI_BREAKDOWNS_PATH", ROOT / "data" / "question-breakdowns.json"))
+OUT_MD = Path(os.environ.get("CIXI_BREAKDOWNS_MD_PATH", ROOT / "data" / "全量真题逐项依据与核对统计.md"))
 
 REVERSE_STEM_RE = re.compile(
     r"(错误的是|不正确的是|说法有误|表述有误|不包括|不属于|不符合|无关的是|较不利于|不能|没有体现)"
@@ -328,7 +330,11 @@ def main() -> None:
     materials = {m["id"]: m["name"] for m in cat["materials"]}
 
     curated = hand_curated_overrides(materials)
-    TARGET_QUESTION_IDS = set(curated.keys())
+    # 本批明确限定第1—10题；若通过命令行参数传入题号则支持指定更新，其余题目均受执行前磁盘基线保护
+    if len(sys.argv) > 1 and all(arg.isdigit() for arg in sys.argv[1:]):
+        TARGET_QUESTION_IDS = {int(arg) for arg in sys.argv[1:]}
+    else:
+        TARGET_QUESTION_IDS = set(range(1, 11))
     breakdowns: list[dict] = []
 
     for q in cat["questions"]:

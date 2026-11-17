@@ -279,3 +279,59 @@ test('排除同卡某一条规则时不影响同卡另一条已确认规则', as
   assert.equal(auditRestored.find((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-DIALECTICAL-NEGATION-01')?.status, '已排除');
   assert.equal(auditRestored.find((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-TWO-POINT-FOCUS-01')?.status, '已确认');
 });
+
+test('旧整卡关联决定先于具体规则应用，逆序返回时具体规则仍优先', async () => {
+  const { db, sqlite, call } = database();
+  // 插入两条记录：一条具体规则确认，一条旧整卡排除
+  sqlite.prepare(`
+    INSERT INTO link_decision(user_id, knowledge_id, question_id, rule_id, status, reason, updated_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+  `).run('owner', 10144, 7, 'RULE-PHIL-TWO-POINT-FOCUS-01', '已确认', '具体规则恢复已确认', '2026-11-17T20:00:00.000Z');
+
+  sqlite.prepare(`
+    INSERT INTO link_decision(user_id, knowledge_id, question_id, rule_id, status, reason, updated_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+  `).run('owner', 10144, 7, '', '已排除', '历史整卡排除', '2026-11-17T19:00:00.000Z');
+
+  const audit = await call('GET', '/link-audit');
+  const rFocus = audit.find((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-TWO-POINT-FOCUS-01');
+  const rNegation = audit.find((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-DIALECTICAL-NEGATION-01');
+
+  // 具体规则已确认必须优先，旧整卡排除仅覆盖未指定单规则的项
+  assert.equal(rFocus?.status, '已确认');
+  assert.equal(rNegation?.status, '已排除');
+
+  // 严格验证逆序返回场景：包装底层 db.prepare，故意反转 link_decision 查询结果
+  const originalPrepare = db.prepare;
+  const reverseDb: any = {
+    ...db,
+    prepare(sql: string) {
+      const stmt = originalPrepare.call(db, sql);
+      return {
+        ...stmt,
+        bind(...args: any[]) {
+          stmt.bind(...args);
+          return this;
+        },
+        async first() {
+          return stmt.first();
+        },
+        async run() {
+          return stmt.run();
+        },
+        async all() {
+          const res = await stmt.all();
+          if (sql.includes('link_decision') && Array.isArray(res.results)) {
+            return { results: [...res.results].reverse() };
+          }
+          return res;
+        }
+      };
+    }
+  };
+  const reversedAudit = await dispatch(reverseDb, 'owner', 'GET', '/link-audit');
+  const revFocus = reversedAudit.find((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-TWO-POINT-FOCUS-01');
+  const revNegation = reversedAudit.find((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-DIALECTICAL-NEGATION-01');
+  assert.equal(revFocus?.status, '已确认', '逆序返回时具体规则被旧整卡决定错误覆盖！');
+  assert.equal(revNegation?.status, '已排除');
+});

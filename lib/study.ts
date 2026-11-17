@@ -64,29 +64,39 @@ async function decisions(db: D1Database, user: string) {
     const ruleId = link.rule_id || '';
     return [link.knowledge_id + '-' + link.question_id + (ruleId ? '-' + ruleId : ''), { ...l, rule_id: ruleId }];
   }));
-  for (const l of await rows(db, 'SELECT * FROM link_decision WHERE user_id=?', user)) {
-    const ruleId = String(l.rule_id ?? '');
-    if (ruleId) {
-      const key = l.knowledge_id + '-' + l.question_id + '-' + ruleId;
-      const existing = result.get(key);
-      if (existing) {
-        result.set(key, { ...existing, ...l, rule_id: ruleId });
-      } else {
-        result.set(key, { ...l, rule_id: ruleId } as any);
-      }
-    } else {
-      let matched = false;
-      for (const [key, item] of result.entries()) {
-        if ((item as any).knowledge_id === l.knowledge_id && (item as any).question_id === l.question_id) {
-          result.set(key, { ...item, ...l, rule_id: (item as any).rule_id || '' });
-          matched = true;
-        }
-      }
-      if (!matched) {
-        result.set(l.knowledge_id + '-' + l.question_id, { ...l, rule_id: '' } as any);
+  const rawRows = await rows(
+    db,
+    'SELECT * FROM link_decision WHERE user_id=? ORDER BY (CASE WHEN rule_id IS NULL OR rule_id = \'\' THEN 0 ELSE 1 END) ASC',
+    user
+  );
+  // 先应用旧的整卡关联决定（rule_id 为空），再应用具体规则决定（rule_id 非空），确保具体规则始终优先，不受数据库返回顺序影响
+  const legacyDecisions = rawRows.filter(l => !String(l.rule_id ?? '').trim());
+  const specificDecisions = rawRows.filter(l => Boolean(String(l.rule_id ?? '').trim()));
+
+  for (const l of legacyDecisions) {
+    let matched = false;
+    for (const [key, item] of result.entries()) {
+      if ((item as any).knowledge_id === l.knowledge_id && (item as any).question_id === l.question_id) {
+        result.set(key, { ...item, ...l, rule_id: (item as any).rule_id || '' });
+        matched = true;
       }
     }
+    if (!matched) {
+      result.set(l.knowledge_id + '-' + l.question_id, { ...l, rule_id: '' } as any);
+    }
   }
+
+  for (const l of specificDecisions) {
+    const ruleId = String(l.rule_id ?? '').trim();
+    const key = l.knowledge_id + '-' + l.question_id + '-' + ruleId;
+    const existing = result.get(key);
+    if (existing) {
+      result.set(key, { ...existing, ...l, rule_id: ruleId });
+    } else {
+      result.set(key, { ...l, rule_id: ruleId } as any);
+    }
+  }
+
   return [...result.values()];
 }
 function checkAnswer(type: string, value: string) {
