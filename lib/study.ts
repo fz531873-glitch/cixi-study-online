@@ -61,18 +61,30 @@ export async function content(db: D1Database, user: string) {
 async function decisions(db: D1Database, user: string) {
   const result = new Map(catalog.links.map(l => {
     const link = l as { knowledge_id: number; question_id: number; rule_id?: string };
-    return [link.knowledge_id + '-' + link.question_id + (link.rule_id ? '-' + link.rule_id : ''), { ...l }];
+    const ruleId = link.rule_id || '';
+    return [link.knowledge_id + '-' + link.question_id + (ruleId ? '-' + ruleId : ''), { ...l, rule_id: ruleId }];
   }));
   for (const l of await rows(db, 'SELECT * FROM link_decision WHERE user_id=?', user)) {
-    let matched = false;
-    for (const [key, item] of result.entries()) {
-      if ((item as any).knowledge_id === l.knowledge_id && (item as any).question_id === l.question_id) {
-        result.set(key, { ...item, ...l });
-        matched = true;
+    const ruleId = String(l.rule_id ?? '');
+    if (ruleId) {
+      const key = l.knowledge_id + '-' + l.question_id + '-' + ruleId;
+      const existing = result.get(key);
+      if (existing) {
+        result.set(key, { ...existing, ...l, rule_id: ruleId });
+      } else {
+        result.set(key, { ...l, rule_id: ruleId } as any);
       }
-    }
-    if (!matched) {
-      result.set(l.knowledge_id + '-' + l.question_id, { ...l } as any);
+    } else {
+      let matched = false;
+      for (const [key, item] of result.entries()) {
+        if ((item as any).knowledge_id === l.knowledge_id && (item as any).question_id === l.question_id) {
+          result.set(key, { ...item, ...l, rule_id: (item as any).rule_id || '' });
+          matched = true;
+        }
+      }
+      if (!matched) {
+        result.set(l.knowledge_id + '-' + l.question_id, { ...l, rule_id: '' } as any);
+      }
     }
   }
   return [...result.values()];
@@ -105,7 +117,7 @@ const backups = z.object({format: z.literal('cixi-study-v1'), version: z.literal
     progress: z.array(z.object({payload: z.string().max(12000).refine(s=>{try{return progressSchema.safeParse(JSON.parse(s)).success}catch{return false}}), updated_at: dateString})).max(1),
     content_edit: z.array(z.object({kind:z.enum(['question','knowledge']), item_id:id, payload:z.string().max(60000), revision:id, updated_at:dateString})).max(contentLimit),
     content_history: z.array(z.object({id:z.string().uuid(), kind:z.enum(['question','knowledge']), item_id:id, payload:z.string().max(60000), reason:short, revision:id, created_at:dateString})).max(5000),
-    link_decision: z.array(z.object({knowledge_id:id, question_id:id, status:z.enum(['已确认','已排除','候选']), reason:short, updated_at:dateString})).max(5000),
+    link_decision: z.array(z.object({knowledge_id:id, question_id:id, rule_id:z.string().default(''), status:z.enum(['已确认','已排除','候选']), reason:short, updated_at:dateString})).max(5000),
   })});
 
 export async function dispatch(db: D1Database, user: string, method: string, path: string, input?: unknown): Promise<any> {
@@ -195,10 +207,10 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
     return {saved:true,version:a.version+1};
   }
   if (method === 'POST' && path === '/link') {
-    const a = z.object({knowledgeId:id, questionId:id, status:z.enum(['候选','已确认','已排除']), reason:short}).parse(input);
+    const a = z.object({knowledgeId:id, questionId:id, ruleId:z.string().trim().max(100).optional().default(''), status:z.enum(['候选','已确认','已排除']), reason:short}).parse(input);
     if (!catalog.knowledge.some(k=>k.id===a.knowledgeId) || !catalog.questions.some(q=>q.id===a.questionId)) throw new InputError('知识或题目不存在',404);
-    await db.prepare('INSERT INTO link_decision VALUES (?,?,?,?,?,?) ON CONFLICT(user_id,knowledge_id,question_id) DO UPDATE SET status=excluded.status,reason=excluded.reason,updated_at=excluded.updated_at')
-      .bind(user,a.knowledgeId,a.questionId,a.status,a.reason,now).run();
+    await db.prepare('INSERT INTO link_decision(user_id,knowledge_id,question_id,rule_id,status,reason,updated_at) VALUES (?,?,?,?,?,?,?) ON CONFLICT(user_id,knowledge_id,question_id,rule_id) DO UPDATE SET status=excluded.status,reason=excluded.reason,updated_at=excluded.updated_at')
+      .bind(user,a.knowledgeId,a.questionId,a.ruleId,a.status,a.reason,now).run();
     return {saved:true};
   }
   if (method === 'GET' && path === '/history') return rows(db,'SELECT kind,item_id,reason,revision,created_at FROM content_history WHERE user_id=? ORDER BY created_at DESC',user);
@@ -225,7 +237,7 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
       attempt:['id','question_id','answer','confidence','correct','disputed','error_reason','kind','snapshot','created_at'],
       recall:['id','knowledge_id','rating','created_at'],review:['kind','item_id','due_date','stage','memory'],progress:['payload','updated_at'],
       content_edit:['kind','item_id','payload','revision','updated_at'],content_history:['id','kind','item_id','payload','reason','revision','created_at'],
-      link_decision:['knowledge_id','question_id','status','reason','updated_at'],
+      link_decision:['knowledge_id','question_id','rule_id','status','reason','updated_at'],
     };
     const statements = tables.map(t=>db.prepare(`DELETE FROM ${t} WHERE user_id=?`).bind(user));
     for (const t of tables) {

@@ -18498,7 +18498,7 @@
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "民主管理主要指基层群众自治组织和企事业单位中群众对自身公共事务的自我管理，陈述成立；与国家五年规划编制的性质不符，不符合设问。",
+          "basis": "基层群众自治制度促进群众在城乡社区治理中依法自我管理、自我服务、自我教育、自我监督，民主管理陈述成立；与国家编制“十五五”规划性质不符，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18514,9 +18514,9 @@
             }
           },
           "rule_id": "RULE-POL-DEMOCRACY-MGMT-01",
-          "rule_statement": "民主管理主要指基层群众自治组织和企事业单位中群众对自身公共事务的自我管理。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "rule_statement": "完善基层群众自治制度是民主政治建设的基础，群众在社区治理中依法自我管理与民主管理；规划编制属于民主决策。",
+          "knowledge_id": 10158,
+          "knowledge_gap": false,
           "statement": "民主管理"
         },
         {
@@ -18639,7 +18639,7 @@
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "实践的社会历史性原理成立；但题干主旨落脚于快节奏都市生活条件驱动了生活理念和审美时尚变化，最直接体现社会存在决定社会意识，D项不符合设问最主要体现的哲理。",
+          "basis": "实践的基本特征包括自觉能动性、社会历史性和直接现实性，陈述成立；但题干主旨在于揭示快节奏都市生活条件驱动了生活理念和审美时尚变化，最直接体现社会存在决定社会意识，D项不符合设问最主要体现的哲理。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18655,9 +18655,9 @@
             }
           },
           "rule_id": "RULE-PHIL-PRACTICE-HISTORICAL-01",
-          "rule_statement": "实践的社会历史性指实践的内容形式受特定历史阶段条件制约；题干主旨在揭示生活观念变化背后的物质生活条件根源。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "rule_statement": "实践的基本特征包括自觉能动性、社会历史性和直接现实性；材料主旨体现社会存在决定社会意识而非实践特征。",
+          "knowledge_id": 10145,
+          "knowledge_gap": false,
           "statement": "实践具有社会历史性，不同时代人们的实践方式不同"
         }
       ]

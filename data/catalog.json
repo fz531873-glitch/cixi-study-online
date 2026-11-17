@@ -10174,6 +10174,54 @@
       }
     },
     {
+      "knowledge_id": 10158,
+      "question_id": 5,
+      "role": "辅助考点",
+      "position": "C选项",
+      "reason": "C项考查基层民主管理与自我管理；卡片第179—180条载明基层群众自治制度促进群众依法自我管理。国家重大规划编制公开征集建言属于民主决策，与基层民主管理性质不符，故排除C项。",
+      "evidence": "2025年上午卷第5题：C选项及解析第2—3页；知识卡10158第179—180条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-DEMOCRACY-MGMT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第5题C项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第5题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10145,
+      "question_id": 6,
+      "role": "辅助考点",
+      "position": "D选项",
+      "reason": "D项考查实践的社会历史性特征；卡片第42条明确载明“实践的特征:自觉能动性、社会历史性、直接现实性”。题干材料未侧重实践活动特征，故排除D项。",
+      "evidence": "2025年上午卷第6题：D选项及解析第3页；知识卡10145第42条",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-PRACTICE-HISTORICAL-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第6题D项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 3,
+          "location": "第6题解析"
+        }
+      }
+    },
+    {
       "knowledge_id": 10144,
       "question_id": 7,
       "role": "辅助考点",

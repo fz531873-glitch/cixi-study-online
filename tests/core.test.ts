@@ -247,3 +247,35 @@ test('并发更新使记忆状态过期时，回滚这次作答并保留更新�
   assert.equal(after.records.review[0].due_date,'2026-12-03');
   assert.equal(after.records.review[0].memory,null);
 });
+
+test('排除同卡某一条规则时不影响同卡另一条已确认规则', async () => {
+  const { call } = database();
+  const auditBefore = await call('GET', '/link-audit');
+  const q7RulesBefore = auditBefore.filter((l: any) => l.question_id === 7 && l.knowledge_id === 10144);
+  assert.equal(q7RulesBefore.length, 2);
+  assert.ok(q7RulesBefore.every((l: any) => l.status === '已确认'));
+
+  await call('POST', '/link', {
+    knowledgeId: 10144,
+    questionId: 7,
+    ruleId: 'RULE-PHIL-DIALECTICAL-NEGATION-01',
+    status: '已排除',
+    reason: '本题材料未体现辩证否定，排除该规则关联',
+  });
+
+  const auditAfter = await call('GET', '/link-audit');
+  const rNegation = auditAfter.find((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-DIALECTICAL-NEGATION-01');
+  const rFocus = auditAfter.find((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-TWO-POINT-FOCUS-01');
+  assert.equal(rNegation?.status, '已排除');
+  assert.equal(rFocus?.status, '已确认');
+
+  const boot = await call('GET', '/bootstrap');
+  assert.ok(boot.links.some((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.status === '已确认'));
+
+  const backup = await call('GET', '/backup');
+  assert.ok(backup.records.link_decision.some((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-DIALECTICAL-NEGATION-01'));
+  await call('POST', '/restore', backup);
+  const auditRestored = await call('GET', '/link-audit');
+  assert.equal(auditRestored.find((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-DIALECTICAL-NEGATION-01')?.status, '已排除');
+  assert.equal(auditRestored.find((l: any) => l.question_id === 7 && l.knowledge_id === 10144 && l.rule_id === 'RULE-PHIL-TWO-POINT-FOCUS-01')?.status, '已确认');
+});

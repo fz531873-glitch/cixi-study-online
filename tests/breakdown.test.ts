@@ -114,11 +114,27 @@ test('关联来源完整且候选不混入已确认集合',()=>{
   assert.equal(catalog.links.find(link=>link.question_id===18&&link.knowledge_id===10183)?.status,'已确认');
   const card=catalog.knowledge.find(card=>card.id===10183)!;
   assert.match(card.content,/纪要。适用于记载会议主要情况和议定事项/);
-  assert.ok(!catalog.links.some(link=>link.question_id===2||link.question_id===21||link.question_id===6||link.knowledge_id===10126||link.knowledge_id===10181));
+  assert.ok(!catalog.links.some(link=>link.question_id===2||link.question_id===21||(link.question_id===6&&link.knowledge_id===10181)||(link.question_id===5&&link.knowledge_id===10181)||link.knowledge_id===10126||link.knowledge_id===10181));
+  assert.equal(catalog.links.find(link=>link.question_id===6&&link.knowledge_id===10145&&link.rule_id==='RULE-PHIL-PRACTICE-HISTORICAL-01')?.status,'已确认');
+  assert.equal(catalog.links.find(link=>link.question_id===5&&link.knowledge_id===10158&&link.rule_id==='RULE-POL-DEMOCRACY-MGMT-01')?.status,'已确认');
   // 验证第一批核对新增确认关联覆盖具体规则
   assert.equal(catalog.links.find(link=>link.question_id===7&&link.knowledge_id===20050)?.status,'已确认');
   assert.equal(catalog.links.find(link=>link.question_id===7&&link.knowledge_id===10144&&link.rule_id==='RULE-PHIL-DIALECTICAL-NEGATION-01')?.status,'已确认');
   assert.equal(catalog.links.find(link=>link.question_id===8&&link.knowledge_id===10145&&link.rule_id==='RULE-PHIL-PRODUCTIVITY-TOOL-01')?.status,'已确认');
   assert.equal(catalog.links.find(link=>link.question_id===9&&link.knowledge_id===20040&&link.rule_id==='RULE-ECON-MONETARY-TIGHT-01')?.status,'已确认');
   assert.equal(catalog.links.find(link=>link.question_id===3&&link.knowledge_id===10158&&link.rule_id==='RULE-POL-ETHNIC-RELATIONS-01')?.status,'已确认');
+});
+
+test('生成器只更新目标题目并保护非目标题现有成果', () => {
+  const currentBds = breakdownsData.breakdowns;
+  assert.equal(currentBds.length, 345);
+  // Verify target batch 1 questions are verified
+  for (let qid = 1; qid <= 10; qid++) {
+    const b = currentBds.find(item => item.question_id === qid);
+    assert.equal(b?.status, '已核对');
+    assert.ok(b?.items.every(it => it.rule_id !== 'RULE-UNVERIFIED'));
+  }
+  // Verify question 11 remains uncurated draft and is not unexpectedly curated or removed
+  const q11 = currentBds.find(item => item.question_id === 11);
+  assert.equal(q11?.status, '待核对');
 });

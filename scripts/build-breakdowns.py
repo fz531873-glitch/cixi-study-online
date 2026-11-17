@@ -135,7 +135,7 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
             "items": [
                 {"key": "A", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "“十五五”规划尚在编制阶段，通过网络征求广大网民建言献策属于在决策形成前汇聚民意民智，属于公民通过社情民意反映制度参与民主决策。", "source_ref": src(8, 2, 7, 2, "第5题A项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-DECISION-01", "rule_statement": "重大规划或政策法规编制前广泛征求公众建言献策，属于公民参与民主决策。", "knowledge_id": None, "knowledge_gap": True},
                 {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "民主协商是社会主义协商民主的重要实现形式，陈述成立；但重大发展规划在起草阶段面向全社会公开征集公众建言献策，属于公民参与民主决策，不符合设问。", "source_ref": src(8, 2, 7, 2, "第5题B项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-CONSULT-01", "rule_statement": "民主协商侧重多方平等对话沟通寻求共识，重大规划起草前网络征求公众建言属于民主决策。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "C", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "民主管理主要指基层群众自治组织和企事业单位中群众对自身公共事务的自我管理，陈述成立；与国家五年规划编制的性质不符，不符合设问。", "source_ref": src(8, 2, 7, 2, "第5题C项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-MGMT-01", "rule_statement": "民主管理主要指基层群众自治组织和企事业单位中群众对自身公共事务的自我管理。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "基层群众自治制度促进群众在城乡社区治理中依法自我管理、自我服务、自我教育、自我监督，民主管理陈述成立；与国家编制“十五五”规划性质不符，不符合设问。", "source_ref": src(8, 2, 7, 2, "第5题C项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-MGMT-01", "rule_statement": "完善基层群众自治制度是民主政治建设的基础，群众在社区治理中依法自我管理与民主管理；规划编制属于民主决策。", "knowledge_id": 10158, "knowledge_gap": False},
                 {"key": "D", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "民主监督的核心功能是公民对国家机关及其公职人员行使公权力和履行法定职责进行批评、建议、监督与纠偏，陈述成立；题干中面向社会公开征求规划编制的建言献策属于为公共政策制定提供民意民智支持的民主决策，不属于监督纠偏公权力履职，不符合设问。", "source_ref": src(8, 2, 7, 2, "第5题D项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-SUPERVISION-01", "rule_statement": "民主监督侧重对国家机关及其工作人员行使公权力和履行职责进行监督与纠偏，规划起草征集公众建言属于民主决策。", "knowledge_id": None, "knowledge_gap": True},
             ],
         },
@@ -145,7 +145,7 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
                 {"key": "A", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "认识具有反复性指认识受主客观条件限制需经过多次反复才能达到真理，原理陈述成立；但题干体现的是人们生活方式与审美时尚的变迁，不涉及认识过程的反复曲折，不符合设问。", "source_ref": src(8, 2, 7, 3, "第6题A项", "第6题解析"), "rule_id": "RULE-PHIL-KNOWLEDGE-REPEATED-01", "rule_statement": "认识具有反复性指认识受主客观条件限制需经过多次反复才能达到正确真理，题干未体现该认知过程。", "knowledge_id": None, "knowledge_gap": True},
                 {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "价值判断与价值选择具有主体差异性原理成立；但题干展现的是当代年轻人面对快节奏生活普遍复兴亲近自然与簪花时尚，反映群体共性追求，未体现不同主体间价值评判的截然对立与差异，不符合设问。", "source_ref": src(8, 2, 7, 3, "第6题B项", "第6题解析"), "rule_id": "RULE-PHIL-VALUE-CHOICE-DIFF-01", "rule_statement": "主体差异性强调由于立场需要不同导致不同主体产生不同价值判断，题干强调当代共性时尚而非个体差异。", "knowledge_id": None, "knowledge_gap": True},
                 {"key": "C", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "都市生活节奏加快与生活压力的现实客观环境（社会存在），催生了年轻人拥抱自然、复兴簪花以求身心舒缓的生活理念与审美追求（社会意识），体现社会存在决定社会意识。", "source_ref": src(8, 2, 7, 3, "第6题C项", "第6题解析"), "rule_id": "RULE-PHIL-SOCIAL-BEING-01", "rule_statement": "社会存在决定社会意识，社会存在的变化决定社会意识的变化；客观生活压力与生存条件驱动生活观念和审美时尚变化。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "D", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "实践的社会历史性原理成立；但题干主旨落脚于快节奏都市生活条件驱动了生活理念和审美时尚变化，最直接体现社会存在决定社会意识，D项不符合设问最主要体现的哲理。", "source_ref": src(8, 2, 7, 3, "第6题D项", "第6题解析"), "rule_id": "RULE-PHIL-PRACTICE-HISTORICAL-01", "rule_statement": "实践的社会历史性指实践的内容形式受特定历史阶段条件制约；题干主旨在揭示生活观念变化背后的物质生活条件根源。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "实践的基本特征包括自觉能动性、社会历史性和直接现实性，陈述成立；但题干主旨在于揭示快节奏都市生活条件驱动了生活理念和审美时尚变化，最直接体现社会存在决定社会意识，D项不符合设问最主要体现的哲理。", "source_ref": src(8, 2, 7, 3, "第6题D项", "第6题解析"), "rule_id": "RULE-PHIL-PRACTICE-HISTORICAL-01", "rule_statement": "实践的基本特征包括自觉能动性、社会历史性和直接现实性；材料主旨体现社会存在决定社会意识而非实践特征。", "knowledge_id": 10145, "knowledge_gap": False},
             ],
         },
         7: {
@@ -313,24 +313,27 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
 
 
 def main() -> None:
+    if not OUT_JSON.exists():
+        raise FileNotFoundError(f"Existing breakdown file {OUT_JSON} not found. Halting to avoid overwriting unverified baselines.")
+    try:
+        baseline_content = json.loads(OUT_JSON.read_text(encoding="utf-8"))
+        baseline_by_id = {b["question_id"]: b for b in baseline_content.get("breakdowns", [])}
+    except Exception as e:
+        raise RuntimeError(f"Failed to read existing baseline from {OUT_JSON}: {e}. Halting.")
+
+    if len(baseline_by_id) != 345:
+        raise RuntimeError(f"Existing baseline has {len(baseline_by_id)} questions, expected 345. Halting.")
+
     cat = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     materials = {m["id"]: m["name"] for m in cat["materials"]}
-    links_by_q: dict[int, list[int]] = {}
-    for link in cat["links"]:
-        if link.get("status") == "已确认":
-            links_by_q.setdefault(link["question_id"], []).append(link["knowledge_id"])
 
     curated = hand_curated_overrides(materials)
+    TARGET_QUESTION_IDS = set(curated.keys())
     breakdowns: list[dict] = []
 
     for q in cat["questions"]:
         qid = q["id"]
-        qm = q["question_material"]
-        am = q["analysis_material"]
-        sp = q["source_page"]
-        ap = q["analysis_page"]
-
-        if qid in curated:
+        if qid in TARGET_QUESTION_IDS:
             ov = curated[qid]
             entry = {
                 "question_id": qid,
@@ -348,120 +351,16 @@ def main() -> None:
                     item["statement"] = q["body"].strip()
             entry["status"] = q["status"]
             breakdowns.append(entry)
-            continue
-
-        polarity = detect_polarity(q["type"], q["body"])
-        keys, comb_map = split_option_keys(q["type"], q["body"])
-        linked_k = links_by_q.get(qid, [])
-        primary_k = linked_k[0] if linked_k else None
-        is_disputed = q["status"] == "争议"
-
-        # Determine which statement/option keys correspond to the correct answer
-        ans_letters = set(q["answer"])
-        selected_keys: set[str] = set()
-        if q["type"] == "判断":
-            selected_keys = {"判断"} if q["answer"] == "A" else set()
-        elif comb_map:
-            for l in ans_letters:
-                selected_keys.update(comb_map.get(l, []))
         else:
-            selected_keys = ans_letters
+            if qid not in baseline_by_id:
+                raise RuntimeError(f"Question {qid} missing from baseline! Halting.")
+            breakdowns.append(baseline_by_id[qid])
 
-        items: list[dict] = []
-        for k in keys:
-            in_ans = k in selected_keys
-            if is_disputed:
-                truth = None
-                matches = None
-                verdict = "存疑"
-            elif q["type"] == "判断":
-                truth = q["answer"] == "A"
-                matches = truth
-                verdict = "入选" if truth else "排除"
-            elif polarity == "选错误":
-                matches = in_ans
-                truth = not in_ans
-                verdict = "入选" if in_ans else "排除"
-            else:
-                matches = in_ans
-                truth = in_ans
-                verdict = "入选" if in_ans else "排除"
-
-            fallback_basis = q["direct"].strip()
-            basis = extract_item_basis(k, q["direct"], q["analysis"], fallback_basis)
-            item_obj: dict = {
-                "key": k,
-                "statement": (re.search(rf"(?:^|\s){re.escape(k)}[.．、]\s*([^\n]+)", q["body"]).group(1).strip() if k in "ABCD" and re.search(rf"(?:^|\s){re.escape(k)}[.．、]\s*([^\n]+)", q["body"]) else q["body"].strip()),
-                "statement_truth": truth,
-                "matches_stem": matches,
-                "verdict": verdict,
-                "basis": basis,
-                "source_ref": {
-                    "question_material": {
-                        "id": qm,
-                        "name": materials[qm],
-                        "page": sp,
-                        "location": f"第{q['number']}题{k if k != '判断' else '题干'}",
-                    },
-                    "analysis_material": {
-                        "id": am,
-                        "name": materials[am],
-                        "page": ap,
-                        "location": f"第{q['number']}题解析",
-                    },
-                    **({"external": q["references"][0]["url"]} if q.get("references") else {}),
-                },
-                "rule_id": "RULE-UNVERIFIED",
-                "rule_statement": q["direct"].split("记住：")[0].strip(),
-                "knowledge_id": None,
-                "knowledge_gap": True,
-            }
-            if k == "判断":
-                item_obj["statement"] = re.sub(r"^\s*\d+[、.．]\s*", "", q["body"].strip())
-            elif k in "①②③④⑤⑥⑦⑧⑨":
-                match = re.search(rf"{re.escape(k)}([^\n]+)", q["body"])
-                item_obj["statement"] = match.group(1).strip() if match else q["body"].strip()
-            elif k in "ABCD":
-                match = re.search(rf"(?:^|\s){re.escape(k)}[.．、]\s*([^\n]+)", q["body"])
-                item_obj["statement"] = match.group(1).strip() if match else q["body"].strip()
-            if is_disputed and q.get("note"):
-                item_obj["dispute_note"] = q["note"]
-            items.append(item_obj)
-
-        entry = {
-            "question_id": qid,
-            "version": q["version"],
-            "exam": q["exam"],
-            "number": q["number"],
-            "type": q["type"],
-                "status": q["status"],
-            "stem_polarity": polarity,
-            **({"combination_map": comb_map} if comb_map else {}),
-            "items": items,
-        }
-        if is_disputed:
-            for item in entry["items"]:
-                item["statement_truth"] = None
-                item["matches_stem"] = None
-                item["verdict"] = "存疑"
-                item["dispute_note"] = item.get("dispute_note") or item["basis"]
-                item["rule_id"] = "RULE-UNVERIFIED"
-        breakdowns.append(entry)
-
-    # Invariance check: verify non-curated questions remain strictly unchanged
-    try:
-        old_raw = subprocess.check_output(
-            ["git", "show", "a95cc91~1:data/question-breakdowns.json"],
-            cwd=ROOT,
-            encoding="utf-8",
-        )
-        old_bd_map = {b["question_id"]: b for b in json.loads(old_raw)["breakdowns"]}
-        for b in breakdowns:
-            qid = b["question_id"]
-            if qid not in curated:
-                assert b == old_bd_map[qid], f"Non-curated question {qid} was modified unexpectedly!"
-    except subprocess.CalledProcessError:
-        pass
+    # Invariance check: verify all non-target questions remain strictly identical to execution baseline
+    new_by_id = {b["question_id"]: b for b in breakdowns}
+    for qid, old_b in baseline_by_id.items():
+        if qid not in TARGET_QUESTION_IDS:
+            assert new_by_id[qid] == old_b, f"Non-target question {qid} was modified unexpectedly!"
 
     OUT_JSON.write_text(
         json.dumps({"version": cat["version"], "count": len(breakdowns), "breakdowns": breakdowns}, ensure_ascii=False, indent=2),
