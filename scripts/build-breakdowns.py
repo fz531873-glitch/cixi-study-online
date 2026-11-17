@@ -94,37 +94,95 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
         1: {
             "stem_polarity": "选错误",
             "items": [
-                {"key": "A", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "“坚持求同存异”属于上合组织天津峰会重要讲话提出的五项主张之一。", "source_ref": src(8, 1, 7, 2, "第1题A项", "第1题解析"), "rule_id": "RULE-POL-SCO-2025-01", "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "“坚持互利共赢”属于五项主张之一。", "source_ref": src(8, 1, 7, 2, "第1题B项", "第1题解析"), "rule_id": "RULE-POL-SCO-2025-01", "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "C", "statement_truth": False, "matches_stem": True, "verdict": "入选", "basis": "“坚持独立自主”未列入此次讲话展望未来的五项主张之中，符合“不包括”设问。", "source_ref": src(8, 1, 7, 2, "第1题C项", "第1题解析"), "rule_id": "RULE-POL-SCO-2025-01", "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效，不含“独立自主”。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "D", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "“坚持公平正义”属于五项主张之一。", "source_ref": src(8, 1, 7, 2, "第1题D项", "第1题解析"), "rule_id": "RULE-POL-SCO-2025-01", "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "A", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "“坚持求同存异”属于习近平主席在上海合作组织峰会重要讲话提出的五项主张之一。", "source_ref": src(8, 1, 7, 2, "第1题A项", "第1题解析"), "rule_id": "RULE-POL-SCO-2025-01", "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "“坚持互利共赢”属于上合峰会重要讲话提出的五项主张之一。", "source_ref": src(8, 1, 7, 2, "第1题B项", "第1题解析"), "rule_id": "RULE-POL-SCO-2025-01", "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": False, "matches_stem": True, "verdict": "入选", "basis": "“坚持独立自主”未列入此次讲话展望未来的五项主张之中，符合反向设问“不包括”。", "source_ref": src(8, 1, 7, 2, "第1题C项", "第1题解析"), "rule_id": "RULE-POL-SCO-2025-01", "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效，不含“独立自主”。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "“坚持公平正义”属于上合峰会重要讲话提出的五项主张之一。", "source_ref": src(8, 1, 7, 2, "第1题D项", "第1题解析"), "rule_id": "RULE-POL-SCO-2025-01", "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        2: {
+            "stem_polarity": "选正确",
+            "combination_map": {"A": ["①", "②"], "B": ["③", "④"], "C": ["①", "②", "④"], "D": ["①", "②", "③", "④"]},
+            "items": [
+                {"key": "①", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "严格纠正不作为属于行政执法监督规范要求，与题干整治形式主义以“为基层松绑减负”的核心主旨不完全契合。", "source_ref": src(8, 1, 7, 2, "第2题陈述①", "第2题解析"), "rule_id": "RULE-POL-GRASSROOTS-BURDEN-01", "rule_statement": "持续为基层松绑减负、纠治形式主义官僚主义，关键在树立正确政绩观与重实绩导向；执法监督不属直接对策。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "②", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "规范执法公开属于政务公开与法治政府建设要求，非基层松绑减负的靶向举措。", "source_ref": src(8, 1, 7, 2, "第2题陈述②", "第2题解析"), "rule_id": "RULE-POL-GRASSROOTS-BURDEN-01", "rule_statement": "持续为基层松绑减负、纠治形式主义官僚主义，关键在树立正确政绩观与重实绩导向；执法监督不属直接对策。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "③", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "克服形式主义必须从思想根源发力，引导党员干部树立正确政绩观、切实改进作风，坚决杜绝过度留痕与文山会海。", "source_ref": src(8, 1, 7, 2, "第2题陈述③", "第2题解析"), "rule_id": "RULE-POL-GRASSROOTS-BURDEN-01", "rule_statement": "持续为基层松绑减负、纠治形式主义官僚主义，关键在树立正确政绩观与重实绩导向。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "④", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "树立重实干、重实绩的考核与用人导向，能有效激励基层干部真抓实干担当作为，从制度上克服形式主义。", "source_ref": src(8, 1, 7, 2, "第2题陈述④", "第2题解析"), "rule_id": "RULE-POL-GRASSROOTS-BURDEN-01", "rule_statement": "持续为基层松绑减负、纠治形式主义官僚主义，关键在树立正确政绩观与重实绩导向。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        3: {
+            "stem_polarity": "选正确",
+            "combination_map": {"A": ["①", "②", "③"], "B": ["①", "②", "④"], "C": ["②", "③", "④"], "D": ["①", "②", "③", "④"]},
+            "items": [
+                {"key": "①", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "坚持党的领导和中国特色社会主义道路，是西藏各项事业取得全方位进步与历史性成就的根本政治保证。", "source_ref": src(8, 1, 7, 2, "第3题陈述①", "第3题解析"), "rule_id": "RULE-POL-TIBET-ACHIEVEMENT-01", "rule_statement": "西藏各项事业取得历史性成就的根本在于坚持党的领导与走中国特色社会主义道路。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "②", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "坚持和完善民族区域自治制度保障了少数民族当家作主和管理本地方事务的权利，是西藏繁荣发展的制度基础。", "source_ref": src(8, 1, 7, 2, "第3题陈述②", "第3题解析"), "rule_id": "RULE-POL-ETHNIC-AUTONOMY-01", "rule_statement": "坚持和完善民族区域自治制度，保障少数民族当家作主管理本民族本地方事务的自治权利。", "knowledge_id": 10158, "knowledge_gap": False},
+                {"key": "③", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "全国各族人民大力支援与共同奋斗，巩固了平等团结互助和谐的社会主义民族关系，为西藏全面发展汇聚强大合力。", "source_ref": src(8, 1, 7, 2, "第3题陈述③", "第3题解析"), "rule_id": "RULE-POL-ETHNIC-RELATIONS-01", "rule_statement": "我国社会主义民族关系是平等团结互助和谐，各民族共同繁荣发展。", "knowledge_id": 10158, "knowledge_gap": False},
+                {"key": "④", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "我国当前处于“全面建设社会主义现代化国家”新征程，目标到本世纪中叶才“全面建成社会主义现代化强国”，④时态与阶段表述错误。", "source_ref": src(8, 1, 7, 2, "第3题陈述④", "第3题解析"), "rule_id": "RULE-POL-MODERNIZATION-STAGE-01", "rule_statement": "我国当前处于全面建设社会主义现代化国家阶段，尚未全面建成社会主义现代化强国。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        4: {
+            "stem_polarity": "选正确",
+            "items": [
+                {"key": "A", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "党和国家的中心工作是经济建设，协调发展是新发展理念之一，不能混为中心工作。", "source_ref": src(8, 2, 7, 2, "第4题A项", "第4题解析"), "rule_id": "RULE-POL-ECONOMIC-CENTER-01", "rule_statement": "党在社会主义初级阶段的基本路线明确以经济建设为中心，中心工作是经济建设而非协调发展。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "“两岸”在我国政策语境中特指大陆与台湾海峡两岸；粤港澳大湾区由广东省与香港、澳门特区构成，用词错误。", "source_ref": src(8, 2, 7, 2, "第4题B项", "第4题解析"), "rule_id": "RULE-POL-CROSS-STRAIT-TERM-01", "rule_statement": "「两岸」特指大陆与台湾海峡两岸，不能用于指代粤港澳大湾区内部协同发展。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "铸牢中华民族共同体意识主要针对民族工作与民族团结领域，不作为粤港澳特区经贸科技协同发展的核心主旨。", "source_ref": src(8, 2, 7, 2, "第4题C项", "第4题解析"), "rule_id": "RULE-POL-COMMUNITY-CONSCIOUSNESS-01", "rule_statement": "铸牢中华民族共同体意识是民族工作的主线，与粤港澳特区跨境协同发展的战略定位不直接契合。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "粤港澳大湾区建设是推动内地与港澳互利合作、保持香港澳门长期繁荣稳定的重大国家战略，丰富拓展了“一国两制”的生动实践。", "source_ref": src(8, 2, 7, 2, "第4题D项", "第4题解析"), "rule_id": "RULE-POL-ONE-COUNTRY-TWO-SYSTEMS-01", "rule_statement": "推进粤港澳大湾区建设是不断丰富和拓展「一国两制」生动实践、保持港澳长期繁荣稳定的重大战略举措。", "knowledge_id": 10167, "knowledge_gap": False},
             ],
         },
         5: {
             "stem_polarity": "选正确",
             "items": [
-                {"key": "A", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "“十五五”规划尚在编制，网络征求意见用于形成规划决策，属于民主决策。", "source_ref": src(8, 2, 7, 2, "第5题A项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-DECISION-01", "rule_statement": "决策制定前向公众征求意见建议，属于公民参与民主决策。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "B", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "不能仅凭出现“意见”就选民主协商，题干定位在规划编制前的征求意见环节。", "source_ref": src(8, 2, 7, 2, "第5题B项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-DECISION-01", "rule_statement": "民主协商侧重多方对话沟通，规划制定前公开征集建言对应民主决策。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "C", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "民主管理主要对应基层自治（如村委会、居委会事务），与国家五年规划征求意见不符。", "source_ref": src(8, 2, 7, 2, "第5题C项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-MGMT-01", "rule_statement": "民主管理主要指基层群众自治组织内的自我管理。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "民主监督针对已实施的权力运行与工作成效，规划尚在编制阶段。", "source_ref": src(8, 2, 7, 2, "第5题D项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-SUPERVISION-01", "rule_statement": "民主监督侧重对国家机关及公职人员履职情况的监督。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "A", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "“十五五”规划尚在编制阶段，通过网络征求广大网民建言献策属于在决策形成前汇聚民意民智，属于公民通过社情民意反映制度参与民主决策。", "source_ref": src(8, 2, 7, 2, "第5题A项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-DECISION-01", "rule_statement": "重大规划或政策法规编制前广泛征求公众建言献策，属于公民参与民主决策。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "民主协商侧重多方平等对话沟通寻求共识（如政协协商），规划制定前公开征集建言对应民主决策。", "source_ref": src(8, 2, 7, 2, "第5题B项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-CONSULT-01", "rule_statement": "民主协商侧重多方平等对话沟通寻求共识，重大规划起草前网络征求公众建言属于民主决策。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "民主管理主要指基层群众在村委会、居委会或企事业单位中参与自我管理自治事务，与国家五年规划编制性质不符。", "source_ref": src(8, 2, 7, 2, "第5题C项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-MGMT-01", "rule_statement": "民主管理主要指基层群众自治组织和企事业单位中群众对自身公共事务的自我管理。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "民主监督侧重对国家公权力行使和政策执行情况进行评价、批评与监督纠偏，征集建言发生在决策前。", "source_ref": src(8, 2, 7, 2, "第5题D项", "第5题解析"), "rule_id": "RULE-POL-DEMOCRACY-SUPERVISION-01", "rule_statement": "民主监督侧重对国家公权力行使和政策执行情况进行评价、批评与监督纠偏。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        6: {
+            "stem_polarity": "选正确",
+            "items": [
+                {"key": "A", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "题干体现的是人们生活方式与审美时尚的变迁，不涉及主客观条件限制下真理探索过程的反复曲折。", "source_ref": src(8, 2, 7, 3, "第6题A项", "第6题解析"), "rule_id": "RULE-PHIL-KNOWLEDGE-REPEATED-01", "rule_statement": "认识具有反复性指认识受主客观条件限制需经过多次反复才能达到正确真理，题干未体现该认知过程。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "题干展现的是当代年轻人面对快节奏生活普遍复兴亲近自然与簪花时尚，未强调不同群体之间价值评判的截然对立与差异。", "source_ref": src(8, 2, 7, 3, "第6题B项", "第6题解析"), "rule_id": "RULE-PHIL-VALUE-CHOICE-DIFF-01", "rule_statement": "主体差异性强调由于立场需要不同导致不同主体产生不同价值判断，题干强调当代共性时尚而非个体差异。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "都市生活节奏加快与生活压力的现实客观环境（社会存在），催生了年轻人拥抱自然、复兴簪花以求身心舒缓的生活理念与审美追求（社会意识），体现社会存在决定社会意识。", "source_ref": src(8, 2, 7, 3, "第6题C项", "第6题解析"), "rule_id": "RULE-PHIL-SOCIAL-BEING-01", "rule_statement": "社会存在决定社会意识，社会存在的变化决定社会意识的变化；客观生活压力与生存条件驱动生活观念和审美时尚变化。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "题干对比古今的主旨在于揭示快节奏都市生活条件驱动了审美观念和生活理念的变化，核心落脚点在客观生活环境决定意识观念，而非比较实践活动形式。", "source_ref": src(8, 2, 7, 3, "第6题D项", "第6题解析"), "rule_id": "RULE-PHIL-PRACTICE-HISTORICAL-01", "rule_statement": "实践的社会历史性指实践的内容形式受特定历史阶段条件制约；题干主旨在揭示生活观念变化背后的物质生活条件根源。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        7: {
+            "stem_polarity": "选正确",
+            "combination_map": {"A": ["①", "②"], "B": ["①", "④"], "C": ["①", "②", "③"], "D": ["①", "②", "③", "④"]},
+            "items": [
+                {"key": "①", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "发挥新型举国体制优势、全面加强科技攻关与提升体系化创新能力，有力支撑高质量发展，直接体现了创新是引领发展的第一动力。", "source_ref": src(8, 2, 7, 3, "第7题陈述①", "第7题解析"), "rule_id": "RULE-POL-INNOVATION-FIRST-POWER-01", "rule_statement": "科技创新是提升国家体系化创新能力、支撑高质量发展的关键，创新是引领发展的第一动力。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "②", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "题干强调的是面向未来全面布局科技攻关与体制改革，未展开论述新旧事物之间保留与扬弃的辩证否定过程。", "source_ref": src(8, 2, 7, 3, "第7题陈述②", "第7题解析"), "rule_id": "RULE-PHIL-DIALECTICAL-NEGATION-01", "rule_statement": "辩证否定是事物联系和发展的环节其实质是扬弃；科技会议工作部署未重点体现辩证否定的发展环节。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "③", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "马克思主义哲学基本原理明确：经济基础决定上层建筑，上层建筑反作用于经济基础；③将二者因果关系倒置，理论陈述严重错误。", "source_ref": src(8, 2, 7, 3, "第7题陈述③", "第7题解析"), "rule_id": "RULE-PHIL-BASE-SUPERSTRUCTURE-01", "rule_statement": "经济基础决定上层建筑，上层建筑对经济基础具有反作用；不能倒置表述为上层建筑决定经济基础。", "knowledge_id": 20050, "knowledge_gap": False},
+                {"key": "④", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "坚持“四个面向”与新型举国体制，既全面加强科技体制改革和体系布局（两点论），又着力突破关键核心技术与体系攻关（重点论），坚持了两点论与重点论相统一。", "source_ref": src(8, 2, 7, 3, "第7题陈述④", "第7题解析"), "rule_id": "RULE-PHIL-TWO-POINT-FOCUS-01", "rule_statement": "坚持两点论和重点论的统一，既要全面看问题，又要着重抓住主要矛盾和矛盾的主要方面。", "knowledge_id": 10144, "knowledge_gap": False},
             ],
         },
         8: {
             "stem_polarity": "选错误",
             "items": [
-                {"key": "A", "statement_truth": False, "matches_stem": True, "verdict": "入选", "basis": "生产工具是生产力发展水平的重要标志，劳动者是最活跃的主导因素；A将两者混在一起，说法错误。", "source_ref": src(8, 2, 7, 3, "第8题A项", "第8题解析"), "rule_id": "RULE-PHIL-PRODUCTIVITY-01", "rule_statement": "生产工具是生产力发展水平的客观标志，劳动者是生产力中最活跃的主导因素。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "生产力决定生产关系的性质，生产力的发展变化最终导致生产关系变革，表述正确。", "source_ref": src(8, 2, 7, 3, "第8题B项", "第8题解析"), "rule_id": "RULE-PHIL-PRODUCTIVITY-02", "rule_statement": "生产力决定生产关系，生产力变化最终引起生产关系变革。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "C", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "封建土地制阻碍工业资本扩张，体现落后的生产关系阻碍生产力发展，属于生产关系对生产力的反作用。", "source_ref": src(8, 2, 7, 3, "第8题C项", "第8题解析"), "rule_id": "RULE-PHIL-PRODUCTIVITY-02", "rule_statement": "生产关系对生产力具有反作用，不相适应的生产关系会阻碍生产力发展。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "D", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "新质生产力的内涵表述与中央权威定义一致，按原卷口径正确。", "source_ref": src(8, 2, 7, 3, "第8题D项", "第8题解析"), "rule_id": "RULE-ECON-NEW-PRODUCTIVITY-01", "rule_statement": "新质生产力由技术革命性突破、生产要素创新性配置、产业深度转型升级催生。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "A", "statement_truth": False, "matches_stem": True, "verdict": "入选", "basis": "生产力三要素中，生产工具（劳动资料）是衡量生产力发展水平的客观标志；劳动者是生产力中最活跃的主导因素。A将客观标志归于劳动能力，混淆了标志与主导因素，说法错误，符合反向设问。", "source_ref": src(8, 2, 7, 3, "第8题A项", "第8题解析"), "rule_id": "RULE-PHIL-PRODUCTIVITY-TOOL-01", "rule_statement": "生产工具是生产力发展水平的客观标志；劳动者是生产力中最活跃的主导因素；二者地位不能混淆。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "历史唯物主义基本原理表明：生产力决定生产关系，生产力状况决定生产关系性质，生产力的发展变化最终引起生产关系变革，表述完全正确。", "source_ref": src(8, 2, 7, 3, "第8题B项", "第8题解析"), "rule_id": "RULE-PHIL-PRODUCTIVITY-RELATION-01", "rule_statement": "生产力决定生产关系，生产力状况决定生产关系性质，生产力的发展变化必然引起生产关系的变革。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "封建土地所有制属于生产关系范畴，当其滞后于生产力发展时会阻碍工业资本扩张，典型体现生产关系反作用于生产力，表述正确。", "source_ref": src(8, 2, 7, 3, "第8题C项", "第8题解析"), "rule_id": "RULE-PHIL-PRODUCTIVITY-RELATION-01", "rule_statement": "生产关系对生产力具有能动的反作用，落后的生产关系会阻碍生产力的发展。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "新质生产力的内涵表述与中央权威界定完全一致，表述正确。", "source_ref": src(8, 2, 7, 3, "第8题D项", "第8题解析"), "rule_id": "RULE-ECON-NEW-PRODUCTIVITY-01", "rule_statement": "新质生产力由技术革命性突破、生产要素创新性配置、产业深度转型升级催生，是符合新发展理念的先进生产力质态。", "knowledge_id": None, "knowledge_gap": True},
             ],
         },
         9: {
             "stem_polarity": "选正确",
             "items": [
-                {"key": "A", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "央行降低再贷款利率会降低商业银行向央行融资成本，推动信贷和货币供给扩张，属于扩张性货币政策。", "source_ref": src(8, 2, 7, 3, "第9题A项", "第9题解析"), "rule_id": "RULE-ECON-MONETARY-EXPANSION-01", "rule_statement": "降低再贷款利率或准备金率属于扩张性货币政策，增加市场流动性。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "B", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "提高法定存款准备金率会减少商业银行可贷资金，属于紧缩性货币政策。", "source_ref": src(8, 2, 7, 3, "第9题B项", "第9题解析"), "rule_id": "RULE-ECON-MONETARY-TIGHT-01", "rule_statement": "提高存款准备金率属于紧缩性货币政策，收紧市场流动性。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "A", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "央行降低再贷款利率能降低商业银行融资成本，推动信贷和货币供给扩张，增加市场流动性，属于扩张性货币政策。", "source_ref": src(8, 2, 7, 3, "第9题A项", "第9题解析"), "rule_id": "RULE-ECON-MONETARY-EXPANSION-01", "rule_statement": "扩张性货币政策通过降准、降息、降低再贷款利率或公开市场逆回购增加市场货币供应量与流动性。", "knowledge_id": 20040, "knowledge_gap": False},
+                {"key": "B", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "提高法定存款准备金率会减少商业银行可贷资金，收紧流动性，属于紧缩性货币政策。", "source_ref": src(8, 2, 7, 3, "第9题B项", "第9题解析"), "rule_id": "RULE-ECON-MONETARY-TIGHT-01", "rule_statement": "提高存款准备金率属于紧缩性货币政策，收紧市场流动性。", "knowledge_id": None, "knowledge_gap": True},
                 {"key": "C", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "发行央行票据回笼货币会直接减少市场基础货币，属于紧缩性货币政策。", "source_ref": src(8, 2, 7, 3, "第9题C项", "第9题解析"), "rule_id": "RULE-ECON-MONETARY-TIGHT-02", "rule_statement": "央行发行票据回笼货币属于紧缩性操作。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "“存贷比基准利率”用语不规范，且上调利率通常偏向紧缩而非扩张。", "source_ref": src(8, 2, 7, 3, "第9题D项", "第9题解析"), "rule_id": "RULE-ECON-MONETARY-EXPANSION-01", "rule_statement": "上调政策利率不属扩张性工具，且存贷比不是基准利率。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "“存贷比基准利率”用语不规范（存贷比是监管指标而非利率），且上调利率通常偏向紧缩而非扩张。", "source_ref": src(8, 2, 7, 3, "第9题D项", "第9题解析"), "rule_id": "RULE-ECON-MONETARY-EXPANSION-01", "rule_statement": "存贷比是监管指标非基准利率，且上调利率偏向紧缩而非扩张。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        10: {
+            "stem_polarity": "选正确",
+            "combination_map": {"A": ["①", "②", "③"], "B": ["①", "②", "④"], "C": ["①", "③", "④"], "D": ["①", "②", "③", "④"]},
+            "items": [
+                {"key": "①", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "空中出租车与低空航线开辟了三维立体交通通道，强化了区域枢纽间的高效接驳与互联互通。", "source_ref": src(8, 3, 7, 3, "第10题陈述①", "第10题解析"), "rule_id": "RULE-ECON-LOW-ALTITUDE-01", "rule_statement": "低空经济依托垂直起降飞行器与通航体系，能够完善立体交通网络并提升区域互联互通水平。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "②", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "低空文旅、无人机配送与打“飞的”通勤培育了新型消费场景，满足人民群众高品质、多样化的出行与生活需求。", "source_ref": src(8, 3, 7, 3, "第10题陈述②", "第10题解析"), "rule_id": "RULE-ECON-LOW-ALTITUDE-01", "rule_statement": "低空经济催生多元化飞行体验与配送消费场景，培育新兴消费市场以满足多样化需求。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "③", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "“彻底缓解”表述过于绝对化；当前低空交通运力与航线密度尚处于起步探索阶段，无法完全替代或彻底解决城市地面交通拥堵。", "source_ref": src(8, 3, 7, 3, "第10题陈述③", "第10题解析"), "rule_id": "RULE-ECON-LOW-ALTITUDE-02", "rule_statement": "低空经济有助于优化通勤效率，但当前发展阶段绝不能表述为「彻底缓解」地面交通压力（绝对化表述错误）。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "④", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "低空经济融合了电动航空、智能网联、轻量化材料与数字空管，是典型的高技术、高效能战略性新兴产业，加速催生新质生产力。", "source_ref": src(8, 3, 7, 3, "第10题陈述④", "第10题解析"), "rule_id": "RULE-ECON-LOW-ALTITUDE-01", "rule_statement": "低空经济作为融合多学科前沿技术的战略性新兴产业，带动产业链升级并催生新质生产力。", "knowledge_id": None, "knowledge_gap": True},
             ],
         },
         23015: {
@@ -231,9 +289,15 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
     }
     statements = {
         1: {"A": "坚持求同存异", "B": "坚持互利共赢", "C": "坚持独立自主", "D": "坚持公平正义"},
+        2: {"①": "严格执法，坚决纠正不作为、乱作为", "②": "规范执法，过程、结果公开透明", "③": "树立正确政绩观，切实改正工作作风", "④": "树立重实干、重实绩的用人导向"},
+        3: {"①": "坚持中国共产党的领导，走中国特色社会主义道路", "②": "坚持和完善民族区域自治制度，保障民族平等权利", "③": "全国各族人民共同奋斗，形成团结互助的民族关系", "④": "全面建成社会主义现代化强国，为西藏全面发展奠定了基础"},
+        4: {"A": "体现出国家把促进协调发展作为中心工作", "B": "彰显了两岸科技创新与协同发展的引擎效应", "C": "表明我国把增强中华民族共同体意识落实到实处", "D": "是不断丰富“一国两制”生动实践的成果"},
         5: {"A": "民主决策", "B": "民主协商", "C": "民主管理", "D": "民主监督"},
-        8: {"A": "人的劳动能力是生产水平的标志，也是最活跃的主导因素", "B": "生产力发展水平决定生产关系的性质，生产力变化最终导致生产关系变革", "C": "封建土地制阻碍工业资本扩张，体现生产关系对生产力的反作用", "D": "新质生产力由技术革命性突破、生产要素创新性配置、产业深度转型升级催生"},
+        6: {"A": "认识具有反复性，正确认识需要经过多次反复才能完成", "B": "价值判断与价值选择具有主体差异性的特征", "C": "社会存在决定社会意识，社会存在变化决定社会意识变化", "D": "实践具有社会历史性，不同时代人们的实践方式不同"},
+        7: {"①": "创新是引领发展的第一动力", "②": "辩证的否定是事物发展的环节", "③": "上层建筑决定经济基础的发展", "④": "要坚持两点论和重点论的统一"},
+        8: {"A": "人的劳动能力是生产水平的标志，也是最活跃的主导因素", "B": "生产力发展水平决定生产关系的性质，生产力变化最终导致生产关系变革", "C": "“封建土地制阻碍工业资本扩张”体现了生产关系对生产力的反作用", "D": "新质生产力是由技术革命性突破、生产要素创新性配置、产业深度转型升级催生"},
         9: {"A": "中央银行降低再贷款利率", "B": "提高法定存款准备金率", "C": "发行央行票据回笼货币", "D": "上调金融机构存贷比基准利率"},
+        10: {"①": "完善立体交通网络，提升区域互联互通水平", "②": "培育新兴消费市场，满足多样化出行需求", "③": "彻底缓解地面交通压力，优化城市通勤效率", "④": "带动技术创新和产业升级，形成新质生产力"},
         13: {"①": "全国人大常委会行使决定权，为保护生态环境提供法律保障。", "②": "中国共产党领导立法，推进国家建设的法治化、规范化。", "③": "编纂生态环境法典是全面贯彻落实生态文明建设的必然要求。", "④": "全国人大常委会坚持科学立法、民主立法，不断提高立法质量。"},
         18: {"A": "会议纪要程序要清楚、目的要明确、中心要突出、层次分明。", "B": "办公会议纪要主要用于传达领导办公会议的决定和决议。", "C": "会议纪要的成文时间一般写在标题之下，正文右下方。", "D": "会议纪要是会议实录，需对全部发言进行原词原句记录。"},
         26: {"A": "人大代表是基层治理的领导核心。", "B": "人大代表联系群众机制畅通社情民意表达渠道。", "C": "人大代表联系群众是行使提案权的最优途径。", "D": "代表履职积分制丰富了选民联系形式。"},
