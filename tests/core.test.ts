@@ -33,6 +33,16 @@ test('未登录拒绝；列表不会泄露答案、直解或争议说明',async(
   const b=await call('GET','/bootstrap');assert.equal(b.questions.length,535);
   for(const q of b.questions)for(const field of ['answer','analysis','direct','note','breakdown'])assert.ok(!(field in q));
 });
+test('刷题接口仅返回已确认的卡片ID；候选和出处只在关联复核接口提供',async()=>{
+  const {call}=database();
+  const boot=await call('GET','/bootstrap');
+  assert.ok(boot.links.length>0);
+  assert.ok(boot.links.every((link:any)=>link.status==='已确认'));
+  assert.ok(boot.links.every((link:any)=>!('reason'in link)&&!('rule_id'in link)&&!('source_ref'in link)));
+  const audit=await call('GET','/link-audit');
+  assert.ok(audit.some((link:any)=>link.question_id===15&&link.status==='候选'&&link.source_ref));
+  assert.ok(audit.some((link:any)=>link.question_id===18&&link.knowledge_id===10183&&link.status==='已确认'));
+});
 test('逐项解析随当时的作答保存，旧快照和用户修订使用各自的原解析',async()=>{
   const {call,sqlite}=database();
   const result=await call('POST','/attempt',submission(13,'B'));
@@ -47,6 +57,12 @@ test('逐项解析随当时的作答保存，旧快照和用户修订使用各�
   sqlite.prepare('UPDATE attempt SET snapshot=? WHERE id=?').run(JSON.stringify(previous),result.id);
   assert.equal((await call('GET','/attempt/'+result.id)).breakdown,undefined);
   assert.equal((await call('GET','/editor/question/23003')).breakdown,null);
+});
+test('待核对题目即使具有完整草稿，作答也只返回原解析',async()=>{
+  const {call}=database();
+  const result=await call('POST','/attempt',submission(18,'D'));
+  assert.equal(result.breakdown,undefined);
+  assert.ok(result.analysis);
 });
 test('单选、多选、判断正确判定，非法组合和重复答案被拒绝',async()=>{
   const {call}=database();for(const a of [submission(13,'D'),submission(19031,'DCA'),submission(19037,'D')])assert.equal((await call('POST','/attempt',a)).correct,true);
@@ -103,7 +119,8 @@ test('知识正文可修订，手工确认或排除关联后统一生效',async(
   await call('POST','/edit',{kind:'knowledge',itemId:k.id,version:1,payload:{...k,content:k.content+'注意区分提案权。'},reason:'补充易混提醒'});
   await call('POST','/link',{knowledgeId:20002,questionId:24012,status:'已排除',reason:'核对排除测试'});
   const after=await call('GET','/bootstrap');assert.ok(after.knowledge.find((k:any)=>k.id===20002).content.includes('注意区分'));
-  assert.equal(after.links.find((l:any)=>l.knowledge_id===20002&&l.question_id===24012).status,'已排除');
+  assert.equal((await call('GET','/link-audit')).find((l:any)=>l.knowledge_id===20002&&l.question_id===24012).status,'已排除');
+  assert.ok(!after.links.some((l:any)=>l.knowledge_id===20002&&l.question_id===24012));
 });
 test('备份恢复覆盖完整用户记录，保留其他账号并具有原子性',async()=>{
   const {call}=database();await call('POST','/attempt',submission(13,'D'));await call('POST','/progress',progress);

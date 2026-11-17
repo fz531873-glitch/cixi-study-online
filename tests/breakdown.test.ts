@@ -7,6 +7,8 @@ import { buildAnswerFeedback, classifyRuleRelation } from '../lib/breakdown.ts';
 import { getQuestionBreakdown } from '../lib/breakdown-data.ts';
 import {questionsForMix} from '../lib/practice-selection.ts';
 
+const sourceBreakdown=(id:number)=>breakdownsData.breakdowns.find(entry=>entry.question_id===id) as any;
+
 test('15个考点覆盖535道题，按公文写作抽到真实试卷和模拟题',()=>{
   const categories=new Set(catalog.knowledge.map(k=>k.category));
   const questions=[...catalog.questions,...simulations.questions];
@@ -43,9 +45,14 @@ test('345道真题稿件覆盖全部题号、版本号与资料页码定位', ()
 test('自动摘录和其他题目版本使用原解析；判断题有具体依据',()=>{
   assert.equal(getQuestionBreakdown(23003,1),null);
   assert.equal(getQuestionBreakdown(13,2),null);
-  const result=buildAnswerFeedback(getQuestionBreakdown(35,1)!,'A','D');
+  const result=buildAnswerFeedback(sourceBreakdown(35),'A','D');
   assert.equal(result.headline,'判断有误');
   assert.match(result.sections[0].items[0].basis,/市场与政府/);
+});
+
+test('待核对草稿不进入答题反馈，争议解析保留争议状态',()=>{
+  assert.equal(getQuestionBreakdown(18,1),null);
+  assert.equal(getQuestionBreakdown(16,1)?.status,'争议');
 });
 
 test('第13题 A、B、C、D 四种作答给出差异化反馈', () => {
@@ -68,11 +75,11 @@ test('第13题 A、B、C、D 四种作答给出差异化反馈', () => {
 });
 
 test('第18题反向设问、第26题多选漏选错选、第16题争议留空', () => {
-  const bd18 = getQuestionBreakdown(18, 1)!;
+  const bd18 = sourceBreakdown(18);
   const fb18 = buildAnswerFeedback(bd18, 'A', 'D');
   assert.match(fb18.summary, /本身陈述成立.*错误的一项/);
 
-  const bd26 = getQuestionBreakdown(26, 1)!;
+  const bd26 = sourceBreakdown(26);
   const fb26 = buildAnswerFeedback(bd26, 'AB', 'BD');
   assert.match(fb26.headline, /错选了 A/);
   assert.match(fb26.headline, /漏选了 D/);
@@ -87,8 +94,8 @@ test('第18题反向设问、第26题多选漏选错选、第16题争议留空',
 });
 
 test('同规则换题识别与同卡不同规则反例', () => {
-  const q17 = getQuestionBreakdown(17, 1)!;
-  const q19025 = getQuestionBreakdown(19025, 1)!;
+  const q17 = sourceBreakdown(17);
+  const q19025 = sourceBreakdown(19025);
   const same = classifyRuleRelation(q17, q19025);
   assert.equal(same.relation, 'same_rule');
   assert.ok(same.sharedRuleIds.includes('RULE-DOC-LETTER-01'));
@@ -99,4 +106,13 @@ test('同规则换题识别与同卡不同规则反例', () => {
   assert.equal(diff.relation, 'same_card_different_rule');
   assert.ok(diff.sharedKnowledgeIds.includes(20003));
   assert.equal(classifyRuleRelation(breakdownsData.breakdowns.find(b=>b.question_id===23003) as any, breakdownsData.breakdowns.find(b=>b.question_id===23004) as any).relation, 'unrelated');
+});
+
+test('关联来源完整且候选不混入已确认集合',()=>{
+  assert.equal(new Set(catalog.links.map(link=>`${link.question_id}:${link.knowledge_id}`)).size,catalog.links.length);
+  assert.ok(catalog.links.every(link=>link.rule_id&&link.source_ref.question_material.page>0&&link.source_ref.analysis_material.page>0));
+  assert.equal(catalog.links.find(link=>link.question_id===18&&link.knowledge_id===10183)?.status,'已确认');
+  const card=catalog.knowledge.find(card=>card.id===10183)!;
+  assert.match(card.content,/纪要。适用于记载会议主要情况和议定事项/);
+  assert.ok(!catalog.links.some(link=>link.question_id===2||link.question_id===21||link.question_id===6||link.knowledge_id===10126||link.knowledge_id===10181));
 });

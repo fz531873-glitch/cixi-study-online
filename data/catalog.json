@@ -10108,7 +10108,22 @@
       "position": "B选项",
       "reason": "原题B选项涉及宪法制定机关；原解析认为宪法由全国人民代表大会制定。",
       "evidence": "2023年上午卷第15题及其解析",
-      "status": "已确认"
+      "status": "已确认",
+      "rule_id": "RULE-LAW-CONSTITUTION-MAKER-01",
+      "source_ref": {
+        "question_material": {
+          "id": 3,
+          "name": "2023年2月26日上午浙江省宁波市余姚、慈溪、奉化事业单位笔试《综合基础知识+主观题》)真题及答案.pdf",
+          "page": 3,
+          "location": "第15题B项"
+        },
+        "analysis_material": {
+          "id": 3,
+          "name": "2023年2月26日上午浙江省宁波市余姚、慈溪、奉化事业单位笔试《综合基础知识+主观题》)真题及答案.pdf",
+          "page": 10,
+          "location": "第15题解析"
+        }
+      }
     },
     {
       "knowledge_id": 20002,
@@ -10117,7 +10132,22 @@
       "position": "题干及D选项",
       "reason": "题干直接询问修改宪法的机关；原解析援引全国人大修改宪法的职权。",
       "evidence": "2024年上午卷第12题及其解析",
-      "status": "已确认"
+      "status": "已确认",
+      "rule_id": "RULE-LAW-CONSTITUTION-AMENDMENT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 3,
+          "location": "第12题D项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 18,
+          "location": "第12题解析"
+        }
+      }
     },
     {
       "knowledge_id": 20003,
@@ -10126,7 +10156,22 @@
       "position": "题干",
       "reason": "判断题直接考查全国人大及其常委会行使国家立法权。",
       "evidence": "2024年下午卷第7题及其解析",
-      "status": "已确认"
+      "status": "已确认",
+      "rule_id": "RULE-LAW-NPC-LEGISLATION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 6,
+          "name": "2024年9月28日下午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 1,
+          "location": "第7题题干"
+        },
+        "analysis_material": {
+          "id": 6,
+          "name": "2024年9月28日下午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 12,
+          "location": "第7题解析"
+        }
+      }
     },
     {
       "knowledge_id": 20003,
@@ -10135,7 +10180,407 @@
       "position": "题干①",
       "reason": "原解析指出常委会审议法律草案涉及立法权而非决定权；本题另涉及党的领导和科学立法。",
       "evidence": "2025年上午卷第13题及其解析",
-      "status": "已确认"
+      "status": "已确认",
+      "rule_id": "RULE-LAW-NPC-LEGISLATION-02",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第13题陈述①"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第13题解析第1句"
+        }
+      }
+    },
+    {
+      "knowledge_id": 20070,
+      "question_id": 17,
+      "role": "主考点",
+      "position": "题干及选项A",
+      "reason": "题干直接询问平级或不相隶属机关的行文方向与主要文种；规则为平行文、函。",
+      "evidence": "2025年上午卷第17题：题干及解析第5页",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-LETTER-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第17题A项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第17题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 20070,
+      "question_id": 19025,
+      "role": "主考点",
+      "position": "D选项",
+      "reason": "公安局与市高级中学不相隶属，借用体育馆属商洽事项，应使用函。与2025年上午第17题同一判断规则。",
+      "evidence": "2019年象山第25题：D选项及解析第2页",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-LETTER-01",
+      "source_ref": {
+        "question_material": {
+          "id": 1,
+          "name": "2019年7月13日宁波市象山县事业单位《综合基础知识及写作》试题.pdf",
+          "page": 3,
+          "location": "第25题D项"
+        },
+        "analysis_material": {
+          "id": 2,
+          "name": "2019年7月13日宁波市象山县事业单位《综合基础知识及写作》试题解析.pdf",
+          "page": 2,
+          "location": "第25题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 20071,
+      "question_id": 41,
+      "role": "主考点",
+      "position": "判断陈述",
+      "reason": "题干把申请专项资金夹带在工作报告中，直接考查报告不得夹带请示事项。",
+      "evidence": "2025年上午卷第41题：题干及解析第9页",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-REPORT-NO-REQUEST-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第41题题干"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 9,
+          "location": "第41题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10183,
+      "question_id": 18,
+      "role": "主考点",
+      "position": "D选项",
+      "reason": "D把会议纪要说成逐字记录全部发言；卡片规定纪要用于记载会议主要情况和议定事项，二者可直接判别。",
+      "evidence": "2025年上午卷第18题：D选项及解析第5页；知识卡10183公文文种第48条",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-MINUTES-VS-RECORD-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第18题D项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第18题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10158,
+      "question_id": 3,
+      "role": "辅助考点",
+      "position": "陈述②",
+      "reason": "陈述②直接考查民族区域自治制度保障民族平等权利；卡片载明民族区域自治的定义、自治权及民族关系原则。",
+      "evidence": "2025年上午卷第3题：陈述②及解析第2页；知识卡10158第175—178条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-ETHNIC-AUTONOMY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 1,
+          "location": "第3题②"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第3题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10167,
+      "question_id": 4,
+      "role": "主考点",
+      "position": "D选项",
+      "reason": "D判断粤港澳大湾区发展是否属于一国两制实践；卡片直接说明一国两制的制度结构及其实践。",
+      "evidence": "2025年上午卷第4题：D选项及解析第2页；知识卡10167第362—366条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-ONE-COUNTRY-TWO-SYSTEMS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第4题D"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第4题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10144,
+      "question_id": 7,
+      "role": "辅助考点",
+      "position": "陈述④",
+      "reason": "陈述④考查坚持两点论与重点论相统一；卡片直接列明该规则。陈述①所涉创新驱动规则未由本卡覆盖。",
+      "evidence": "2025年上午卷第7题：陈述④及解析第3页；知识卡10144第41条",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-TWO-POINT-FOCUS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第7题④"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 3,
+          "location": "第7题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 20040,
+      "question_id": 9,
+      "role": "主考点",
+      "position": "A选项",
+      "reason": "降低再贷款利率增加银行信贷投放、扩大流动性，属于扩张性货币政策；卡片列明降息、降准及公开市场买入等扩张工具。",
+      "evidence": "2025年上午卷第9题：A选项及解析第3页；知识卡20040",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-MONETARY-EXPANSION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第9题A项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 3,
+          "location": "第9题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 20011,
+      "question_id": 15,
+      "role": "主考点",
+      "position": "D选项",
+      "reason": "题目援引自甘风险及经营场所安全保障义务；卡片覆盖该两项规则。D项的自甘风险适用边界仍有争议，暂列候选。",
+      "evidence": "2025年上午卷第15题：题干及D选项、解析第4页；知识卡20011",
+      "status": "候选",
+      "rule_id": "RULE-LAW-SELF-RISK-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第15题D"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第15题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10038,
+      "question_id": 16,
+      "role": "辅助考点",
+      "position": "陈述①",
+      "reason": "陈述①涉及婚后父母出资购房的夫妻共同财产认定；题干未说明赠与约定，适用结论存疑，关联待复核。",
+      "evidence": "2025年上午卷第16题：陈述①及解析第5页；知识卡10038",
+      "status": "候选",
+      "rule_id": "RULE-LAW-MARRIAGE-GIFT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第16题陈述①"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第16题解析"
+        },
+        "external": "https://www.court.gov.cn/zixun/xiangqing/452751.html"
+      }
+    },
+    {
+      "knowledge_id": 10077,
+      "question_id": 24,
+      "role": "主考点",
+      "position": "A选项",
+      "reason": "A直接考查物体质量与惯性大小的关系；卡片列明质量越大、惯性越大。题干启动后推力描述另有不完整处。",
+      "evidence": "2025年上午卷第24题：A选项及解析第6页；知识卡10077第1条",
+      "status": "已确认",
+      "rule_id": "RULE-SCI-INERTIA-MASS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第24题A"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 6,
+          "location": "第24题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10116,
+      "question_id": 29,
+      "role": "主考点",
+      "position": "B选项",
+      "reason": "B将《本草纲目》的作者与我国最早药物学著作混淆；卡片列明《神农本草经》与《本草纲目》的作者、地位。",
+      "evidence": "2025年上午卷第29题：B选项及解析第7页；知识卡10116第328—330条",
+      "status": "已确认",
+      "rule_id": "RULE-HERB-MATERIA-MEDICA-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 6,
+          "location": "第29题B"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 7,
+          "location": "第29题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10158,
+      "question_id": 33,
+      "role": "主考点",
+      "position": "判断陈述",
+      "reason": "题干直接判断民族区域自治制度的核心是否为自治权；卡片明列自治权及该制度的核心内容。",
+      "evidence": "2025年上午卷第33题：题干及解析第8页；知识卡10158第177—178条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-ETHNIC-AUTONOMY-CORE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第33题题干"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 8,
+          "location": "第33题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10144,
+      "question_id": 34,
+      "role": "主考点",
+      "position": "判断陈述",
+      "reason": "题干判断只重痕迹不重实绩是否属于形而上学；卡片说明形而上学以孤立、静止、片面观点看问题。",
+      "evidence": "2025年上午卷第34题：题干及解析第8页；知识卡10144第21—22条",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-DIALECTICS-METAPHYSICS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第34题题干"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 8,
+          "location": "第34题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10043,
+      "question_id": 40,
+      "role": "主考点",
+      "position": "判断陈述",
+      "reason": "题干将一年以上不满三年的试用期上限写成三个月；卡片明确该期限的上限为两个月。",
+      "evidence": "2025年上午卷第40题：题干及解析第9页；知识卡10043第21—24条",
+      "status": "已确认",
+      "rule_id": "RULE-LABOR-PROBATION-LIMIT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第40题题干"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 9,
+          "location": "第40题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10155,
+      "question_id": 35,
+      "role": "主考点",
+      "position": "判断陈述",
+      "reason": "题干直接检验政府与市场关系的规范表述；卡片明列处理政府与市场关系及市场起决定性作用、更好发挥政府作用。",
+      "evidence": "2025年上午卷第35题：题干及解析第8页；知识卡10155第129—130条",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-GOVERNMENT-MARKET-ROLE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第35题题干"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 8,
+          "location": "第35题解析"
+        }
+      }
     }
   ]
 }

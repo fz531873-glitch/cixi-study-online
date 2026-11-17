@@ -104,9 +104,11 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
       rows(db,'SELECT knowledge_id,MIN(created_at) AS first_at,MAX(created_at) AS last_at FROM recall WHERE user_id=? GROUP BY knowledge_id',user),
       db.prepare('SELECT payload,updated_at FROM progress WHERE user_id=?').bind(user).first<{payload:string;updated_at:string}>(),
     ]);
-    return {questions:questions.map(stripAnswer), knowledge, links, reviews, attempts, recalls, materials:catalog.materials,
+    const confirmedLinks=links.filter(link=>link.status==='已确认').map(({knowledge_id,question_id,status})=>({knowledge_id,question_id,status}));
+    return {questions:questions.map(stripAnswer), knowledge, links:confirmedLinks, reviews, attempts, recalls, materials:catalog.materials,
       progress:progress ? JSON.parse(progress.payload) : null, progress_updated_at:progress?.updated_at, today:today(), version:catalog.version};
   }
+  if (method === 'GET' && path === '/link-audit') return decisions(db,user);
   if (method === 'POST' && path === '/progress') {
     const p = progressSchema.parse(input);
     if (!catalog.questions.some(q=>q.id===p.questionId) || !catalog.knowledge.some(k=>k.id===p.knowledgeId) || !p.queue.every(id=>catalog.questions.some(q=>q.id===id))) throw new InputError('学习位置不存在');
