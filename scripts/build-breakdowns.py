@@ -235,6 +235,25 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
                 {"key": "④", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "根据民事诉讼法，当事人不服地方人民法院第一审判决的，有权在判决书送达之日起15日内向上一级人民法院提起上诉。", "source_ref": src(8, 4, 7, 5, "第16题陈述④", "第16题解析"), "rule_id": "RULE-LAW-CIVPRO-APPEAL-01", "rule_statement": "民事一审判决的上诉期限为收到判决书之日起15日内。", "knowledge_id": None, "knowledge_gap": True},
             ],
         },
+        11: {
+            "stem_polarity": "选正确",
+            "combination_map": {"A": ["①", "②"], "B": ["①", "③"], "C": ["②", "③"], "D": ["②", "③", "④"]},
+            "items": [
+                {"key": "①", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "生存资料消费主要满足基本生活需要，需求弹性较小；提高国民消费意愿应推动消费结构向发展型、享受型消费升级，增加生存资料消费不符合提振消费意愿的经济学规律。", "source_ref": src(8, 3, 7, 4, "第11题陈述①", "第11题解析第1句"), "rule_id": "RULE-ECON-CONSUMPTION-STRUCTURE-01", "rule_statement": "提振消费意愿与消费升级应促进发展资料和享受资料消费，生存资料消费满足基本生存需要且弹性较小。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "②", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "收入预期是影响居民消费信心的关键因素。保持国民经济稳定增长、稳定未来收入预期，有利于增强居民消费信心、提高消费意愿。", "source_ref": src(8, 3, 7, 4, "第11题陈述②", "第11题解析第2句"), "rule_id": "RULE-ECON-CONSUMPTION-EXPECTATION-01", "rule_statement": "保持国民经济稳定发展与稳定未来收入预期有利于增强消费信心、提振国民消费意愿。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "③", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "完善收入分配政策可提高中低收入群体的边际消费倾向，健全社会保障体系能减轻群众在医疗、养老等方面的后顾之忧，降低预防性储蓄，释放消费潜能。", "source_ref": src(8, 3, 7, 4, "第11题陈述③", "第11题解析第3句"), "rule_id": "RULE-ECON-SOCIAL-SECURITY-CONSUMPTION-01", "rule_statement": "完善收入分配结构与健全社会保障体系能减轻预防性储蓄压力、释放居民消费潜力。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "④", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "降低市场准入门槛、优化营商环境属于激发企业投资和供给侧活力的举措，与直接提高国民终端消费意愿不属于同一领域，不符合设问。", "source_ref": src(8, 3, 7, 4, "第11题陈述④", "第11题解析第4句"), "rule_id": "RULE-ECON-INVESTMENT-VS-CONSUMPTION-01", "rule_statement": "降低市场准入门槛属于促进市场投资与供给活力的措施，不直接提高居民消费意愿。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        12: {
+            "stem_polarity": "选正确",
+            "items": [
+                {"key": "A", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "证券投资具有市场风险，监管部门依法处罚旨在维护公平秩序与保护合法权益，无法保证投资者获得稳定收益（投资自担风险），且“杜绝”表述绝对化。", "source_ref": src(8, 3, 7, 4, "第12题A项", "第12题解析A项"), "rule_id": "RULE-LAW-SECURITIES-REGULATION-01", "rule_statement": "证券监管旨在维护公开公正秩序与保护投资者合法权益，无法保证投资者获得稳定收益，也不能绝对杜绝违法行为。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "证监会对违法中介机构实施行政处罚属于行政执法和行业监管行为，并非中央银行运用的货币政策工具。", "source_ref": src(8, 3, 7, 4, "第12题B项", "第12题解析B项"), "rule_id": "RULE-ECON-MONETARY-VS-ADMIN-01", "rule_statement": "证券行政监管执法是行业外部监管与行政处罚，不属于宏观货币政策工具。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "会计师事务所是资本市场重要的看门人。证监会依法严厉惩戒未勤勉尽责出具虚假审计报告的失职机构，能有效压实中介责任、强化行业监管效能，积极营造规范诚信的投资环境。", "source_ref": src(8, 3, 7, 4, "第12题C项", "第12题解析C项"), "rule_id": "RULE-LAW-SECURITIES-GATEKEEPER-01", "rule_statement": "依法惩戒证券中介失职与虚假记载行为，有助于压实看门人责任、强化金融监管效能并营造良好投资环境。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "没一罚二的行政处罚是国家行政机关依法行使行政执法权追究法律责任的惩戒行为，绝非无偿法律服务，且目的在于纠治违法、惩戒失责，而非帮助企业提高效益。", "source_ref": src(8, 3, 7, 4, "第12题D项", "第12题解析D项"), "rule_id": "RULE-LAW-ADMIN-PUNISHMENT-NATURE-01", "rule_statement": "行政处罚是国家行政执法机关依法实施的行政制裁，不属于政府无偿法律服务，亦非为企业提高效益。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
         17: {
             "stem_polarity": "选正确",
             "items": [
@@ -247,10 +266,55 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
         18: {
             "stem_polarity": "选错误",
             "items": [
-                {"key": "A", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "会议纪要确实要求程序清楚、目的明确、中心突出、层次分明，该项陈述成立。", "source_ref": src(8, 4, 7, 5, "第18题A项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-01", "rule_statement": "会议纪要适用于记载会议主要情况和议定事项，要求中心突出、层次分明。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "A", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "会议纪要确实要求程序清楚、目的明确、中心突出、层次分明，该项陈述成立。", "source_ref": src(8, 4, 7, 5, "第18题A项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-01", "rule_statement": "会议纪要适用于记载会议主要情况和议定事项，要求中心突出、层次分明。", "knowledge_id": 10183, "knowledge_gap": False},
                 {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "办公会议纪要主要用于记载和传达领导办公会议的决定和决议事项，陈述成立。", "source_ref": src(8, 4, 7, 5, "第18题B项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-01", "rule_statement": "办公会议纪要用于记载和传达会议决定和决议事项。", "knowledge_id": None, "knowledge_gap": True},
                 {"key": "C", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "会议纪要的成文时间可置于标题下方，也可置于正文右下方主办单位下面，陈述成立。", "source_ref": src(8, 4, 7, 5, "第18题C项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-02", "rule_statement": "纪要成文时间位置较为灵活，可置于标题下方或正文右下方。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "D", "statement_truth": False, "matches_stem": True, "verdict": "入选", "basis": "纪要提炼会议主要情况和议定事项，无须原词原句记录全部发言；D混淆了「会议纪要」与「会议记录」，符合“错误的是”设问。", "source_ref": src(8, 4, 7, 5, "第18题D项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-VS-RECORD-01", "rule_statement": "会议纪要提炼主要情况和议定事项，不要求原词原句记录发言；原词记录属于会议记录。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": False, "matches_stem": True, "verdict": "入选", "basis": "纪要提炼会议主要情况和议定事项，无须原词原句记录全部发言；D混淆了「会议纪要」与「会议记录」，符合“错误的是”设问。", "source_ref": src(8, 4, 7, 5, "第18题D项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-VS-RECORD-01", "rule_statement": "会议纪要提炼主要情况和议定事项，不要求原词原句记录发言；原词记录属于会议记录。", "knowledge_id": 10183, "knowledge_gap": False},
+            ],
+        },
+        19: {
+            "stem_polarity": "选错误",
+            "items": [
+                {"key": "A", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "畅通沟通渠道和提升协作能力能消除信息孤岛与误解，有助于从根源化解冲突，属于根本性解决措施；设问选较不利项，排除。", "source_ref": src(8, 4, 7, 5, "第19题A项", "第19题解析A项"), "rule_id": "RULE-MGMT-CONFLICT-COMMUNICATION-01", "rule_statement": "建立有效沟通渠道并提升团队协作能力有助于增进互信，从源头预防与化解组织冲突。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "引导双方各退一步属于妥协或回避策略，仅能在表面上平息争端维持暂时和谐，未触及引发冲突的根本利益或深层机制，矛盾容易复发，较不利于从根本上解决冲突，符合设问。", "source_ref": src(8, 4, 7, 5, "第19题B项", "第19题解析B项"), "rule_id": "RULE-MGMT-CONFLICT-COMPROMISE-01", "rule_statement": "妥协策略引导双方各退一步属于权宜折中，未触及冲突深层诱因，较不利于从根本上解决组织冲突。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "建立常态化问题反馈与汇报交流机制，有助于及早发现并解决萌芽状态的隐患，属于源头化解措施；设问选较不利项，排除。", "source_ref": src(8, 4, 7, 5, "第19题C项", "第19题解析C项"), "rule_id": "RULE-MGMT-CONFLICT-FEEDBACK-01", "rule_statement": "建立定期汇报与有效问题反馈机制有助于在萌芽阶段识别并解决矛盾，属于根本性化解举措。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "资源争夺是组织冲突的重要物质根源，合理科学调配人力物力资源能消除资源短缺或不均引发的深层矛盾，属于根本性解决措施；设问选较不利项，排除。", "source_ref": src(8, 4, 7, 5, "第19题D项", "第19题解析D项"), "rule_id": "RULE-MGMT-CONFLICT-RESOURCE-01", "rule_statement": "合理优化调配人力、物力等资源能消除因资源争夺导致的结构性矛盾，从源头缓解组织冲突。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        20: {
+            "stem_polarity": "选正确",
+            "items": [
+                {"key": "A", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "热射病的病因是体温调节中枢受损和散热障碍导致体内严重热蓄积，并非产热超出需要，病理机制表述错误。", "source_ref": src(8, 5, 7, 5, "第20题A项", "第20题解析A项"), "rule_id": "RULE-SCI-HEAT-STROKE-PATHOLOGY-01", "rule_statement": "热射病的病理机制是散热障碍与体温调节中枢衰竭导致体内严重热蓄积，而非单纯产热超出需要。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "热射病属于致命性重症中暑，核心体温常超过40℃伴多器官功能衰竭，单纯多喝水休息不仅无法缓解，还会延误抢救黄金期，必须立即物理降温并紧急送医救治。", "source_ref": src(8, 5, 7, 5, "第20题B项", "第20题解析B项"), "rule_id": "RULE-SCI-HEAT-STROKE-SEVERITY-01", "rule_statement": "热射病是重症中暑中的致命类型，不能仅靠多喝水和休息缓解，必须立即强制物理降温并紧急送医。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "热射病体温升高系散热衰竭所致，体温调定点未上移，对乙酰氨基酚等解热镇痛药不仅无效，且会加剧肝肾损伤与凝血障碍，属于急救禁忌用药，急救必须采用物理降温。", "source_ref": src(8, 5, 7, 5, "第20题C项", "第20题解析C项"), "rule_id": "RULE-SCI-HEAT-STROKE-MEDICATION-CONTRAINDICATION-01", "rule_statement": "热射病退热禁用对乙酰氨基酚等解热镇痛药物，因其不仅无效且会加剧肝肾损伤与出血风险，急救首选物理降温。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "经典型与劳力型热射病的最核心诱因即为高温高湿等气候环境及高负荷体力活动，陈述完全符合医学科学原理。", "source_ref": src(8, 5, 7, 5, "第20题D项", "第20题解析D项"), "rule_id": "RULE-SCI-HEAT-STROKE-RISK-FACTORS-01", "rule_statement": "高温高湿气候环境与高强度体力活动是诱发经典型和劳力型热射病的最主要危险因素。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        21: {
+            "stem_polarity": "选错误",
+            "items": [
+                {"key": "A", "statement_truth": False, "matches_stem": True, "verdict": "入选", "basis": "1931年九一八事变是日本帝国主义企图以武力征服中国的开端，也是中国人民抗日战争的起点；1937年七七事变是全面侵华与全民族抗战的开始，而非侵华起点，A项时间错误，符合设问。", "source_ref": src(8, 5, 7, 5, "第21题A项", "第21题解析第1句"), "rule_id": "RULE-HIST-ANTI-JAPANESE-WAR-START-01", "rule_statement": "1931年九一八事变是日本以武力侵占中国的开端与抗战起点；1937年七七事变是全国抗战的开始。", "knowledge_id": 10072, "knowledge_gap": False},
+                {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "抗战是近代以来中国反抗外敌入侵持续时间最长、规模最大、牺牲最多且首次完全胜利的民族解放斗争，陈述正确；本题选错误项，排除。", "source_ref": src(8, 5, 7, 6, "第21题B项", "第21题解析B项"), "rule_id": "RULE-HIST-ANTI-JAPANESE-WAR-SIGNIFICANCE-01", "rule_statement": "抗日战争是近代以来中国人民反抗外敌入侵持续时间最长、规模最大、牺牲最多且首次取得完全胜利的民族解放斗争。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "中国抗战是世界反法西斯战争的东方主战场，为拯救人类文明和保卫世界和平作出巨大牺牲与不可磨灭的贡献，陈述正确；本题选错误项，排除。", "source_ref": src(8, 5, 7, 6, "第21题C项", "第21题解析C项"), "rule_id": "RULE-HIST-ANTI-JAPANESE-WAR-WORLD-CONTRIB-01", "rule_statement": "中国抗战是世界反法西斯战争的东方主战场，为保卫世界和平与战胜法西斯作出了重大历史贡献。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "抗战胜利彻底粉碎了侵略图谋并收复失地，捍卫了国家主权和领土完整，陈述正确；本题选错误项，排除。", "source_ref": src(8, 5, 7, 6, "第21题D项", "第21题解析D项"), "rule_id": "RULE-HIST-ANTI-JAPANESE-WAR-VICTORY-EFFECT-01", "rule_statement": "抗日战争的胜利彻底粉碎了日本军国主义殖民奴役中国的图谋，捍卫了国家主权和领土完整。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        22: {
+            "stem_polarity": "选正确",
+            "items": [
+                {"key": "A", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "钟馗属于中国道教及民间信仰中的驱邪捉鬼神仙，不属于佛教神祇体系，主要职责是捉鬼辟邪、赐福镇宅而非超度亡魂。", "source_ref": src(8, 5, 7, 6, "第22题A项", "第22题解析A项"), "rule_id": "RULE-CULT-ZHONGKUI-RELIGION-NATURE-01", "rule_statement": "钟馗属于中国民间信仰与道教神仙体系的驱邪镇宅神祇，不属于佛教谱系。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "符合民间传说经典典故：钟馗貌丑殿试落第愤而身亡，唐玄宗梦见钟馗捉小鬼后病愈，命吴道子画钟馗像并敕封赐福镇宅圣君，陈述完全成立。", "source_ref": src(8, 5, 7, 6, "第22题B项", "第22题解析B项"), "rule_id": "RULE-CULT-ZHONGKUI-LEGEND-ORIGIN-01", "rule_statement": "民间传说中钟馗科举因貌丑落第愤死，唐玄宗梦醒后命吴道子画其像并封为赐福镇宅圣君。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "钟馗捉鬼传说源自唐代而非汉代；掌管地府生死簿的是阴司判官崔珏而非钟馗。", "source_ref": src(8, 5, 7, 6, "第22题C项", "第22题解析C项"), "rule_id": "RULE-CULT-ZHONGKUI-PERIOD-DUTY-01", "rule_statement": "钟馗传说形成定型于唐代，其主职为辟邪除魅，非掌管地府生死簿。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "钟馗为民间神话与道教传说人物，并非正史中的真实武将；“阎魔罗阁”（阎罗王）属于冥界护法神汉译，二者并非一人。", "source_ref": src(8, 5, 7, 6, "第22题D项", "第22题解析D项"), "rule_id": "RULE-CULT-ZHONGKUI-MYTH-REALITY-01", "rule_statement": "钟馗为民间神话传说与道教信仰神祇，并非正史中真实存在的武将人物。", "knowledge_id": None, "knowledge_gap": True},
+            ],
+        },
+        23: {
+            "stem_polarity": "选正确",
+            "items": [
+                {"key": "A", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "U盘分区损坏会导致盘符无法访问、提示格式化或容量显示异常，不会产生原文件被隐藏且生成同名快捷方式的特征现象。", "source_ref": src(8, 5, 7, 6, "第23题A项", "第23题解析A项"), "rule_id": "RULE-TECH-STORAGE-PARTITION-DAMAGE-01", "rule_statement": "存储介质分区损坏通常表现为磁盘无法识别、打不开或提示格式化，不会产生伪装快捷方式现象。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "U盘文件变成快捷方式是U盘蠕虫病毒的典型破坏与传播行为：病毒将原文件修改为系统隐藏属性，同时生成同名伪装快捷方式诱导点击运行以传播病毒。", "source_ref": src(8, 5, 7, 6, "第23题B项", "第23题解析B项"), "rule_id": "RULE-TECH-WORM-VIRUS-SHORTCUT-01", "rule_statement": "U盘文件被隐藏并出现同名快捷方式是计算机蠕虫病毒的典型破坏特征与传播机制。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "C", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "常规文件加密表现为打开时要求输入密码，勒索加密多修改扩展名，均不会将原文件替换为恶意快捷方式。", "source_ref": src(8, 5, 7, 6, "第23题C项", "第23题解析C项"), "rule_id": "RULE-TECH-FILE-ENCRYPTION-NATURE-01", "rule_statement": "文件加密通常表现为要求输入凭据或更改扩展名，不会将文件替换为快捷方式。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "U盘写保护仅限制写入、修改和删除操作，原有文档仍可正常打开阅读，绝不可能将文件变为快捷方式。", "source_ref": src(8, 5, 7, 6, "第23题D项", "第23题解析D项"), "rule_id": "RULE-TECH-WRITE-PROTECTION-FEATURE-01", "rule_statement": "写保护仅禁止文件写入、删除与修改，不影响已有文件读取，不会篡改为快捷方式。", "knowledge_id": None, "knowledge_gap": True},
             ],
         },
         26: {
@@ -301,40 +365,64 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
         8: {"A": "人的劳动能力是生产水平的标志，也是最活跃的主导因素", "B": "生产力发展水平决定生产关系的性质，生产力变化最终导致生产关系变革", "C": "“封建土地制阻碍工业资本扩张”体现了生产关系对生产力的反作用", "D": "新质生产力是由技术革命性突破、生产要素创新性配置、产业深度转型升级催生"},
         9: {"A": "中央银行降低再贷款利率", "B": "提高法定存款准备金率", "C": "发行央行票据回笼货币", "D": "上调金融机构存贷比基准利率"},
         10: {"①": "完善立体交通网络，提升区域互联互通水平", "②": "培育新兴消费市场，满足多样化出行需求", "③": "彻底缓解地面交通压力，优化城市通勤效率", "④": "带动技术创新和产业升级，形成新质生产力"},
+        11: {"①": "转变消费观念，增加生存资料消费", "②": "保持国民经济稳定发展、稳定消费预期", "③": "完善收入分配政策和社会保障体系", "④": "降低市场准入门槛，营造良好投资环境"},
+        12: {"A": "旨在杜绝市场违法行为，保证投资者获得稳定收益", "B": "是国家运用货币政策工具，直接引导资本市场流向", "C": "能强化金融行业监管效能，积极打造良好投资环境", "D": "是政府提供无偿法律服务，旨在帮助企业提高效益"},
         13: {"①": "全国人大常委会行使决定权，为保护生态环境提供法律保障。", "②": "中国共产党领导立法，推进国家建设的法治化、规范化。", "③": "编纂生态环境法典是全面贯彻落实生态文明建设的必然要求。", "④": "全国人大常委会坚持科学立法、民主立法，不断提高立法质量。"},
-        18: {"A": "会议纪要程序要清楚、目的要明确、中心要突出、层次分明。", "B": "办公会议纪要主要用于传达领导办公会议的决定和决议。", "C": "会议纪要的成文时间一般写在标题之下，正文右下方。", "D": "会议纪要是会议实录，需对全部发言进行原词原句记录。"},
+        17: {"A": "平行文 函", "B": "上行文 报告", "C": "平行文 意见", "D": "上行文 通知"},
+        18: {"A": "会议纪要要求记录会议程序清楚、目的明确、中心突出、层次分明", "B": "办公会议纪要主要用于记载和传达领导办公会议的决定和决议事项", "C": "会议纪要的时间可以写在标题的下方，也可以写在正文的右下方、主办单位的下面", "D": "会议纪要因为要体现会议的真实性、准确性，要求尽可能原词原句记录发言人发言内容和议定事项"},
+        19: {"A": "建立有效的沟通渠道，不断提升团队成员的沟通与协作能力", "B": "强调团队整体和谐重要性，引导冲突双方各退一步，寻求新方案", "C": "开展定期的工作汇报和交流，建立有效的问题反馈机制", "D": "根据项目进展和需求，合理调整人力、物力等资源的分配"},
+        20: {"A": "其病因是体内产生的热量超出满足身体的需要", "B": "是中暑的一种表现，多喝水并休息一下即可缓解", "C": "热射病患者存在高烧不退的症状，应及时使用乙酰氨基酚类等解热镇痛药物退烧", "D": "高温高湿的气候因素和高强度体力活动是导致热射病最主要的危险因素"},
+        21: {"A": "日本侵华战争始于1937 年七七事变，结束于1945 年日本宣布无条件投降", "B": "抗日战争是近代以来中国人民反抗外敌入侵持续时间最长、规模最大、牺牲最多的民族解放斗争，也是第一次取得完全胜利的民族解放斗争", "C": "中国人民抗日战争是世界反法西斯战争的重要组成部分，中国人民以巨大的民族牺牲，为拯救人类文明、保卫世界和平作出了重大贡献", "D": "抗日战争的胜利，彻底粉碎了日本军国主义殖民奴役中国的图谋，有力捍卫了国家主权和领土完整"},
+        22: {"A": "钟馗是佛教文化中的“伏魔尊者”，主要职责是超度亡魂", "B": "钟馗因相貌丑陋在科举中落榜，愤而撞柱身亡，后被唐明皇封为“赐福镇宅圣君”", "C": "钟馗最早源于汉代民间传说，主要职责是掌管地府生死簿", "D": "钟馗在历史上真实存在，是唐代著名武将，因战功被封为“阎魔罗阁”"},
+        23: {"A": "U 盘分区损坏", "B": "感染了蠕虫病毒", "C": "文件被加密", "D": "U 盘写保护"},
         26: {"A": "人大代表是基层治理的领导核心。", "B": "人大代表联系群众机制畅通社情民意表达渠道。", "C": "人大代表联系群众是行使提案权的最优途径。", "D": "代表履职积分制丰富了选民联系形式。"},
         19025: {"A": "请示", "B": "通知", "C": "申请", "D": "函"},
         23015: {"A": "任何法律、法规都不得与宪法相抵触", "B": "宪法由全国人民代表大会及其常务委员会制定", "C": "我国现行宪法一共有五个修正案", "D": "宪法对我国国旗、国歌、国徽、首都均作出明确规定"},
         24012: {"A": "国务院", "B": "省、自治区、直辖市人大及其常委会", "C": "全国人民代表大会常务委员会", "D": "全国人民代表大会"},
     }
     for qid, items in statements.items():
-        for item in overrides[qid]["items"]:
-            item["statement"] = items[item["key"]]
+        if qid in overrides:
+            for item in overrides[qid]["items"]:
+                if item["key"] in items:
+                    item["statement"] = items[item["key"]]
     return overrides
 
 
 def main() -> None:
     if not OUT_JSON.exists():
-        raise FileNotFoundError(f"Existing breakdown file {OUT_JSON} not found. Halting to avoid overwriting unverified baselines.")
+        sys.stderr.write(f"Error: Existing breakdown file {OUT_JSON} not found. Halting to avoid overwriting unverified baselines.\n")
+        sys.exit(1)
     try:
         baseline_content = json.loads(OUT_JSON.read_text(encoding="utf-8"))
         baseline_by_id = {b["question_id"]: b for b in baseline_content.get("breakdowns", [])}
     except Exception as e:
-        raise RuntimeError(f"Failed to read existing baseline from {OUT_JSON}: {e}. Halting.")
+        sys.stderr.write(f"Error: Failed to read existing baseline from {OUT_JSON}: {e}. Halting.\n")
+        sys.exit(1)
 
     if len(baseline_by_id) != 345:
-        raise RuntimeError(f"Existing baseline has {len(baseline_by_id)} questions, expected 345. Halting.")
+        sys.stderr.write(f"Error: Existing baseline has {len(baseline_by_id)} questions, expected 345. Halting.\n")
+        sys.exit(1)
 
     cat = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     materials = {m["id"]: m["name"] for m in cat["materials"]}
 
     curated = hand_curated_overrides(materials)
-    # 本批明确限定第1—10题；若通过命令行参数传入题号则支持指定更新，其余题目均受执行前磁盘基线保护
-    if len(sys.argv) > 1 and all(arg.isdigit() for arg in sys.argv[1:]):
-        TARGET_QUESTION_IDS = {int(arg) for arg in sys.argv[1:]}
+    # 参数解析与严格校验：若有参数，必须全为纯数字且题号在 curated 中有定义
+    if len(sys.argv) > 1:
+        invalid_args = [arg for arg in sys.argv[1:] if not arg.isdigit()]
+        if invalid_args:
+            sys.stderr.write(f"Error: Invalid non-numeric arguments: {invalid_args}\n")
+            sys.exit(1)
+        target_ids = {int(arg) for arg in sys.argv[1:]}
+        unsupported = [qid for qid in target_ids if qid not in curated]
+        if unsupported:
+            sys.stderr.write(f"Error: Unsupported question IDs without curation definition: {unsupported}\n")
+            sys.exit(1)
+        TARGET_QUESTION_IDS = target_ids
     else:
+        # 无参数时保持既有行为：默认第 1—10 题
         TARGET_QUESTION_IDS = set(range(1, 11))
+
     breakdowns: list[dict] = []
 
     for q in cat["questions"]:

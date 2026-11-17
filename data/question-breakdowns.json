@@ -19172,7 +19172,7 @@
       "exam": "2025年上午卷",
       "number": 11,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选正确",
       "combination_map": {
         "A": [
@@ -19196,107 +19196,107 @@
       "items": [
         {
           "key": "①",
-          "statement": "11、 有专家指出,中国经济长期以来的问题是消费需求不足,当产能迅速增长的时候\n就更加显示出消费需求的不足。下列措施有利于提高国民消费意愿的是(   ) \n1转变消费观念,增加生存资料消费 \n2保持国民经济稳定发展、稳定消费预期 \n3完善收入分配政策和社会保障体系 \n4降低市场准入门槛,营造良好投资环境 \nA、12 \nB、13 \nC、23 \nD、234",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "①强调增加基本生存消费，④侧重企业投资环境，与题干要求不直接对应。",
+          "basis": "生存资料消费主要满足基本生活需要，需求弹性较小；提高国民消费意愿应推动消费结构向发展型、享受型消费升级，增加生存资料消费不符合提振消费意愿的经济学规律。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 3,
-              "location": "第11题①"
+              "location": "第11题陈述①"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 4,
-              "location": "第11题解析"
+              "location": "第11题解析第1句"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "②稳定收入和消费预期，③减少社保与收入分配方面的后顾之忧，直接提升消费意愿，选C。①强调增加基本生存消费，④侧重企业投资环境，与题干要求不直接对应。",
+          "rule_id": "RULE-ECON-CONSUMPTION-STRUCTURE-01",
+          "rule_statement": "提振消费意愿与消费升级应促进发展资料和享受资料消费，生存资料消费满足基本生存需要且弹性较小。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "转变消费观念，增加生存资料消费"
         },
         {
           "key": "②",
-          "statement": "11、 有专家指出,中国经济长期以来的问题是消费需求不足,当产能迅速增长的时候\n就更加显示出消费需求的不足。下列措施有利于提高国民消费意愿的是(   ) \n1转变消费观念,增加生存资料消费 \n2保持国民经济稳定发展、稳定消费预期 \n3完善收入分配政策和社会保障体系 \n4降低市场准入门槛,营造良好投资环境 \nA、12 \nB、13 \nC、23 \nD、234",
           "statement_truth": true,
           "matches_stem": true,
           "verdict": "入选",
-          "basis": "②稳定收入和消费预期，③减少社保与收入分配方面的后顾之忧，直接提升消费意愿，选C。",
+          "basis": "收入预期是影响居民消费信心的关键因素。保持国民经济稳定增长、稳定未来收入预期，有利于增强居民消费信心、提高消费意愿。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 3,
-              "location": "第11题②"
+              "location": "第11题陈述②"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 4,
-              "location": "第11题解析"
+              "location": "第11题解析第2句"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "②稳定收入和消费预期，③减少社保与收入分配方面的后顾之忧，直接提升消费意愿，选C。①强调增加基本生存消费，④侧重企业投资环境，与题干要求不直接对应。",
+          "rule_id": "RULE-ECON-CONSUMPTION-EXPECTATION-01",
+          "rule_statement": "保持国民经济稳定发展与稳定未来收入预期有利于增强消费信心、提振国民消费意愿。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "保持国民经济稳定发展、稳定消费预期"
         },
         {
           "key": "③",
-          "statement": "11、 有专家指出,中国经济长期以来的问题是消费需求不足,当产能迅速增长的时候\n就更加显示出消费需求的不足。下列措施有利于提高国民消费意愿的是(   ) \n1转变消费观念,增加生存资料消费 \n2保持国民经济稳定发展、稳定消费预期 \n3完善收入分配政策和社会保障体系 \n4降低市场准入门槛,营造良好投资环境 \nA、12 \nB、13 \nC、23 \nD、234",
           "statement_truth": true,
           "matches_stem": true,
           "verdict": "入选",
-          "basis": "3正确,完善收入分配和社会保障体系能减轻民众后顾之忧,释放。",
+          "basis": "完善收入分配政策可提高中低收入群体的边际消费倾向，健全社会保障体系能减轻群众在医疗、养老等方面的后顾之忧，降低预防性储蓄，释放消费潜能。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 3,
-              "location": "第11题③"
+              "location": "第11题陈述③"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 4,
-              "location": "第11题解析"
+              "location": "第11题解析第3句"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "②稳定收入和消费预期，③减少社保与收入分配方面的后顾之忧，直接提升消费意愿，选C。①强调增加基本生存消费，④侧重企业投资环境，与题干要求不直接对应。",
+          "rule_id": "RULE-ECON-SOCIAL-SECURITY-CONSUMPTION-01",
+          "rule_statement": "完善收入分配结构与健全社会保障体系能减轻预防性储蓄压力、释放居民消费潜力。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "完善收入分配政策和社会保障体系"
         },
         {
           "key": "④",
-          "statement": "11、 有专家指出,中国经济长期以来的问题是消费需求不足,当产能迅速增长的时候\n就更加显示出消费需求的不足。下列措施有利于提高国民消费意愿的是(   ) \n1转变消费观念,增加生存资料消费 \n2保持国民经济稳定发展、稳定消费预期 \n3完善收入分配政策和社会保障体系 \n4降低市场准入门槛,营造良好投资环境 \nA、12 \nB、13 \nC、23 \nD、234",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "4错误,降低市场准入门槛主要促进投资活动,与居民消费意愿关系不大。",
+          "basis": "降低市场准入门槛、优化营商环境属于激发企业投资和供给侧活力的举措，与直接提高国民终端消费意愿不属于同一领域，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 3,
-              "location": "第11题④"
+              "location": "第11题陈述④"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 4,
-              "location": "第11题解析"
+              "location": "第11题解析第4句"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "②稳定收入和消费预期，③减少社保与收入分配方面的后顾之忧，直接提升消费意愿，选C。①强调增加基本生存消费，④侧重企业投资环境，与题干要求不直接对应。",
+          "rule_id": "RULE-ECON-INVESTMENT-VS-CONSUMPTION-01",
+          "rule_statement": "降低市场准入门槛属于促进市场投资与供给活力的措施，不直接提高居民消费意愿。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "降低市场准入门槛，营造良好投资环境"
         }
       ]
     },
@@ -19306,112 +19306,112 @@
       "exam": "2025年上午卷",
       "number": 12,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选正确",
       "items": [
         {
           "key": "A",
-          "statement": "旨在杜绝市场违法行为,保证投资者获得稳定收益",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "A 错误,监管目标不是保证投资者稳定收益,且无。",
+          "basis": "证券投资具有市场风险，监管部门依法处罚旨在维护公平秩序与保护合法权益，无法保证投资者获得稳定收益（投资自担风险），且“杜绝”表述绝对化。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 3,
-              "location": "第12题A"
+              "location": "第12题A项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 4,
-              "location": "第12题解析"
+              "location": "第12题解析A项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "依法处罚失职审计机构属于证券行政监管，有助于维护市场秩序和投资环境，选C。监管不能保证收益或杜绝违法；行政处罚也不属于货币政策或无偿法律服务。",
+          "rule_id": "RULE-LAW-SECURITIES-REGULATION-01",
+          "rule_statement": "证券监管旨在维护公开公正秩序与保护投资者合法权益，无法保证投资者获得稳定收益，也不能绝对杜绝违法行为。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "旨在杜绝市场违法行为，保证投资者获得稳定收益"
         },
         {
           "key": "B",
-          "statement": "是国家运用货币政策工具,直接引导资本市场流向",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "B 错误,证监会处罚不属于货币政策工具;C 正确,依法惩戒失职机构,能强。",
+          "basis": "证监会对违法中介机构实施行政处罚属于行政执法和行业监管行为，并非中央银行运用的货币政策工具。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 3,
-              "location": "第12题B"
+              "location": "第12题B项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 4,
-              "location": "第12题解析"
+              "location": "第12题解析B项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "依法处罚失职审计机构属于证券行政监管，有助于维护市场秩序和投资环境，选C。监管不能保证收益或杜绝违法；行政处罚也不属于货币政策或无偿法律服务。",
+          "rule_id": "RULE-ECON-MONETARY-VS-ADMIN-01",
+          "rule_statement": "证券行政监管执法是行业外部监管与行政处罚，不属于宏观货币政策工具。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "是国家运用货币政策工具，直接引导资本市场流向"
         },
         {
           "key": "C",
-          "statement": "能强化金融行业监管效能,积极打造良好投资环境",
           "statement_truth": true,
           "matches_stem": true,
           "verdict": "入选",
-          "basis": "C 正确,依法惩戒失职机构,能强。",
+          "basis": "会计师事务所是资本市场重要的看门人。证监会依法严厉惩戒未勤勉尽责出具虚假审计报告的失职机构，能有效压实中介责任、强化行业监管效能，积极营造规范诚信的投资环境。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 3,
-              "location": "第12题C"
+              "location": "第12题C项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 4,
-              "location": "第12题解析"
+              "location": "第12题解析C项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "依法处罚失职审计机构属于证券行政监管，有助于维护市场秩序和投资环境，选C。监管不能保证收益或杜绝违法；行政处罚也不属于货币政策或无偿法律服务。",
+          "rule_id": "RULE-LAW-SECURITIES-GATEKEEPER-01",
+          "rule_statement": "依法惩戒证券中介失职与虚假记载行为，有助于压实看门人责任、强化金融监管效能并营造良好投资环境。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "能强化金融行业监管效能，积极打造良好投资环境"
         },
         {
           "key": "D",
-          "statement": "是政府提供无偿法律服务,旨在帮助企业提高效益",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "D 错误,处罚属行政执法而非无偿法律服务。",
+          "basis": "没一罚二的行政处罚是国家行政机关依法行使行政执法权追究法律责任的惩戒行为，绝非无偿法律服务，且目的在于纠治违法、惩戒失责，而非帮助企业提高效益。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 3,
-              "location": "第12题D"
+              "location": "第12题D项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 4,
-              "location": "第12题解析"
+              "location": "第12题解析D项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "依法处罚失职审计机构属于证券行政监管，有助于维护市场秩序和投资环境，选C。监管不能保证收益或杜绝违法；行政处罚也不属于货币政策或无偿法律服务。",
+          "rule_id": "RULE-LAW-ADMIN-PUNISHMENT-NATURE-01",
+          "rule_statement": "行政处罚是国家行政执法机关依法实施的行政制裁，不属于政府无偿法律服务，亦非为企业提高效益。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "是政府提供无偿法律服务，旨在帮助企业提高效益"
         }
       ]
     },
@@ -19931,7 +19931,7 @@
       "exam": "2025年上午卷",
       "number": 17,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选正确",
       "items": [
         {
@@ -19958,7 +19958,7 @@
           "rule_statement": "平级或不相隶属机关之间商洽工作、询问和答复问题、请求批准和答复审批事项，主要使用平行文「函」。",
           "knowledge_id": 20070,
           "knowledge_gap": false,
-          "statement": "17、 在党政机关公文处理中,平级关系或不相隶属关系的机关之间主要通过_____进行\n正式沟通,其中以_____为最主要的行文方式。 \nA、平行文 函 \nB、上行文 报告 C、平行文 意见 D、上行文 通知"
+          "statement": "平行文 函"
         },
         {
           "key": "B",
@@ -19984,7 +19984,7 @@
           "rule_statement": "报告适用于向上级机关汇报工作、反映情况，属于上行文。",
           "knowledge_id": null,
           "knowledge_gap": true,
-          "statement": "17、 在党政机关公文处理中,平级关系或不相隶属关系的机关之间主要通过_____进行\n正式沟通,其中以_____为最主要的行文方式。 \nA、平行文 函 \nB、上行文 报告 C、平行文 意见 D、上行文 通知"
+          "statement": "上行文 报告"
         },
         {
           "key": "C",
@@ -20010,7 +20010,7 @@
           "rule_statement": "不相隶属机关之间最主要的正式沟通文种是函，而非意见。",
           "knowledge_id": 20070,
           "knowledge_gap": false,
-          "statement": "17、 在党政机关公文处理中,平级关系或不相隶属关系的机关之间主要通过_____进行\n正式沟通,其中以_____为最主要的行文方式。 \nA、平行文 函 \nB、上行文 报告 C、平行文 意见 D、上行文 通知"
+          "statement": "平行文 意见"
         },
         {
           "key": "D",
@@ -20036,7 +20036,7 @@
           "rule_statement": "通知主要用于下行或平行知照事项，并非上行文。",
           "knowledge_id": null,
           "knowledge_gap": true,
-          "statement": "17、 在党政机关公文处理中,平级关系或不相隶属关系的机关之间主要通过_____进行\n正式沟通,其中以_____为最主要的行文方式。 \nA、平行文 函 \nB、上行文 报告 C、平行文 意见 D、上行文 通知"
+          "statement": "上行文 通知"
         }
       ]
     },
@@ -20046,7 +20046,7 @@
       "exam": "2025年上午卷",
       "number": 18,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选错误",
       "items": [
         {
@@ -20071,9 +20071,9 @@
           },
           "rule_id": "RULE-DOC-MINUTES-01",
           "rule_statement": "会议纪要适用于记载会议主要情况和议定事项，要求中心突出、层次分明。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
-          "statement": "会议纪要程序要清楚、目的要明确、中心要突出、层次分明。"
+          "knowledge_id": 10183,
+          "knowledge_gap": false,
+          "statement": "会议纪要要求记录会议程序清楚、目的明确、中心突出、层次分明"
         },
         {
           "key": "B",
@@ -20099,7 +20099,7 @@
           "rule_statement": "办公会议纪要用于记载和传达会议决定和决议事项。",
           "knowledge_id": null,
           "knowledge_gap": true,
-          "statement": "办公会议纪要主要用于传达领导办公会议的决定和决议。"
+          "statement": "办公会议纪要主要用于记载和传达领导办公会议的决定和决议事项"
         },
         {
           "key": "C",
@@ -20125,7 +20125,7 @@
           "rule_statement": "纪要成文时间位置较为灵活，可置于标题下方或正文右下方。",
           "knowledge_id": null,
           "knowledge_gap": true,
-          "statement": "会议纪要的成文时间一般写在标题之下，正文右下方。"
+          "statement": "会议纪要的时间可以写在标题的下方，也可以写在正文的右下方、主办单位的下面"
         },
         {
           "key": "D",
@@ -20149,9 +20149,9 @@
           },
           "rule_id": "RULE-DOC-MINUTES-VS-RECORD-01",
           "rule_statement": "会议纪要提炼主要情况和议定事项，不要求原词原句记录发言；原词记录属于会议记录。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
-          "statement": "会议纪要是会议实录，需对全部发言进行原词原句记录。"
+          "knowledge_id": 10183,
+          "knowledge_gap": false,
+          "statement": "会议纪要因为要体现会议的真实性、准确性，要求尽可能原词原句记录发言人发言内容和议定事项"
         }
       ]
     },
@@ -20161,112 +20161,112 @@
       "exam": "2025年上午卷",
       "number": 19,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选错误",
       "items": [
         {
           "key": "A",
-          "statement": "建立有效的沟通渠道,不断提升团队成员的沟通与协作能力",
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "A、C改善沟通与反馈，D针对资源分配矛盾。",
+          "basis": "畅通沟通渠道和提升协作能力能消除信息孤岛与误解，有助于从根源化解冲突，属于根本性解决措施；设问选较不利项，排除。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 4,
-              "location": "第19题A"
+              "location": "第19题A项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 5,
-              "location": "第19题解析"
+              "location": "第19题解析A项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干问“较不利于从根本解决”。B只强调和谐和各退一步，未必处理冲突原因，因此按原卷选B；A、C改善沟通与反馈，D针对资源分配矛盾。不要把“妥协永远无效”当成普遍结论。",
+          "rule_id": "RULE-MGMT-CONFLICT-COMMUNICATION-01",
+          "rule_statement": "建立有效沟通渠道并提升团队协作能力有助于增进互信，从源头预防与化解组织冲突。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "建立有效的沟通渠道，不断提升团队成员的沟通与协作能力"
         },
         {
           "key": "B",
-          "statement": "强调团队整体和谐重要性,引导冲突双方各退一步,寻求新方案",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": true,
           "verdict": "入选",
-          "basis": "B只强调和谐和各退一步，未必处理冲突原因，因此按原卷选B；A、C改善沟通与反馈，D针对资源分配矛盾。",
+          "basis": "引导双方各退一步属于妥协或回避策略，仅能在表面上平息争端维持暂时和谐，未触及引发冲突的根本利益或深层机制，矛盾容易复发，较不利于从根本上解决冲突，符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 4,
-              "location": "第19题B"
+              "location": "第19题B项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 5,
-              "location": "第19题解析"
+              "location": "第19题解析B项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干问“较不利于从根本解决”。B只强调和谐和各退一步，未必处理冲突原因，因此按原卷选B；A、C改善沟通与反馈，D针对资源分配矛盾。不要把“妥协永远无效”当成普遍结论。",
+          "rule_id": "RULE-MGMT-CONFLICT-COMPROMISE-01",
+          "rule_statement": "妥协策略引导双方各退一步属于权宜折中，未触及冲突深层诱因，较不利于从根本上解决组织冲突。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "强调团队整体和谐重要性，引导冲突双方各退一步，寻求新方案"
         },
         {
           "key": "C",
-          "statement": "开展定期的工作汇报和交流,建立有效的问题反馈机制",
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "C 正确:制度化。",
+          "basis": "建立常态化问题反馈与汇报交流机制，有助于及早发现并解决萌芽状态的隐患，属于源头化解措施；设问选较不利项，排除。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 4,
-              "location": "第19题C"
+              "location": "第19题C项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 5,
-              "location": "第19题解析"
+              "location": "第19题解析C项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干问“较不利于从根本解决”。B只强调和谐和各退一步，未必处理冲突原因，因此按原卷选B；A、C改善沟通与反馈，D针对资源分配矛盾。不要把“妥协永远无效”当成普遍结论。",
+          "rule_id": "RULE-MGMT-CONFLICT-FEEDBACK-01",
+          "rule_statement": "建立定期汇报与有效问题反馈机制有助于在萌芽阶段识别并解决矛盾，属于根本性化解举措。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "开展定期的工作汇报和交流，建立有效的问题反馈机制"
         },
         {
           "key": "D",
-          "statement": "根据项目进展和需求,合理调整人力、物力等资源的分配",
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "D 正确:合理调整资源可从根源缓解矛盾。",
+          "basis": "资源争夺是组织冲突的重要物质根源，合理科学调配人力物力资源能消除资源短缺或不均引发的深层矛盾，属于根本性解决措施；设问选较不利项，排除。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 4,
-              "location": "第19题D"
+              "location": "第19题D项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 5,
-              "location": "第19题解析"
+              "location": "第19题解析D项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干问“较不利于从根本解决”。B只强调和谐和各退一步，未必处理冲突原因，因此按原卷选B；A、C改善沟通与反馈，D针对资源分配矛盾。不要把“妥协永远无效”当成普遍结论。",
+          "rule_id": "RULE-MGMT-CONFLICT-RESOURCE-01",
+          "rule_statement": "合理优化调配人力、物力等资源能消除因资源争夺导致的结构性矛盾，从源头缓解组织冲突。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "根据项目进展和需求，合理调整人力、物力等资源的分配"
         }
       ]
     },
@@ -20276,116 +20276,112 @@
       "exam": "2025年上午卷",
       "number": 20,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选正确",
       "items": [
         {
           "key": "A",
-          "statement": "其病因是体内产生的热量超出满足身体的需要",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "A 错误:不是“热量超出需要”,而是散热障。",
+          "basis": "热射病的病因是体温调节中枢受损和散热障碍导致体内严重热蓄积，并非产热超出需要，病理机制表述错误。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第20题A"
+              "location": "第20题A项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 5,
-              "location": "第20题解析"
-            },
-            "external": "https://www.nhc.gov.cn/yzygj/c100067/202207/5400c058ad124d1587146c18dfdb93bc.shtml"
+              "location": "第20题解析A项"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "高温高湿与高强度体力活动是热射病的主要风险因素，选D。热射病属于危及生命的重症中暑，不能只靠喝水休息或普通退热药处理；需要迅速降温并及时求助。",
+          "rule_id": "RULE-SCI-HEAT-STROKE-PATHOLOGY-01",
+          "rule_statement": "热射病的病理机制是散热障碍与体温调节中枢衰竭导致体内严重热蓄积，而非单纯产热超出需要。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "其病因是体内产生的热量超出满足身体的需要"
         },
         {
           "key": "B",
-          "statement": "是中暑的一种表现,多喝水并休息一下即可缓解",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "B 错误:多喝水、休息不足以缓解;C 错误:应避免使用解热镇痛药,需立即物理。",
+          "basis": "热射病属于致命性重症中暑，核心体温常超过40℃伴多器官功能衰竭，单纯多喝水休息不仅无法缓解，还会延误抢救黄金期，必须立即物理降温并紧急送医救治。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第20题B"
+              "location": "第20题B项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 5,
-              "location": "第20题解析"
-            },
-            "external": "https://www.nhc.gov.cn/yzygj/c100067/202207/5400c058ad124d1587146c18dfdb93bc.shtml"
+              "location": "第20题解析B项"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "高温高湿与高强度体力活动是热射病的主要风险因素，选D。热射病属于危及生命的重症中暑，不能只靠喝水休息或普通退热药处理；需要迅速降温并及时求助。",
+          "rule_id": "RULE-SCI-HEAT-STROKE-SEVERITY-01",
+          "rule_statement": "热射病是重症中暑中的致命类型，不能仅靠多喝水和休息缓解，必须立即强制物理降温并紧急送医。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "是中暑的一种表现，多喝水并休息一下即可缓解"
         },
         {
           "key": "C",
-          "statement": "热射病患者存在高烧不退的症状,应及时使用乙酰氨基酚类等解热镇痛药物退",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "C 错误:应避免使用解热镇痛药,需立即物理。",
+          "basis": "热射病体温升高系散热衰竭所致，体温调定点未上移，对乙酰氨基酚等解热镇痛药不仅无效，且会加剧肝肾损伤与凝血障碍，属于急救禁忌用药，急救必须采用物理降温。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第20题C"
+              "location": "第20题C项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 5,
-              "location": "第20题解析"
-            },
-            "external": "https://www.nhc.gov.cn/yzygj/c100067/202207/5400c058ad124d1587146c18dfdb93bc.shtml"
+              "location": "第20题解析C项"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "高温高湿与高强度体力活动是热射病的主要风险因素，选D。热射病属于危及生命的重症中暑，不能只靠喝水休息或普通退热药处理；需要迅速降温并及时求助。",
+          "rule_id": "RULE-SCI-HEAT-STROKE-MEDICATION-CONTRAINDICATION-01",
+          "rule_statement": "热射病退热禁用对乙酰氨基酚等解热镇痛药物，因其不仅无效且会加剧肝肾损伤与出血风险，急救首选物理降温。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "热射病患者存在高烧不退的症状，应及时使用乙酰氨基酚类等解热镇痛药物退烧"
         },
         {
           "key": "D",
-          "statement": "高温高湿的气候因素和高强度体力活动是导致热射病最主要的危险因素",
           "statement_truth": true,
           "matches_stem": true,
           "verdict": "入选",
-          "basis": "D 正确:高温高湿环境和高强度体力活动是主要危险因素。",
+          "basis": "经典型与劳力型热射病的最核心诱因即为高温高湿等气候环境及高负荷体力活动，陈述完全符合医学科学原理。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第20题D"
+              "location": "第20题D项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 5,
-              "location": "第20题解析"
-            },
-            "external": "https://www.nhc.gov.cn/yzygj/c100067/202207/5400c058ad124d1587146c18dfdb93bc.shtml"
+              "location": "第20题解析D项"
+            }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "高温高湿与高强度体力活动是热射病的主要风险因素，选D。热射病属于危及生命的重症中暑，不能只靠喝水休息或普通退热药处理；需要迅速降温并及时求助。",
+          "rule_id": "RULE-SCI-HEAT-STROKE-RISK-FACTORS-01",
+          "rule_statement": "高温高湿气候环境与高强度体力活动是诱发经典型和劳力型热射病的最主要危险因素。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "高温高湿的气候因素和高强度体力活动是导致热射病最主要的危险因素"
         }
       ]
     },
@@ -20395,112 +20391,112 @@
       "exam": "2025年上午卷",
       "number": 21,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选错误",
       "items": [
         {
           "key": "A",
-          "statement": "日本侵华战争始于1937 年七七事变,结束于1945 年日本宣布无条件投降",
           "statement_truth": false,
           "matches_stem": true,
           "verdict": "入选",
-          "basis": "A将侵华起点写成1937年，故选A。",
+          "basis": "1931年九一八事变是日本帝国主义企图以武力征服中国的开端，也是中国人民抗日战争的起点；1937年七七事变是全面侵华与全民族抗战的开始，而非侵华起点，A项时间错误，符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第21题A"
+              "location": "第21题A项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 5,
-              "location": "第21题解析"
+              "location": "第21题解析第1句"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干选错误项。1931年九一八事变标志日本局部侵华与中国局部抗战开始，1937年七七事变标志全民族抗战开始；A将侵华起点写成1937年，故选A。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-HIST-ANTI-JAPANESE-WAR-START-01",
+          "rule_statement": "1931年九一八事变是日本以武力侵占中国的开端与抗战起点；1937年七七事变是全国抗战的开始。",
+          "knowledge_id": 10072,
+          "knowledge_gap": false,
+          "statement": "日本侵华战争始于1937 年七七事变，结束于1945 年日本宣布无条件投降"
         },
         {
           "key": "B",
-          "statement": "抗日战争是近代以来中国人民反抗外敌入侵持续时间最长、规模最大、牺牲最",
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "B、C、D 三项均正确,分别体现了抗日战争的历史地。",
+          "basis": "抗战是近代以来中国反抗外敌入侵持续时间最长、规模最大、牺牲最多且首次完全胜利的民族解放斗争，陈述正确；本题选错误项，排除。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第21题B"
+              "location": "第21题B项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
-              "page": 5,
-              "location": "第21题解析"
+              "page": 6,
+              "location": "第21题解析B项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干选错误项。1931年九一八事变标志日本局部侵华与中国局部抗战开始，1937年七七事变标志全民族抗战开始；A将侵华起点写成1937年，故选A。",
+          "rule_id": "RULE-HIST-ANTI-JAPANESE-WAR-SIGNIFICANCE-01",
+          "rule_statement": "抗日战争是近代以来中国人民反抗外敌入侵持续时间最长、规模最大、牺牲最多且首次取得完全胜利的民族解放斗争。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "抗日战争是近代以来中国人民反抗外敌入侵持续时间最长、规模最大、牺牲最多的民族解放斗争，也是第一次取得完全胜利的民族解放斗争"
         },
         {
           "key": "C",
-          "statement": "中国人民抗日战争是世界反法西斯战争的重要组成部分,中国人民以巨大的民",
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "题干选错误项。1931年九一八事变标志日本局部侵华与中国局部抗战开始，1937年七七事变标志全民族抗战开始；A将侵华起点写成1937年，故选A。",
+          "basis": "中国抗战是世界反法西斯战争的东方主战场，为拯救人类文明和保卫世界和平作出巨大牺牲与不可磨灭的贡献，陈述正确；本题选错误项，排除。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第21题C"
+              "location": "第21题C项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
-              "page": 5,
-              "location": "第21题解析"
+              "page": 6,
+              "location": "第21题解析C项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干选错误项。1931年九一八事变标志日本局部侵华与中国局部抗战开始，1937年七七事变标志全民族抗战开始；A将侵华起点写成1937年，故选A。",
+          "rule_id": "RULE-HIST-ANTI-JAPANESE-WAR-WORLD-CONTRIB-01",
+          "rule_statement": "中国抗战是世界反法西斯战争的东方主战场，为保卫世界和平与战胜法西斯作出了重大历史贡献。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "中国人民抗日战争是世界反法西斯战争的重要组成部分，中国人民以巨大的民族牺牲，为拯救人类文明、保卫世界和平作出了重大贡献"
         },
         {
           "key": "D",
-          "statement": "抗日战争的胜利,彻底粉碎了日本军国主义殖民奴役中国的图谋,有力捍卫了",
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "题干选错误项。1931年九一八事变标志日本局部侵华与中国局部抗战开始，1937年七七事变标志全民族抗战开始；A将侵华起点写成1937年，故选A。",
+          "basis": "抗战胜利彻底粉碎了侵略图谋并收复失地，捍卫了国家主权和领土完整，陈述正确；本题选错误项，排除。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第21题D"
+              "location": "第21题D项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
-              "page": 5,
-              "location": "第21题解析"
+              "page": 6,
+              "location": "第21题解析D项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干选错误项。1931年九一八事变标志日本局部侵华与中国局部抗战开始，1937年七七事变标志全民族抗战开始；A将侵华起点写成1937年，故选A。",
+          "rule_id": "RULE-HIST-ANTI-JAPANESE-WAR-VICTORY-EFFECT-01",
+          "rule_statement": "抗日战争的胜利彻底粉碎了日本军国主义殖民奴役中国的图谋，捍卫了国家主权和领土完整。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "抗日战争的胜利，彻底粉碎了日本军国主义殖民奴役中国的图谋，有力捍卫了国家主权和领土完整"
         }
       ]
     },
@@ -20510,112 +20506,112 @@
       "exam": "2025年上午卷",
       "number": 22,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选正确",
       "items": [
         {
           "key": "A",
-          "statement": "钟馗是佛教文化中的“伏魔尊者”,主要职责是超度亡魂",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "A将其归为佛教伏魔尊者，C说其掌生死簿，D断言为真实武将，均不符合该传说体系。",
+          "basis": "钟馗属于中国道教及民间信仰中的驱邪捉鬼神仙，不属于佛教神祇体系，主要职责是捉鬼辟邪、赐福镇宅而非超度亡魂。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第22题A"
+              "location": "第22题A项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 6,
-              "location": "第22题解析"
+              "location": "第22题解析A项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "按原卷民间传说口径选B：钟馗形象与落第、捉鬼辟邪的传说相关。A将其归为佛教伏魔尊者，C说其掌生死簿，D断言为真实武将，均不符合该传说体系。民间版本存在差异，不把传说细节当作史实。",
+          "rule_id": "RULE-CULT-ZHONGKUI-RELIGION-NATURE-01",
+          "rule_statement": "钟馗属于中国民间信仰与道教神仙体系的驱邪镇宅神祇，不属于佛教谱系。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "钟馗是佛教文化中的“伏魔尊者”，主要职责是超度亡魂"
         },
         {
           "key": "B",
-          "statement": "钟馗因相貌丑陋在科举中落榜,愤而撞柱身亡,后被唐明皇封为“赐福镇宅圣",
           "statement_truth": true,
           "matches_stem": true,
           "verdict": "入选",
-          "basis": "按原卷民间传说口径选B：钟馗形象与落第、捉鬼辟邪的传说相关。A将其归为佛教伏魔尊者，C说其掌生死簿，D断言为真实武将，均不符合该传说体系。民间版本存在差异，不把传说细节当作史实。",
+          "basis": "符合民间传说经典典故：钟馗貌丑殿试落第愤而身亡，唐玄宗梦见钟馗捉小鬼后病愈，命吴道子画钟馗像并敕封赐福镇宅圣君，陈述完全成立。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第22题B"
+              "location": "第22题B项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 6,
-              "location": "第22题解析"
+              "location": "第22题解析B项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "按原卷民间传说口径选B：钟馗形象与落第、捉鬼辟邪的传说相关。A将其归为佛教伏魔尊者，C说其掌生死簿，D断言为真实武将，均不符合该传说体系。民间版本存在差异，不把传说细节当作史实。",
+          "rule_id": "RULE-CULT-ZHONGKUI-LEGEND-ORIGIN-01",
+          "rule_statement": "民间传说中钟馗科举因貌丑落第愤死，唐玄宗梦醒后命吴道子画其像并封为赐福镇宅圣君。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "钟馗因相貌丑陋在科举中落榜，愤而撞柱身亡，后被唐明皇封为“赐福镇宅圣君”"
         },
         {
           "key": "C",
-          "statement": "钟馗最早源于汉代民间传说,主要职责是掌管地府生死簿",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "C 错误,传说源于唐代而非汉代;D。",
+          "basis": "钟馗捉鬼传说源自唐代而非汉代；掌管地府生死簿的是阴司判官崔珏而非钟馗。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第22题C"
+              "location": "第22题C项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 6,
-              "location": "第22题解析"
+              "location": "第22题解析C项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "按原卷民间传说口径选B：钟馗形象与落第、捉鬼辟邪的传说相关。A将其归为佛教伏魔尊者，C说其掌生死簿，D断言为真实武将，均不符合该传说体系。民间版本存在差异，不把传说细节当作史实。",
+          "rule_id": "RULE-CULT-ZHONGKUI-PERIOD-DUTY-01",
+          "rule_statement": "钟馗传说形成定型于唐代，其主职为辟邪除魅，非掌管地府生死簿。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "钟馗最早源于汉代民间传说，主要职责是掌管地府生死簿"
         },
         {
           "key": "D",
-          "statement": "钟馗在历史上真实存在,是唐代著名武将,因战功被封为“阎魔罗阁”",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "按原卷民间传说口径选B：钟馗形象与落第、捉鬼辟邪的传说相关。A将其归为佛教伏魔尊者，C说其掌生死簿，D断言为真实武将，均不符合该传说体系。民间版本存在差异，不把传说细节当作史实。",
+          "basis": "钟馗为民间神话与道教传说人物，并非正史中的真实武将；“阎魔罗阁”（阎罗王）属于冥界护法神汉译，二者并非一人。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第22题D"
+              "location": "第22题D项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 6,
-              "location": "第22题解析"
+              "location": "第22题解析D项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "按原卷民间传说口径选B：钟馗形象与落第、捉鬼辟邪的传说相关。A将其归为佛教伏魔尊者，C说其掌生死簿，D断言为真实武将，均不符合该传说体系。民间版本存在差异，不把传说细节当作史实。",
+          "rule_id": "RULE-CULT-ZHONGKUI-MYTH-REALITY-01",
+          "rule_statement": "钟馗为民间神话传说与道教信仰神祇，并非正史中真实存在的武将人物。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "钟馗在历史上真实存在，是唐代著名武将，因战功被封为“阎魔罗阁”"
         }
       ]
     },
@@ -20625,112 +20621,112 @@
       "exam": "2025年上午卷",
       "number": 23,
       "type": "单选",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "选正确",
       "items": [
         {
           "key": "A",
-          "statement": "U 盘分区损坏",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "A 分区损坏会导致U 盘无法读取;C 文件加密会改变扩展名;D 写保护仅限制写。",
+          "basis": "U盘分区损坏会导致盘符无法访问、提示格式化或容量显示异常，不会产生原文件被隐藏且生成同名快捷方式的特征现象。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第23题A"
+              "location": "第23题A项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 6,
-              "location": "第23题解析"
+              "location": "第23题解析A项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "原文件变成快捷方式、难以打开，是U盘快捷方式类恶意程序感染的常见表现，按题目选B。分区损坏通常影响读取，写保护限制写入；单凭这一现象仍不能完成现实中的病毒诊断。",
+          "rule_id": "RULE-TECH-STORAGE-PARTITION-DAMAGE-01",
+          "rule_statement": "存储介质分区损坏通常表现为磁盘无法识别、打不开或提示格式化，不会产生伪装快捷方式现象。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "U 盘分区损坏"
         },
         {
           "key": "B",
-          "statement": "感染了蠕虫病毒 C、文件被加密",
           "statement_truth": true,
           "matches_stem": true,
           "verdict": "入选",
-          "basis": "原文件变成快捷方式、难以打开，是U盘快捷方式类恶意程序感染的常见表现，按题目选B。分区损坏通常影响读取，写保护限制写入；单凭这一现象仍不能完成现实中的病毒诊断。",
+          "basis": "U盘文件变成快捷方式是U盘蠕虫病毒的典型破坏与传播行为：病毒将原文件修改为系统隐藏属性，同时生成同名伪装快捷方式诱导点击运行以传播病毒。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第23题B"
+              "location": "第23题B项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 6,
-              "location": "第23题解析"
+              "location": "第23题解析B项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "原文件变成快捷方式、难以打开，是U盘快捷方式类恶意程序感染的常见表现，按题目选B。分区损坏通常影响读取，写保护限制写入；单凭这一现象仍不能完成现实中的病毒诊断。",
+          "rule_id": "RULE-TECH-WORM-VIRUS-SHORTCUT-01",
+          "rule_statement": "U盘文件被隐藏并出现同名快捷方式是计算机蠕虫病毒的典型破坏特征与传播机制。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "感染了蠕虫病毒"
         },
         {
           "key": "C",
-          "statement": "文件被加密",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "C 文件加密会改变扩展名;D 写保护仅限制写。",
+          "basis": "常规文件加密表现为打开时要求输入密码，勒索加密多修改扩展名，均不会将原文件替换为恶意快捷方式。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第23题C"
+              "location": "第23题C项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 6,
-              "location": "第23题解析"
+              "location": "第23题解析C项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "原文件变成快捷方式、难以打开，是U盘快捷方式类恶意程序感染的常见表现，按题目选B。分区损坏通常影响读取，写保护限制写入；单凭这一现象仍不能完成现实中的病毒诊断。",
+          "rule_id": "RULE-TECH-FILE-ENCRYPTION-NATURE-01",
+          "rule_statement": "文件加密通常表现为要求输入凭据或更改扩展名，不会将文件替换为快捷方式。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "文件被加密"
         },
         {
           "key": "D",
-          "statement": "U 盘写保护",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "D 写保护仅限制写。",
+          "basis": "U盘写保护仅限制写入、修改和删除操作，原有文档仍可正常打开阅读，绝不可能将文件变为快捷方式。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
               "page": 5,
-              "location": "第23题D"
+              "location": "第23题D项"
             },
             "analysis_material": {
               "id": 7,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
               "page": 6,
-              "location": "第23题解析"
+              "location": "第23题解析D项"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "原文件变成快捷方式、难以打开，是U盘快捷方式类恶意程序感染的常见表现，按题目选B。分区损坏通常影响读取，写保护限制写入；单凭这一现象仍不能完成现实中的病毒诊断。",
+          "rule_id": "RULE-TECH-WRITE-PROTECTION-FEATURE-01",
+          "rule_statement": "写保护仅禁止文件写入、删除与修改，不影响已有文件读取，不会篡改为快捷方式。",
           "knowledge_id": null,
-          "knowledge_gap": true
+          "knowledge_gap": true,
+          "statement": "U 盘写保护"
         }
       ]
     },

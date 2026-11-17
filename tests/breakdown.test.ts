@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, copyFileSync, rmSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, copyFileSync, rmSync, readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import catalog from '../data/catalog.json' with { type: 'json' };
@@ -55,7 +55,7 @@ test('自动摘录和其他题目版本使用原解析；判断题有具体依�
 });
 
 test('待核对草稿不进入答题反馈，争议解析保留争议状态',()=>{
-  assert.equal(getQuestionBreakdown(18,1),null);
+  assert.equal(getQuestionBreakdown(25,1),null);
   assert.equal(getQuestionBreakdown(16,1)?.status,'争议');
 });
 
@@ -118,7 +118,8 @@ test('关联来源完整且候选不混入已确认集合',()=>{
   assert.equal(catalog.links.find(link=>link.question_id===18&&link.knowledge_id===10183)?.status,'已确认');
   const card=catalog.knowledge.find(card=>card.id===10183)!;
   assert.match(card.content,/纪要。适用于记载会议主要情况和议定事项/);
-  assert.ok(!catalog.links.some(link=>link.question_id===2||link.question_id===21||(link.question_id===6&&link.knowledge_id===10181)||(link.question_id===5&&link.knowledge_id===10181)||link.knowledge_id===10126||link.knowledge_id===10181));
+  assert.ok(!catalog.links.some(link=>link.question_id===2||(link.question_id===21&&link.knowledge_id===10181)||(link.question_id===6&&link.knowledge_id===10181)||(link.question_id===5&&link.knowledge_id===10181)||link.knowledge_id===10126||link.knowledge_id===10181));
+  assert.equal(catalog.links.find(link=>link.question_id===21&&link.knowledge_id===10072&&link.rule_id==='RULE-HIST-ANTI-JAPANESE-WAR-START-01')?.status,'已确认');
   assert.equal(catalog.links.find(link=>link.question_id===6&&link.knowledge_id===10145&&link.rule_id==='RULE-PHIL-PRACTICE-HISTORICAL-01')?.status,'已确认');
   assert.equal(catalog.links.find(link=>link.question_id===5&&link.knowledge_id===10158&&link.rule_id==='RULE-POL-DEMOCRACY-MGMT-01')?.status,'已确认');
   // 验证第一批核对新增确认关联覆盖具体规则
@@ -178,10 +179,110 @@ test('生成器实际运行且只更新第1—10题并保护第13、18题等非�
     assert.equal(updatedQ13.items[0].basis, customBasis13, '第13题人工补充内容被生成器意外覆盖！');
     assert.equal(updatedQ18.items[0].basis, customBasis18, '第18题人工补充内容被生成器意外覆盖！');
 
-    // 验证第11题待核对状态保持不变
+    // 验证第11题等非目标题与运行前记录严格一致未被修改
+    const initialQ11 = initialContent.breakdowns.find((b: any) => b.question_id === 11);
     const updatedQ11 = updatedContent.breakdowns.find((b: any) => b.question_id === 11);
-    assert.equal(updatedQ11?.status, '待核对');
+    assert.deepEqual(updatedQ11, initialQ11, '默认生成器意外修改了第11题！');
   } finally {
     rmSync(tmpDir, { recursive: true, force: true });
   }
+});
+
+test('在 CodexReview 隔离目录下真实子进程运行生成器验证参数校验、连续幂等与 336 题保护', () => {
+  const codexBase = join(tmpdir(), 'CodexReview');
+  if (!existsSync(codexBase)) mkdirSync(codexBase, { recursive: true });
+  const taskDir = mkdtempSync(join(codexBase, 'cixi-review-batch2-'));
+  writeFileSync(join(taskDir, '.review-temp'), 'CodexReview temporary test sandbox\n', 'utf8');
+
+  try {
+    const tmpBreakdownsPath = join(taskDir, 'question-breakdowns.json');
+    const tmpMdPath = join(taskDir, 'breakdowns.md');
+    const tmpCatalogPath = join(taskDir, 'catalog.json');
+
+    copyFileSync(join(process.cwd(), 'data', 'question-breakdowns.json'), tmpBreakdownsPath);
+    copyFileSync(join(process.cwd(), 'data', 'catalog.json'), tmpCatalogPath);
+
+    // 记录初始主目录文件的内容，确保测试期间主目录文件零改动
+    const originalJsonBytes = readFileSync(join(process.cwd(), 'data', 'question-breakdowns.json'));
+
+    // 1. 测试无效参数、混合非法参数、不支持题号均拒绝写入并返回非零退出码
+    const scriptPath = join(process.cwd(), 'scripts', 'build-breakdowns.py');
+    const pyCmd = process.platform === 'win32' ? 'python' : 'python3';
+    const testEnv = {
+      ...process.env,
+      CIXI_CATALOG_PATH: tmpCatalogPath,
+      CIXI_BREAKDOWNS_PATH: tmpBreakdownsPath,
+      CIXI_BREAKDOWNS_MD_PATH: tmpMdPath,
+    };
+
+    // 无效参数 abc
+    assert.throws(() => {
+      execFileSync(pyCmd, [scriptPath, 'abc'], { cwd: process.cwd(), env: testEnv, stdio: 'pipe' });
+    });
+    // 混合非法参数 11 abc
+    assert.throws(() => {
+      execFileSync(pyCmd, [scriptPath, '11', 'abc'], { cwd: process.cwd(), env: testEnv, stdio: 'pipe' });
+    });
+    // 不支持题号 9999
+    assert.throws(() => {
+      execFileSync(pyCmd, [scriptPath, '9999'], { cwd: process.cwd(), env: testEnv, stdio: 'pipe' });
+    });
+
+    // 2. 模拟人工补入非目标题的依据成果（例如第 14 题、第 26 题）
+    const initialContent = JSON.parse(readFileSync(tmpBreakdownsPath, 'utf8'));
+    const q14 = initialContent.breakdowns.find((b: any) => b.question_id === 14);
+    const q26 = initialContent.breakdowns.find((b: any) => b.question_id === 26);
+    assert.ok(q14 && q26);
+    const customBasis14 = '【人工校正】第14题物业名誉侵权责任争议复核依据';
+    const customBasis26 = '【人工校正】第26题人大代表积分制履职依据';
+    q14.items[0].basis = customBasis14;
+    q26.items[0].basis = customBasis26;
+    writeFileSync(tmpBreakdownsPath, JSON.stringify(initialContent, null, 2), 'utf8');
+
+    // 3. 在隔离环境运行目标 9 题生成器
+    const targetArgs = ['11', '12', '17', '18', '19', '20', '21', '22', '23'];
+    execFileSync(pyCmd, [scriptPath, ...targetArgs], { cwd: process.cwd(), env: testEnv, stdio: 'pipe' });
+
+    // 4. 验证 9 题已核实生成，且全部 336 条非目标题目完整保留
+    const firstRunContent = JSON.parse(readFileSync(tmpBreakdownsPath, 'utf8'));
+    assert.equal(firstRunContent.breakdowns.length, 345);
+
+    const targetSet = new Set([11, 12, 17, 18, 19, 20, 21, 22, 23]);
+    let nonTargetCount = 0;
+    for (const b of firstRunContent.breakdowns) {
+      if (targetSet.has(b.question_id)) {
+        assert.ok(b.items.length >= 4, `Target Q${b.question_id} has incomplete items`);
+        assert.ok(b.items.every((it: any) => it.rule_id && it.rule_id !== 'RULE-UNVERIFIED'));
+      } else {
+        nonTargetCount++;
+        const prev = initialContent.breakdowns.find((oldB: any) => oldB.question_id === b.question_id);
+        assert.deepEqual(b, prev, `Non-target question ${b.question_id} was modified!`);
+      }
+    }
+    assert.equal(nonTargetCount, 336, '非目标题目数量必须精确等于 336 题！');
+    assert.equal(firstRunContent.breakdowns.find((b: any) => b.question_id === 14).items[0].basis, customBasis14);
+    assert.equal(firstRunContent.breakdowns.find((b: any) => b.question_id === 26).items[0].basis, customBasis26);
+
+    // 5. 验证连续运行两次，结果保持 100% 幂等一致
+    execFileSync(pyCmd, [scriptPath, ...targetArgs], { cwd: process.cwd(), env: testEnv, stdio: 'pipe' });
+    const secondRunContent = JSON.parse(readFileSync(tmpBreakdownsPath, 'utf8'));
+    assert.deepEqual(firstRunContent, secondRunContent, '生成器连续运行两次结果不一致（非幂等）！');
+
+    // 6. 验证测试期间主目录真实数据文件未被修改
+    const currentJsonBytes = readFileSync(join(process.cwd(), 'data', 'question-breakdowns.json'));
+    assert.deepEqual(currentJsonBytes, originalJsonBytes, '主目录文件在隔离测试期间被污染！');
+  } finally {
+    rmSync(taskDir, { recursive: true, force: true });
+  }
+});
+
+test('第二批9题（第11、12、17—23题）逐项依据有效且符合设问极性', () => {
+  const targetIds = [11, 12, 17, 18, 19, 20, 21, 22, 23];
+  for (const qid of targetIds) {
+    const q = catalog.questions.find(item => item.id === qid);
+    assert.equal(q?.status, '已核对');
+  }
+  assert.equal(catalog.links.find(l => l.question_id === 21 && l.knowledge_id === 10072)?.status, '已确认');
+  assert.equal(catalog.links.find(l => l.question_id === 17 && l.knowledge_id === 20070)?.status, '已确认');
+  assert.equal(catalog.links.find(l => l.question_id === 18 && l.knowledge_id === 10183)?.status, '已确认');
 });

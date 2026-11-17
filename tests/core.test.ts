@@ -60,7 +60,7 @@ test('逐项解析随当时的作答保存，旧快照和用户修订使用各�
 });
 test('待核对题目即使具有完整草稿，作答也只返回原解析',async()=>{
   const {call}=database();
-  const result=await call('POST','/attempt',submission(18,'D'));
+  const result=await call('POST','/attempt',submission(25,'C'));
   assert.equal(result.breakdown,undefined);
   assert.ok(result.analysis);
 });
