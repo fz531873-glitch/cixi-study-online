@@ -226,7 +226,7 @@ export default function Study({userName}:{userName:string}) {
   const categoryKnowledge=data.knowledge.filter(k=>k.category===knowledge.category);
   const visibleKnowledge=categoryKnowledge.filter(k=>!search.trim()||k.title.includes(search.trim())||k.content.includes(search.trim()));
   const learningCategory=p.knowledgeScope!=='point', categoryIndex=categoryKnowledge.findIndex(k=>k.id===p.knowledgeId);
-  const related=data.links.filter(l=>l.knowledge_id===p.knowledgeId&&l.status==='已确认').map(l=>data.questions.find(q=>q.id===l.question_id)!).filter(Boolean);
+  const related=[...new Map(data.links.filter(l=>l.knowledge_id===p.knowledgeId&&l.status==='已确认').map(l=>[l.question_id, data.questions.find(q=>q.id===l.question_id)!])).values()].filter(Boolean);
   const date=daily?.date||data.today;
   const reviews=data.reviews.filter(r=>r.kind==='question'?data.questions.some(q=>q.id===r.item_id&&q.status!=='争议'):data.knowledge.some(k=>k.id===r.item_id));
   const due=reviews.filter(r=>r.due_date<=date);
@@ -517,7 +517,7 @@ export default function Study({userName}:{userName:string}) {
           <p className="source">{questionSource} · <a href={pdf(result.analysis_material,result.analysis_page)} target="_blank" rel="noreferrer">{question.kind==='模拟题'?'关联真题解析':'解析原文'}第{result.analysis_page}页</a></p>
           {result.references?.map(r=><p className="source" key={r.url}><a href={r.url} target="_blank" rel="noreferrer">{r.title}</a></p>)}
           {!reviewingQuestion&&<div className="buttons">
-            {data.links.filter(l=>l.question_id===p.questionId&&l.status==='已确认').map(l=><button className="text-link" key={l.knowledge_id} onClick={()=>chooseK(l.knowledge_id)}>{data.knowledge.find(k=>k.id===l.knowledge_id)?.title} <ArrowRight size={16}/></button>)}
+            {[...new Map(data.links.filter(l=>l.question_id===p.questionId&&l.status==='已确认').map(l=>[l.knowledge_id, l])).values()].map(l=><button className="text-link" key={l.knowledge_id} onClick={()=>chooseK(l.knowledge_id)}>{data.knowledge.find(k=>k.id===l.knowledge_id)?.title} <ArrowRight size={16}/></button>)}
             <button className="text-link" onClick={()=>{tabTo('资料纠错');setEditKind('question');setEditor(null)}}>解析有疑问</button>
           </div>}
         </details>

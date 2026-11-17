@@ -36,8 +36,8 @@ test('345道真题稿件覆盖全部题号、版本号与资料页码定位', ()
       assert.ok(item.statement?.length, `${q.id}:${item.key} 缺少原题陈述`);
       assert.ok(item.basis.length > 0);
       assert.ok(item.rule_statement.length > 0);
-      assert.equal(item.source_ref.question_material.page,q.source_page);
-      assert.equal(item.source_ref.analysis_material.page,q.analysis_page);
+      assert.ok(item.source_ref.question_material.page >= q.source_page && item.source_ref.question_material.page <= q.source_page + 1, `${q.id}:${item.key} 原题页码 ${item.source_ref.question_material.page} 超出跨页范围 [${q.source_page}, ${q.source_page + 1}]`);
+      assert.ok(item.source_ref.analysis_material.page >= q.analysis_page && item.source_ref.analysis_material.page <= q.analysis_page + 1, `${q.id}:${item.key} 解析页码 ${item.source_ref.analysis_material.page} 超出跨页范围 [${q.analysis_page}, ${q.analysis_page + 1}]`);
     }
   }
 });
@@ -109,10 +109,16 @@ test('同规则换题识别与同卡不同规则反例', () => {
 });
 
 test('关联来源完整且候选不混入已确认集合',()=>{
-  assert.equal(new Set(catalog.links.map(link=>`${link.question_id}:${link.knowledge_id}`)).size,catalog.links.length);
+  assert.equal(new Set(catalog.links.map(link=>`${link.question_id}:${link.knowledge_id}:${link.rule_id}`)).size,catalog.links.length);
   assert.ok(catalog.links.every(link=>link.rule_id&&link.source_ref.question_material.page>0&&link.source_ref.analysis_material.page>0));
   assert.equal(catalog.links.find(link=>link.question_id===18&&link.knowledge_id===10183)?.status,'已确认');
   const card=catalog.knowledge.find(card=>card.id===10183)!;
   assert.match(card.content,/纪要。适用于记载会议主要情况和议定事项/);
   assert.ok(!catalog.links.some(link=>link.question_id===2||link.question_id===21||link.question_id===6||link.knowledge_id===10126||link.knowledge_id===10181));
+  // 验证第一批核对新增确认关联覆盖具体规则
+  assert.equal(catalog.links.find(link=>link.question_id===7&&link.knowledge_id===20050)?.status,'已确认');
+  assert.equal(catalog.links.find(link=>link.question_id===7&&link.knowledge_id===10144&&link.rule_id==='RULE-PHIL-DIALECTICAL-NEGATION-01')?.status,'已确认');
+  assert.equal(catalog.links.find(link=>link.question_id===8&&link.knowledge_id===10145&&link.rule_id==='RULE-PHIL-PRODUCTIVITY-TOOL-01')?.status,'已确认');
+  assert.equal(catalog.links.find(link=>link.question_id===9&&link.knowledge_id===20040&&link.rule_id==='RULE-ECON-MONETARY-TIGHT-01')?.status,'已确认');
+  assert.equal(catalog.links.find(link=>link.question_id===3&&link.knowledge_id===10158&&link.rule_id==='RULE-POL-ETHNIC-RELATIONS-01')?.status,'已确认');
 });

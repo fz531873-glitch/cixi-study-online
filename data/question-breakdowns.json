@@ -18075,10 +18075,10 @@
       "items": [
         {
           "key": "①",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "严格纠正不作为属于行政执法监督规范要求，与题干整治形式主义以“为基层松绑减负”的核心主旨不完全契合。",
+          "basis": "坚决纠正不作为、乱作为属于严格规范行政执法的要求，陈述成立；但题干设问针对的是整治形式主义、为基层松绑减负的举措，执法监督不属该专项直接对策，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18101,10 +18101,10 @@
         },
         {
           "key": "②",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "规范执法公开属于政务公开与法治政府建设要求，非基层松绑减负的靶向举措。",
+          "basis": "规范执法、公开透明属于推进政务公开和法治政府建设的要求，陈述成立；但并非针对基层形式主义困扰的松绑减负靶向举措，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18299,7 +18299,7 @@
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
-              "page": 1,
+              "page": 2,
               "location": "第3题陈述④"
             },
             "analysis_material": {
@@ -18380,10 +18380,10 @@
         },
         {
           "key": "C",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "铸牢中华民族共同体意识主要针对民族工作与民族团结领域，不作为粤港澳特区经贸科技协同发展的核心主旨。",
+          "basis": "铸牢中华民族共同体意识是新时代党的民族工作主线，原理陈述成立；但粤港澳大湾区战略着眼于内地与港澳特区的跨境体制机制对接与协同发展，并非针对民族工作领域，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18469,10 +18469,10 @@
         },
         {
           "key": "B",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "民主协商侧重多方平等对话沟通寻求共识（如政协协商），规划制定前公开征集建言对应民主决策。",
+          "basis": "民主协商是社会主义协商民主的重要实现形式，陈述成立；但重大发展规划在起草阶段面向全社会公开征集公众建言献策，属于公民参与民主决策，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18495,10 +18495,10 @@
         },
         {
           "key": "C",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "民主管理主要指基层群众在村委会、居委会或企事业单位中参与自我管理自治事务，与国家五年规划编制性质不符。",
+          "basis": "民主管理主要指基层群众自治组织和企事业单位中群众对自身公共事务的自我管理，陈述成立；与国家五年规划编制的性质不符，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18521,10 +18521,10 @@
         },
         {
           "key": "D",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "民主监督侧重对国家公权力行使和政策执行情况进行评价、批评与监督纠偏，征集建言发生在决策前。",
+          "basis": "民主监督的核心功能是公民对国家机关及其公职人员行使公权力和履行法定职责进行批评、建议、监督与纠偏，陈述成立；题干中面向社会公开征求规划编制的建言献策属于为公共政策制定提供民意民智支持的民主决策，不属于监督纠偏公权力履职，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18540,7 +18540,7 @@
             }
           },
           "rule_id": "RULE-POL-DEMOCRACY-SUPERVISION-01",
-          "rule_statement": "民主监督侧重对国家公权力行使和政策执行情况进行评价、批评与监督纠偏。",
+          "rule_statement": "民主监督侧重对国家机关及其工作人员行使公权力和履行职责进行监督与纠偏，规划起草征集公众建言属于民主决策。",
           "knowledge_id": null,
           "knowledge_gap": true,
           "statement": "民主监督"
@@ -18558,10 +18558,10 @@
       "items": [
         {
           "key": "A",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "题干体现的是人们生活方式与审美时尚的变迁，不涉及主客观条件限制下真理探索过程的反复曲折。",
+          "basis": "认识具有反复性指认识受主客观条件限制需经过多次反复才能达到真理，原理陈述成立；但题干体现的是人们生活方式与审美时尚的变迁，不涉及认识过程的反复曲折，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18584,10 +18584,10 @@
         },
         {
           "key": "B",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "题干展现的是当代年轻人面对快节奏生活普遍复兴亲近自然与簪花时尚，未强调不同群体之间价值评判的截然对立与差异。",
+          "basis": "价值判断与价值选择具有主体差异性原理成立；但题干展现的是当代年轻人面对快节奏生活普遍复兴亲近自然与簪花时尚，反映群体共性追求，未体现不同主体间价值评判的截然对立与差异，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18636,10 +18636,10 @@
         },
         {
           "key": "D",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "题干对比古今的主旨在于揭示快节奏都市生活条件驱动了审美观念和生活理念的变化，核心落脚点在客观生活环境决定意识观念，而非比较实践活动形式。",
+          "basis": "实践的社会历史性原理成立；但题干主旨落脚于快节奏都市生活条件驱动了生活理念和审美时尚变化，最直接体现社会存在决定社会意识，D项不符合设问最主要体现的哲理。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18720,10 +18720,10 @@
         },
         {
           "key": "②",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "题干强调的是面向未来全面布局科技攻关与体制改革，未展开论述新旧事物之间保留与扬弃的辩证否定过程。",
+          "basis": "辩证的否定是事物联系和发展的环节，其实质是扬弃，哲学陈述成立；但题干强调面向未来全面布局科技攻关与体制改革，未重点展开论述辩证否定中关于旧事物向新事物发展及扬弃的过程，不符合材料设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -18740,8 +18740,8 @@
           },
           "rule_id": "RULE-PHIL-DIALECTICAL-NEGATION-01",
           "rule_statement": "辩证否定是事物联系和发展的环节其实质是扬弃；科技会议工作部署未重点体现辩证否定的发展环节。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 10144,
+          "knowledge_gap": false,
           "statement": "辩证的否定是事物发展的环节"
         },
         {
@@ -18829,8 +18829,8 @@
           },
           "rule_id": "RULE-PHIL-PRODUCTIVITY-TOOL-01",
           "rule_statement": "生产工具是生产力发展水平的客观标志；劳动者是生产力中最活跃的主导因素；二者地位不能混淆。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 10145,
+          "knowledge_gap": false,
           "statement": "人的劳动能力是生产水平的标志，也是最活跃的主导因素"
         },
         {
@@ -18855,8 +18855,8 @@
           },
           "rule_id": "RULE-PHIL-PRODUCTIVITY-RELATION-01",
           "rule_statement": "生产力决定生产关系，生产力状况决定生产关系性质，生产力的发展变化必然引起生产关系的变革。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 10145,
+          "knowledge_gap": false,
           "statement": "生产力发展水平决定生产关系的性质，生产力变化最终导致生产关系变革"
         },
         {
@@ -18881,8 +18881,8 @@
           },
           "rule_id": "RULE-PHIL-PRODUCTIVITY-RELATION-01",
           "rule_statement": "生产关系对生产力具有能动的反作用，落后的生产关系会阻碍生产力的发展。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 10145,
+          "knowledge_gap": false,
           "statement": "“封建土地制阻碍工业资本扩张”体现了生产关系对生产力的反作用"
         },
         {
@@ -18932,7 +18932,7 @@
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
-              "page": 2,
+              "page": 3,
               "location": "第9题A项"
             },
             "analysis_material": {
@@ -18950,15 +18950,15 @@
         },
         {
           "key": "B",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "提高法定存款准备金率会减少商业银行可贷资金，收紧流动性，属于紧缩性货币政策。",
+          "basis": "提高法定存款准备金率是规范的货币政策工具，陈述成立；它会减少商业银行可贷资金，收紧流动性，属于紧缩性货币政策，题干要求选扩张性货币政策工具，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
-              "page": 2,
+              "page": 3,
               "location": "第9题B项"
             },
             "analysis_material": {
@@ -18970,21 +18970,21 @@
           },
           "rule_id": "RULE-ECON-MONETARY-TIGHT-01",
           "rule_statement": "提高存款准备金率属于紧缩性货币政策，收紧市场流动性。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 20040,
+          "knowledge_gap": false,
           "statement": "提高法定存款准备金率"
         },
         {
           "key": "C",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "发行央行票据回笼货币会直接减少市场基础货币，属于紧缩性货币政策。",
+          "basis": "央行发行票据回笼货币是规范的公开市场操作，陈述成立；但该操作直接减少市场基础货币，属于紧缩性政策工具，题干要求选扩张性货币政策工具，不符合设问。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
-              "page": 2,
+              "page": 3,
               "location": "第9题C项"
             },
             "analysis_material": {
@@ -19005,12 +19005,12 @@
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "“存贷比基准利率”用语不规范（存贷比是监管指标而非利率），且上调利率通常偏向紧缩而非扩张。",
+          "basis": "“存贷比”是商业银行流动性监管指标而非利率指标，不存在“存贷比基准利率”政策工具，且上调利率通常偏向紧缩而非扩张，用语不规范且陈述不成立，排除。",
           "source_ref": {
             "question_material": {
               "id": 8,
               "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
-              "page": 2,
+              "page": 3,
               "location": "第9题D项"
             },
             "analysis_material": {
@@ -20766,8 +20766,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "资料答案A抓住了“装满货物后质量更大、惯性更大、改变运动状态更困难”。但题干又说启动后空车反而更费力，这一点仅凭惯性无法推出，可能涉及阻力等未说明条件。",
-          "knowledge_id": 10077,
-          "knowledge_gap": false,
+          "knowledge_id": null,
+          "knowledge_gap": true,
           "dispute_note": "后半段现象与原解析论证不完整，保留A作为资料答案，暂不计掌握。"
         },
         {
@@ -20793,8 +20793,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "资料答案A抓住了“装满货物后质量更大、惯性更大、改变运动状态更困难”。但题干又说启动后空车反而更费力，这一点仅凭惯性无法推出，可能涉及阻力等未说明条件。",
-          "knowledge_id": 10077,
-          "knowledge_gap": false,
+          "knowledge_id": null,
+          "knowledge_gap": true,
           "dispute_note": "后半段现象与原解析论证不完整，保留A作为资料答案，暂不计掌握。"
         },
         {
@@ -20820,8 +20820,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "资料答案A抓住了“装满货物后质量更大、惯性更大、改变运动状态更困难”。但题干又说启动后空车反而更费力，这一点仅凭惯性无法推出，可能涉及阻力等未说明条件。",
-          "knowledge_id": 10077,
-          "knowledge_gap": false,
+          "knowledge_id": null,
+          "knowledge_gap": true,
           "dispute_note": "后半段现象与原解析论证不完整，保留A作为资料答案，暂不计掌握。"
         },
         {
@@ -20847,8 +20847,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "资料答案A抓住了“装满货物后质量更大、惯性更大、改变运动状态更困难”。但题干又说启动后空车反而更费力，这一点仅凭惯性无法推出，可能涉及阻力等未说明条件。",
-          "knowledge_id": 10077,
-          "knowledge_gap": false,
+          "knowledge_id": null,
+          "knowledge_gap": true,
           "dispute_note": "后半段现象与原解析论证不完整，保留A作为资料答案，暂不计掌握。"
         }
       ]
@@ -21353,8 +21353,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "题干要求选错误说法，选ABD。A把切脉说成触摸各处皮肤；B将李时珍的《本草纲目》误写成华佗所著的第一部药物学专著；D把天然药物当作无毒副作用。C是针灸的基本描述。",
-          "knowledge_id": 10116,
-          "knowledge_gap": false
+          "knowledge_id": null,
+          "knowledge_gap": true
         },
         {
           "key": "B",
@@ -21379,8 +21379,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "题干要求选错误说法，选ABD。A把切脉说成触摸各处皮肤；B将李时珍的《本草纲目》误写成华佗所著的第一部药物学专著；D把天然药物当作无毒副作用。C是针灸的基本描述。",
-          "knowledge_id": 10116,
-          "knowledge_gap": false
+          "knowledge_id": null,
+          "knowledge_gap": true
         },
         {
           "key": "C",
@@ -21405,8 +21405,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "题干要求选错误说法，选ABD。A把切脉说成触摸各处皮肤；B将李时珍的《本草纲目》误写成华佗所著的第一部药物学专著；D把天然药物当作无毒副作用。C是针灸的基本描述。",
-          "knowledge_id": 10116,
-          "knowledge_gap": false
+          "knowledge_id": null,
+          "knowledge_gap": true
         },
         {
           "key": "D",
@@ -21431,8 +21431,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "题干要求选错误说法，选ABD。A把切脉说成触摸各处皮肤；B将李时珍的《本草纲目》误写成华佗所著的第一部药物学专著；D把天然药物当作无毒副作用。C是针灸的基本描述。",
-          "knowledge_id": 10116,
-          "knowledge_gap": false
+          "knowledge_id": null,
+          "knowledge_gap": true
         }
       ]
     },
@@ -21657,8 +21657,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "民族区域自治制度的核心内容是依法行使自治权，题干表述正确，选A。辨析时把制度核心与国家统一领导这一前提分开。",
-          "knowledge_id": 10158,
-          "knowledge_gap": false
+          "knowledge_id": null,
+          "knowledge_gap": true
         }
       ]
     },
@@ -21694,8 +21694,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "只重留痕、不重实际成效，割裂过程与效果的联系，体现片面、孤立地看问题，按原卷判正确选A。",
-          "knowledge_id": 10144,
-          "knowledge_gap": false
+          "knowledge_id": null,
+          "knowledge_gap": true
         }
       ]
     },
@@ -21917,8 +21917,8 @@
           },
           "rule_id": "RULE-UNVERIFIED",
           "rule_statement": "劳动合同一年以上不满三年，试用期上限是两个月，题干写成三个月，因此判错选D。三个常见上限为：三个月至不满一年1个月；一年至不满三年2个月；三年以上及无固定期限6个月。",
-          "knowledge_id": 10043,
-          "knowledge_gap": false
+          "knowledge_id": null,
+          "knowledge_gap": true
         }
       ]
     },

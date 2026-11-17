@@ -59,8 +59,22 @@ export async function content(db: D1Database, user: string) {
   return {questions: [...q.values()], knowledge: [...k.values()]};
 }
 async function decisions(db: D1Database, user: string) {
-  const result = new Map(catalog.links.map(l => [l.knowledge_id+'-'+l.question_id, {...l}]));
-  for (const l of await rows(db, 'SELECT * FROM link_decision WHERE user_id=?', user)) result.set(l.knowledge_id+'-'+l.question_id, {...l} as any);
+  const result = new Map(catalog.links.map(l => {
+    const link = l as { knowledge_id: number; question_id: number; rule_id?: string };
+    return [link.knowledge_id + '-' + link.question_id + (link.rule_id ? '-' + link.rule_id : ''), { ...l }];
+  }));
+  for (const l of await rows(db, 'SELECT * FROM link_decision WHERE user_id=?', user)) {
+    let matched = false;
+    for (const [key, item] of result.entries()) {
+      if ((item as any).knowledge_id === l.knowledge_id && (item as any).question_id === l.question_id) {
+        result.set(key, { ...item, ...l });
+        matched = true;
+      }
+    }
+    if (!matched) {
+      result.set(l.knowledge_id + '-' + l.question_id, { ...l } as any);
+    }
+  }
   return [...result.values()];
 }
 function checkAnswer(type: string, value: string) {
