@@ -354,6 +354,14 @@ def main() -> None:
             **({"combination_map": comb_map} if comb_map else {}),
             "items": items,
         }
+        if is_disputed:
+            entry["status"] = "待核对"
+            for item in entry["items"]:
+                item["statement_truth"] = None
+                item["matches_stem"] = None
+                item["verdict"] = "存疑"
+                item["dispute_note"] = item.get("dispute_note") or item["basis"]
+                item["rule_id"] = "RULE-UNVERIFIED"
         breakdowns.append(entry)
 
     OUT_JSON.write_text(
