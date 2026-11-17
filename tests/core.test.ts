@@ -31,7 +31,22 @@ test('535题都有判断依据；原345题及2019年题型和来源不变',()=>{
 test('未登录拒绝；列表不会泄露答案、直解或争议说明',async()=>{
   const {call}=database();await assert.rejects(call('GET','/bootstrap',undefined,''),/登录/);
   const b=await call('GET','/bootstrap');assert.equal(b.questions.length,535);
-  for(const q of b.questions)for(const field of ['answer','analysis','direct','note'])assert.ok(!(field in q));
+  for(const q of b.questions)for(const field of ['answer','analysis','direct','note','breakdown'])assert.ok(!(field in q));
+});
+test('逐项解析随当时的作答保存，旧快照和用户修订使用各自的原解析',async()=>{
+  const {call,sqlite}=database();
+  const result=await call('POST','/attempt',submission(13,'B'));
+  assert.equal(result.breakdown.question_id,13);
+  assert.deepEqual((await call('GET','/attempt/'+result.id)).breakdown,result.breakdown);
+  const editor=await call('GET','/editor/question/13');
+  assert.deepEqual(editor.breakdown,result.breakdown);
+  await call('POST','/edit',{kind:'question',itemId:13,version:editor.version,payload:{...editor,answer:'A'},reason:'测试修改依据'});
+  assert.equal((await call('GET','/editor/question/13')).breakdown,null);
+  assert.equal((await call('POST','/attempt',submission(13,'A'))).breakdown,undefined);
+  const {breakdown,...previous}=JSON.parse((sqlite.prepare('SELECT snapshot FROM attempt WHERE id=?').get(result.id) as {snapshot:string}).snapshot);
+  sqlite.prepare('UPDATE attempt SET snapshot=? WHERE id=?').run(JSON.stringify(previous),result.id);
+  assert.equal((await call('GET','/attempt/'+result.id)).breakdown,undefined);
+  assert.equal((await call('GET','/editor/question/23003')).breakdown,null);
 });
 test('单选、多选、判断正确判定，非法组合和重复答案被拒绝',async()=>{
   const {call}=database();for(const a of [submission(13,'D'),submission(19031,'DCA'),submission(19037,'D')])assert.equal((await call('POST','/attempt',a)).correct,true);

@@ -4,6 +4,7 @@ import simulations from '../data/simulations.json' with { type: 'json' };
 import { memorySnapshot, Rating, reviewMemory, today } from './memory.ts';
 import { storedMistakeReasons } from './mistake-reasons.ts';
 import { reviewBatchLimit, type ReviewBatch } from './review-batch.ts';
+import { breakdownSchema, getQuestionBreakdown } from './breakdown-data.ts';
 
 export { today };
 
@@ -24,6 +25,7 @@ const questionEdit = z.object({body: z.string().trim().min(10).max(16000), answe
   analysis: z.string().trim().min(10).max(30000), direct: z.string().trim().min(12).max(3000),
   type: z.enum(['单选', '多选', '判断']), status, note: z.string().max(3000),
   source_page: id.max(500), analysis_page: id.max(500)});
+const questionSnapshot=questionEdit.extend({breakdown:breakdownSchema.optional()});
 const knowledgeEdit = z.object({title: short, content: z.string().trim().min(5).max(20000),
   question: short, status, source: short, page: id.max(500)});
 const reviewBatchSchema: z.ZodType<ReviewBatch> = z.object({
@@ -77,13 +79,13 @@ async function schedule(db: D1Database, user: string, kind: 'question' | 'knowle
       memory=excluded.memory`)
     .bind(user, kind, item, next.dueDate, next.memory, previous?.memory ?? null);
 }
-function stripAnswer(q: any) { const {answer, analysis, direct, references, note, ...visible} = q; return visible; }
+function stripAnswer(q: any) { const {answer, analysis, direct, references, note, breakdown, ...visible} = q; return visible; }
 const attemptSchema = z.object({questionId: id, answer, confidence: z.enum(['确定','犹豫','猜的']), requestId: z.string().uuid()});
 const dateString = z.string().refine(s => !isNaN(Date.parse(s)), '日期无效');
 const backups = z.object({format: z.literal('cixi-study-v1'), version: z.literal('1.0.0'), exported_at: dateString,
   catalog: z.object({version: z.literal('1.0.0'), questions: z.array(z.object({id})).min(seed.questions.length).max(catalog.questions.length), knowledge: z.array(z.object({id})).min(seed.knowledge.length).max(catalog.knowledge.length)}).passthrough(),
   records: z.object({
-    attempt: z.array(z.object({id: z.string().uuid(), question_id: id, answer, confidence: z.enum(['确定','犹豫','猜的']), correct: z.number().int().min(0).max(1), disputed: z.number().int().min(0).max(1), error_reason: z.string().max(400), kind: z.enum(['首次','重复']), snapshot: z.string().max(50000).refine(s=>{try{return questionEdit.safeParse(JSON.parse(s)).success}catch{return false}}, '作答快照无效'), created_at: dateString})).max(10000),
+    attempt: z.array(z.object({id: z.string().uuid(), question_id: id, answer, confidence: z.enum(['确定','犹豫','猜的']), correct: z.number().int().min(0).max(1), disputed: z.number().int().min(0).max(1), error_reason: z.string().max(400), kind: z.enum(['首次','重复']), snapshot: z.string().max(50000).refine(s=>{try{return questionSnapshot.safeParse(JSON.parse(s)).success}catch{return false}}, '作答快照无效'), created_at: dateString})).max(10000),
     recall: z.array(z.object({id: z.string().uuid(), knowledge_id: id, rating: z.enum(['记住了','记住一部分','还没记住']), created_at: dateString})).max(10000),
     review: z.array(z.object({kind: z.enum(['question','knowledge']), item_id: id, due_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), stage: z.number().int().min(0).max(3), memory: memorySnapshot.nullish()})).max(contentLimit),
     progress: z.array(z.object({payload: z.string().max(12000).refine(s=>{try{return progressSchema.safeParse(JSON.parse(s)).success}catch{return false}}), updated_at: dateString})).max(1),
@@ -121,15 +123,17 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
       return {...JSON.parse(existing.snapshot), id:existing.id, questionId:existing.question_id, correct:!!existing.correct, disputed:!!existing.disputed};
     }
     const normalized = [...a.answer].sort().join(''), correct = normalized === [...q.answer].sort().join(''), disputed = q.status === '争议';
+    const breakdown = getQuestionBreakdown(q.id, q.version);
+    const snapshotObj = breakdown ? {...q, breakdown} : q;
     const statements = [db.prepare("INSERT INTO attempt(id,user_id,question_id,answer,confidence,correct,disputed,kind,snapshot,created_at) SELECT ?,?,?,?,?,?,?,CASE WHEN EXISTS(SELECT 1 FROM attempt WHERE user_id=? AND question_id=?) THEN '重复' ELSE '首次' END,?,?")
-      .bind(a.requestId,user,q.id,normalized,a.confidence,Number(correct),Number(disputed),user,q.id,JSON.stringify(q),now)];
+      .bind(a.requestId,user,q.id,normalized,a.confidence,Number(correct),Number(disputed),user,q.id,JSON.stringify(snapshotObj),now)];
     if (!disputed) {
       const grade = !correct || a.confidence==='猜的' ? Rating.Again : a.confidence==='犹豫' ? Rating.Hard : Rating.Good;
       const review = await schedule(db,user,'question',q.id,grade,now);
       if (review) statements.push(review);
     }
     await db.batch(statements);
-    return {...q,id:a.requestId,questionId:q.id,correct,disputed};
+    return {...snapshotObj,id:a.requestId,questionId:q.id,correct,disputed};
   }
   if (method === 'POST' && path === '/reason') {
     const a = z.object({id:z.string().uuid(), reason:z.enum(storedMistakeReasons)}).parse(input);
@@ -155,7 +159,7 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
   if (method === 'GET' && /^\/editor\/question\/\d+$/.test(path)) {
     const {questions} = await content(db,user), q = questions.find(q=>q.id===Number(path.split('/').pop()));
     if (!q) throw new InputError('题目不存在',404);
-    return q;
+    return {...q, breakdown: getQuestionBreakdown(q.id, q.version)};
   }
   if (method === 'POST' && path === '/edit') {
     const a = z.object({kind:z.enum(['question','knowledge']), itemId:id, version:id, payload:z.unknown(), reason:short}).parse(input);

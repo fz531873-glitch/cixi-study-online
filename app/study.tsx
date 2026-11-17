@@ -9,6 +9,7 @@ import type {Progress} from '../lib/study';
 import {dailyQuote} from '../lib/daily-quote';
 import {dailyPlan} from '../lib/daily-plan';
 import {explanationParts} from '../lib/explanation';
+import {buildAnswerFeedback, type AnswerFeedback, type QuestionBreakdown} from '../lib/breakdown';
 import {mistakeReasons, storedMistakeReasons} from '../lib/mistake-reasons';
 import {formatQuestionAnalysis, formatQuestionText, optionLetters, questionSummary, splitQuestionOptions} from '../lib/question-options';
 import {mixedCounts, questionsForMix, questionsForPaper, questionTypes, sampleQuestions} from '../lib/practice-selection';
@@ -18,8 +19,8 @@ type K = {id:number; title:string; category:string; chapter:string; module:strin
 type Link = {knowledge_id:number; question_id:number; status:string; reason:string};
 type Attempt = {id:string; question_id:number; answer:string; confidence:string; correct:number; disputed:number; error_reason:string; kind:string; created_at:string};
 type Boot = {questions:Q[]; knowledge:K[]; links:Link[]; materials:{id:number;name:string;url:string}[]; reviews:(ReviewItem&{due_date:string;stage:number})[]; attempts:Attempt[]; recalls:{knowledge_id:number;first_at:string;last_at:string}[]; progress:Progress|null; progress_updated_at?:string; today:string};
-type Result = Omit<Q,'id'> & {id:string; questionId:number; correct:boolean; disputed:boolean; answer:string; direct:string; analysis:string; references:{title:string;url:string}[]};
-type Preview = Q & {answer:string; direct:string; analysis:string};
+type Result = Omit<Q,'id'> & {id:string; questionId:number; correct:boolean; disputed:boolean; answer:string; direct:string; analysis:string; references:{title:string;url:string}[]; breakdown?:QuestionBreakdown|null};
+type Preview = Q & {answer:string; direct:string; analysis:string; breakdown?:QuestionBreakdown|null};
 const confidenceLevels = ['确定','犹豫','猜的'] as const;
 type Submission = {questionId:number; answer:string; confidence:typeof confidenceLevels[number]; requestId:string};
 const initial:Progress = {tab:'今日学习',knowledgeId:20002,questionId:13,answer:[],confidence:'未选择',mode:'全部',queue:[],exam:'2025年上午卷',submittedId:null,knowledgeScope:'category'};
@@ -32,12 +33,37 @@ const reviewTab=(item:ReviewItem)=>item.kind==='question'?'真题练习':'知识
 const tabName=(tab:string)=>tab==='真题练习'?'题库练习':tab;
 const categoryNames:Record<string,string>={'经济学':'经济','管理学':'管理','马克思主义原理':'马原'};
 const categoryName=(category:string)=>categoryNames[category]||category;
-function QuestionExplanation({direct,analysis,children}:{direct:string;analysis:string;children?:ReactNode}) {
+function BreakdownDetails({feedback,status}:{feedback:AnswerFeedback;status:QuestionBreakdown['status']}) {
+  return <details className="breakdown-details">
+    <summary>逐项讲解{status==='待核对'?'（待核对）':''}</summary>
+    <div className="breakdown-box">
+      <p className="direct"><b>{feedback.headline}</b>：{feedback.summary}</p>
+      {feedback.sections.map(sec=><div key={sec.title}>
+        <p className="source"><b>{sec.title}</b></p>
+        {sec.items.map(item=><div className="breakdown-item" key={item.key}>
+          <p><b>{item.key}</b> · {item.statement}</p>
+          <p>{item.verdict}（{item.statement_truth===null?'陈述存疑':item.statement_truth?'陈述成立':'陈述不成立'} / {item.matches_stem===null?'设问存疑':item.matches_stem?'符合设问':'不符合设问'}）</p>
+          <p>{item.basis}</p>
+          {item.dispute_note&&<p className="notice">{item.dispute_note}</p>}
+          <p className="source">规则：{item.rule_statement}（{item.rule_id}{item.knowledge_gap?' · 知识卡缺口':item.knowledge_id?' · 知识卡 #'+item.knowledge_id:''}）</p>
+          <p className="source">定位：原题第{item.source_ref.question_material.page}页（{item.source_ref.question_material.location}） / 解析第{item.source_ref.analysis_material.page}页（{item.source_ref.analysis_material.location}）</p>
+        </div>)}
+      </div>)}
+    </div>
+  </details>;
+}
+function QuestionExplanation({direct,analysis,breakdown,userAnswer,correctAnswer,children}:{direct:string;analysis:string;breakdown?:QuestionBreakdown|null;userAnswer?:string;correctAnswer?:string;children?:ReactNode}) {
   const {summary,takeaway,full,isExcerpt}=explanationParts(direct,analysis);
+  const feedback=breakdown&&correctAnswer?buildAnswerFeedback(breakdown,userAnswer??'',correctAnswer):null;
+  const focus=feedback&&!feedback.disputed&&userAnswer&&
+    [...userAnswer].sort().join('')!==[...(correctAnswer??'')].sort().join('')
+    ?feedback.sections[0]?.items[0]:undefined;
   return <>
-    {summary&&<p className={isExcerpt?'direct explanation-excerpt':'direct'}>{formatQuestionAnalysis(summary)}</p>}
+    {focus&&feedback?<p className="direct breakdown-focus"><b>{feedback.sections[0].title}</b>　{focus.basis}</p>:
+      summary&&<p className={isExcerpt?'direct explanation-excerpt':'direct'}>{formatQuestionAnalysis(summary)}</p>}
     {takeaway&&<p className="remember"><b>记住</b> {formatQuestionAnalysis(takeaway)}</p>}
     {children}
+    {feedback&&breakdown&&<BreakdownDetails feedback={feedback} status={breakdown.status}/>}
     {full&&<details className={isExcerpt?'explanation-expanded-replaces':undefined}>
       <summary>完整解析</summary>
       <div className="question">{formatQuestionAnalysis(full)}</div>
@@ -466,14 +492,14 @@ export default function Study({userName}:{userName:string}) {
       {hideAnalysis&&previewed&&!result&&<p className="notice">本次已查看解析，可以前往下一题。</p>}
       {!hideAnalysis&&!result&&<div className="result" aria-live="polite">
         <p className="source">查看解析期间无法提交作答。</p>
-        {preview?.id===question.id?<><h3>{question.status==='争议'?'资料参考答案':'正确答案'} {preview.answer}</h3><QuestionExplanation direct={preview.direct} analysis={preview.analysis}/><details><summary>出处与核对信息</summary><p className="source">{questionSource} · {question.status}</p></details></>:<p>正在读取解析…</p>}
+        {preview?.id===question.id?<><h3>{question.status==='争议'?'资料参考答案':'正确答案'} {preview.answer}</h3><QuestionExplanation direct={preview.direct} analysis={preview.analysis} breakdown={preview.breakdown} userAnswer="" correctAnswer={preview.answer}/><details><summary>出处与核对信息</summary><p className="source">{questionSource} · {question.status}</p></details></>:<p>正在读取解析…</p>}
       </div>}
       {result&&<div className={'result practice-result '+(result.disputed?'disputed':'')}>
         <div role="status">
           <h3>{result.disputed?'资料参考答案':'正确答案'} {result.answer}{question.type==='判断'?(result.answer==='A'?'（正确）':'（错误）'):''}</h3>
           <p className="muted">{result.disputed?'争议题 · ':''}你选了 {p.answer.join('')} · {p.confidence}</p>
         </div>
-        <QuestionExplanation direct={result.direct} analysis={result.analysis}>
+        <QuestionExplanation direct={result.direct} analysis={result.analysis} breakdown={result.breakdown} userAnswer={p.answer.join("")} correctAnswer={result.answer}>
         {nextScheduled&&<p className="review-confirmation"><CalendarDays size={16}/> {nextScheduled>date?'下次复习 · '+reviewDateLabel(nextScheduled,date):'本题仍在到期复习中'}</p>}
         {(!result.correct||p.confidence!=='确定')&&!result.disputed&&<div className="reasons" role="group" aria-label="错因">
           <h4>{result.correct?'哪里没把握':'这次卡在哪里'}</h4>
