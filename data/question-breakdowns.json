@@ -17959,8 +17959,8 @@
           },
           "rule_id": "RULE-POL-SCO-2025-01",
           "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30001,
+          "knowledge_gap": false,
           "statement": "坚持求同存异"
         },
         {
@@ -17985,8 +17985,8 @@
           },
           "rule_id": "RULE-POL-SCO-2025-01",
           "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30001,
+          "knowledge_gap": false,
           "statement": "坚持互利共赢"
         },
         {
@@ -18011,8 +18011,8 @@
           },
           "rule_id": "RULE-POL-SCO-2025-01",
           "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效，不含“独立自主”。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30001,
+          "knowledge_gap": false,
           "statement": "坚持独立自主"
         },
         {
@@ -18037,8 +18037,8 @@
           },
           "rule_id": "RULE-POL-SCO-2025-01",
           "rule_statement": "2025年上合峰会五项主张为求同存异、互利共赢、开放包容、公平正义、务实高效。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30001,
+          "knowledge_gap": false,
           "statement": "坚持公平正义"
         }
       ]
@@ -18463,8 +18463,8 @@
           },
           "rule_id": "RULE-POL-DEMOCRACY-DECISION-01",
           "rule_statement": "重大规划或政策法规编制前广泛征求公众建言献策，属于公民参与民主决策。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30032,
+          "knowledge_gap": false,
           "statement": "民主决策"
         },
         {
@@ -18714,8 +18714,8 @@
           },
           "rule_id": "RULE-POL-INNOVATION-FIRST-POWER-01",
           "rule_statement": "科技创新是提升国家体系化创新能力、支撑高质量发展的关键，创新是引领发展的第一动力。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 10156,
+          "knowledge_gap": false,
           "statement": "创新是引领发展的第一动力"
         },
         {
@@ -19082,8 +19082,8 @@
           },
           "rule_id": "RULE-ECON-LOW-ALTITUDE-01",
           "rule_statement": "低空经济依托垂直起降飞行器与通航体系，能够完善立体交通网络并提升区域互联互通水平。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30030,
+          "knowledge_gap": false,
           "statement": "完善立体交通网络，提升区域互联互通水平"
         },
         {
@@ -19108,8 +19108,8 @@
           },
           "rule_id": "RULE-ECON-LOW-ALTITUDE-01",
           "rule_statement": "低空经济催生多元化飞行体验与配送消费场景，培育新兴消费市场以满足多样化需求。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30030,
+          "knowledge_gap": false,
           "statement": "培育新兴消费市场，满足多样化出行需求"
         },
         {
@@ -19160,8 +19160,8 @@
           },
           "rule_id": "RULE-ECON-LOW-ALTITUDE-01",
           "rule_statement": "低空经济作为融合多学科前沿技术的战略性新兴产业，带动产业链升级并催生新质生产力。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30030,
+          "knowledge_gap": false,
           "statement": "带动技术创新和产业升级，形成新质生产力"
         }
       ]
@@ -19242,8 +19242,8 @@
           },
           "rule_id": "RULE-ECON-CONSUMPTION-EXPECTATION-01",
           "rule_statement": "保持国民经济稳定发展与稳定未来收入预期有利于增强消费信心、提振国民消费意愿。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30011,
+          "knowledge_gap": false,
           "statement": "保持国民经济稳定发展、稳定消费预期"
         },
         {
@@ -19268,8 +19268,8 @@
           },
           "rule_id": "RULE-ECON-SOCIAL-SECURITY-CONSUMPTION-01",
           "rule_statement": "完善收入分配结构与健全社会保障体系能减轻预防性储蓄压力、释放居民消费潜力。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30011,
+          "knowledge_gap": false,
           "statement": "完善收入分配政策和社会保障体系"
         },
         {
@@ -19383,8 +19383,8 @@
           },
           "rule_id": "RULE-LAW-SECURITIES-GATEKEEPER-01",
           "rule_statement": "依法惩戒证券中介失职与虚假记载行为，有助于压实看门人责任、强化金融监管效能并营造良好投资环境。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30034,
+          "knowledge_gap": false,
           "statement": "能强化金融行业监管效能，积极打造良好投资环境"
         },
         {
@@ -19392,7 +19392,7 @@
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "没一罚二的行政处罚是国家行政机关依法行使行政执法权追究法律责任的惩戒行为，绝非无偿法律服务，且目的在于纠治违法、惩戒失责，而非帮助企业提高效益。",
+          "basis": "没一罚二的行政处罚是国家行政机关依法行使行政执法权追究法律责任的惩戒行为（卡片10026第83条明确财产罚为罚款、没收违法所得与非法财物，第92条明确行政处罚执法管辖），绝非无偿法律服务，且目的在于纠治违法、惩戒失责，而非帮助企业提高效益。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -19408,9 +19408,9 @@
             }
           },
           "rule_id": "RULE-LAW-ADMIN-PUNISHMENT-NATURE-01",
-          "rule_statement": "行政处罚是国家行政执法机关依法实施的行政制裁，不属于政府无偿法律服务，亦非为企业提高效益。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "rule_statement": "行政处罚是国家行政执法机关依法对违法行为实施的行政制裁（含罚款、没收违法所得等财产罚），不属于政府无偿法律服务，亦非为企业提高效益。",
+          "knowledge_id": 10026,
+          "knowledge_gap": false,
           "statement": "是政府提供无偿法律服务，旨在帮助企业提高效益"
         }
       ]
@@ -19493,8 +19493,8 @@
           },
           "rule_id": "RULE-POL-PARTY-LAW-01",
           "rule_statement": "全面依法治国坚持党领导立法，重大立法部署由党中央提出并经法定程序转化为国家意志。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 10163,
+          "knowledge_gap": false,
           "statement": "中国共产党领导立法，推进国家建设的法治化、规范化。"
         },
         {
@@ -19519,8 +19519,8 @@
           },
           "rule_id": "RULE-POL-ECO-CIV-01",
           "rule_statement": "生态环境法典编纂是推进生态文明建设制度化、法治化的重要举措。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 10162,
+          "knowledge_gap": false,
           "statement": "编纂生态环境法典是全面贯彻落实生态文明建设的必然要求。"
         },
         {
@@ -19545,8 +19545,8 @@
           },
           "rule_id": "RULE-LAW-SCIENTIFIC-LEG-01",
           "rule_statement": "全国人大常委会审议法律草案过程坚持科学立法、民主立法以提高立法质量。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 10163,
+          "knowledge_gap": false,
           "statement": "全国人大常委会坚持科学立法、民主立法，不断提高立法质量。"
         }
       ]
@@ -19779,10 +19779,10 @@
               "location": "第15题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "按资料答案选D，其可取的判断依据是景区已设置明显警示和防护设施，题干未显示其违反安全保障义务；甲自行翻越隔离栏造成损害。年龄大不自动使景区承担公平责任。D中的“自甘风险”作为法律术语是否适用须另行核对，不能把任何冒险行为都套入该规则。",
+          "rule_id": "RULE-LAW-SELF-RISK-01",
+          "rule_statement": "经营场所经营者在合理限度内履行安全保障义务后，对他人因自甘风险造成的损害不承担责任。",
           "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_gap": false,
           "dispute_note": "原解析把安全保障义务与自甘风险规则混用；保留D作为资料答案，暂不计掌握。"
         }
       ]
@@ -19839,7 +19839,7 @@
           },
           "rule_id": "RULE-LAW-MARRIAGE-GIFT-01",
           "rule_statement": "婚后父母全额出资购房并登记在自己子女名下，有明确约定的从约定；约定不明时不能简单推定为当然个人财产。",
-          "knowledge_id": 10038,
+          "knowledge_id": null,
           "knowledge_gap": false,
           "statement": "16、 吴某(男)与杭某(女)结婚后,吴某父母出全资购房,并将房产登记在吴某名\n下,后吴某与杭某离婚。离婚起诉期间吴某将房产赠与自己的母亲,并签订了《不\n动产赠与合同》,吴某母亲办理了转移登记并取得了不动产权证。杭某主张房产\n是夫妻共同财产,要求确认赠与无效。吴某认为该房产是个人财产,赠与有效。\n本案中(   ) \n1该房产是由吴某父母出资登记在吴某名下,所以该房产属于个人财产,赠与有\n效 \n2该房产在签订了《不动产赠与合同》后,吴某的母亲就取得了所有权 \n3由于该房产赠与处在婚姻存续期间,所以该房产是夫妻共同财产,赠与无效 \n4法院作出一审判决后,如果当事人不服判决可在收到判决书起15 日内提出上\n诉 \nA、12 \nB、34 \nC、14 \nD、124"
         },
@@ -19893,7 +19893,7 @@
           },
           "rule_id": "RULE-LAW-MARRIAGE-GIFT-01",
           "rule_statement": "婚后父母出资房产归属需结合赠与约定判断，不能仅凭婚姻存续期间一概认定。",
-          "knowledge_id": 10038,
+          "knowledge_id": null,
           "knowledge_gap": false,
           "statement": "16、 吴某(男)与杭某(女)结婚后,吴某父母出全资购房,并将房产登记在吴某名\n下,后吴某与杭某离婚。离婚起诉期间吴某将房产赠与自己的母亲,并签订了《不\n动产赠与合同》,吴某母亲办理了转移登记并取得了不动产权证。杭某主张房产\n是夫妻共同财产,要求确认赠与无效。吴某认为该房产是个人财产,赠与有效。\n本案中(   ) \n1该房产是由吴某父母出资登记在吴某名下,所以该房产属于个人财产,赠与有\n效 \n2该房产在签订了《不动产赠与合同》后,吴某的母亲就取得了所有权 \n3由于该房产赠与处在婚姻存续期间,所以该房产是夫妻共同财产,赠与无效 \n4法院作出一审判决后,如果当事人不服判决可在收到判决书起15 日内提出上\n诉 \nA、12 \nB、34 \nC、14 \nD、124"
         },
@@ -19962,10 +19962,10 @@
         },
         {
           "key": "B",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "报告属于上行文，用于向有隶属关系的上级机关汇报工作、反映情况。",
+          "basis": "卡片10183第43条明确「报告。适用于向上级机关汇报工作、反映情况,回复上级机关的询问」，因此“报告属于上行文”陈述本身成立；但本题设问要求平级或不相隶属机关之间行文，故不符合设问，排除。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -19981,17 +19981,17 @@
             }
           },
           "rule_id": "RULE-DOC-REPORT-01",
-          "rule_statement": "报告适用于向上级机关汇报工作、反映情况，属于上行文。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "rule_statement": "报告适用于向上级机关汇报工作、反映情况，回复上级机关的询问，属于上行文。",
+          "knowledge_id": 10183,
+          "knowledge_gap": false,
           "statement": "上行文 报告"
         },
         {
           "key": "C",
-          "statement_truth": false,
+          "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "意见可用于上行、下行或平行，但不是平级/不相隶属机关间最主要的正式沟通文种。",
+          "basis": "意见可用于上行、下行或平行文，因此“意见可作平行文”陈述本身成立；但平级或不相隶属机关之间最主要的正式沟通文种是「函」而非意见，故不符合设问，排除。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -20017,7 +20017,7 @@
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "通知一般用于发布、传达要求下级机关执行和有关单位周知或者执行的事项，不属上行文。",
+          "basis": "卡片10183第41条明确「通知。适用于发布、传达要求下级机关执行和有关单位周知或者执行的事项,批转、转发公文」，主要属于下行文或平行知照性公文，陈述“通知是上行文”客观错误，排除。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -20033,9 +20033,9 @@
             }
           },
           "rule_id": "RULE-DOC-NOTICE-01",
-          "rule_statement": "通知主要用于下行或平行知照事项，并非上行文。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "rule_statement": "通知适用于发布、传达要求下级机关执行和有关单位周知或者执行的事项，并非上行文。",
+          "knowledge_id": 10183,
+          "knowledge_gap": false,
           "statement": "上行文 通知"
         }
       ]
@@ -20054,7 +20054,7 @@
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "会议纪要确实要求程序清楚、目的明确、中心突出、层次分明，该项陈述成立。",
+          "basis": "卡片10183第48条明确「纪要。适用于记载会议主要情况和议定事项」，要求记录会议程序清楚、目的明确、中心突出、层次分明，该项陈述成立。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -20070,7 +20070,7 @@
             }
           },
           "rule_id": "RULE-DOC-MINUTES-01",
-          "rule_statement": "会议纪要适用于记载会议主要情况和议定事项，要求中心突出、层次分明。",
+          "rule_statement": "会议纪要适用于记载会议主要情况和议定事项，要求程序清楚、中心突出、层次分明。",
           "knowledge_id": 10183,
           "knowledge_gap": false,
           "statement": "会议纪要要求记录会议程序清楚、目的明确、中心突出、层次分明"
@@ -20080,7 +20080,7 @@
           "statement_truth": true,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "办公会议纪要主要用于记载和传达领导办公会议的决定和决议事项，陈述成立。",
+          "basis": "卡片10183第48条明确「纪要。适用于记载会议主要情况和议定事项」，办公会议纪要用于记载和传达领导办公会议的决定和决议事项，陈述成立。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -20096,9 +20096,9 @@
             }
           },
           "rule_id": "RULE-DOC-MINUTES-01",
-          "rule_statement": "办公会议纪要用于记载和传达会议决定和决议事项。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "rule_statement": "会议纪要适用于记载会议主要情况和议定事项，要求程序清楚、中心突出、层次分明。",
+          "knowledge_id": 10183,
+          "knowledge_gap": false,
           "statement": "办公会议纪要主要用于记载和传达领导办公会议的决定和决议事项"
         },
         {
@@ -20212,8 +20212,8 @@
           },
           "rule_id": "RULE-MGMT-CONFLICT-COMPROMISE-01",
           "rule_statement": "妥协策略引导双方各退一步属于权宜折中，未触及冲突深层诱因，较不利于从根本上解决组织冲突。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30020,
+          "knowledge_gap": false,
           "statement": "强调团队整体和谐重要性，引导冲突双方各退一步，寻求新方案"
         },
         {
@@ -20379,8 +20379,8 @@
           },
           "rule_id": "RULE-SCI-HEAT-STROKE-RISK-FACTORS-01",
           "rule_statement": "高温高湿气候环境与高强度体力活动是诱发经典型和劳力型热射病的最主要危险因素。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30027,
+          "knowledge_gap": false,
           "statement": "高温高湿的气候因素和高强度体力活动是导致热射病最主要的危险因素"
         }
       ]
@@ -20672,8 +20672,8 @@
           },
           "rule_id": "RULE-TECH-WORM-VIRUS-SHORTCUT-01",
           "rule_statement": "U盘文件被隐藏并出现同名快捷方式是计算机蠕虫病毒的典型破坏特征与传播机制。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 30008,
+          "knowledge_gap": false,
           "statement": "感染了蠕虫病毒"
         },
         {
@@ -20760,10 +20760,10 @@
               "location": "第24题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "资料答案A抓住了“装满货物后质量更大、惯性更大、改变运动状态更困难”。但题干又说启动后空车反而更费力，这一点仅凭惯性无法推出，可能涉及阻力等未说明条件。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "rule_id": "RULE-SCI-INERTIA-MASS-01",
+          "rule_statement": "质量越大，惯性越大，改变运动状态越困难。",
+          "knowledge_id": 10077,
+          "knowledge_gap": false,
           "dispute_note": "后半段现象与原解析论证不完整，保留A作为资料答案，暂不计掌握。"
         },
         {
@@ -20879,10 +20879,10 @@
               "location": "第25题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干选错误项。月食是月球进入地球影子，日食是月球遮挡太阳，两者几何关系不同；月全食可用肉眼观看，C两处均错，因此选C。血月的红色与大气对不同波长光的散射和折射有关。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-SCI-LUNAR-ECLIPSE-01",
+          "rule_statement": "月食时地球位于太阳和月球之间，月球进入地影。",
+          "knowledge_id": 10061,
+          "knowledge_gap": false
         },
         {
           "key": "B",
@@ -21310,10 +21310,10 @@
               "location": "第28题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "按原卷推论口径选ABCD：经营主体、民营企业与外资企业的新设情况分别对应营商环境、民营经济活力和对外开放，D体现支持非公有制经济的政策导向。要留意“新设数量”与“存量净增”含义不同，不能混用统计概念。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-ECON-NONPUBLIC-ECONOMY-SUPPORT-01",
+          "rule_statement": "国家鼓励、支持和引导非公有制经济发展。",
+          "knowledge_id": 10155,
+          "knowledge_gap": false
         }
       ]
     },
@@ -21373,10 +21373,10 @@
               "location": "第29题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干要求选错误说法，选ABD。A把切脉说成触摸各处皮肤；B将李时珍的《本草纲目》误写成华佗所著的第一部药物学专著；D把天然药物当作无毒副作用。C是针灸的基本描述。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-HERB-MATERIA-MEDICA-01",
+          "rule_statement": "《神农本草经》是我国现存最早的药物学专著，《本草纲目》由明代李时珍编著。",
+          "knowledge_id": 10116,
+          "knowledge_gap": false
         },
         {
           "key": "C",
@@ -21488,10 +21488,10 @@
               "location": "第30题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "四项均围绕传承英烈精神：A讲历史记忆与精神动力，B讲爱国主义与凝聚力，C讲价值践行和责任，D讲青少年教育；均切题，选ABCD。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-POL-NATIONAL-SPIRIT-01",
+          "rule_statement": "以爱国主义为核心的民族精神凝聚民族力量。",
+          "knowledge_id": 10154,
+          "knowledge_gap": false
         },
         {
           "key": "C",
@@ -21514,10 +21514,10 @@
               "location": "第30题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "四项均围绕传承英烈精神：A讲历史记忆与精神动力，B讲爱国主义与凝聚力，C讲价值践行和责任，D讲青少年教育；均切题，选ABCD。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-POL-SOCIALIST-CORE-VALUES-01",
+          "rule_statement": "社会主义核心价值观引导公民品格和价值践行。",
+          "knowledge_id": 10159,
+          "knowledge_gap": false
         },
         {
           "key": "D",
@@ -21614,10 +21614,10 @@
               "location": "第32题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "题干把国防安全说成最基础、最重要、最根本，范围与地位表述失当，判错选D。国家安全体系强调政治安全为根本、经济安全为基础，国防安全属于重要组成部分。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-POL-SECURITY-HIERARCHY-01",
+          "rule_statement": "总体国家安全观以人民安全为宗旨、以政治安全为根本、以经济安全为基础。",
+          "knowledge_id": 30010,
+          "knowledge_gap": false
         }
       ]
     },
@@ -21651,10 +21651,10 @@
               "location": "第33题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "民族区域自治制度的核心内容是依法行使自治权，题干表述正确，选A。辨析时把制度核心与国家统一领导这一前提分开。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-POL-ETHNIC-AUTONOMY-CORE-01",
+          "rule_statement": "民族区域自治制度的核心是依法行使自治权。",
+          "knowledge_id": 10158,
+          "knowledge_gap": false
         }
       ]
     },
@@ -21688,10 +21688,10 @@
               "location": "第34题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "只重留痕、不重实际成效，割裂过程与效果的联系，体现片面、孤立地看问题，按原卷判正确选A。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-PHIL-DIALECTICS-METAPHYSICS-01",
+          "rule_statement": "形而上学以孤立、静止、片面的观点看问题。",
+          "knowledge_id": 10144,
+          "knowledge_gap": false
         }
       ]
     },
@@ -21724,10 +21724,10 @@
               "location": "第35题解析"
             }
           },
-          "rule_id": "RULE-ECON-MARKET-GOV-01",
+          "rule_id": "RULE-ECON-GOVERNMENT-MARKET-ROLE-01",
           "rule_statement": "市场在资源配置中起决定性作用，更好发挥政府作用。",
-          "knowledge_id": null,
-          "knowledge_gap": true,
+          "knowledge_id": 10155,
+          "knowledge_gap": false,
           "statement": "35、 坚持社会主义市场经济的改革方向,核心问题是正确处理好政府与市场之间的关\n系,使市场在资源配置中起基础性作用,政府发挥决定性作用。(   )"
         }
       ]
@@ -21911,10 +21911,10 @@
               "location": "第40题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "劳动合同一年以上不满三年，试用期上限是两个月，题干写成三个月，因此判错选D。三个常见上限为：三个月至不满一年1个月；一年至不满三年2个月；三年以上及无固定期限6个月。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-LABOR-PROBATION-LIMIT-01",
+          "rule_statement": "劳动合同期限一年以上不满三年的，试用期不得超过两个月。",
+          "knowledge_id": 10043,
+          "knowledge_gap": false
         }
       ]
     },
@@ -21948,7 +21948,7 @@
             }
           },
           "rule_id": "RULE-DOC-REPORT-NO-REQUEST-01",
-          "rule_statement": "请示应当一文一事，不得在报告等非请示性公文中夹带请示事项。",
+          "rule_statement": "报告等非请示性公文不得夹带请示事项。",
           "knowledge_id": 20071,
           "knowledge_gap": false,
           "statement": "41、 某县教育局需要向市教育局提交一份教育工作情况报告。为提高办公效率,可在\n报告中加上希望上级拨付专项资金用于更新教学设备的申请。(   )"
@@ -21985,10 +21985,10 @@
               "location": "第42题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "元朝由蒙古族建立并统一全国，行省制成为后世省级行政区划的重要基础；按题干两项表述均正确，选A。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-HIST-YUAN-PROVINCE-01",
+          "rule_statement": "元朝实行行省制度，成为后世省级行政区划的重要基础。",
+          "knowledge_id": 10068,
+          "knowledge_gap": false
         }
       ]
     },
@@ -22072,16 +22072,15 @@
       "exam": "2025年上午卷",
       "number": 45,
       "type": "判断",
-      "status": "待核对",
+      "status": "已核对",
       "stem_polarity": "判断正误",
       "items": [
         {
           "key": "判断",
-          "statement": "当人从温暖的室内到寒冷的室外时,下丘脑产生冷觉,皮肤血流量增多,骨骼肌\n产热增加。(   )",
           "statement_truth": false,
           "matches_stem": false,
           "verdict": "排除",
-          "basis": "冷觉在大脑皮质形成，下丘脑负责体温调节；寒冷时皮肤血管收缩、血流减少以减少散热，骨骼肌产热可增加。题干前两处错误，因此选D。",
+          "basis": "冷觉由大脑皮质产生；寒冷时下丘脑调节皮肤血管收缩、减少血流以减少散热，骨骼肌颤栗增加产热。题干前两处错误，判错（选D）。",
           "source_ref": {
             "question_material": {
               "id": 8,
@@ -22096,10 +22095,11 @@
               "location": "第45题解析"
             }
           },
-          "rule_id": "RULE-UNVERIFIED",
-          "rule_statement": "冷觉在大脑皮质形成，下丘脑负责体温调节；寒冷时皮肤血管收缩、血流减少以减少散热，骨骼肌产热可增加。题干前两处错误，因此选D。",
-          "knowledge_id": null,
-          "knowledge_gap": true
+          "rule_id": "RULE-SCI-COLD-THERMOREGULATION-01",
+          "rule_statement": "寒冷环境下皮肤血管收缩、减少散热，骨骼肌颤栗增加产热。",
+          "knowledge_id": 10088,
+          "knowledge_gap": false,
+          "statement": "当人从温暖的室内到寒冷的室外时，下丘脑产生冷觉，皮肤血流量增多，骨骼肌产热增加。"
         }
       ]
     },

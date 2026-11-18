@@ -251,23 +251,23 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
                 {"key": "A", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "证券投资具有市场风险，监管部门依法处罚旨在维护公平秩序与保护合法权益，无法保证投资者获得稳定收益（投资自担风险），且“杜绝”表述绝对化。", "source_ref": src(8, 3, 7, 4, "第12题A项", "第12题解析A项"), "rule_id": "RULE-LAW-SECURITIES-REGULATION-01", "rule_statement": "证券监管旨在维护公开公正秩序与保护投资者合法权益，无法保证投资者获得稳定收益，也不能绝对杜绝违法行为。", "knowledge_id": None, "knowledge_gap": True},
                 {"key": "B", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "证监会对违法中介机构实施行政处罚属于行政执法和行业监管行为，并非中央银行运用的货币政策工具。", "source_ref": src(8, 3, 7, 4, "第12题B项", "第12题解析B项"), "rule_id": "RULE-ECON-MONETARY-VS-ADMIN-01", "rule_statement": "证券行政监管执法是行业外部监管与行政处罚，不属于宏观货币政策工具。", "knowledge_id": None, "knowledge_gap": True},
                 {"key": "C", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "会计师事务所是资本市场重要的看门人。证监会依法严厉惩戒未勤勉尽责出具虚假审计报告的失职机构，能有效压实中介责任、强化行业监管效能，积极营造规范诚信的投资环境。", "source_ref": src(8, 3, 7, 4, "第12题C项", "第12题解析C项"), "rule_id": "RULE-LAW-SECURITIES-GATEKEEPER-01", "rule_statement": "依法惩戒证券中介失职与虚假记载行为，有助于压实看门人责任、强化金融监管效能并营造良好投资环境。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "没一罚二的行政处罚是国家行政机关依法行使行政执法权追究法律责任的惩戒行为，绝非无偿法律服务，且目的在于纠治违法、惩戒失责，而非帮助企业提高效益。", "source_ref": src(8, 3, 7, 4, "第12题D项", "第12题解析D项"), "rule_id": "RULE-LAW-ADMIN-PUNISHMENT-NATURE-01", "rule_statement": "行政处罚是国家行政执法机关依法实施的行政制裁，不属于政府无偿法律服务，亦非为企业提高效益。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "没一罚二的行政处罚是国家行政机关依法行使行政执法权追究法律责任的惩戒行为（卡片10026第83条明确财产罚为罚款、没收违法所得与非法财物，第92条明确行政处罚执法管辖），绝非无偿法律服务，且目的在于纠治违法、惩戒失责，而非帮助企业提高效益。", "source_ref": src(8, 3, 7, 4, "第12题D项", "第12题解析D项"), "rule_id": "RULE-LAW-ADMIN-PUNISHMENT-NATURE-01", "rule_statement": "行政处罚是国家行政执法机关依法对违法行为实施的行政制裁（含罚款、没收违法所得等财产罚），不属于政府无偿法律服务，亦非为企业提高效益。", "knowledge_id": 10026, "knowledge_gap": False},
             ],
         },
         17: {
             "stem_polarity": "选正确",
             "items": [
                 {"key": "A", "statement_truth": True, "matches_stem": True, "verdict": "入选", "basis": "平级或不相隶属机关之间行文方向为平行文，商洽、询答和请求批准等主要使用函。", "source_ref": src(8, 4, 7, 5, "第17题A项", "第17题解析"), "rule_id": "RULE-DOC-LETTER-01", "rule_statement": "平级或不相隶属机关之间商洽工作、询问和答复问题、请求批准和答复审批事项，主要使用平行文「函」。", "knowledge_id": 20070, "knowledge_gap": False},
-                {"key": "B", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "报告属于上行文，用于向有隶属关系的上级机关汇报工作、反映情况。", "source_ref": src(8, 4, 7, 5, "第17题B项", "第17题解析"), "rule_id": "RULE-DOC-REPORT-01", "rule_statement": "报告适用于向上级机关汇报工作、反映情况，属于上行文。", "knowledge_id": None, "knowledge_gap": True},
-                {"key": "C", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "意见可用于上行、下行或平行，但不是平级/不相隶属机关间最主要的正式沟通文种。", "source_ref": src(8, 4, 7, 5, "第17题C项", "第17题解析"), "rule_id": "RULE-DOC-LETTER-01", "rule_statement": "不相隶属机关之间最主要的正式沟通文种是函，而非意见。", "knowledge_id": 20070, "knowledge_gap": False},
-                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "通知一般用于发布、传达要求下级机关执行和有关单位周知或者执行的事项，不属上行文。", "source_ref": src(8, 4, 7, 5, "第17题D项", "第17题解析"), "rule_id": "RULE-DOC-NOTICE-01", "rule_statement": "通知主要用于下行或平行知照事项，并非上行文。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "卡片10183第43条明确「报告。适用于向上级机关汇报工作、反映情况,回复上级机关的询问」，因此“报告属于上行文”陈述本身成立；但本题设问要求平级或不相隶属机关之间行文，故不符合设问，排除。", "source_ref": src(8, 4, 7, 5, "第17题B项", "第17题解析"), "rule_id": "RULE-DOC-REPORT-01", "rule_statement": "报告适用于向上级机关汇报工作、反映情况，回复上级机关的询问，属于上行文。", "knowledge_id": 10183, "knowledge_gap": False},
+                {"key": "C", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "意见可用于上行、下行或平行文，因此“意见可作平行文”陈述本身成立；但平级或不相隶属机关之间最主要的正式沟通文种是「函」而非意见，故不符合设问，排除。", "source_ref": src(8, 4, 7, 5, "第17题C项", "第17题解析"), "rule_id": "RULE-DOC-LETTER-01", "rule_statement": "不相隶属机关之间最主要的正式沟通文种是函，而非意见。", "knowledge_id": 20070, "knowledge_gap": False},
+                {"key": "D", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "卡片10183第41条明确「通知。适用于发布、传达要求下级机关执行和有关单位周知或者执行的事项,批转、转发公文」，主要属于下行文或平行知照性公文，陈述“通知是上行文”客观错误，排除。", "source_ref": src(8, 4, 7, 5, "第17题D项", "第17题解析"), "rule_id": "RULE-DOC-NOTICE-01", "rule_statement": "通知适用于发布、传达要求下级机关执行和有关单位周知或者执行的事项，并非上行文。", "knowledge_id": 10183, "knowledge_gap": False},
             ],
         },
         18: {
             "stem_polarity": "选错误",
             "items": [
-                {"key": "A", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "会议纪要确实要求程序清楚、目的明确、中心突出、层次分明，该项陈述成立。", "source_ref": src(8, 4, 7, 5, "第18题A项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-01", "rule_statement": "会议纪要适用于记载会议主要情况和议定事项，要求中心突出、层次分明。", "knowledge_id": 10183, "knowledge_gap": False},
-                {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "办公会议纪要主要用于记载和传达领导办公会议的决定和决议事项，陈述成立。", "source_ref": src(8, 4, 7, 5, "第18题B项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-01", "rule_statement": "办公会议纪要用于记载和传达会议决定和决议事项。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "A", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "卡片10183第48条明确「纪要。适用于记载会议主要情况和议定事项」，要求记录会议程序清楚、目的明确、中心突出、层次分明，该项陈述成立。", "source_ref": src(8, 4, 7, 5, "第18题A项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-01", "rule_statement": "会议纪要适用于记载会议主要情况和议定事项，要求程序清楚、中心突出、层次分明。", "knowledge_id": 10183, "knowledge_gap": False},
+                {"key": "B", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "卡片10183第48条明确「纪要。适用于记载会议主要情况和议定事项」，办公会议纪要用于记载和传达领导办公会议的决定和决议事项，陈述成立。", "source_ref": src(8, 4, 7, 5, "第18题B项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-01", "rule_statement": "会议纪要适用于记载会议主要情况和议定事项，要求程序清楚、中心突出、层次分明。", "knowledge_id": 10183, "knowledge_gap": False},
                 {"key": "C", "statement_truth": True, "matches_stem": False, "verdict": "排除", "basis": "会议纪要的成文时间可置于标题下方，也可置于正文右下方主办单位下面，陈述成立。", "source_ref": src(8, 4, 7, 5, "第18题C项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-02", "rule_statement": "纪要成文时间位置较为灵活，可置于标题下方或正文右下方。", "knowledge_id": None, "knowledge_gap": True},
                 {"key": "D", "statement_truth": False, "matches_stem": True, "verdict": "入选", "basis": "纪要提炼会议主要情况和议定事项，无须原词原句记录全部发言；D混淆了「会议纪要」与「会议记录」，符合“错误的是”设问。", "source_ref": src(8, 4, 7, 5, "第18题D项", "第18题解析"), "rule_id": "RULE-DOC-MINUTES-VS-RECORD-01", "rule_statement": "会议纪要提炼主要情况和议定事项，不要求原词原句记录发言；原词记录属于会议记录。", "knowledge_id": 10183, "knowledge_gap": False},
             ],
@@ -329,13 +329,19 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
         35: {
             "stem_polarity": "判断正误",
             "items": [
-                {"key": "判断", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "题干将市场与政府的作用倒置。规范表述为使市场在资源配置中起决定性作用，更好发挥政府作用，故判错（选D）。", "source_ref": src(8, 7, 7, 8, "第35题题干", "第35题解析"), "rule_id": "RULE-ECON-MARKET-GOV-01", "rule_statement": "市场在资源配置中起决定性作用，更好发挥政府作用。", "knowledge_id": None, "knowledge_gap": True},
+                {"key": "判断", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "题干将市场与政府的作用倒置。规范表述为使市场在资源配置中起决定性作用，更好发挥政府作用，故判错（选D）。", "source_ref": src(8, 7, 7, 8, "第35题题干", "第35题解析"), "rule_id": "RULE-ECON-GOVERNMENT-MARKET-ROLE-01", "rule_statement": "市场在资源配置中起决定性作用，更好发挥政府作用。", "knowledge_id": 10155, "knowledge_gap": False},
             ],
         },
         41: {
             "stem_polarity": "判断正误",
             "items": [
                 {"key": "判断", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "报告中不得夹带请示事项。教育工作报告用于汇报情况，申请专项资金应另行使用请示，故判错（选D）。", "source_ref": src(8, 7, 7, 9, "第41题题干", "第41题解析"), "rule_id": "RULE-DOC-REPORT-NO-REQUEST-01", "rule_statement": "请示应当一文一事，不得在报告等非请示性公文中夹带请示事项。", "knowledge_id": 20071, "knowledge_gap": False},
+            ],
+        },
+        45: {
+            "stem_polarity": "判断正误",
+            "items": [
+                {"key": "判断", "statement_truth": False, "matches_stem": False, "verdict": "排除", "basis": "冷觉由大脑皮质产生；寒冷时下丘脑调节皮肤血管收缩、减少血流以减少散热，骨骼肌颤栗增加产热。题干前两处错误，判错（选D）。", "source_ref": src(8, 7, 7, 10, "第45题题干", "第45题解析"), "rule_id": "RULE-SCI-COLD-THERMOREGULATION-01", "rule_statement": "寒冷环境下皮肤血管收缩、减少散热，骨骼肌颤栗增加产热。", "knowledge_id": 10088, "knowledge_gap": False},
             ],
         },
         24107: {
@@ -379,6 +385,7 @@ def hand_curated_overrides(materials: dict[int, str]) -> dict[int, dict]:
         19025: {"A": "请示", "B": "通知", "C": "申请", "D": "函"},
         23015: {"A": "任何法律、法规都不得与宪法相抵触", "B": "宪法由全国人民代表大会及其常务委员会制定", "C": "我国现行宪法一共有五个修正案", "D": "宪法对我国国旗、国歌、国徽、首都均作出明确规定"},
         24012: {"A": "国务院", "B": "省、自治区、直辖市人大及其常委会", "C": "全国人民代表大会常务委员会", "D": "全国人民代表大会"},
+        45: {"判断": "当人从温暖的室内到寒冷的室外时，下丘脑产生冷觉，皮肤血流量增多，骨骼肌产热增加。"},
     }
     for qid, items in statements.items():
         if qid in overrides:
@@ -407,6 +414,44 @@ def main() -> None:
     materials = {m["id"]: m["name"] for m in cat["materials"]}
 
     curated = hand_curated_overrides(materials)
+    card_overrides = {
+        1: {"A": 30001, "B": 30001, "C": 30001, "D": 30001},
+        3: {"②": 10158, "③": 10158},
+        4: {"D": 10167},
+        5: {"A": 30032, "C": 10158},
+        7: {"①": 10156, "②": 10144, "③": 20050, "④": 10144},
+        8: {"A": 10145, "B": 10145, "C": 10145},
+        9: {"A": 20040, "B": 20040},
+        10: {"①": 30030, "②": 30030, "④": 30030},
+        11: {"②": 30011, "③": 30011},
+        12: {"C": 30034, "D": 10026},
+        13: {"①": 20003, "②": 10163, "③": 10162, "④": 10163},
+        17: {"A": 20070, "B": 10183, "C": 20070, "D": 10183},
+        18: {"A": 10183, "B": 10183, "D": 10183},
+        19: {"B": 30020},
+        20: {"D": 30027},
+        21: {"A": 10072},
+        23: {"B": 30008},
+        25: {"A": 10061},
+        28: {"D": 10155},
+        29: {"B": 10116},
+        30: {"B": 10154, "C": 10159},
+        32: {"判断": 30010},
+        33: {"判断": 10158},
+        34: {"判断": 10144},
+        35: {"判断": 10155},
+        40: {"判断": 10043},
+        41: {"判断": 20071},
+        42: {"判断": 10068},
+        45: {"判断": 10088},
+    }
+    for qid, item_cards in card_overrides.items():
+        if qid in curated:
+            for item in curated[qid]["items"]:
+                card_id = item_cards.get(item["key"])
+                if card_id is not None:
+                    item["knowledge_id"] = card_id
+                    item["knowledge_gap"] = False
     # 参数解析与严格校验：若有参数，必须全为纯数字且题号在 curated 中有定义
     if len(sys.argv) > 1:
         invalid_args = [arg for arg in sys.argv[1:] if not arg.isdigit()]
@@ -488,7 +533,7 @@ def main() -> None:
         v = [x for x in qs if x["status"] == "已核对"]
         p = [x for x in qs if x["status"] == "待核对"]
         d = [x for x in qs if x["status"] == "争议"]
-        g = [x for x in qs if all(item.get("knowledge_gap") for item in x["items"])]
+        g = [x for x in qs if x["status"] == "已核对" and any(item.get("knowledge_gap") for item in x["items"])]
         total_verified += len(v)
         total_pending += len(p)
         total_disputed += len(d)

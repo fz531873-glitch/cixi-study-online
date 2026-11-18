@@ -107,16 +107,22 @@ export function buildAnswerFeedback(
 
   const byKey = new Map(breakdown.items.map(item => [item.key, item]));
   const pick = (keys: string[]) => keys.map(k => byKey.get(k)).filter((x): x is BreakdownItem => Boolean(x));
+  const rightItems = pick(correctKeys);
+  const isComparativeNegative =
+    breakdown.stem_polarity === '选错误' &&
+    rightItems.some(item => item.statement_truth === true);
 
   if (!userNorm || userNorm === correctNorm) {
-    const selectedItems = pick(correctKeys);
+    const selectedItems = rightItems;
     const excludedItems = breakdown.items.filter(item => !correctKeys.includes(item.key));
     return {
       headline: userNorm ? `回答正确（${correctNorm}）` : `参考答案 ${correctNorm}`,
       summary:
-        breakdown.stem_polarity === '选错误'
-          ? '本题为反向设问「选错误的一项」，先确认各陈述真假，再锁定不符合事实的选项。'
-          : '关键判断规则已命中，可核对各入选与排除依据。',
+        isComparativeNegative
+          ? '本题为比较设问「较不利于的一项」，各选项陈述本身均成立，需比较分析其对解决冲突的作用深度，锁定相对不利或权宜性质的选项。'
+          : breakdown.stem_polarity === '选错误'
+            ? '本题为反向设问「选错误的一项」，先确认各陈述真假，再锁定不符合事实的选项。'
+            : '关键判断规则已命中，可核对各入选与排除依据。',
       sections: [
         ...(selectedItems.length ? [{ title: '正确入选依据', items: selectedItems }] : []),
         ...(excludedItems.length ? [{ title: '其余排除依据', items: excludedItems }] : []),
@@ -170,11 +176,12 @@ export function buildAnswerFeedback(
 
   // 单选 / 判断
   const chosenItems = pick(userKeys);
-  const rightItems = pick(correctKeys);
   const reverseHint =
-    breakdown.stem_polarity === '选错误' && chosenItems.some(item => item.statement_truth === true)
-      ? `你选的 ${userNorm} 本身陈述成立，但本题问的是「错误的一项」，因此不符合设问。`
-      : `你选的 ${userNorm} 不符合题干设问，正确答案应为 ${correctNorm}。`;
+    isComparativeNegative && chosenItems.some(item => item.statement_truth === true)
+      ? `你选的 ${userNorm} 本身陈述成立且属于根本化解冲突的有效举措，但本题要求选出「较不利于」的一项，故不符合设问，正确答案应为 ${correctNorm}。`
+      : breakdown.stem_polarity === '选错误' && chosenItems.some(item => item.statement_truth === true)
+        ? `你选的 ${userNorm} 本身陈述成立，但本题问的是「错误的一项」，因此不符合设问。`
+        : `你选的 ${userNorm} 不符合题干设问，正确答案应为 ${correctNorm}。`;
 
   return {
     headline: `你选了 ${userNorm}，参考答案 ${correctNorm}`,

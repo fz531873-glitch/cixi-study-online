@@ -130,7 +130,11 @@ const backups = z.object({format: z.literal('cixi-study-v1'), version: z.literal
     link_decision: z.array(z.object({knowledge_id:id, question_id:id, rule_id:z.string().default(''), status:z.enum(['已确认','已排除','候选']), reason:short, updated_at:dateString})).max(5000),
   })});
 
-export async function dispatch(db: D1Database, user: string, method: string, path: string, input?: unknown): Promise<any> {
+export type DispatchOptions = {
+  breakdownLookup?: ReadonlyMap<string, import('./breakdown.ts').QuestionBreakdown>;
+};
+
+export async function dispatch(db: D1Database, user: string, method: string, path: string, input?: unknown, options?: DispatchOptions): Promise<any> {
   if (!user) throw new InputError('请先登录', 401);
   const now = new Date().toISOString();
   if (method === 'GET' && path === '/bootstrap') {
@@ -161,7 +165,7 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
       return {...JSON.parse(existing.snapshot), id:existing.id, questionId:existing.question_id, correct:!!existing.correct, disputed:!!existing.disputed};
     }
     const normalized = [...a.answer].sort().join(''), correct = normalized === [...q.answer].sort().join(''), disputed = q.status === '争议';
-    const breakdown = getQuestionBreakdown(q.id, q.version);
+    const breakdown = getQuestionBreakdown(q.id, q.version, options?.breakdownLookup);
     const snapshotObj = breakdown ? {...q, breakdown} : q;
     const statements = [db.prepare("INSERT INTO attempt(id,user_id,question_id,answer,confidence,correct,disputed,kind,snapshot,created_at) SELECT ?,?,?,?,?,?,?,CASE WHEN EXISTS(SELECT 1 FROM attempt WHERE user_id=? AND question_id=?) THEN '重复' ELSE '首次' END,?,?")
       .bind(a.requestId,user,q.id,normalized,a.confidence,Number(correct),Number(disputed),user,q.id,JSON.stringify(snapshotObj),now)];
@@ -197,7 +201,7 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
   if (method === 'GET' && /^\/editor\/question\/\d+$/.test(path)) {
     const {questions} = await content(db,user), q = questions.find(q=>q.id===Number(path.split('/').pop()));
     if (!q) throw new InputError('题目不存在',404);
-    return {...q, breakdown: getQuestionBreakdown(q.id, q.version)};
+    return {...q, breakdown: getQuestionBreakdown(q.id, q.version, options?.breakdownLookup)};
   }
   if (method === 'POST' && path === '/edit') {
     const a = z.object({kind:z.enum(['question','knowledge']), itemId:id, version:id, payload:z.unknown(), reason:short}).parse(input);

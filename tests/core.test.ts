@@ -3,8 +3,10 @@ import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
 import {readFileSync,readdirSync} from 'node:fs';
 import {dispatch,catalog,today} from '../lib/study.ts';
+import {loadBreakdownMap} from '../lib/breakdown-data.ts';
 import originalCatalog from '../data/catalog.json' with {type:'json'};
 import simulationCatalog from '../data/simulations.json' with {type:'json'};
+import breakdownsData from '../data/question-breakdowns.json' with {type:'json'};
 
 // 用真实SQLite执行同一份SQL，模拟D1的参数绑定和原子批处理。
 function database(upgrade = true) {
@@ -59,10 +61,30 @@ test('逐项解析随当时的作答保存，旧快照和用户修订使用各�
   assert.equal((await call('GET','/editor/question/23003')).breakdown,null);
 });
 test('待核对题目即使具有完整草稿，作答也只返回原解析',async()=>{
-  const {call}=database();
+  const {db,call}=database();
   const result=await call('POST','/attempt',submission(25,'C'));
   assert.equal(result.breakdown,undefined);
   assert.ok(result.analysis);
+
+  // 构造具有完整有效 rule_id（全部非 RULE-UNVERIFIED）但 status 为「待核对」的隔离夹具
+  const q13Seed=structuredClone(breakdownsData.breakdowns.find(b=>b.question_id===13)!);
+  assert.ok(q13Seed.items.every(it=>it.rule_id&&it.rule_id!=='RULE-UNVERIFIED'));
+  const pendingValidDraft={
+    ...q13Seed,
+    question_id:25,
+    status:'待核对' as const,
+  };
+  const customLookup=loadBreakdownMap([pendingValidDraft]);
+  assert.equal(customLookup.size,0);
+  const isolatedAttempt=await dispatch(db,'owner','POST','/attempt',submission(25,'C'),{breakdownLookup:customLookup});
+  assert.equal(isolatedAttempt.breakdown,undefined);
+  assert.ok(isolatedAttempt.analysis);
+
+  // 对照：若同一套完整规则草稿状态变为「已核对」，则 loadBreakdownMap 允许进入作答快照
+  const verifiedLookup=loadBreakdownMap([{...pendingValidDraft,status:'已核对' as const}]);
+  assert.equal(verifiedLookup.size,1);
+  const verifiedAttempt=await dispatch(db,'owner','POST','/attempt',submission(25,'C'),{breakdownLookup:verifiedLookup});
+  assert.equal(verifiedAttempt.breakdown?.question_id,25);
 });
 test('单选、多选、判断正确判定，非法组合和重复答案被拒绝',async()=>{
   const {call}=database();for(const a of [submission(13,'D'),submission(19031,'DCA'),submission(19037,'D')])assert.equal((await call('POST','/attempt',a)).correct,true);

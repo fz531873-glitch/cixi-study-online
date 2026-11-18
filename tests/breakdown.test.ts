@@ -172,6 +172,9 @@ test('生成器实际运行且只更新第1—10题并保护第13、18题等非�
       assert.equal(b?.status, '已核对');
       assert.ok(b?.items.every((it: any) => it.rule_id !== 'RULE-UNVERIFIED'));
     }
+    assert.equal(updatedContent.breakdowns.find((b: any) => b.question_id === 1).items.find((it: any) => it.key === 'C').knowledge_id, 30001);
+    assert.equal(updatedContent.breakdowns.find((b: any) => b.question_id === 7).items.find((it: any) => it.key === '①').knowledge_id, 10156);
+    assert.equal(updatedContent.breakdowns.find((b: any) => b.question_id === 10).items.find((it: any) => it.key === '④').knowledge_id, 30030);
 
     // 关键校验：第13题与第18题等非目标题的人工成果必须 100% 保留，严禁被覆盖
     const updatedQ13 = updatedContent.breakdowns.find((b: any) => b.question_id === 13);
@@ -259,6 +262,8 @@ test('在 CodexReview 隔离目录下真实子进程运行生成器验证参数�
         assert.deepEqual(b, prev, `Non-target question ${b.question_id} was modified!`);
       }
     }
+    assert.equal(firstRunContent.breakdowns.find((b: any) => b.question_id === 11).items.find((it: any) => it.key === '②').knowledge_id, 30011);
+    assert.equal(firstRunContent.breakdowns.find((b: any) => b.question_id === 13).items.find((it: any) => it.key === '④').knowledge_id, 10163);
     assert.equal(nonTargetCount, 336, '非目标题目数量必须精确等于 336 题！');
     assert.equal(firstRunContent.breakdowns.find((b: any) => b.question_id === 14).items[0].basis, customBasis14);
     assert.equal(firstRunContent.breakdowns.find((b: any) => b.question_id === 26).items[0].basis, customBasis26);
@@ -285,4 +290,64 @@ test('第二批9题（第11、12、17—23题）逐项依据有效且符合设�
   assert.equal(catalog.links.find(l => l.question_id === 21 && l.knowledge_id === 10072)?.status, '已确认');
   assert.equal(catalog.links.find(l => l.question_id === 17 && l.knowledge_id === 20070)?.status, '已确认');
   assert.equal(catalog.links.find(l => l.question_id === 18 && l.knowledge_id === 10183)?.status, '已确认');
+});
+
+test('2025年上午卷45题的逐规则配对覆盖与候选隔离', () => {
+  const paper = catalog.questions.filter(q => q.exam === '2025年上午卷');
+  assert.equal(paper.length, 45);
+  assert.deepEqual(paper.map(q => q.number).sort((a,b)=>a-b), Array.from({length:45},(_,i)=>i+1));
+
+  const report = readFileSync(new URL('../data/2025上午卷_主考点配对清单.md', import.meta.url), 'utf8');
+  const rows = report.split(/\r?\n/).filter(line => /^\| \d+ \|/.test(line));
+  assert.equal(rows.length, 45);
+  assert.equal(new Set(rows.map(line => Number(line.match(/^\| (\d+) \|/)?.[1]))).size, 45);
+
+  const links = catalog.links.filter(link => link.question_id >= 1 && link.question_id <= 45);
+  assert.equal(new Set(links.map(link => `${link.knowledge_id}:${link.question_id}:${link.rule_id}`)).size, links.length);
+  for (const link of links) {
+    const question = catalog.questions.find(q => q.id === link.question_id)!;
+    const breakdown = sourceBreakdown(link.question_id);
+    assert.notEqual(link.rule_id, 'RULE-UNVERIFIED');
+    assert.ok(breakdown.items.some((item: any) => item.rule_id === link.rule_id), `${link.question_id}:${link.rule_id}`);
+    assert.ok(link.source_ref.question_material.page >= question.source_page && link.source_ref.question_material.page <= question.source_page + 1);
+    assert.ok(link.source_ref.analysis_material.page >= question.analysis_page && link.source_ref.analysis_material.page <= question.analysis_page + 1);
+  }
+
+  const expected = [
+    [1,30001,'RULE-POL-SCO-2025-01'],
+    [5,30032,'RULE-POL-DEMOCRACY-DECISION-01'],
+    [7,10156,'RULE-POL-INNOVATION-FIRST-POWER-01'],
+    [10,30030,'RULE-ECON-LOW-ALTITUDE-01'],
+    [11,30011,'RULE-ECON-CONSUMPTION-EXPECTATION-01'],
+    [11,30011,'RULE-ECON-SOCIAL-SECURITY-CONSUMPTION-01'],
+    [12,30034,'RULE-LAW-SECURITIES-GATEKEEPER-01'],
+    [13,10162,'RULE-POL-ECO-CIV-01'],
+    [13,10163,'RULE-POL-PARTY-LAW-01'],
+    [13,10163,'RULE-LAW-SCIENTIFIC-LEG-01'],
+    [19,30020,'RULE-MGMT-CONFLICT-COMPROMISE-01'],
+    [20,30027,'RULE-SCI-HEAT-STROKE-RISK-FACTORS-01'],
+    [23,30008,'RULE-TECH-WORM-VIRUS-SHORTCUT-01'],
+    [25,10061,'RULE-SCI-LUNAR-ECLIPSE-01'],
+    [28,10155,'RULE-ECON-NONPUBLIC-ECONOMY-SUPPORT-01'],
+    [29,10116,'RULE-HERB-MATERIA-MEDICA-01'],
+    [30,10154,'RULE-POL-NATIONAL-SPIRIT-01'],
+    [30,10159,'RULE-POL-SOCIALIST-CORE-VALUES-01'],
+    [32,30010,'RULE-POL-SECURITY-HIERARCHY-01'],
+    [33,10158,'RULE-POL-ETHNIC-AUTONOMY-CORE-01'],
+    [34,10144,'RULE-PHIL-DIALECTICS-METAPHYSICS-01'],
+    [35,10155,'RULE-ECON-GOVERNMENT-MARKET-ROLE-01'],
+    [40,10043,'RULE-LABOR-PROBATION-LIMIT-01'],
+    [42,10068,'RULE-HIST-YUAN-PROVINCE-01'],
+    [45,10088,'RULE-SCI-COLD-THERMOREGULATION-01'],
+  ] as const;
+  for (const [questionId, knowledgeId, ruleId] of expected) {
+    assert.ok(links.some(link => link.question_id===questionId && link.knowledge_id===knowledgeId && link.rule_id===ruleId && link.status==='已确认'));
+    assert.ok(sourceBreakdown(questionId).items.some((item: any) => item.rule_id===ruleId && item.knowledge_id===knowledgeId));
+  }
+  assert.equal(catalog.questions.find(question => question.id===45)?.status, '已核对');
+
+  assert.equal(links.find(link => link.question_id===15 && link.knowledge_id===20011)?.status, '候选');
+  assert.equal(links.find(link => link.question_id===16 && link.knowledge_id===10038)?.status, '候选');
+  assert.ok(sourceBreakdown(15).items.every((item: any) => item.knowledge_id!==20011));
+  assert.ok(sourceBreakdown(16).items.every((item: any) => item.knowledge_id!==10038));
 });

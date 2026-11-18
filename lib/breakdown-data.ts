@@ -29,14 +29,32 @@ export const breakdownSchema=z.object({
 });
 
 const available=new Map<string,QuestionBreakdown>();
-for(const item of data.breakdowns){
+export function isBreakdownReady(item: {
+  status: string;
+  items: { rule_id: string }[];
+}) {
   // Automatically extracted drafts can include the wrong option's evidence.
-  if(item.status!=='待核对'&&item.items.length&&item.items.every(evidence=>evidence.rule_id!=='RULE-UNVERIFIED')){
-    const entry=breakdownSchema.parse(item);
-    available.set(entry.question_id+':'+entry.version,entry);
+  return item.status!=='待核对'&&item.items.length>0&&item.items.every(evidence=>evidence.rule_id!=='RULE-UNVERIFIED');
+}
+export function loadBreakdownMap(breakdowns: readonly unknown[]) {
+  const map=new Map<string,QuestionBreakdown>();
+  for(const raw of breakdowns){
+    const item=raw as {question_id:number;version:number;status:string;items:{rule_id:string}[]};
+    if(isBreakdownReady(item)){
+      const entry=breakdownSchema.parse(item);
+      map.set(entry.question_id+':'+entry.version,entry);
+    }
   }
+  return map;
+}
+for(const [k,v] of loadBreakdownMap(data.breakdowns)){
+  available.set(k,v);
 }
 
-export function getQuestionBreakdown(id:number, version:number) {
-  return available.get(id+':'+version)??null;
+export function getQuestionBreakdown(
+  id:number,
+  version:number,
+  lookup: ReadonlyMap<string,QuestionBreakdown>=available
+) {
+  return lookup.get(id+':'+version)??null;
 }

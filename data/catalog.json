@@ -5178,7 +5178,7 @@
       "analysis_page": 10,
       "question_material": 8,
       "analysis_material": 7,
-      "status": "待核对",
+      "status": "已核对",
       "direct": "冷觉在大脑皮质形成，下丘脑负责体温调节；寒冷时皮肤血管收缩、血流减少以减少散热，骨骼肌产热可增加。题干前两处错误，因此选D。",
       "note": "",
       "references": [],
@@ -10104,9 +10104,9 @@
     {
       "knowledge_id": 10158,
       "question_id": 3,
-      "role": "辅助考点",
+      "role": "主考点",
       "position": "陈述②",
-      "reason": "陈述②直接考查民族区域自治制度保障民族平等权利；卡片载明民族区域自治的定义、自治权及民族关系原则。",
+      "reason": "陈述②是参考组合正确项，民族区域自治制度直接解释民族平等权利。",
       "evidence": "2025年上午卷第3题：陈述②及解析第2页；知识卡10158第175—178条",
       "status": "已确认",
       "rule_id": "RULE-POL-ETHNIC-AUTONOMY-01",
@@ -10128,9 +10128,9 @@
     {
       "knowledge_id": 10158,
       "question_id": 3,
-      "role": "辅助考点",
+      "role": "主考点",
       "position": "陈述③",
-      "reason": "陈述③考查全国各族人民共同奋斗形成平等团结互助和谐的社会主义民族关系；卡片第175条明确载明社会主义民族关系为平等团结互助和谐。",
+      "reason": "陈述③是参考组合正确项，知识卡直接列明社会主义民族关系原则。",
       "evidence": "2025年上午卷第3题：陈述③及解析第2页；知识卡10158第175条",
       "status": "已确认",
       "rule_id": "RULE-POL-ETHNIC-RELATIONS-01",
@@ -10248,9 +10248,9 @@
     {
       "knowledge_id": 10144,
       "question_id": 7,
-      "role": "辅助考点",
+      "role": "主考点",
       "position": "陈述④",
-      "reason": "陈述④考查坚持两点论与重点论相统一；卡片直接列明该规则。陈述①所涉创新驱动规则未由本卡覆盖。",
+      "reason": "陈述④是参考组合正确项，直接考查两点论与重点论相统一。",
       "evidence": "2025年上午卷第7题：陈述④及解析第3页；知识卡10144第41条",
       "status": "已确认",
       "rule_id": "RULE-PHIL-TWO-POINT-FOCUS-01",
@@ -10795,6 +10795,582 @@
           "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
           "page": 5,
           "location": "第21题解析第1句"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10026,
+      "question_id": 12,
+      "role": "辅助考点",
+      "position": "D选项",
+      "reason": "D选项误将“没一罚二”的行政处罚说成政府提供无偿法律服务；卡片10026第83条明确财产罚为罚款、没收违法所得与非法财物，第92条明确行政处罚执法管辖。",
+      "evidence": "2025年上午卷第12题：D选项及解析第4页；知识卡10026第83、92条",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-ADMIN-PUNISHMENT-NATURE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第12题D项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第12题解析D项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10183,
+      "question_id": 17,
+      "role": "辅助考点",
+      "position": "B选项",
+      "reason": "B选项表述“上行文 报告”本身符合公文规定（卡片10183第43条明确报告适用于向上级机关汇报工作、反映情况，回复上级机关的询问），但不符合本题平级/不相隶属机关行文设问，故排除。",
+      "evidence": "2025年上午卷第17题：B选项及解析第5页；知识卡10183第43条",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-REPORT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第17题B项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第17题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10183,
+      "question_id": 17,
+      "role": "辅助考点",
+      "position": "D选项",
+      "reason": "D选项将“通知”归为上行文错误；卡片10183第41条明确通知适用于发布、传达要求下级机关执行和有关单位周知或者执行的事项，批转、转发公文。",
+      "evidence": "2025年上午卷第17题：D选项及解析第5页；知识卡10183第41条",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-NOTICE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第17题D项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第17题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10183,
+      "question_id": 18,
+      "role": "辅助考点",
+      "position": "A、B选项",
+      "reason": "A、B两项分别涉及会议纪要结构层次与办公会议纪要记载传达事项；卡片10183第48条明确「纪要。适用于记载会议主要情况和议定事项」，两项陈述本身均成立，因本题选错误项而排除。",
+      "evidence": "2025年上午卷第18题：A、B选项及解析第5页；知识卡10183第48条",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-MINUTES-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第18题A、B项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第18题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30001,
+      "question_id": 1,
+      "role": "主考点",
+      "position": "A选项、B选项、C选项、D选项",
+      "reason": "四项均考查2025年上合峰会提出的五项主张。",
+      "evidence": "卡30001逐项列明峰会五项主张。",
+      "status": "已确认",
+      "rule_id": "RULE-POL-SCO-2025-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 1,
+          "location": "第1题A选项、B选项、C选项、D选项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第1题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30032,
+      "question_id": 5,
+      "role": "主考点",
+      "position": "A选项",
+      "reason": "A项对应公众在公共方案形成前建言属于民主决策参与。",
+      "evidence": "卡30032明确公共方案形成前建言属于民主决策。",
+      "status": "已确认",
+      "rule_id": "RULE-POL-DEMOCRACY-DECISION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第5题A选项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第5题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10156,
+      "question_id": 7,
+      "role": "主考点",
+      "position": "陈述①",
+      "reason": "①直接考查创新是引领发展的第一动力。",
+      "evidence": "卡10156第138条。",
+      "status": "已确认",
+      "rule_id": "RULE-POL-INNOVATION-FIRST-POWER-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第7题陈述①"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 3,
+          "location": "第7题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30030,
+      "question_id": 10,
+      "role": "主考点",
+      "position": "陈述①、陈述②、陈述④",
+      "reason": "①②④对应低空应用的交通、消费和产业带动作用。",
+      "evidence": "卡30030低空应用场景要点。",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-LOW-ALTITUDE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第10题陈述①、陈述②、陈述④"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 3,
+          "location": "第10题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30011,
+      "question_id": 11,
+      "role": "主考点",
+      "position": "陈述②",
+      "reason": "②直接考查稳定收入预期有助于增强消费意愿。",
+      "evidence": "卡30011消费预期要点。",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-CONSUMPTION-EXPECTATION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第11题陈述②"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第11题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30011,
+      "question_id": 11,
+      "role": "主考点",
+      "position": "陈述③",
+      "reason": "③直接考查完善保障有助于提高消费意愿。",
+      "evidence": "卡30011收入保障与消费意愿要点。",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-SOCIAL-SECURITY-CONSUMPTION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第11题陈述③"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第11题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30034,
+      "question_id": 12,
+      "role": "主考点",
+      "position": "C选项",
+      "reason": "C项考查金融监管执法规范市场秩序并改善投资环境。",
+      "evidence": "卡30034金融监管与市场规则要点。",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-SECURITIES-GATEKEEPER-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第12题C选项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第12题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10163,
+      "question_id": 13,
+      "role": "主考点",
+      "position": "陈述②",
+      "reason": "②考查党领导立法及党委领导、人大主导的立法格局。",
+      "evidence": "卡10163第94条。",
+      "status": "已确认",
+      "rule_id": "RULE-POL-PARTY-LAW-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第13题陈述②"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第13题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10162,
+      "question_id": 13,
+      "role": "主考点",
+      "position": "陈述③",
+      "reason": "③考查生态环境法典编纂与生态文明建设的制度联系。",
+      "evidence": "卡10162生态文明建设要点。",
+      "status": "已确认",
+      "rule_id": "RULE-POL-ECO-CIV-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第13题陈述③"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第13题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10163,
+      "question_id": 13,
+      "role": "主考点",
+      "position": "陈述④",
+      "reason": "④直接考查科学立法、民主立法及提高立法质量。",
+      "evidence": "卡10163第94条。",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-SCIENTIFIC-LEG-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第13题陈述④"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第13题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30020,
+      "question_id": 19,
+      "role": "主考点",
+      "position": "B选项",
+      "reason": "B项考查妥协未解决根源时不等于从根本上解决冲突。",
+      "evidence": "卡30020冲突处理要点。",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-CONFLICT-COMPROMISE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第19题B选项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第19题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30027,
+      "question_id": 20,
+      "role": "主考点",
+      "position": "D选项",
+      "reason": "D项对应高温高湿与高强度体力活动是热射病的重要危险因素。",
+      "evidence": "卡30027热射病识别与紧急救治要点。",
+      "status": "已确认",
+      "rule_id": "RULE-SCI-HEAT-STROKE-RISK-FACTORS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第20题D选项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第20题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30008,
+      "question_id": 23,
+      "role": "主考点",
+      "position": "B选项",
+      "reason": "B项对应可移动介质出现快捷方式时优先排查恶意程序。",
+      "evidence": "卡30008可移动介质安全要点。",
+      "status": "已确认",
+      "rule_id": "RULE-TECH-WORM-VIRUS-SHORTCUT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第23题B选项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 6,
+          "location": "第23题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10061,
+      "question_id": 25,
+      "role": "辅助考点",
+      "position": "A选项",
+      "reason": "A项的月食几何关系与卡片条文一致；不覆盖C项的观测条件和血月光学原理。",
+      "evidence": "卡10061第242条。",
+      "status": "已确认",
+      "rule_id": "RULE-SCI-LUNAR-ECLIPSE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第25题A选项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 6,
+          "location": "第25题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10155,
+      "question_id": 28,
+      "role": "辅助考点",
+      "position": "D选项",
+      "reason": "D项直接对应国家鼓励、支持和引导非公有制经济发展的政策。",
+      "evidence": "卡10155第121条。",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-NONPUBLIC-ECONOMY-SUPPORT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 6,
+          "location": "第28题D选项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 7,
+          "location": "第28题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10154,
+      "question_id": 30,
+      "role": "辅助考点",
+      "position": "B选项",
+      "reason": "B项涉及以爱国主义为核心的民族精神。",
+      "evidence": "卡10154第111条。",
+      "status": "已确认",
+      "rule_id": "RULE-POL-NATIONAL-SPIRIT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 6,
+          "location": "第30题B选项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 7,
+          "location": "第30题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10159,
+      "question_id": 30,
+      "role": "辅助考点",
+      "position": "C选项",
+      "reason": "C项涉及社会主义核心价值观的公民层面内容。",
+      "evidence": "卡10159第198至200条。",
+      "status": "已确认",
+      "rule_id": "RULE-POL-SOCIALIST-CORE-VALUES-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 6,
+          "location": "第30题C选项"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 7,
+          "location": "第30题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30010,
+      "question_id": 32,
+      "role": "主考点",
+      "position": "判断陈述",
+      "reason": "该题直接混淆政治安全与经济安全的层级。",
+      "evidence": "卡30010总体国家安全观层级。",
+      "status": "已确认",
+      "rule_id": "RULE-POL-SECURITY-HIERARCHY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第32题判断陈述"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 8,
+          "location": "第32题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10068,
+      "question_id": 42,
+      "role": "主考点",
+      "position": "判断陈述",
+      "reason": "元朝与行省制度可由知识卡相关条文直接核对。",
+      "evidence": "卡10068元朝与行省制度要点。",
+      "status": "已确认",
+      "rule_id": "RULE-HIST-YUAN-PROVINCE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第42题判断陈述"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 9,
+          "location": "第42题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10088,
+      "question_id": 45,
+      "role": "主考点",
+      "position": "判断陈述（皮肤血流与产热调节）",
+      "reason": "知识卡第269条直接说明寒冷环境下皮肤血管收缩、减少散热并增加骨骼肌产热，题干把皮肤血流方向写反。",
+      "evidence": "2025年上午卷第45题：判断陈述及解析第10页；知识卡10088第269条",
+      "status": "已确认",
+      "rule_id": "RULE-SCI-COLD-THERMOREGULATION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 8,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第45题判断陈述"
+        },
+        "analysis_material": {
+          "id": 7,
+          "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 10,
+          "location": "第45题解析"
         }
       }
     }
