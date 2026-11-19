@@ -3,6 +3,7 @@ import data from '../data/question-breakdowns.json' with {type:'json'};
 import type {QuestionBreakdown} from './breakdown';
 
 const location=z.object({id:z.number().int(),name:z.string(),page:z.number().int().positive(),location:z.string()});
+const count=z.number().int().nonnegative();
 export const breakdownSchema=z.object({
   question_id:z.number().int().positive(),
   version:z.number().int().positive(),
@@ -12,6 +13,7 @@ export const breakdownSchema=z.object({
   status:z.enum(['待核对','已核对','争议']),
   stem_polarity:z.enum(['选正确','选错误','判断正误']),
   combination_map:z.record(z.string(),z.array(z.string())).optional(),
+  count_options:z.object({A:count,B:count,C:count,D:count}).optional(),
   items:z.array(z.object({
     key:z.string(),
     statement_truth:z.boolean().nullable(),

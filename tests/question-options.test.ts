@@ -53,3 +53,13 @@ test('上午卷第13题统一日期、编号和选项，解析不改普通数值
   assert.equal(formatQuestionAnalysis('第123错误，1,000元，3.5%。'), '第123错误，1,000元，3.5%。');
   assert.deepEqual(splitQuestionOptions(catalog.questions.find(q => q.id === 19010)!.body)?.choices,['①③④','①②④','①②③','①②③④']);
 });
+
+test('下午卷第5题的选项保留数量，陈述仍显示圈号', () => {
+  const countQuestion = catalog.questions.find(q => q.id === 25105)!;
+  const count = splitQuestionOptions(countQuestion.body, countQuestion.number)!;
+  assert.deepEqual(count.choices, ['1', '2', '3', '4']);
+  assert.match(count.stem, /\n④ 中国外交/);
+  const combinationQuestion = catalog.questions.find(q => q.id === 25106)!;
+  assert.deepEqual(splitQuestionOptions(combinationQuestion.body, combinationQuestion.number)?.choices,
+    ['①②', '③', '②④', '③④']);
+});

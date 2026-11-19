@@ -38,6 +38,7 @@ export interface QuestionBreakdown {
   status: '待核对' | '已核对' | '争议';
   stem_polarity: StemPolarity;
   combination_map?: Record<string, string[]>;
+  count_options?: Record<string, number>;
   items: BreakdownItem[];
 }
 
@@ -96,6 +97,22 @@ export function buildAnswerFeedback(
       summary:correctNorm==='A'?'参考答案：正确。':'参考答案：错误。',
       sections:item?[{title:'判断依据',items:[item]}]:[],
       disputed:false,
+    };
+  }
+
+  if (breakdown.count_options) {
+    const chosenCount = breakdown.count_options[userNorm];
+    const correctCount = breakdown.count_options[correctNorm];
+    const included = breakdown.items.filter(item => item.matches_stem === true);
+    const excluded = breakdown.items.filter(item => item.matches_stem === false);
+    return {
+      headline: userNorm ? `你选了 ${chosenCount} 项，正确数量为 ${correctCount} 项` : `正确数量为 ${correctCount} 项`,
+      summary: `逐一核对陈述后计数，参考答案为 ${correctNorm}。`,
+      sections: [
+        ...(included.length ? [{ title: '计入正确数量的陈述', items: included }] : []),
+        ...(excluded.length ? [{ title: '排除的陈述', items: excluded }] : []),
+      ],
+      disputed: false,
     };
   }
 

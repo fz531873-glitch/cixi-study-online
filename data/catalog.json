@@ -5199,13 +5199,18 @@
       "analysis_page": 2,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "题干指向2025年7月1日中央财经委员会第六次会议,公开报道显示本次会议研究“纵深推进全国统一大市场建设、海洋经济高质量发展”等问题,与选项B完全对应。【快速解题思路】根据题干“协调配合”“合力”等关键词,可分析出研究的问题应着重“合作”,即可基本排除重心不在合作的ACD选项。",
+      "status": "已核对",
+      "direct": "2025年7月1日会议公开通稿列出的两项议题是纵深推进全国统一大市场建设和海洋经济高质量发展，选B。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "中央财经委员会第六次会议报道",
+          "url": "https://www.miit.gov.cn/xwfb/szyw/art/2025/art_a646254fc59c42be9d957c2ac3487701.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5220,13 +5225,18 @@
       "analysis_page": 2,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "根据2025年9月8—10日在北京召开的全球能源互联网大会报道,倡议提出深化可再生能源开发利用、电网互联互通和智慧能源技术等领域合作,对应123,故选A。",
+      "status": "已核对",
+      "direct": "第一项倡议列举可再生能源发电、电网互联、智慧能源合作，对应①②③，选A。跨国和跨区域能源基础设施联通属于第四项倡议。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "全球能源互联网大会致辞报道",
+          "url": "https://me.china-embassy.gov.cn/chn/sgxx1/202509/t20250909_11705023.htm"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5241,13 +5251,13 @@
       "analysis_page": 2,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "题干强调自然界先于人类且意识是自然长期发展和社会劳动的产物,属于唯物主义立场,体现物质独立于意识的原则,因此选C。AB选项是唯心主义,D选项是二元论观点。",
+      "status": "已核对",
+      "direct": "题干从自然界先于人类、意识依赖自然与社会条件出发。唯物主义认为物质具有客观实在性，独立于人的意识存在，选C。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "马克思主义原理"
     },
     {
@@ -5262,13 +5272,22 @@
       "analysis_page": 2,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "我国多党合作制度的基本方针即为“长期共存、互相监督、肝胆相照、荣辱与共”,对应选项C;多党合作制度的根本保证是中国共产党的领导;活动准则是遵守宪法和法律;政治基础在于坚持党的领导和社会主义道路,人民政协是协商议政的重要渠道但不是制度的政治基础本身。",
+      "status": "已核对",
+      "direct": "认清四个概念：根本保证是党的领导，根本活动准则是宪法和法律，十六字方针是基本方针，人民政协是多党合作的重要组织形式。选C。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《中国新型政党制度》白皮书",
+          "url": "https://www.mod.gov.cn/gfbw/fgwx/bps/4888135.html?big=fan"
+        },
+        {
+          "title": "《中国共产党统一战线工作条例》第十二条",
+          "url": "https://www.ccdi.gov.cn/toutiao/202101/t20210105_233292.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5283,13 +5302,22 @@
       "analysis_page": 2,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "题目列出的四项均反映了新时代中国特色大国外交的目标与原则:1关于构建人类命运共同体;2体现独立自主的和平外交;3坚持和平共处五项原则并深化伙伴关系;4践行真正的多边主义并参与全球治理改革,均属实,故四项均正确。",
+      "status": "已核对",
+      "direct": "共有4项正确，选D。逐项核对外交目标、独立自主的和平外交政策、和平共处五项原则及全球伙伴关系、全球治理与多边主义。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "党的二十大报告第十四部分",
+          "url": "https://www.mfa.gov.cn/ziliao_674904/zt_674979/dnzt_674981/qtzt/twwt/xjpzsjstzyjh/202304/t20230410_11057003.html"
+        },
+        {
+          "title": "中央外事工作会议关于外交目标的说明",
+          "url": "https://www.mfa.gov.cn/wjdt_674879/gjldrhd_674881/202312/t20231228_11214409.shtml"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5304,13 +5332,22 @@
       "analysis_page": 3,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "抗战精神蕴含深厚的民族情感和时代价值,能够激发人民的爱国情怀、增强担当意识,并为实现中华民族伟大复兴提供持续的精神动力,34正确。“文明”是社会主义核心价值观的集中体现,社会主义核心价值观是当代中国精神的集中体现,抗战精神本质上是中华民族的信念、性格、气质、血性的集中体现,是中国精神在抗战中的集中体现。新时期中华民族精神的重要基础和组成部分是儒家思想,2错误。",
+      "status": "已核对",
+      "direct": "③④正确，选D。抗战精神孕育于全民族抗战实践，体现并丰富了以爱国主义为核心的中华民族精神，今天仍能激发爱国担当、为民族复兴提供动力。①混淆抗战精神与核心价值观，②误把抗战中丰富民族精神说成奠定其思想基础。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "纪念抗战胜利75周年座谈会讲话",
+          "url": "https://www.mem.gov.cn/jjz/ywgz/202009/t20200908_361442.shtml"
+        },
+        {
+          "title": "纪念抗战胜利60周年大会讲话",
+          "url": "https://www.mct.gov.cn/whzx/whyw/201112/t20111201_707660.htm"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5325,13 +5362,18 @@
       "analysis_page": 3,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "文化特派员制度通过人才资源引领优质文化资源下沉基层,有助于挖掘乡村文化资源、整合集聚文化力量、提升文化治理效能,并促进公共文化服务均衡化,因此1234均正确。本题节选自中共浙江省委宣传部《构建以人才资源牵引优质文化资源直达基层的新型模式(深入学习贯彻习近平新时代中国特色社会主义思想)——浙江实施文化特派员制度的探索与实践》。",
+      "status": "已核对",
+      "direct": "四项都符合文化特派员制度的作用，选A。顺着人才下沉看四条作用链：激活本地资源、整合外部供给、带动村民参与治理、扩大基层文化服务的可及性。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "浙江省委宣传部关于文化特派员制度的原文",
+          "url": "https://cpc.people.com.cn/n1/2025/0513/c459166-40478544.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5346,13 +5388,22 @@
       "analysis_page": 3,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "不变资本指用于购买生产资料的资本,可变资本是用来购买劳动力的资本,A错误;剩余价值既有绝对形式也有相对形式,B错误;剩余价值率=剩余劳动时间÷必要劳动时间=100%,D错误;利息是剩余价值的特殊转化形式,通常受平均利润率影响并方向一致,故只有C正确。",
+      "status": "已核对",
+      "direct": "选C。利息从借入资本所实现的利润中分出，在分割比例相同等条件下通常随平均利润率同向变化。购买劳动力属可变资本；绝对和相对剩余价值有不同生产方法；本题剩余价值率为4÷4＝100%。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《资本论》第三卷第二十二章",
+          "url": "https://www.marxists.org/archive/marx/works/1894-c3/ch22.htm"
+        },
+        {
+          "title": "《资本论》第一卷",
+          "url": "https://www.marxists.org/archive/marx/works/1867-c1/index.htm"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "马克思主义原理"
     },
     {
@@ -5367,13 +5418,18 @@
       "analysis_page": 3,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "最低工资主要作用于低技能劳动者的工资区间,对高技能劳动者(其工资远高于最低标准)影响极小,A错误,C正确。最低工资提高会增加部分行业的成本,但最终价格变化受市场竞争、成本结构、需求弹性等多因素影响,不具有必然性,也不是最直接影响,B错误。对于仍然被雇佣的劳动者,最低工资提高会提升其名义收入,不会导致其实际收入下降;收入下降主要出现在失业人群,而题干明确限定为“在职劳动者”,D错误。",
+      "status": "已核对",
+      "direct": "按题设的竞争性劳动力市场模型，最低工资高于均衡工资会使劳动供给量超过劳动需求量，部分低技能劳动者面临失业风险，选C。用工替代、售价和实际收入还取决于其他条件。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "OpenStax《宏观经济学原理》4.1节",
+          "url": "https://openstax.org/books/principles-macroeconomics-3e/pages/4-1-demand-and-supply-at-work-in-labor-markets"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -5388,13 +5444,18 @@
       "analysis_page": 4,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "二手房交易不属于当期新产出,其差价不计入GDP,只能记录中介服务等新增劳动价值,因此B不正确。其他选项均符合GDP核算原则。",
+      "status": "已核对",
+      "direct": "本题选不正确项，选B。二手房涨价的20万元属于存量资产价差，不计入当年GDP；这次交易新增的中介服务则可计入。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "国家统计局国民经济核算问答第6问",
+          "url": "https://www.stats.gov.cn/hd/cjwtjd/202302/t20230207_1902278.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -5409,13 +5470,18 @@
       "analysis_page": 4,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "完全竞争市场依靠价格机制自动调节供需,政府不会通过关税、补贴、配给等方式进行干预,因此B不属于其特征。",
+      "status": "已核对",
+      "direct": "完全竞争市场的特征包括产品同质和个体按市场价格交易。关税、补贴和配给属于政策工具，题目问不属于市场特征的一项，选B。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "OpenStax《微观经济学原理》第8.1节",
+          "url": "https://openstax.org/books/principles-microeconomics-3e/pages/8-1-perfect-competition-and-why-it-matters"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -5430,13 +5496,26 @@
       "analysis_page": 4,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "财产性收入增加属于非劳动收入上升,会产生收入效应,促使劳动者在收入更高的情况下减少劳动供给,从而使劳动供给下降。在劳动供给理论中,工资变动引起替代效应与收入效应,但财产性收入不改变劳动价格,因此只体现收入效应。财产性收入与劳动力的边际产出(取决于生产技术与资本等)没有直接因果关系,收入变化通过效用选择影响供给,而非通过降低边际产出来实现。",
+      "status": "已核对",
+      "direct": "工资率等条件不变、闲暇为正常品时，非工资收入增加会增加闲暇需求，减少劳动供给。闲暇的机会成本未变，主要是收入效应，选A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《提振消费专项行动方案》",
+          "url": "https://www.mee.gov.cn/zcwj/zyygwj/202503/t20250316_1104111.shtml"
+        },
+        {
+          "title": "OpenStax《宏观经济学原理》第4.1节（劳动市场供给和需求）",
+          "url": "https://openstax.org/books/principles-macroeconomics-3e/pages/4-1-demand-and-supply-at-work-in-labor-markets"
+        },
+        {
+          "title": "MIT开放课程《微观经济学原理》（劳动与闲暇选择）",
+          "url": "https://ocw.mit.edu/ans7870/14/14.01SC/MIT14_01SCF11_rttext.pdf"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -5451,13 +5530,13 @@
       "analysis_page": 4,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "决策影响因素通常区分为外部因素(如环境、政策、技术)和内部因素(如组织结构、文化、人员特质),管理者需综合权衡,因此1234全部正确。",
+      "status": "已核对",
+      "direct": "从外部环境、组织的历史与文化、决策者个人四个方面理解决策。四项都成立，选D。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -5472,13 +5551,13 @@
       "analysis_page": 4,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "艺术型强调创造力、审美性和表达性,与平面设计师岗位“视觉设计+创意表达”的需求完全匹配,因此选B。",
+      "status": "已核对",
+      "direct": "平面设计岗位强调审美、个性和创意表达，对应霍兰德职业兴趣中的艺术型，选B。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -5493,13 +5572,13 @@
       "analysis_page": 4,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "人本管理强调尊重员工、关注员工需求、体现柔性管理。A项做法僵化机械,未顾及员工真实困难,不符合人本管理理念。",
+      "status": "已核对",
+      "direct": "题目考查人本管理。应核实紧急请假的实际情况，并依法依规分类处理。按题面，A机械处理且未体现这一点，选A。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -5514,13 +5593,13 @@
       "analysis_page": 5,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "关键路径指项目中持续时间最长、总时差为零的路径,关键路径上的任务没有可利用的浮动时间,因此只要任一关键任务延误,就会以同样时长直接推迟项目总工期。B项错误,因为项目可能存在多条持续时间相同的关键路径,且非关键路径任务若延误超过其允许时差,同样会影响总工期。C项错误,关键路径的特点是持续时间最长、对工期影响最大,而不是“最短且易完成”。",
+      "status": "已核对",
+      "direct": "关键路径决定项目工期。按标准模型，其他条件不变且无赶工补救时，零总时差的关键任务延误一天，总工期同样延误一天，选A。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -5535,13 +5614,18 @@
       "analysis_page": 5,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "行政诉讼以审查行政行为是否合法为核心,人民法院必须依法实行合议、回避、公开审理和两审终审制度,故A正确;法院审查行政行为是否合法是行政诉讼基本原则之一,故B正确;根据《行政诉讼法》及行政法原理,行政主体享有公权力,在行政法律关系中通常处于优势地位,而行政相对人处于从属地位,因此二者不具有实体意义上的地位平等,C项错误;二审行政案件三个月内作出终审判决且可依法获批延长,D项正确。",
+      "status": "已核对",
+      "direct": "行政主体与相对人在原行政管理关系中处于不对等地位；进入行政诉讼后，各诉讼当事人的诉讼法律地位平等。题干问前者，选C。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《中华人民共和国行政诉讼法》第6—8、88条",
+          "url": "https://wb.flk.npc.gov.cn/flfg/PDF/23d1a3847d2440d88dda4ccc34f39ef2.pdf"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -5556,13 +5640,18 @@
       "analysis_page": 5,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "A、B、D三项均是对集体土地、鱼塘、宅基地等他人财产依法享有使用收益权,符合用益物权定义。而C项中小周购买的卡车为其自有财产,他通过经营获得收益属于行使所有权的使用权能,不构成用益物权。",
+      "status": "已核对",
+      "direct": "区分对本人财产行使所有权和依法利用他人财产。C中的卡车归小周所有，运货获利是行使所有权的收益权能，选C。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《中华人民共和国民法典》第240、323、329、331、362条",
+          "url": "https://www.npc.gov.cn/wxzlhgb/c27214/gb2020/202006/P020230313538731037747.pdf"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -5577,13 +5666,18 @@
       "analysis_page": 5,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "选举权与国家权力的关系是“通过选举国家权力机关成员间接影响国家权力”,并非直接行使国家权力,因此A错误;基层人大代表原则上由选民直接选举产生,而非由上级人大委派,B错误;年满18周岁公民拥有选举权和被选举权,但依法被剥夺政治权利者除外,因此C不严谨而错误;选举权属于公民个人享有的基本政治权利,不以集体形式行使,D正确。",
+      "status": "已核对",
+      "direct": "选举权是符合法定条件的公民个人的政治权利。县乡人大代表由选民直接选举；依法被剥夺政治权利的人除外，选D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《中华人民共和国全国人民代表大会和地方各级人民代表大会选举法》第3、4条",
+          "url": "https://www.gzns.gov.cn/rd/flfg/gjflfg/202106/P020210610356188983648.pdf"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -5598,13 +5692,18 @@
       "analysis_page": 5,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "省政府办公厅与省公安厅同属省政府系统,办公厅转发公安厅实施意见符合规定,故A正确。B项中抽调人员属于不相隶属机关之间的商洽事项,应使用函,而不能使用决定。D项中县级部门向市级部门汇报情况属于上行文,应使用报告,而非函。",
+      "status": "已核对",
+      "direct": "转发公文用通知；不相隶属机关商洽事项用函；向上级汇报工作用报告。A所述转发做法适当，选A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《党政机关公文处理工作条例》第8、14—16条",
+          "url": "https://www.miit.gov.cn/xwdt/szyw/art/2020/art_6afb8ee6d07540dcacccbeb47dbc0fd4.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "公文写作"
     },
     {
@@ -5619,13 +5718,13 @@
       "analysis_page": 6,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "最迫切的历史任务便是通过反帝反封建的资产阶级民主革命争取民族独立与人民解放,A项正确。C项错误,半殖民地半封建社会的形成主要源自帝国主义侵略与本国封建势力勾结,而非一般意义上的“战争直接造成”;同时并非多数国家都会经历此阶段。D项错误,半殖民地特点是形式上独立,但在政治、经济、文化等方面受帝国主义控制,而非“经济政治上独立自主”。",
+      "status": "已核对",
+      "direct": "近代中国民族独立与人民解放的任务，要求反对帝国主义和封建主义。半殖民地说的是主权受损，半封建说的是社会经济结构变化，选A。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "毛泽东思想概论"
     },
     {
@@ -5640,13 +5739,13 @@
       "analysis_page": 6,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "近因效应指最近发生的事件对评价影响较大,因此A项中因一次争执否定长期感情属于近因效应而非酝酿效应(酝酿效应表现为思考暂时中断后灵感突现)。首因效应强调第一印象的影响力,但并不强调“单一特征泛化”,该特点属于晕轮效应,故B错误。D项中“以貌取人”属于因外貌单一特征推断整体能力或品行,典型体现晕轮效应,故正确。",
+      "status": "已核对",
+      "direct": "晕轮效应是由一个突出特征推断整体，“以貌取人”就是用外貌推断能力或品行，选D。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -5661,13 +5760,18 @@
       "analysis_page": 6,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "1错误,作者是左思而非陆机。3错误,典故寓意作品影响力巨大,与“纸张供应短缺导致物价上涨”无关,核心是文化现象而非经济现象。因此只有2正确,共1个。",
-      "note": "",
-      "references": [],
+      "status": "已核对",
+      "direct": "按资料口径，②抓住了争相传抄推高纸价的直接原因，①错在作者，③错在寓意。符合设问的有1项，选B。",
+      "note": "按资料保留B。争相传抄带来纸张需求有原典支持；《晋书》具体写的是豪贵之家，对普通百姓的参与没有作同样记载。",
+      "references": [
+        {
+          "title": "《晋书》卷九十二《左思传》",
+          "url": "https://zh.wikisource.org/zh-hans/%E6%99%89%E6%9B%B8_%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29/%E5%8D%B7092"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "文学常识"
     },
     {
@@ -5682,13 +5786,26 @@
       "analysis_page": 6,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "人的双肺结构因心脏位置不同而左右不对称,右肺三叶、左肺两叶,A正确。婴儿的肺泡数量远少于成年人,出生时约数千万,随年龄增加至学龄期达到成人水平,而非“多于成年人”,故C错误。儿童代谢需求高、肺容量小,因此呼吸频率越小越快,D正确。",
+      "status": "已核对",
+      "direct": "婴儿出生后肺泡仍会随发育增多，成人通常比婴儿更多。其余选项符合通常的人体解剖与生理特征，选C。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "OpenStax《护理学基础》第19.1节（呼吸系统）",
+          "url": "https://openstax.org/books/fundamentals-nursing/pages/19-1-respiratory-system"
+        },
+        {
+          "title": "美国胸科学会肺出生后发育研讨报告",
+          "url": "https://www.thoracic.org/statements/resources/respiratory-disease-pediatric/lunggrowth1-25.pdf"
+        },
+        {
+          "title": "Fleming等的儿童呼吸频率年龄分布研究",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21411136/"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "科技常识"
     },
     {
@@ -5703,13 +5820,22 @@
       "analysis_page": 7,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "酥油茶是藏族传统饮品,具有高热量与保暖功能,A正确。那达慕大会是蒙古族的传统盛会,以骑马、射箭、摔跤为主要内容,而非回族,B错误。泼水节是傣族传统节日,在泼水中象征辞旧迎新与祈福,C正确。",
+      "status": "已核对",
+      "direct": "那达慕是蒙古族传统盛会，传统项目包括赛马、射箭和摔跤。B将它归到回族，选B。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "西藏自治区人民政府驻成都办事处《西藏民俗文化》",
+          "url": "https://cdbsc.xizang.gov.cn/xwzx/xwzx/201907/t20190725_87718.html"
+        },
+        {
+          "title": "国家级非遗项目《侗族木构建筑营造技艺》",
+          "url": "https://www.ihchina.cn/project_details/14312/"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "文学常识"
     },
     {
@@ -5724,13 +5850,22 @@
       "analysis_page": 7,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "“一五计划”时期我国工业化以重工业优先为核心战略。A项正确,苏联“重工业优先”的斯大林模式对中国具有显著示范效应;B项正确,近代中国重工业基础极度薄弱,无法支撑独立的工业体系;C项正确,新中国成立之初,我国是一个经历了百余年帝国主义、封建主义和官僚资本主义三重压迫剥削和长期战乱的农业国,为了保证国家安全,必须有强大的国防工业,这就要求优先快速发展重工业。D项错误,重工业投资周期长、见效慢,与“提高收益”无直接关系。",
+      "status": "已核对",
+      "direct": "一五计划优先发展重工业，既参考了苏联经验，也为了弥补工业基础薄弱、奠定工业化和国防现代化基础，选ABC。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "第一届全国人大第二次会议关于一五计划的决议",
+          "url": "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202112/P020251029616784084236.pdf"
+        },
+        {
+          "title": "《建国以来国民经济和社会发展五年计划重要文件汇编》（一五计划相关文件）",
+          "url": "https://www.gov.cn/zhengce/2021-12/15/5666300/files/e667d17af9334a36b54fe21454954314.pdf"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5745,13 +5880,22 @@
       "analysis_page": 7,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "商业银行资本补充方式分为内生性补充和外源性补充,内生性主要依靠公司经营获取的留存利润。外源性资本补充工具多样,其中最重要的是核心一级资本补充工具,包括IPO、配股、增发、发行可转债等。其中,发行可转债已成为商业银行补充核心一级资本最主要方式。",
+      "status": "已核对",
+      "direct": "配股、定向增发和利润留存可增加符合监管口径的核心一级资本；可转债要在实际转换成合格普通股后才产生相应作用。按题设的筹资路径选ABCD。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《商业银行资本管理办法》（资本组成）",
+          "url": "https://www.nfra.gov.cn/cn/view/pages/rulesDetail.html?docId=1134197&itemId=4214"
+        },
+        {
+          "title": "财政部2025年上半年财政收支新闻发布会",
+          "url": "https://bgt.mof.gov.cn/zhuantilanmu/rdwyh/czyw/202507/t20250725_3968586.htm"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -5766,13 +5910,13 @@
       "analysis_page": 7,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "A项正确,小型组织可直接采取团队结构,大型组织则常作为层级结构的补充。B项正确,团队结构强调授权与成员参与,决策权由基层团队承担。C项错误,跨职能团队旨在打破部门壁垒,减少信息隔阂,而非增加矛盾。",
+      "status": "已核对",
+      "direct": "团队结构有助于授权和跨职能协作。小型组织可整体采用，大型组织常与层级结构并用；绩效压力取决于目标和考核机制，选AB。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -5788,12 +5932,21 @@
       "question_material": 10,
       "analysis_material": 9,
       "status": "争议",
-      "direct": "A项符合《工伤保险条例》第十四条规定,属工伤。C项属于“视同工伤”,但不属于题干所要求的“属于工伤”范畴,因此不选。D项为因工外出期间受到事故伤害,应认定为工伤。",
-      "note": "",
-      "references": [],
+      "direct": "资料给AD，采用狭义的第十四条“认定为工伤”口径。A、D符合第十四条，B因本人负主要责任而排除。C若在工作时间和岗位突发疾病，且自医疗机构初次诊断起48小时内经抢救无效死亡，则依第十五条视同工伤并享受工伤保险待遇。题干未写明只问第十四条。",
+      "note": "原资料给AD，把设问解释为仅考第十四条。C涉及《工伤保险条例》第十五条第一项。如病历证实在工作时间和岗位突发疾病，且初次诊断起48小时内经抢救无效死亡，C应按视同工伤判断。题干未限定只考第十四条。资料的旧通勤表述也应按现行第十四条第六项校正。",
+      "references": [
+        {
+          "title": "《工伤保险条例》第14、15条",
+          "url": "https://xzfg.moj.gov.cn/mobile/law/detail?LawID=610"
+        },
+        {
+          "title": "最高人民检察院《关于工伤认定的关键“48小时”》",
+          "url": "https://www.spp.gov.cn/spp/zdgz/tj/202306/t20230607_616660.shtml"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -5808,13 +5961,30 @@
       "analysis_page": 8,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "B项正确,《雅典学院》代表拉斐尔高超的人物组织能力和和谐风格。C项正确,《睡莲》系列是莫奈晚年艺术巅峰,被誉为其“史诗般总结”。D项正确,塞尚被称为“现代绘画之父”,对立体主义影响深远。",
+      "status": "已核对",
+      "direct": "文艺复兴美术三杰包括拉斐尔。按资料口径，B是对拉斐尔作品及语境的评价，C是对莫奈晚年组画的比喻，D的画派归属成立，选BCD。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "梵蒂冈博物馆：拉斐尔签字厅",
+          "url": "https://www.museivaticani.va/content/museivaticani/it/collezioni/musei/stanze-di-raffaello/stanza-della-segnatura/stanza-della-segnatura.html"
+        },
+        {
+          "title": "橘园美术馆：《睡莲》组画的沿革",
+          "url": "https://www.musee-orangerie.fr/en/node/33"
+        },
+        {
+          "title": "北京市园林绿化局《莫奈与〈睡莲〉》（题项比喻的同文出处）",
+          "url": "https://yllhj.beijing.gov.cn/ztxx/bjhx/hhzs/201907/t20190705_118681.shtml"
+        },
+        {
+          "title": "大都会艺术博物馆：保罗·塞尚",
+          "url": "https://www.metmuseum.org/essays/paul-cezanne-1839-1906"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "历史常识"
     },
     {
@@ -5829,13 +5999,18 @@
       "analysis_page": 8,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "题干准确概述了习近平主席在2025年中国国际服务贸易交易会开幕之际所强调的开放合作主张,包括推动全球服务贸易开放创新、建设开放型世界经济及为构建人类命运共同体注入新动力,均与实际报道一致,因此判断为正确。",
+      "status": "已核对",
+      "direct": "2025年9月10日，当年服贸会在北京开幕，贺信确有推进全球服贸开放创新合作、建设开放型世界经济等内容，选A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "习近平向2025年中国国际服务贸易交易会致贺信",
+          "url": "https://www.mee.gov.cn/ywdt/szyw/202509/t20250910_1127216.shtml"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5850,13 +6025,13 @@
       "analysis_page": 9,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "政府职能包括经济调节、市场监管、社会管理、公共服务、生态环境保护职能社会管理等职能。题干中的“绿色行动”属于整治市场生态、优化环境秩序,体现了市场监管职能;社会管理职能侧重社会事务和公共秩序,如社会治安、公共安全、社区治理、人口管理等。",
+      "status": "已核对",
+      "direct": "题面治理对象是市场经营秩序，对应政府市场监管职能，选D。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5871,13 +6046,13 @@
       "analysis_page": 9,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "“小康”强调的是发展水平,而“全面”强调的是范围和程度,包括平衡性、协调性和可持续性。题干将二者含义调换,属于错误表述,因此本题判断为错误。",
+      "status": "已核对",
+      "direct": "“小康”讲发展水平；“全面”讲发展的平衡性、协调性、可持续性。题干把两者对调，选D。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5892,13 +6067,18 @@
       "analysis_page": 9,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "依据《中国共产党章程》相关规定:下级组织必须坚决执行上级组织决定;如情况不符可以提请改变,但上级坚持原决定时必须执行,不得公开发表不同意见,但可向再上级组织报告。题干内容与党章一致,因此判断正确。",
+      "status": "已核对",
+      "direct": "题干符合党章第十六条。下级组织可以请求改变，但上级坚持原决定时须执行，可向再上一级组织报告，选A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《中国共产党章程》第16条",
+          "url": "https://www.miit.gov.cn/xwdt/szyw/art/2022/art_870a5469839a4b5bb65857894642b2a0.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -5913,13 +6093,18 @@
       "analysis_page": 9,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "题干第一句“市场需求是消费者需求的总和”表述正确;但第二句“需求量变化会使价格同方向变动”错误。“需求量变化”通常由价格变动引起,属于沿需求曲线的移动,不能反向决定价格;真正影响价格的是“需求变化”(需求曲线移动)。",
+      "status": "已核对",
+      "direct": "某给定价格下，市场需求量等于各消费者需求量之和。价格变动引起沿需求曲线的移动；其他因素引起需求曲线移动，均衡价格还受供给影响。题干后半句错误，选D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "OpenStax《微观经济学原理》第3.2节（需求量变化与需求曲线移动）",
+          "url": "https://openstax.org/books/principles-microeconomics-2e/pages/3-2-shifts-in-demand-and-supply-for-goods-and-services"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -5935,12 +6120,21 @@
       "question_material": 10,
       "analysis_material": 9,
       "status": "争议",
-      "direct": "银行代销的保险产品与银行理财产品在发行主体、合同责任、保障和流动性方面不同；但收益和风险孰高取决于具体产品，不能一概比较。资料判A的依据不充分，本题暂列争议。",
-      "note": "避免把不同类别产品简单排成固定风险顺序；保留资料答案供对照。",
-      "references": [],
+      "direct": "资料答案为A。通过银行代销的保险产品与银行理财的合同主体、保障和资金运作不同。收益、风险和退出成本需要按具体产品条款及资产核对，题干的统一排序缺少依据。",
+      "note": "原资料判正确。仅凭银行销售渠道与产品类别，无法得出风险和收益均较高的统一顺序，须看具体产品条款。",
+      "references": [
+        {
+          "title": "国家金融监督管理总局《商业银行代理销售业务管理办法》",
+          "url": "https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1242774&generaltype=1&itemId=859"
+        },
+        {
+          "title": "《理财公司理财产品流动性风险管理办法》",
+          "url": "https://www.nfra.gov.cn/cn/view/pages/rulesDetail.html?docId=1024321"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "逐题整理",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -5955,13 +6149,13 @@
       "analysis_page": 9,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "(1)全分解式目标管理是指把目标分解到每一个成员。特点是把个人目标与部门乃至整体组织目标结合起来,形成个人、局部和整体三个层次的目标体系;加强了个人之间的竞争,可能导致个人间的协作减少,也可能影响整体组织目标的完成。(2)半分解式目标管理是指把目标分解到科室、车间、工段等基层组织,并不制定十分明确的个人目标,组织成员以所在基层组织为单位,有着共同的目标。",
+      "status": "已核对",
+      "direct": "全分解式把目标分解到个人；半分解式通常分解到科室、车间等基层单位，由成员共享单位目标。题干把两种方式混淆，选D。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -5976,13 +6170,13 @@
       "analysis_page": 10,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "管理的本质在于为实现组织目标而进行计划、组织、领导和控制的活动,与管理者年龄、权力形式等无直接关系。班级班干部在组织活动、协调同学、维持纪律、推进班务工作等过程中体现了典型的管理要素,因此其行为属于管理活动。题干以“年龄小、缺乏强制力”为理由否定其管理属性属于错误认识。",
+      "status": "已核对",
+      "direct": "班干部为班级目标规划活动、分工和协调同学，属于管理活动。年龄大小和是否有强制权均非必要条件，选D。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -5997,13 +6191,13 @@
       "analysis_page": 10,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "上行沟通是组织中下级向上级传递信息的过程,包括反馈工作情况、提出建议、表达需求等。题干列举的意见箱、绩效反馈、定期汇报以及主动汇报均属于典型上行沟通渠道,因此表述正确。",
+      "status": "已核对",
+      "direct": "上行沟通按信息方向辨认，即下级向上级传递信息。汇报、意见和下级向上反馈绩效问题均可属于上行沟通，选A。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -6018,13 +6212,18 @@
       "analysis_page": 10,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "全国人大常委会对刑法第二百六十六条的解释明确指出:以伪造证明材料等方式骗取医疗保险金属于诈骗公私财物行为,已经构成刑法意义上的诈骗,无论是否造成严重后果。题干以“未造成严重后果”为理由否定其诈骗性质,明显与法律规定不符,因此为错误判断。",
+      "status": "已核对",
+      "direct": "伪造材料骗取医保金属于刑法所说的诈骗公私财物行为。“未造成严重后果”不改变行为性质；是否构成犯罪及如何处理还须依法核对数额、情节等要件，选D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "两高一部《关于办理医保骗保刑事案件若干问题的指导意见》",
+          "url": "https://www.nhsa.gov.cn/art/2024/3/8/art_104_12175.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -6039,13 +6238,22 @@
       "analysis_page": 10,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "普通外国留学生在中国境内应遵守中国法律，题干判正确，选A。原解析把外交豁免概括为“不受法律约束”不准确；相关豁免主要涉及特定管辖与程序，不等于可以任意违法。",
+      "status": "已核对",
+      "direct": "我国宪法规定，在中国境内的外国人必须遵守我国法律。题设韩国留学生在境内，依法受我国法律约束，选A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《中华人民共和国宪法》第32条",
+          "url": "https://www.ssf.gov.cn/portal/rootfile/P020180614604768874938.pdf"
+        },
+        {
+          "title": "《中华人民共和国出境入境管理法》第3条",
+          "url": "https://www.nia.gov.cn/n794014/n1050181/n1050479/c1013311/content.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "逐题整理",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -6060,13 +6268,22 @@
       "analysis_page": 10,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "行政机关起草规范性文件时,可依法邀请相关领域专家、法律顾问参与,也可以委托具备专业能力的高校、科研机构或社会组织进行起草,以提高文件的科学性和合法性。题干描述符合规范性文件制定程序,因此判断正确。",
+      "status": "已核对",
+      "direct": "符合适用规定时，可邀请专家、法律顾问参与，也可委托合格高校等机构起草。制定机关继续承担相应程序与审查责任，选A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "《四川省行政规范性文件管理办法》（起草规定）",
+          "url": "https://www.moj.gov.cn/pub/sfbgw/flfggz/flfggzdfzwgz/202305/t20230525_479518.html"
+        },
+        {
+          "title": "《国务院办公厅关于加强行政规范性文件制定和监督管理工作的通知》",
+          "url": "https://app.www.gov.cn/govdata/gov/201805/31/425127/article.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -6081,13 +6298,18 @@
       "analysis_page": 10,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "同一艘载重不变的船漂浮时，浮力始终等于船重；海水密度较大，按ρgV=G，排水体积反而减小、吃水变浅。因此题干“体积更大、吃水更深”错误，选D。原解析“浮力更大”的说法已在此纠正。",
+      "status": "已核对",
+      "direct": "同一艘船载重不变且稳定漂浮时，浮力等于船重。海水更密，因此所需排水体积更小、吃水更浅，选D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "OpenStax《大学物理》第14.4节（阿基米德原理与浮力）",
+          "url": "https://openstax.org/books/university-physics-volume-1/pages/14-4-archimedes-principle-and-buoyancy"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "逐题整理",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "科技常识"
     },
     {
@@ -6102,13 +6324,18 @@
       "analysis_page": 11,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "“三山夹两盆”指新疆地区典型的南北走向地形格局:北有阿尔泰山,中有天山,南有昆仑山;“两盆”指准噶尔盆地与塔里木盆地。题干将中部山脉错误表述为祁连山,因此整体判断为错误。",
+      "status": "已核对",
+      "direct": "新疆从北到南为阿尔泰山、准噶尔盆地、天山、塔里木盆地、昆仑山。中部是天山，选D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "新疆维吾尔自治区政务服务网《大美新疆》",
+          "url": "https://zwfw.xinjiang.gov.cn/dmxj.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "地理常识"
     },
     {
@@ -6123,13 +6350,22 @@
       "analysis_page": 11,
       "question_material": 10,
       "analysis_material": 9,
-      "status": "待核对",
-      "direct": "疫苗通过提供抗原等方式诱导机体产生针对性免疫应答，使再次遇到相关病原体时更快防御，属于主动免疫，按题干判正确选A。“以毒攻毒”不能准确描述这一免疫机制。",
-      "note": "",
-      "references": [],
+      "status": "争议",
+      "direct": "资料按疫苗诱导主动免疫和免疫记忆的考点判A。“注入”和“制剂含抗原”描述的是常见情形，部分疫苗可经口或鼻接种，部分向机体提供产生抗原的遗传指令。按全称表述理解有争议。",
+      "note": "原资料按主动免疫原理判正确。原题用“注入”概括全部接种途径，并将疫苗一律描述为直接含有抗原成分，表述范围过广。",
+      "references": [
+        {
+          "title": "世界卫生组织《疫苗如何发挥作用》",
+          "url": "https://www.who.int/en/emergencies/diseases/novel-coronavirus-2019/covid-19-vaccines/how-do-vaccines-work"
+        },
+        {
+          "title": "世界卫生组织《何为疫苗接种？》（接种途径）",
+          "url": "https://www.who.int/news-room/questions-and-answers/item/vaccines-and-immunization-what-is-vaccination/"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "逐题整理",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "科技常识"
     },
     {
@@ -11371,6 +11607,1332 @@
           "name": "2025年9月21日上午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
           "page": 10,
           "location": "第45题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30002,
+      "question_id": 25101,
+      "role": "主考点",
+      "position": "A、B、C、D",
+      "reason": "卡片30002正文首句直接支持此判断规则。中央财经委员会第六次会议于2025年7月1日研究全国统一大市场建设与海洋经济高质量发展。",
+      "evidence": "2025年下午卷第1题；原卷第1页，解析第2页；知识卡30002正文首句",
+      "status": "已确认",
+      "rule_id": "RULE-POL-CFEAC-2025-06-AGENDA-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 1,
+          "location": "第1题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第1题解析"
+        },
+        "external": "https://www.miit.gov.cn/xwfb/szyw/art/2025/art_a646254fc59c42be9d957c2ac3487701.html"
+      }
+    },
+    {
+      "knowledge_id": 30001,
+      "question_id": 25102,
+      "role": "主考点",
+      "position": "①、②、③",
+      "reason": "卡片30001正文中全球能源互联网大会段直接支持此判断规则。能源绿色低碳转型倡议列举可再生能源发电、电网互联、智慧能源合作。",
+      "evidence": "2025年下午卷第2题；原卷第1页，解析第2页；知识卡30001正文中全球能源互联网大会段",
+      "status": "已确认",
+      "rule_id": "RULE-POL-GEIC-2025-GREEN-COOP-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 1,
+          "location": "第2题①陈述"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第2题解析"
+        },
+        "external": "https://me.china-embassy.gov.cn/chn/sgxx1/202509/t20250909_11705023.htm"
+      }
+    },
+    {
+      "knowledge_id": 30001,
+      "question_id": 25102,
+      "role": "辅助考点",
+      "position": "④",
+      "reason": "卡片30001正文中全球能源互联网大会段直接支持此判断规则。第四项能源资源和产能合作倡议提出推动跨国、跨区域能源基础设施联通。",
+      "evidence": "2025年下午卷第2题；原卷第1页，解析第2页；知识卡30001正文中全球能源互联网大会段",
+      "status": "已确认",
+      "rule_id": "RULE-POL-GEIC-2025-ENERGY-CAPACITY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 1,
+          "location": "第2题④陈述"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第2题解析"
+        },
+        "external": "https://me.china-embassy.gov.cn/chn/sgxx1/202509/t20250909_11705023.htm"
+      }
+    },
+    {
+      "knowledge_id": 10143,
+      "question_id": 25103,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "卡片10143第14条直接支持此判断规则。将客观事物的存在归结为人的感觉或感知，属于主观唯心主义。",
+      "evidence": "2025年下午卷第3题；原卷第1页，解析第2页；知识卡10143第14条",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-SUBJECTIVE-IDEALISM-PERCEPTION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 1,
+          "location": "第3题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第3题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10143,
+      "question_id": 25103,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "卡片10143第19—20条直接支持此判断规则。意识依赖物质基础，人脑是意识活动的物质器官。",
+      "evidence": "2025年下午卷第3题；原卷第2页，解析第2页；知识卡10143第19—20条",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-CONSCIOUSNESS-MATERIAL-BASIS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第3题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第3题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10143,
+      "question_id": 25103,
+      "role": "主考点",
+      "position": "C",
+      "reason": "卡片10143第16条直接支持此判断规则。物质的唯一特性是客观实在性，其存在独立于人的意识。",
+      "evidence": "2025年下午卷第3题；原卷第2页，解析第2页；知识卡10143第16条",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-MATTER-OBJECTIVE-REALITY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第3题C项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第3题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10158,
+      "question_id": 25104,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "卡片10158第168条直接支持此判断规则。坚持中国共产党领导是多党合作健康发展的首要前提和根本保证。",
+      "evidence": "2025年下午卷第4题；原卷第2页，解析第2页；知识卡10158第168条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-MULTIPARTY-CPC-LEADERSHIP-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第4题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第4题解析"
+        },
+        "external": "https://www.mod.gov.cn/gfbw/fgwx/bps/4888135.html?big=fan"
+      }
+    },
+    {
+      "knowledge_id": 10158,
+      "question_id": 25104,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "卡片10158第170条直接支持此判断规则。中国共产党和各民主党派以宪法和法律为根本活动准则。",
+      "evidence": "2025年下午卷第4题；原卷第2页，解析第2页；知识卡10158第170条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-MULTIPARTY-CONSTITUTION-LAW-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第4题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第4题解析"
+        },
+        "external": "https://www.mod.gov.cn/gfbw/fgwx/bps/4888135.html?big=fan"
+      }
+    },
+    {
+      "knowledge_id": 10158,
+      "question_id": 25104,
+      "role": "主考点",
+      "position": "C",
+      "reason": "卡片10158第169条直接支持此判断规则。多党合作的基本方针是长期共存、互相监督、肝胆相照、荣辱与共。",
+      "evidence": "2025年下午卷第4题；原卷第2页，解析第2页；知识卡10158第169条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-MULTIPARTY-16-CHARACTERS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第4题C项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第4题解析"
+        },
+        "external": "https://www.mod.gov.cn/gfbw/fgwx/bps/4888135.html?big=fan"
+      }
+    },
+    {
+      "knowledge_id": 10158,
+      "question_id": 25104,
+      "role": "辅助考点",
+      "position": "D",
+      "reason": "卡片10158第171、173条直接支持此判断规则。人民政协是实行多党合作和政治协商的重要组织形式，也是协商民主的重要渠道。",
+      "evidence": "2025年下午卷第4题；原卷第2页，解析第2页；知识卡10158第171、173条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-MULTIPARTY-CPPCC-FORM-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第4题D项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 2,
+          "location": "第4题解析"
+        },
+        "external": "https://www.mod.gov.cn/gfbw/fgwx/bps/4888135.html?big=fan"
+      }
+    },
+    {
+      "knowledge_id": 10153,
+      "question_id": 25105,
+      "role": "主考点",
+      "position": "①",
+      "reason": "卡片10153第85条直接支持此判断规则。推动构建人类命运共同体是新时代中国特色大国外交追求的崇高目标。",
+      "evidence": "2025年下午卷第5题；原卷第2页，解析第3页；知识卡10153第85条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-DIPLOMACY-SHARED-FUTURE-GOAL-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第5题①陈述"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 3,
+          "location": "第5题解析续文（第2页末列参考答案）"
+        },
+        "external": "https://www.mfa.gov.cn/wjdt_674879/gjldrhd_674881/202312/t20231228_11214409.shtml"
+      }
+    },
+    {
+      "knowledge_id": 10168,
+      "question_id": 25105,
+      "role": "主考点",
+      "position": "②",
+      "reason": "卡片10168第382、384条直接支持此判断规则。尊重各国主权和领土完整、反对霸权主义和强权政治是独立自主和平外交的具体体现。",
+      "evidence": "2025年下午卷第5题；原卷第2页，解析第3页；知识卡10168第382、384条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-DIPLOMACY-SOVEREIGNTY-ANTI-HEGEMONY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第5题②陈述"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 3,
+          "location": "第5题解析续文（第2页末列参考答案）"
+        },
+        "external": "https://www.mfa.gov.cn/ziliao_674904/zt_674979/dnzt_674981/qtzt/twwt/xjpzsjstzyjh/202304/t20230410_11057003.html"
+      }
+    },
+    {
+      "knowledge_id": 10168,
+      "question_id": 25105,
+      "role": "主考点",
+      "position": "③",
+      "reason": "卡片10168第381—382、385—386条直接支持此判断规则。中国以和平共处五项原则为准则推进同各国合作并推动构建新型国际关系。",
+      "evidence": "2025年下午卷第5题；原卷第2页，解析第3页；知识卡10168第381—382、385—386条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-DIPLOMACY-FIVE-PRINCIPLES-PARTNERSHIP-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第5题③陈述"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 3,
+          "location": "第5题解析续文（第2页末列参考答案）"
+        },
+        "external": "https://www.mfa.gov.cn/ziliao_674904/zt_674979/dnzt_674981/qtzt/twwt/xjpzsjstzyjh/202304/t20230410_11057003.html"
+      }
+    },
+    {
+      "knowledge_id": 10159,
+      "question_id": 25106,
+      "role": "辅助考点",
+      "position": "①",
+      "reason": "卡片10159第198—200条直接支持此判断规则。社会主义核心价值观集中体现当代中国精神。",
+      "evidence": "2025年下午卷第6题；原卷第2页，解析第3页；知识卡10159第198—200条",
+      "status": "已确认",
+      "rule_id": "RULE-POL-CORE-VALUES-CONTEMPORARY-SPIRIT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 2,
+          "location": "第6题①陈述"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 3,
+          "location": "第6题解析"
+        },
+        "external": "https://www.mem.gov.cn/jjz/ywgz/202009/t20200908_361442.shtml"
+      }
+    },
+    {
+      "knowledge_id": 10136,
+      "question_id": 25110,
+      "role": "辅助考点",
+      "position": "D",
+      "reason": "卡片10136第47—48条直接支持此判断规则。GDP按经济领土内生产活动核算，劳动者的国籍不能单独决定归属。",
+      "evidence": "2025年下午卷第10题；原卷第3页，解析第4页；知识卡10136第47—48条",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-GDP-TERRITORIAL-PRODUCTION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第10题D项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第10题解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10135,
+      "question_id": 25111,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡10135第28条“每一个厂商提供的商品都是同质的”直接支持该判断规则。同质产品在消费者看来可相互替代，符合完全竞争的模型假设。",
+      "evidence": "2025年下午卷第11题A项，知识卡10135第28条“每一个厂商提供的商品都是同质的”",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-PERFECT-COMPETITION-HOMOGENEITY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第11题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第11题解析·A项"
+        },
+        "external": "https://openstax.org/books/principles-microeconomics-3e/pages/8-1-perfect-competition-and-why-it-matters"
+      }
+    },
+    {
+      "knowledge_id": 10135,
+      "question_id": 25111,
+      "role": "主考点",
+      "position": "B",
+      "reason": "知识卡10135第28条列出的完全竞争市场存在条件直接支持该判断规则。卡片列的是买卖者数量、同质性、流动性和信息等市场条件；关税、补贴和配给属于政府调节手段，符合反向设问。",
+      "evidence": "2025年下午卷第11题B项，知识卡10135第28条列出的完全竞争市场存在条件",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-PERFECT-COMPETITION-CONDITIONS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 3,
+          "location": "第11题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第11题解析·B项"
+        },
+        "external": "https://openstax.org/books/principles-microeconomics-3e/pages/8-1-perfect-competition-and-why-it-matters"
+      }
+    },
+    {
+      "knowledge_id": 30011,
+      "question_id": 25112,
+      "role": "主考点",
+      "position": "A、B",
+      "reason": "知识卡30011正文“若闲暇为正常品”起的劳动供给判断直接支持该判断规则。工资率不变且闲暇为正常品时，非工资收入增加通过收入效应减少劳动供给。",
+      "evidence": "2025年下午卷第12题A项，知识卡30011正文“若闲暇为正常品”起的劳动供给判断",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-NONLABOR-INCOME-LABOR-SUPPLY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第12题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第12题解析·A项"
+        },
+        "external": "https://ocw.mit.edu/ans7870/14/14.01SC/MIT14_01SCF11_rttext.pdf"
+      }
+    },
+    {
+      "knowledge_id": 30019,
+      "question_id": 25114,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡30019正文“现实型偏好工具操作和具体实践”直接支持该判断规则。现实型偏工具、操作和具体实践，题目所强调的视觉创意由艺术型更直接对应。",
+      "evidence": "2025年下午卷第14题A项，知识卡30019正文“现实型偏好工具操作和具体实践”",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-HOLLAND-REALISTIC-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第14题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第14题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30019,
+      "question_id": 25114,
+      "role": "主考点",
+      "position": "B",
+      "reason": "知识卡30019正文关于艺术型及平面设计岗位的例子直接支持该判断规则。艺术型重创造、表达和审美，正好对应任务对创意与设计表达的要求；实际录用还需看技能等。",
+      "evidence": "2025年下午卷第14题B项，知识卡30019正文关于艺术型及平面设计岗位的例子",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-HOLLAND-ARTISTIC-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第14题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第14题解析·B项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30019,
+      "question_id": 25114,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡30019正文“研究型偏好分析探索”直接支持该判断规则。研究型的典型任务是观察、分析、推理和探索，与题目给出的核心要求不如艺术型贴合。",
+      "evidence": "2025年下午卷第14题C项，知识卡30019正文“研究型偏好分析探索”",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-HOLLAND-INVESTIGATIVE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第14题C项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第14题解析·C项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30019,
+      "question_id": 25114,
+      "role": "辅助考点",
+      "position": "D",
+      "reason": "知识卡30019正文“常规型偏好规则与秩序”直接支持该判断规则。常规型偏好规则、程序和有序信息处理，题目强调的是个性化创意表达。",
+      "evidence": "2025年下午卷第14题D项，知识卡30019正文“常规型偏好规则与秩序”",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-HOLLAND-CONVENTIONAL-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第14题D项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 4,
+          "location": "第14题解析·D项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30020,
+      "question_id": 25115,
+      "role": "主考点",
+      "position": "A",
+      "reason": "知识卡30020正文“在合法制度和授权范围内核实事实、分类处理”直接支持该判断规则。题面提到紧急情况与事前告知，直接按旷工辞退未体现对具体情况的核实与分类处理。本题只判管理理念，辞退是否合法要另按劳动法和事实判断。",
+      "evidence": "2025年下午卷第15题A项，知识卡30020正文“在合法制度和授权范围内核实事实、分类处理”",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-HUMAN-CENTERED-DISCIPLINE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第15题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第15题人本管理理念与A项解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30020,
+      "question_id": 25115,
+      "role": "辅助考点",
+      "position": "B、C、D",
+      "reason": "知识卡30020正文“重视员工的合理需求、贡献与发展”直接支持该判断规则。人本管理重视员工的合理需求、贡献与发展。",
+      "evidence": "2025年下午卷第15题B项，知识卡30020正文“重视员工的合理需求、贡献与发展”",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-HUMAN-CENTERED-NEEDS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第15题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第15题人本管理理念与A项解析"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30025,
+      "question_id": 25116,
+      "role": "主考点",
+      "position": "A",
+      "reason": "知识卡30025正文零总时差及无补救时的工期影响直接支持该判断规则。关键任务没有可消化的总时差；在原计划和其他任务不变的条件下，延误传递到完工日期。",
+      "evidence": "2025年下午卷第16题A项，知识卡30025正文零总时差及无补救时的工期影响",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-CPM-ZERO-FLOAT-DELAY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第16题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第16题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30025,
+      "question_id": 25116,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "知识卡30025正文关于多条关键路径及非关键任务总时差直接支持该判断规则。同时存在两条或更多等长的最长路径时可有多条关键路径；非关键任务延误超过总时差也可能推迟完工。",
+      "evidence": "2025年下午卷第16题B项，知识卡30025正文关于多条关键路径及非关键任务总时差",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-CPM-MULTIPLE-PATHS-FLOAT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第16题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第16题解析·B项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30025,
+      "question_id": 25116,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡30025正文“持续时间最长的路径”直接支持该判断规则。比较的是网络中各完整路径的累计持续时间。路径关键也不代表其中的具体任务更容易完成。",
+      "evidence": "2025年下午卷第16题C项，知识卡30025正文“持续时间最长的路径”",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-CPM-LONGEST-PATH-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第16题C项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第16题解析·C项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10029,
+      "question_id": 25117,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "知识卡10029第145条行政行为合法性审查直接支持该判断规则。《行政诉讼法》第六条规定，法院审理行政案件，对行政行为是否合法进行审查。",
+      "evidence": "2025年下午卷第17题B项，知识卡10029第145条行政行为合法性审查",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-ADMIN-LEGALITY-REVIEW-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第17题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第17题解析·B项"
+        },
+        "external": "https://wb.flk.npc.gov.cn/flfg/PDF/23d1a3847d2440d88dda4ccc34f39ef2.pdf"
+      }
+    },
+    {
+      "knowledge_id": 10023,
+      "question_id": 25117,
+      "role": "主考点",
+      "position": "C",
+      "reason": "知识卡10023第6条行政法律关系当事人地位不对等直接支持该判断规则。原行政管理关系中行政主体行使公权力；《行政诉讼法》第八条规定的平等指当事人的诉讼法律地位。",
+      "evidence": "2025年下午卷第17题C项，知识卡10023第6条行政法律关系当事人地位不对等",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-ADMIN-RELATIONSHIP-UNEQUAL-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 4,
+          "location": "第17题C项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第17题解析·C项"
+        },
+        "external": "https://wb.flk.npc.gov.cn/flfg/PDF/23d1a3847d2440d88dda4ccc34f39ef2.pdf"
+      }
+    },
+    {
+      "knowledge_id": 10034,
+      "question_id": 25118,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡10034第62条将土地承包经营权列为用益物权直接支持该判断规则。《民法典》第三百三十一条确认土地承包经营权人可占有、使用和收益，种植并出售作物符合该权利的通常用法。",
+      "evidence": "2025年下午卷第18题A项，知识卡10034第62条将土地承包经营权列为用益物权",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-USUFRUCT-LAND-CONTRACT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第18题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第18题解析·A项"
+        },
+        "external": "https://www.npc.gov.cn/wxzlhgb/c27214/gb2020/202006/P020230313538731037747.pdf"
+      }
+    },
+    {
+      "knowledge_id": 10034,
+      "question_id": 25118,
+      "role": "主考点",
+      "position": "C",
+      "reason": "知识卡10034第53、56条区分物权类型并列明所有权的收益权能直接支持该判断规则。《民法典》第二百四十条规定所有权人对自己的财产依法享有占有、使用、收益和处分的权利；第三百二十三条所称用益物权的客体是他人的财产。",
+      "evidence": "2025年下午卷第18题C项，知识卡10034第53、56条区分物权类型并列明所有权的收益权能",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-USUFRUCT-VS-OWNERSHIP-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第18题C项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第18题解析·C项"
+        },
+        "external": "https://www.npc.gov.cn/wxzlhgb/c27214/gb2020/202006/P020230313538731037747.pdf"
+      }
+    },
+    {
+      "knowledge_id": 10034,
+      "question_id": 25118,
+      "role": "辅助考点",
+      "position": "D",
+      "reason": "知识卡10034第62条将宅基地使用权列为用益物权直接支持该判断规则。《民法典》第三百六十二条规定宅基地使用权系对集体土地依法占有和使用的权利。按题设“获批”评价权利类型，民宿经营仍受用途及审批要求约束。",
+      "evidence": "2025年下午卷第18题D项，知识卡10034第62条将宅基地使用权列为用益物权",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-USUFRUCT-HOMESTEAD-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第18题D项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第18题解析·D项"
+        },
+        "external": "https://www.npc.gov.cn/wxzlhgb/c27214/gb2020/202006/P020230313538731037747.pdf"
+      }
+    },
+    {
+      "knowledge_id": 10009,
+      "question_id": 25119,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "知识卡10009第58条县乡两级人大代表由选民直接选出直接支持该判断规则。《选举法》第三条规定题列县乡层级代表由选民直接选举；不存在由上级人大委派人员产生代表的程序。",
+      "evidence": "2025年下午卷第19题B项，知识卡10009第58条县乡两级人大代表由选民直接选出",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-ELECTION-COUNTY-TOWNSHIP-DIRECT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第19题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第19题解析·B项"
+        },
+        "external": "https://www.gzns.gov.cn/rd/flfg/gjflfg/202106/P020210610356188983648.pdf"
+      }
+    },
+    {
+      "knowledge_id": 10008,
+      "question_id": 25119,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡10008第55条列明国籍、年龄和未被剥夺政治权利直接支持该判断规则。《选举法》第四条规定，年满十八周岁的中国公民享有选举权和被选举权，依法被剥夺政治权利的人除外。",
+      "evidence": "2025年下午卷第19题C项，知识卡10008第55条列明国籍、年龄和未被剥夺政治权利",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-ELECTION-VOTER-QUALIFICATION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第19题C项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第19题解析·C项"
+        },
+        "external": "https://www.gzns.gov.cn/rd/flfg/gjflfg/202106/P020210610356188983648.pdf"
+      }
+    },
+    {
+      "knowledge_id": 10010,
+      "question_id": 25119,
+      "role": "主考点",
+      "position": "D",
+      "reason": "知识卡10010第103条确认选举权是我国公民享有的政治权利直接支持该判断规则。选举资格落实到每一名符合法定条件的公民个人，组织或集体不能代替个人享有该权利。",
+      "evidence": "2025年下午卷第19题D项，知识卡10010第103条确认选举权是我国公民享有的政治权利",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-ELECTION-INDIVIDUAL-RIGHT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第19题D项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第19题解析·D项"
+        },
+        "external": "https://www.gzns.gov.cn/rd/flfg/gjflfg/202106/P020210610356188983648.pdf"
+      }
+    },
+    {
+      "knowledge_id": 10183,
+      "question_id": 25120,
+      "role": "主考点",
+      "position": "A",
+      "reason": "知识卡10183第41条明确通知适于批转、转发公文直接支持该判断规则。省政府办公厅转发部门印发的实施意见，可采用转发通知。被转发文件本身仍是意见。",
+      "evidence": "2025年下午卷第20题A项，知识卡10183第41条明确通知适于批转、转发公文",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-NOTICE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第20题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第20题解析·A项"
+        },
+        "external": "https://www.miit.gov.cn/xwdt/szyw/art/2020/art_6afb8ee6d07540dcacccbeb47dbc0fd4.html"
+      }
+    },
+    {
+      "knowledge_id": 20070,
+      "question_id": 25120,
+      "role": "辅助考点",
+      "position": "B、C",
+      "reason": "知识卡20070正文关于不相隶属机关之间商洽工作直接支持该判断规则。不相隶属机关之间商洽工作、询问和答复问题、请求批准和答复审批事项可使用函。",
+      "evidence": "2025年下午卷第20题B项，知识卡20070正文关于不相隶属机关之间商洽工作",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-LETTER-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第20题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 5,
+          "location": "第20题解析·B项（续第6页）"
+        },
+        "external": "https://www.miit.gov.cn/xwdt/szyw/art/2020/art_6afb8ee6d07540dcacccbeb47dbc0fd4.html"
+      }
+    },
+    {
+      "knowledge_id": 10183,
+      "question_id": 25120,
+      "role": "辅助考点",
+      "position": "D",
+      "reason": "知识卡10183第43条关于向上级机关汇报工作直接支持该判断规则。按原题的上下级业务行文关系，向上级主管部门汇报工作进展宜用报告；具体还应遵循双重领导及部门行文规定。",
+      "evidence": "2025年下午卷第20题D项，知识卡10183第43条关于向上级机关汇报工作",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-REPORT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第20题D项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 6,
+          "location": "第20题解析·D项"
+        },
+        "external": "https://www.miit.gov.cn/xwdt/szyw/art/2020/art_6afb8ee6d07540dcacccbeb47dbc0fd4.html"
+      }
+    },
+    {
+      "knowledge_id": 10170,
+      "question_id": 25121,
+      "role": "主考点",
+      "position": "A",
+      "reason": "知识卡10170中共二大最低纲领段的反帝反封建民主革命任务直接支持该判断规则。反对帝国主义和封建主义是近代中国民主革命的基本任务。",
+      "evidence": "2025年下午卷第21题A项，知识卡10170中共二大最低纲领段的反帝反封建民主革命任务",
+      "status": "已确认",
+      "rule_id": "RULE-HIST-MODERN-CHINA-DEMOCRATIC-TASK-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第21题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 6,
+          "location": "第21题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30018,
+      "question_id": 25122,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡30018正文“近因效应重最近信息”直接支持该判断规则。一次最新争执压过了以往长期相处信息，体现近因效应。酝酿效应常指暂时搁置问题后思路获得突破。",
+      "evidence": "2025年下午卷第22题A项，知识卡30018正文“近因效应重最近信息”",
+      "status": "已确认",
+      "rule_id": "RULE-PSY-RECENCY-EFFECT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第22题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 6,
+          "location": "第22题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30018,
+      "question_id": 25122,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "知识卡30018正文比较首因效应与晕轮效应的两句直接支持该判断规则。首因效应取决于信息出现的顺序，着重最初印象；单一特征泛化到整体对应晕轮效应。",
+      "evidence": "2025年下午卷第22题B项，知识卡30018正文比较首因效应与晕轮效应的两句",
+      "status": "已确认",
+      "rule_id": "RULE-PSY-PRIMACY-VS-HALO-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第22题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 6,
+          "location": "第22题解析·B项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30018,
+      "question_id": 25122,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡30018正文首句关于投射效应的归因方向直接支持该判断规则。投射是用自己的特点、偏好或动机推断他人，题项所述的方向相反。",
+      "evidence": "2025年下午卷第22题C项，知识卡30018正文首句关于投射效应的归因方向",
+      "status": "已确认",
+      "rule_id": "RULE-PSY-PROJECTION-EFFECT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第22题C项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 6,
+          "location": "第22题解析·C项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30018,
+      "question_id": 25122,
+      "role": "主考点",
+      "position": "D",
+      "reason": "知识卡30018正文以貌推断能力的例子直接支持该判断规则。仅凭外貌推断能力、品行等整体表现，属于由局部特征推断整体的晕轮效应。",
+      "evidence": "2025年下午卷第22题D项，知识卡30018正文以貌推断能力的例子",
+      "status": "已确认",
+      "rule_id": "RULE-PSY-HALO-EFFECT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 5,
+          "location": "第22题D项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 6,
+          "location": "第22题解析·D项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30026,
+      "question_id": 25124,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "知识卡30026正文肺泡与周围毛细血管之间的气体交换直接支持该判断规则。氧和二氧化碳主要跨肺泡与毛细血管之间的薄屏障交换，肺泡是完成该功能的基本结构。",
+      "evidence": "2025年下午卷第24题B项，知识卡30026正文肺泡与周围毛细血管之间的气体交换",
+      "status": "已确认",
+      "rule_id": "RULE-BIO-ALVEOLAR-GAS-EXCHANGE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 6,
+          "location": "第24题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 6,
+          "location": "第24题解析·B项"
+        },
+        "external": "https://openstax.org/books/fundamentals-nursing/pages/19-1-respiratory-system"
+      }
+    },
+    {
+      "knowledge_id": 30015,
+      "question_id": 25125,
+      "role": "主考点",
+      "position": "B",
+      "reason": "知识卡30015正文那达慕对应蒙古族及三项传统项目直接支持该判断规则。“男儿三艺”的项目列对了，民族归属写错，应为蒙古族。",
+      "evidence": "2025年下午卷第25题B项，知识卡30015正文那达慕对应蒙古族及三项传统项目",
+      "status": "已确认",
+      "rule_id": "RULE-CULT-MONGOLIAN-NAADAM-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 6,
+          "location": "第25题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 7,
+          "location": "第25题解析·B项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10058,
+      "question_id": 25125,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡10058第179条将泼水节列为傣族的主要节日直接支持该判断规则。傣族泼水节有辞旧迎新、以水祝福的习俗；其他民族也可有类似节庆。",
+      "evidence": "2025年下午卷第25题C项，知识卡10058第179条将泼水节列为傣族的主要节日",
+      "status": "已确认",
+      "rule_id": "RULE-CULT-DAI-WATER-SPLASHING-FESTIVAL-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 6,
+          "location": "第25题C项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 7,
+          "location": "第25题解析·C项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10048,
+      "question_id": 25129,
+      "role": "主考点",
+      "position": "A",
+      "reason": "知识卡10048第122条履职时受到暴力等意外伤害直接支持该判断规则。工作时间、工作场所、因履职受伤符合《工伤保险条例》第十四条第三项。",
+      "evidence": "2025年下午卷第29题A项，知识卡10048第122条履职时受到暴力等意外伤害",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-WORK-INJURY-DUTY-VIOLENCE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第29题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 7,
+          "location": "第29题解析·A项"
+        },
+        "external": "https://xzfg.moj.gov.cn/mobile/law/detail?LawID=610"
+      }
+    },
+    {
+      "knowledge_id": 10048,
+      "question_id": 25129,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "知识卡10048第125条明确“非本人主要责任”直接支持该判断规则。现行第十四条第六项要求相关交通事故伤害为非本人主要责任。题中本人负主要责任，不符该条款；原解析拓展所引关于通勤的旧表述应以现行条文校正。",
+      "evidence": "2025年下午卷第29题B项，知识卡10048第125条明确“非本人主要责任”",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-WORK-INJURY-COMMUTE-RESPONSIBILITY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第29题B项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 7,
+          "location": "第29题解析·B项（续第8页）"
+        },
+        "external": "https://xzfg.moj.gov.cn/mobile/law/detail?LawID=610"
+      }
+    },
+    {
+      "knowledge_id": 10048,
+      "question_id": 25129,
+      "role": "主考点",
+      "position": "D",
+      "reason": "知识卡10048第124条因工外出期间因工作原因受到伤害直接支持该判断规则。受单位指派去展会的必要行程属于题设的因工外出，途中交通事故伤害符合第十四条第五项的适用情形。",
+      "evidence": "2025年下午卷第29题D项，知识卡10048第124条因工外出期间因工作原因受到伤害",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-WORK-INJURY-BUSINESS-TRAVEL-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第29题D项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 8,
+          "location": "第29题解析·D项"
+        },
+        "external": "https://xzfg.moj.gov.cn/mobile/law/detail?LawID=610"
+      }
+    },
+    {
+      "knowledge_id": 10074,
+      "question_id": 25130,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡10074第207条列出达·芬奇、米开朗基罗、拉斐尔直接支持该判断规则。题项把但丁放进了美术三杰。即使按“后三杰”的简称理解，正确的第三位也是拉斐尔；但丁属于文学三杰。",
+      "evidence": "2025年下午卷第30题A项，知识卡10074第207条列出达·芬奇、米开朗基罗、拉斐尔",
+      "status": "已确认",
+      "rule_id": "RULE-ART-RENAISSANCE-THREE-MASTERS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第30题A项"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 8,
+          "location": "第30题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10141,
+      "question_id": 25132,
+      "role": "主考点",
+      "position": "判断",
+      "reason": "知识卡10141第58条将市场监管单列为经济职能的一项直接支持该判断规则。从管理对象判断职能：治理市场交易与经营秩序属于市场监管。“绿色行动”这个名称本身不能决定职能类别。",
+      "evidence": "2025年下午卷第32题题干，知识卡10141第58条将市场监管单列为经济职能的一项",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-GOVERNMENT-MARKET-SUPERVISION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第32题题干"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 9,
+          "location": "第32题解析·题干"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10162,
+      "question_id": 25133,
+      "role": "主考点",
+      "position": "判断",
+      "reason": "知识卡10162第263条逐一说明“全面”和“小康”直接支持该判断规则。衡量“达到什么水平”看小康；衡量覆盖范围及发展是否平衡协调、可持续看全面。",
+      "evidence": "2025年下午卷第33题题干，知识卡10162第263条逐一说明“全面”和“小康”",
+      "status": "已确认",
+      "rule_id": "RULE-POL-MODERATELY-PROSPEROUS-SOCIETY-SCOPE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第33题题干"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 9,
+          "location": "第33题解析·题干"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10134,
+      "question_id": 25135,
+      "role": "主考点",
+      "position": "判断",
+      "reason": "知识卡10134第14—15条区分影响因素并给出自身价格与需求量的反向关系直接支持该判断规则。在通常向下倾斜的需求曲线上，其他条件不变时价格上涨、需求量下降。消费者收入等非价格因素变化会移动需求曲线；“需求量变化使价格同方向变动”混淆这两个概念。",
+      "evidence": "2025年下午卷第35题题干，知识卡10134第14—15条区分影响因素并给出自身价格与需求量的反向关系",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-DEMAND-QUANTITY-PRICE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第35题题干"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 9,
+          "location": "第35题解析·题干"
+        },
+        "external": "https://openstax.org/books/principles-microeconomics-2e/pages/3-2-shifts-in-demand-and-supply-for-goods-and-services"
+      }
+    },
+    {
+      "knowledge_id": 10139,
+      "question_id": 25138,
+      "role": "主考点",
+      "position": "判断",
+      "reason": "知识卡10139第1、4、7条关于管理定义、职能及目标直接支持该判断规则。以组织目标和协调活动判断。班务管理符合这些特征，即便组织者年龄较小、主要依靠沟通和分工，也可构成管理。",
+      "evidence": "2025年下午卷第38题题干，知识卡10139第1、4、7条关于管理定义、职能及目标",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-ORGANIZATIONAL-GOAL-ACTIVITY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 10,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位试卷.pdf",
+          "page": 7,
+          "location": "第38题题干"
+        },
+        "analysis_material": {
+          "id": 9,
+          "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
+          "page": 10,
+          "location": "第38题解析·题干"
         }
       }
     }

@@ -4,6 +4,7 @@ import {DatabaseSync} from 'node:sqlite';
 import {readFileSync,readdirSync} from 'node:fs';
 import {dispatch,catalog,today} from '../lib/study.ts';
 import {loadBreakdownMap} from '../lib/breakdown-data.ts';
+import {buildAnswerFeedback} from '../lib/breakdown.ts';
 import originalCatalog from '../data/catalog.json' with {type:'json'};
 import simulationCatalog from '../data/simulations.json' with {type:'json'};
 import breakdownsData from '../data/question-breakdowns.json' with {type:'json'};
@@ -22,6 +23,22 @@ function database(upgrade = true) {
 const progress={tab:'真题练习',knowledgeId:20002,questionId:19031,answer:['A','C'],confidence:'犹豫',mode:'全部',queue:[],exam:'2019年7月象山事业单位',submittedId:null,knowledgeScope:'category'};
 const submission=(questionId:number,answer:string,confidence='确定')=>({questionId,answer,confidence,requestId:crypto.randomUUID()});
 
+test('下午卷计数题按数量讲解，无配对卡的题仍返回逐项依据',async()=>{
+  const {call}=database();
+  const boot=await call('GET','/bootstrap');
+  assert.ok(!boot.links.some((link:any)=>link.question_id===25107));
+  const count=await call('POST','/attempt',submission(25105,'B'));
+  assert.equal(count.correct,false);
+  const feedback=buildAnswerFeedback(count.breakdown,'B',count.answer);
+  assert.match(feedback.headline,/你选了 2 项，正确数量为 4 项/);
+  assert.deepEqual(feedback.sections.flatMap(section=>section.items.map(item=>item.key)),['①','②','③','④']);
+  const noCard=await call('POST','/attempt',submission(25107,'A'));
+  assert.equal(noCard.correct,true);
+  assert.ok(noCard.breakdown.items.every((item:any)=>item.basis&&item.knowledge_gap&&item.knowledge_id===null));
+  await call('POST','/restore',await call('GET','/backup'));
+  assert.deepEqual((await call('GET','/attempt/'+count.id)).breakdown.count_options,{A:1,B:2,C:3,D:4});
+});
+
 test('535题都有判断依据；原345题及2019年题型和来源不变',()=>{
   assert.equal(catalog.questions.length,535);
   assert.deepEqual(catalog.questions.filter(q=>q.id<500000),originalCatalog.questions);
@@ -30,6 +47,33 @@ test('535题都有判断依据；原345题及2019年题型和来源不变',()=>{
   assert.deepEqual(qs.reduce((n:any,q)=>({...n,[q.type]:(n[q.type]||0)+1}),{}),{'单选':30,'多选':5,'判断':20});
   assert.ok(qs.some(q=>q.source_page>1));assert.ok(qs[54].body.length<100);
 });
+
+test('下午卷整卷可查看逐项依据，零项计数与争议作答使用正确的反馈',async()=>{
+  const {call}=database();
+  const questions=catalog.questions.filter(q=>q.exam==='2025年下午卷');
+  assert.equal(questions.length,45);
+  const results=[];
+  for(const q of questions){
+    const result=await call('POST','/attempt',submission(q.id,q.id===25123?'A':q.answer));
+    assert.equal(result.breakdown?.question_id,q.id);
+    results.push(result);
+  }
+  assert.deepEqual(results.filter(r=>r.disputed).map(r=>r.questionId).sort(),[25129,25136,25145]);
+  assert.equal(results.reduce((total,r)=>total+r.breakdown.items.length,0),134);
+  const count=results.find(r=>r.questionId===25123);
+  const feedback=buildAnswerFeedback(count.breakdown,'A',count.answer);
+  assert.match(feedback.headline,/你选了 0 项，正确数量为 1 项/);
+  assert.deepEqual(feedback.sections[0].items.map(item=>item.key),['②']);
+  const injury=results.find(r=>r.questionId===25129);
+  assert.equal(injury.answer,'AD');
+  const injuryFeedback=buildAnswerFeedback(injury.breakdown,'AD',injury.answer);
+  assert.equal(injuryFeedback.sections[0].items[0].key,'C');
+  assert.match(injuryFeedback.sections[0].items[0].basis,/48小时/);
+  const boot=await call('GET','/bootstrap');
+  assert.ok(boot.reviews.some((r:{item_id:number})=>r.item_id===25123));
+  assert.ok(boot.reviews.every((r:{item_id:number})=>![25129,25136,25145].includes(r.item_id)));
+});
+
 test('未登录拒绝；列表不会泄露答案、直解或争议说明',async()=>{
   const {call}=database();await assert.rejects(call('GET','/bootstrap',undefined,''),/登录/);
   const b=await call('GET','/bootstrap');assert.equal(b.questions.length,535);

@@ -65,15 +65,17 @@ export function splitQuestionOptions(body: string, number?: number) {
   const start = markersInStem.findIndex(marker => marker[1]==='1'||marker[2]==='①');
   const statements = start>=0?markersInStem.slice(start):[];
   const combination = (value: string) => value.replace(/[\s、，,]/g, '');
+  const countChoices = statements.length > 0 && /[（(]\s*[）)]\s*[个项条种]/u.test(stemText.slice(0, statements[0].index))
+    && choices.every(choice => /^\d+$/.test(choice));
   const grouped = statements.length >= 2 && statements.every((item,i) => item[1] === String(i+1) || item[2] === circled[i])
-    && choices.every(choice => /^[1-9①-⑨]+$/.test(combination(choice)) && [...combination(choice)].every(n => (/[1-9]/.test(n) ? Number(n)-1 : circled.indexOf(n)) < statements.length));
+    && (countChoices || choices.every(choice => /^[1-9①-⑨]+$/.test(combination(choice)) && [...combination(choice)].every(n => (/[1-9]/.test(n) ? Number(n)-1 : circled.indexOf(n)) < statements.length)));
   if (grouped) {
     const stem = formatQuestionText(stemText.slice(0,statements[0].index), number);
     return {
       stem: [stem, ...statements.map((item,i) =>
         circled[i]+' '+formatQuestionText(stemText.slice(item.index+item[0].length,statements[i+1]?.index).trim().replace(/\n\s*\n/g,'\n'))
       )].join('\n'),
-      choices: choices.map(choice => combination(choice).replace(/[1-9]/g,n => circled[Number(n)-1])),
+      choices: countChoices ? choices : choices.map(choice => combination(choice).replace(/[1-9]/g,n => circled[Number(n)-1])),
     };
   }
   return {stem: formatQuestionText(stemText, number), choices: choices.map(choice => formatQuestionText(choice.replace(/\n\s*\n/g,'\n')))};

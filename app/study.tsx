@@ -45,7 +45,7 @@ function BreakdownDetails({feedback,status}:{feedback:AnswerFeedback;status:Ques
           <p>{item.verdict}（{item.statement_truth===null?'陈述存疑':item.statement_truth?'陈述成立':'陈述不成立'} / {item.matches_stem===null?'设问存疑':item.matches_stem?'符合设问':'不符合设问'}）</p>
           <p>{item.basis}</p>
           {item.dispute_note&&<p className="notice">{item.dispute_note}</p>}
-          <p className="source">规则：{item.rule_statement}（{item.rule_id}{item.knowledge_gap?' · 知识卡缺口':item.knowledge_id?' · 知识卡 #'+item.knowledge_id:''}）</p>
+          <p className="source">规则{item.rule_statement!==item.basis&&`：${item.rule_statement}`}（{item.rule_id}{item.knowledge_gap?' · 知识卡缺口':item.knowledge_id?' · 知识卡 #'+item.knowledge_id:''}）</p>
           <p className="source">定位：原题第{item.source_ref.question_material.page}页（{item.source_ref.question_material.location}） / 解析第{item.source_ref.analysis_material.page}页（{item.source_ref.analysis_material.location}）</p>
         </div>)}
       </div>)}
@@ -55,7 +55,7 @@ function BreakdownDetails({feedback,status}:{feedback:AnswerFeedback;status:Ques
 function QuestionExplanation({direct,analysis,breakdown,userAnswer,correctAnswer,children}:{direct:string;analysis:string;breakdown?:QuestionBreakdown|null;userAnswer?:string;correctAnswer?:string;children?:ReactNode}) {
   const {summary,takeaway,full,isExcerpt}=explanationParts(direct,analysis);
   const feedback=breakdown&&correctAnswer?buildAnswerFeedback(breakdown,userAnswer??'',correctAnswer):null;
-  const focus=feedback&&!feedback.disputed&&userAnswer&&
+  const focus=feedback&&!feedback.disputed&&!breakdown?.count_options&&userAnswer&&
     [...userAnswer].sort().join('')!==[...(correctAnswer??'')].sort().join('')
     ?feedback.sections[0]?.items[0]:undefined;
   return <>
