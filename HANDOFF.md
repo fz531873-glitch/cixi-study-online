@@ -1,13 +1,13 @@
 # 慈溪备考当前开发入口
 
-更新日期：2026-11-18（北京时间）。此文件随源码提交维护，接手时须重新核对实际 Git 状态。
+更新日期：2026-11-19（北京时间）。此文件随源码提交维护，接手时须重新核对实际 Git 和 Sites 状态。
 
 ## 唯一入口
 
 - 主目录：`D:\事业编\cixi-study-online`。
 - 仓库：`https://github.com/fz531873-glitch/cixi-study-online.git`。
 - 当前维护分支：`feat/question-breakdowns`。
-- 上一已验收代码基线：`15658502906accc049eff535a2c3b9f4e63e21fd`；当前 HEAD 另用 `git log -1 --format=%H` 核对。
+- 本次发布审查基线：`cf9f8d9eb82af862da7c7952502f5616c0381baa`；当前 HEAD 另用 `git log -1 --format=%H` 核对。
 - 先读 `AGENTS.md`，在主目录运行 `git status --short --branch` 和 `git remote -v`。已有任务直接继续维护分支。
 - 本轮读取 GitHub 后，`origin/main` 为 `f4155eba79b16e3bd5b823f296958705b138da54`，落后于当前维护成果；不要从该旧版本重新开发或覆盖本目录。
 
@@ -54,15 +54,23 @@
 - 非目标题不变量检查：通过，全库其余 336 题严格一致，零越界改动。
 - 本地提交，未推送、未合入 GitHub main、未部署。
 
-## 2026-11-18 当前任务状态
+## 2026-11-19 发布审查
 
-- 主目录：D:\事业编\cixi-study-online；仓库：fz531873-glitch/cixi-study-online；分支：feat/question-breakdowns；HEAD：87d198cbb1d81c844d5aff27c74dfaf2d1baa572。
+- 在 `feat/question-breakdowns` 上补齐 `0002_add_link_decision_rule_id` 的 Drizzle 结构快照，发布沿用原迁移 SQL。隔离生成验证确认补齐快照后不会重复生成关联表迁移。
+- 增加旧版整卡关联迁移和旧备份恢复的回归用例，保留旧决定的状态、依据和更新时间。
+- 核验结果：`node --test tests/*.test.ts` 57 项通过，`node node_modules/typescript/bin/tsc --noEmit --incremental false` 和 Sites 生产构建通过。隔离 Wrangler D1 中的旧关联迁移成功，浏览器从首页进入上午卷，在第 13 题实际验证了作答后的组合题遗漏反馈与逐项讲解。
+- 发布前的正式版为 Sites 第 8 版，提交 `b83d7a08f496435f8ad8d5a5542e85711cd51208`，已包含于本次发布基线。发布版本、对应提交和结果以 Sites 记录为准。正式站复用现有 DB，迁移 `0002` 由发布流程应用。
+- 第 8 版的关联写入使用旧表结构。`0002` 应用后如需回滚应用，须同时处理旧版关联写入的兼容性。
+
+## 2026-11-18 主考点配对记录
+
+- 主目录：D:\事业编\cixi-study-online；仓库：fz531873-glitch/cixi-study-online；分支：feat/question-breakdowns；配对提交：`cf9f8d9eb82af862da7c7952502f5616c0381baa`。
 - 2025年上午卷45题均已列入主考点配对清单。当前有49条规则级关联，47条已确认、2条候选；候选为第15、16题。仍有20题未找到直接匹配的主考点知识卡，题号见 data/2025上午卷_主考点配对清单.md，不计为永久知识缺口。
 - 第45题原卷第7页与解析第10页已核对，状态由“待核对”改为“已核对”；知识卡10088第269条对应寒冷环境下的皮肤血管收缩、减少散热和骨骼肌产热，已建立规则级主考点关联。
 - 当前状态为2025年上午卷已核对21题、待核对19题、争议5题；全库345题已核对24题、待核对306题、争议15题。全库已核对题中知识卡缺口题数为16。
-- 本轮涉及 HANDOFF.md、data/catalog.json、data/question-breakdowns.json、data/全量真题逐项依据与核对统计.md、data/2025上午卷_主考点配对清单.md、scripts/build-breakdowns.py、tests/breakdown.test.ts，以及先前已有的 lib/breakdown-data.ts、lib/breakdown.ts、lib/study.ts、tests/core.test.ts 工作区改动。上述改动均未提交。
+- 配对提交包含题库、逐项依据、配对清单、生成器及相关回归测试。
 - 实际验证：D:\python\python.exe -X utf8 scripts/build-breakdowns.py 45 成功，生成器保护其余344题；node --test tests/*.test.ts 56项通过；node node_modules/typescript/bin/tsc --noEmit --incremental false 通过；npm.cmd run build 构建成功。
-- 仍未推送、合并或部署。下一项备考数据工作应继续核对19道待核对题（第25、26、28—44题），并逐项复核20道缺少直接主考点卡的题；5道争议题继续隔离。
+- 仍有19道待核对题（第25、26、28—44题）、20道缺少直接主考点卡的题和5道争议题。
 
 ## 历史指令与规范约束（持续遵循）
 

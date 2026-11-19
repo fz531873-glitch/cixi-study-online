@@ -29,15 +29,15 @@ def generate_doc():
         ans = q['answer']
         src_p = q['source_page']
         ana_p = q['analysis_page']
-        body_text = q['body']
-        
+        body_text = '\n'.join(line.rstrip() for line in q['body'].split('\n'))
+
         sec = f"### 第 {qnum} 题（ID: `{qid}` · {qtype} · {polarity} · 参考答案: `{ans}`）\n\n"
         sec += f"- **试卷出处**：原题《8.pdf》第 {src_p} 页，原解析《7.pdf》第 {ana_p} 页\n"
         sec += f"- **设问极性**：`{polarity}`\n"
         sec += f"- **题干原文**：\n```text\n{body_text}\n```\n\n"
         sec += "| 标识/选项 | 选项陈述内容 | 陈述真实性 (`statement_truth`) | 符合设问 (`matches_stem`) | 判定结论 (`verdict`) | 考点规则与知识卡关联 | 判定依据说明 |\n"
         sec += "|---|---|---|---|---|---|---|\n"
-        
+
         for it in b['items']:
             key = it['key']
             stmt = it['statement'].replace('\n', ' ')
@@ -53,7 +53,7 @@ def generate_doc():
                 link_info = f"**真实知识缺口**<br>`{rid}`"
             basis = it['basis'].replace('\n', ' ')
             sec += f"| **{key}** | {stmt} | {st} | {ms} | {vd} | {link_info} | {basis} |\n"
-        
+
         batch2_sections.append(sec)
 
     batch2_rendered = '\n\n'.join(batch2_sections)

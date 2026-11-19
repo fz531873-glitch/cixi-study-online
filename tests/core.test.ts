@@ -255,6 +255,23 @@ test('旧数据库迁移保留到期日，知识点首次回忆后才建立记�
   assert.deepEqual((await call('GET','/backup')).records,backup.records);
 });
 
+test('旧数据库升级后保留整卡关联决定和备份恢复能力',async()=>{
+  const {call,sqlite,upgrade}=database(false);
+  const changedAt='2026-11-18T00:00:00.000Z';
+  sqlite.prepare('INSERT INTO link_decision VALUES (?,?,?,?,?,?)')
+    .run('owner',20002,24012,'已排除','旧版关联复核',changedAt);
+  upgrade();
+
+  const backup=await call('GET','/backup');
+  assert.deepEqual(backup.records.link_decision.map((row:object)=>({...row})),[{
+    user_id:'owner',knowledge_id:20002,question_id:24012,rule_id:'',status:'已排除',reason:'旧版关联复核',updated_at:changedAt,
+  }]);
+  delete backup.records.link_decision[0].rule_id;
+  await call('POST','/restore',backup);
+  const boot=await call('GET','/bootstrap');
+  assert.ok(!boot.links.some((link:any)=>link.knowledge_id===20002&&link.question_id===24012));
+});
+
 test('并发更新使记忆状态过期时，回滚这次作答并保留更新后的安排',async()=>{
   const {call,db,sqlite}=database();
   await call('POST','/attempt',submission(13,'D'));
