@@ -63,3 +63,10 @@ test('下午卷第5题的选项保留数量，陈述仍显示圈号', () => {
   assert.deepEqual(splitQuestionOptions(combinationQuestion.body, combinationQuestion.number)?.choices,
     ['①②', '③', '②④', '③④']);
 });
+
+test('2024年上午卷第14题按“有几项”显示数量选项和三条陈述', () => {
+  const question = catalog.questions.find(q => q.id === 24014)!;
+  const parsed = splitQuestionOptions(question.body, question.number)!;
+  assert.deepEqual(parsed.choices, ['3', '2', '1', '0']);
+  assert.match(parsed.stem, /有几项[?？][\s\S]*\n① 甲公司[\s\S]*\n② 乙有权[\s\S]*\n③ 乙有权/);
+});

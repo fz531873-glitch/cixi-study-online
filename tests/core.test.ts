@@ -418,3 +418,32 @@ test('旧整卡关联决定先于具体规则应用，逆序返回时具体规�
   assert.equal(revFocus?.status, '已确认', '逆序返回时具体规则被旧整卡决定错误覆盖！');
   assert.equal(revNegation?.status, '已排除');
 });
+
+test('2024年上午卷45题可作答并查看逐项解析，争议题不进入复习',async()=>{
+  const {call}=database();
+  const questions=catalog.questions.filter(q=>q.exam==='2024年上午卷');
+  assert.equal(questions.length,45);
+  const results=new Map<number,any>();
+  for(const q of questions){
+    const result=await call('POST','/attempt',submission(q.id,q.id===24014?'D':q.answer));
+    assert.equal(result.breakdown?.question_id,q.id);
+    results.set(q.id,result);
+  }
+  const disputed=[24003,24031,24037,24039,24040,24045];
+  assert.deepEqual([...results.keys()].filter(id=>results.get(id).disputed),disputed);
+  assert.equal([...results.values()].reduce((total,r)=>total+r.breakdown.items.length,0),134);
+  const count=results.get(24014);
+  const feedback=buildAnswerFeedback(count.breakdown,'D',count.answer);
+  assert.match(count.direct,/原解析以①成立/);
+  assert.match(feedback.headline,/你选了 0 项，正确数量为 1 项/);
+  assert.deepEqual(feedback.sections[0].items.map(item=>item.key),['②']);
+  const date=results.get(24031);
+  assert.equal(date.answer,'A');
+  assert.equal(date.breakdown.items[0].statement_truth,false);
+  assert.equal(date.breakdown.items[0].matches_stem,null);
+  assert.match(date.breakdown.items[0].basis,/8 月 29 日/);
+  assert.ok(results.get(24027).breakdown.items.every((item:any)=>item.knowledge_id===null&&item.basis));
+  const boot=await call('GET','/bootstrap');
+  assert.ok(boot.reviews.some((r:{item_id:number})=>r.item_id===24014));
+  assert.ok(boot.reviews.every((r:{item_id:number})=>!disputed.includes(r.item_id)));
+});

@@ -65,7 +65,7 @@ export function splitQuestionOptions(body: string, number?: number) {
   const start = markersInStem.findIndex(marker => marker[1]==='1'||marker[2]==='①');
   const statements = start>=0?markersInStem.slice(start):[];
   const combination = (value: string) => value.replace(/[\s、，,]/g, '');
-  const countChoices = statements.length > 0 && /[（(]\s*[）)]\s*[个项条种]/u.test(stemText.slice(0, statements[0].index))
+  const countChoices = statements.length > 0 && /[（(]\s*[）)]\s*[个项条种]|几[个项条种]\s*[?？]?\s*[（(]\s*[）)]/u.test(stemText.slice(0, statements[0].index))
     && choices.every(choice => /^\d+$/.test(choice));
   const grouped = statements.length >= 2 && statements.every((item,i) => item[1] === String(i+1) || item[2] === circled[i])
     && (countChoices || choices.every(choice => /^[1-9①-⑨]+$/.test(combination(choice)) && [...combination(choice)].every(n => (/[1-9]/.test(n) ? Number(n)-1 : circled.indexOf(n)) < statements.length)));

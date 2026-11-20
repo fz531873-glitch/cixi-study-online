@@ -2329,13 +2329,18 @@
       "analysis_page": 11,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "“谛听”是地藏菩萨经案下伏着的通灵神兽。2024年7月28日,全球首个亿级参数量的专业地震数据处理大模型——“谛听”地震波大模型正式发布,标志着中国在地震监测、预警和前兆识别等关键技术方面迈出了坚实一步。",
+      "status": "已核对",
+      "direct": "2024 年 7 月在成都发布的地震波大模型名为“谛听”，对应 B。该模型用于地震波检测与处理。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "应急管理部 2024年9月4日新闻发布会",
+          "url": "https://www.mem.gov.cn/xw/xwfbh/2024n09y04xwfbh_6209/"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "科技常识"
     },
     {
@@ -2350,13 +2355,18 @@
       "analysis_page": 11,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "国家统计局7月30日发布的数据显示,2023年我国以新产业、新业态、新商业模式为核心内容的“三新”经济增加值为223528亿元,比上年增长6.4%,占GDP的比重为17.73%,比上年提高0.37个百分点。",
+      "status": "已核对",
+      "direct": "国家统计局的定义是新产业、新业态、新商业模式。题干的增加值和占比是 2023 年数据，定义对应 C。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "国家统计局 2023年全国“三新”经济增加值核算",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202407/t20240730_1955890.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -2371,13 +2381,13 @@
       "analysis_page": 12,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "唯物主义在哲学基本问题上主张物质第一性,精神第二性,世界统一于物质,精神是物质的反映。物质是运动的主体和承担者,运动是物质的根本属性和存在方式。也就是说,所有的运动都是物质的运动,脱离物质的运动是不存在的,这才是唯物主义的观点。",
-      "note": "",
+      "status": "争议",
+      "direct": "资料单选 A。运动是物质的根本属性和存在方式，A 否认运动的物质承担者。D 把某些运动的具体条件说成一切运动的直接原因，也缺少依据，原题难以得到唯一错误项。",
+      "note": "资料单选 A。D 将部分运动条件推广为一切运动的直接原因，无法据此得到唯一错误项。",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "马克思主义原理"
     },
     {
@@ -2392,13 +2402,13 @@
       "analysis_page": 13,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "新能源汽车销量暴涨、技术稳步前进体现了其前进性。它作为新质生产力代表,有很好的发展态势。但是有关新能源汽车自爆等负面话题冲上热搜,导致部分人不愿意购买,这体现了它发展过程中的曲折性。",
+      "status": "已核对",
+      "direct": "销量走高、技术进步体现前进性，风险和疑虑体现发展过程中会遇到阻碍。题面突出两方面并存，选 B。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "马克思主义原理"
     },
     {
@@ -2413,13 +2423,18 @@
       "analysis_page": 14,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "本题新时代中国特色社会主义思想知识。人民代表大会制度是我国的根本政治制度。人民代表大会制度的核心是国家的一切权力属于人民。",
+      "status": "已核对",
+      "direct": "人民代表大会制度是我国的根本政治制度，选 B。多党合作的政治保证、政协职能和中国特色社会主义最本质的特征各有特定所指。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "中华人民共和国宪法",
+          "url": "https://qhca.miit.gov.cn/zwgk/zcwj/flfg/art/2022/art_0d1d8586107d4363b3f51284c56873c5.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "政治名词解释"
     },
     {
@@ -2434,13 +2449,18 @@
       "analysis_page": 14,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "习近平新时代中国特色社会主义思想的核心要义是坚持和发展中国特色社会主义。中国特色社会主义是改革开放以来党的全部理论和实践的主题。习近平新时代中国特色社会主义思想围绕这个主题进行了一系列理论创新和实践探索。",
+      "status": "已核对",
+      "direct": "核心要义是坚持和发展中国特色社会主义。题目辨认的是“核心要义”这一整体定位，选 D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "国家市场监督管理总局转载的学习纲要",
+          "url": "https://www.samr.gov.cn/jjz/xxyd/shzysx/art/2023/art_a01cee98b85c4291b777665c1024f485.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -2455,13 +2475,18 @@
       "analysis_page": 15,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "进一步全面深化改革要坚持以制度建设为主线。虽然推动高质量发展是进一步全面深化改革的重要目标和任务,但并非主线。但从主线的角度来说,是制度建设而非推动高质量发展。",
+      "status": "已核对",
+      "direct": "进一步全面深化改革以制度建设为主线。高质量发展有其重要定位，不能与主线互换，选 A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "中共中央关于进一步全面深化改革、推进中国式现代化的决定",
+          "url": "https://www.cac.gov.cn/2024-07/21/c_1723275282504292.htm"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -2476,13 +2501,18 @@
       "analysis_page": 16,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "影响需求最关键的因素是商品本身的价格。丙听到草莓降价消息后立即去抢购,直接体现了商品价格下降引起需求增加,能够很好地体现影响需求最关键的因素是商品本身的价格。",
+      "status": "已核对",
+      "direct": "题目问四个场景中哪个直接体现商品自身价格的影响。草莓当前售价下降后，其他条件不变时购买量增加，选 C。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "OpenStax 需求与供给曲线的移动",
+          "url": "https://openstax.org/books/principles-economics-2e/pages/3-2-shifts-in-demand-and-supply-for-goods-and-services"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -2497,13 +2527,13 @@
       "analysis_page": 16,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "食品加工业属于劳动密集型产业,而不是资本密集型产业。食品加工虽然也需要一定的设备投入,但在生产过程中,劳动力如食品加工工人、包装工人等发挥着关键作用,而且设备投入相对一些重工业等资本密集型产业来说较小。",
+      "status": "已核对",
+      "direct": "按试题采用的传统生产例子，常规食品加工强调劳动投入，家具制造、航空航天和矿产采掘分别对应题列的典型类型，选 A。企业的实际类型要按具体工艺和投入结构判断。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -2518,13 +2548,13 @@
       "analysis_page": 17,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "价值尺度是指货币作为表现和衡量其他一切商品价值大小的职能。货币在执行价值尺度职能时,不需要现实的货币,只需要观念上的货币。“某地房价从2023年6月的4.33万元/m2下降到2024年6月的3.76万元/m2”,这里的房价是用货币来衡量房屋价值的大小,是观念上的货币,体现了货币的价值尺度职能。",
+      "status": "已核对",
+      "direct": "价格用货币单位表现商品价值。房价的两个数字只需标价即可表示，无需发生付款，选 C。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "马克思主义原理"
     },
     {
@@ -2535,17 +2565,22 @@
       "body": "11、2024 年7 月16 日,国际货币基金组织(IMF)将沙特2024 年GDP 增速预期\n从2.6%下调至1.7%,从经济学角度讲,当一国GDP 增速下降时,该国政府最可\n能采取以下哪种措施来刺激经济增长?( ) \nA. 提高银行利率 \nB. 降低存款准备金率 \nC. 增加税收 \nD. 减少公共支出",
       "answer": "B",
       "analysis": "11.2024 年7 月16 日,国际货币基金组织(IMF)将沙特2024 年GDP 增速预期从2.6%\n下调至1.7%,从经济学角度讲,当一国GDP 增速下降时,该国政府最可能采取以下哪种措\n施来刺激经济增长?(          ) \nA.提高银行利率 \nB.降低存款准备金率 \n\nC.增加税收 \nD.减少公共支出 \n【答案】B \n【解析】第一步,本题考查经济学知识点。 \n第二步,当一国GDP 增速下降时,可以得知该国进入了通货紧缩的经济问题。针对通\n货紧缩一般采取扩张性的财政政策和扩张性的货币政策,降低存款准备金可以有效的增加市\n场中货币的流通量,缓解通货紧缩的问题。 \n因此,选择B 选项。 \n【拓展】A 项:面对通货紧缩,应该降低银行利率。 \nB 项:通货紧缩时,增加税收会加剧市场上货币不足的问题。 \nC 项:应该增加公共支出。",
-      "source_page": 2,
+      "source_page": 3,
       "analysis_page": 17,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "当一国GDP增速下降时,可以得知该国进入了通货紧缩的经济问题。针对通货紧缩一般采取扩张性的财政政策和扩张性的货币政策,降低存款准备金可以有效的增加市场中货币的流通量,缓解通货紧缩的问题。",
+      "status": "已核对",
+      "direct": "题目问哪项通常具有扩张作用。降准可释放金融机构的可用流动性，支持信贷投放，选 B。增长预期下调本身不能判断经济已通缩。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "国际货币基金组织 2024年7月世界经济展望更新",
+          "url": "https://www.imf.org/-/media/files/publications/weo/2024/update/july/english/text.pdf"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -2586,13 +2621,18 @@
       "analysis_page": 18,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "《中华人民共和国》第二百六十三条以暴力、胁迫或者其他方法抢劫公私财物的,处三年以上十年以下有期徒刑,并处罚金;有下列情形之一的,处十年以上有期徒刑、无期徒刑或者死刑,并处罚金或者没收财产:(一)入户抢劫的;(二)在公共交通工具上抢劫的;(三)抢劫银行或者其他金融机构的;(四)多次抢劫或者抢劫数额巨大的;(五)抢劫致人重伤、死亡的;(六)冒充军警人员抢劫的;(七)持枪抢劫的;(八)抢劫军用物资或者抢险、救灾、救济物资的。",
+      "status": "已核对",
+      "direct": "甲明知假钞无法支付价款，仍以即刻暴力相威胁并当场取得财物。按题干事实，选项中符合抢劫罪特征的是 A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "中华人民共和国刑法 第263条",
+          "url": "https://flk.npc.gov.cn/detail?fileId=&id=ff808181796a636a0179822a19640c92&title=&type="
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -2607,13 +2647,22 @@
       "analysis_page": 19,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "《中华人民共和国民法典》第一百五十三条违反法律、行政法规的强制性规定的民事法律行为无效。但是,该强制性规定不导致该民事法律行为无效的除外。违背公序良俗的民事法律行为无效。",
+      "status": "已核对",
+      "direct": "符合设问的有 1 项，选 C。原解析以①成立得出 C；按民法典的预约合同和定金规则，未获预售许可不当然使预约无效。按题面认购书和订约定金有效，开发商自行售罄时成立的是②，①③排除。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "最高人民法院 民法典合同编通则司法解释 第6条",
+          "url": "https://www.court.gov.cn/zixun/xiangqing/419382.html"
+        },
+        {
+          "title": "中华人民共和国民法典 第495、586、587条",
+          "url": "https://www.court.gov.cn/zixun/xiangqing/233181.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -2628,13 +2677,13 @@
       "analysis_page": 20,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "画饼是一种常见于企业的管理手段,一般为公司的创始人、高层管理、中层管理以及实际拥有管理职权的领导者所热衷的非官方管理学。可以激励员工,增强其对公司未来成功的信心,为员工制造成功的体验。",
+      "status": "已核对",
+      "direct": "“画饼”借助对未来利益或目标的期待来影响员工工作动机，概念上最接近激励，选 B。承诺能否兑现关系到这种做法的实际效果。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -2645,17 +2694,17 @@
       "body": "16、金庸小说《笑傲江湖》中有这么一句话:“自君子看来,天下滔滔皆是君子,\n而自小人眼中看来,天下无一不是小人。”这句话所蕴含的心理学原理是( ) \nA. 晕轮效应 \nB. 首因效应 \nC. 近因效应 \nD. 投射效应",
       "answer": "D",
       "analysis": "16.金庸小说《笑傲江湖》中有这么一句话:自君子看来,天下滔滔皆是君子,而自小\n人眼中看来,天下无一不是小人。这句话所蕴含的心理学原理是(          )。 \nA.晕轮效应 \nB.首因效应 \nC.近因效应 \n\nD.投射效应 \n【答案】D \n【解析】第一步,本题考查管理知识点。 \n第二步,投射效应,是指将自己的特点归因到其他人身上的倾向。人在认知和对他人形\n成印象时,以为他人也具备与自己相似的特性的现象,把自己的感情、意志、特性投射到他\n人身上并强加于人,即推己及人的认知障碍。比如,一个心地善良的人会以为别人都是善良\n的;一个经常算计别人的人就会觉得别人也在算计他等等。 \n因此,选择D 选项。",
-      "source_page": 3,
+      "source_page": 4,
       "analysis_page": 20,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "投射效应,是指将自己的特点归因到其他人身上的倾向。人在认知和对他人形成印象时,以为他人也具备与自己相似的特性的现象,把自己的感情、意志、特性投射到他人身上并强加于人,即推己及人的认知障碍。比如,一个心地善良的人会以为别人都是善良的;一个经常算计别人的人就会觉得别人也在算计他等等。",
+      "status": "已核对",
+      "direct": "君子和小人分别拿自己的特征推想别人，体现把自身特点归到他人身上的投射效应，选 D。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -2670,13 +2719,13 @@
       "analysis_page": 21,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "组织具有综合效应,这种综合效应是组织中的成员共同作用的结果。管理组织就是通过建立组织结构,规定职务或职位,明确责权关系,以使组织中的成员互相协作配合、共同劳动,有效实现组织目标的过程。组织管理是管理活动的一部分,也称组织职能。",
+      "status": "已核对",
+      "direct": "按资料，重点落在给小张分派职责和具体工作，选组织职能 D。题面同时有规定目标和指挥的成分，须看设问强调的动作。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -2691,13 +2740,18 @@
       "analysis_page": 21,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "公文的成文时间以领导人签发的日期为准。这是确定公文成文时间的基本原则。不同类型公文的成文时间规定:普通公文:以成文日期为准,即最后一名领导签发的日期。",
+      "status": "已核对",
+      "direct": "通常署发文机关负责人签发的日期，选 A。经会议通过的公文署通过日期，联合行文署最后签发机关负责人签发的日期。文中另定施行日期时，施行日期应依该规定判断。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "党政机关公文处理工作条例 第9条",
+          "url": "https://www.miit.gov.cn/xwdt/szyw/art/2020/art_6afb8ee6d07540dcacccbeb47dbc0fd4.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "公文写作"
     },
     {
@@ -2712,13 +2766,13 @@
       "analysis_page": 22,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "《重阳席上赋白菊》是唐代诗人白居易创作的一首七言绝句。此诗前两句写诗人看到满园金黄的菊花中有一朵雪白的菊花,感到欣喜;后两句把那朵雪白的菊花比作是参加“歌舞席”的老人,和“少年”一起载歌载舞。全诗表达了诗人虽然年老仍有少年的情趣。",
+      "status": "已核对",
+      "direct": "白居易《重阳席上赋白菊》有“满园花菊郁金黄”，选 B。原题 B 的“孤从”对应通行文本“孤丛”，诗人配对仍可识别。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "文学常识"
     },
     {
@@ -2733,13 +2787,18 @@
       "analysis_page": 23,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "马可·波罗(约1254年9月15日—1324年1月8日),旧译“马哥·孛罗”“马可·孛罗”“马哥·波罗”“马高·保罗”。",
+      "status": "已核对",
+      "direct": "马可·波罗通常以威尼斯商人和旅行家的身份被介绍，2024 年威尼斯总督府也举办了专题展，四个选项中选 A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "威尼斯总督府 2024年马可·波罗专题展",
+          "url": "https://palazzoducale.visitmuve.it/en/exhibition/the-worlds-of-marco-polo/"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "历史常识"
     },
     {
@@ -2754,13 +2813,13 @@
       "analysis_page": 23,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "A项:我国气候复杂多样,并非只有亚热带季风气候和温带季风气候两种。我国东部地区以季风气候为主,包括热带季风气候、亚热带季风气候和温带季风气候。此外,我国西北地区主要是温带大陆性气候,冬冷夏热,降水稀少。",
+      "status": "已核对",
+      "direct": "我国气候类型多样。除了温带及亚热带季风气候，还有热带季风气候、温带大陆性气候、高原山地气候等，选 A。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "地理常识"
     },
     {
@@ -2771,17 +2830,22 @@
       "body": "22、9 月属于北方的夏秋之交季节。南方的夏季,又被称为“收获月”。9 月份\n的节气有( ) \nA. 立秋和处暑 \nB. 白露和秋分 \nC. 白露和寒露 \nD. 小暑和大暑",
       "answer": "B",
       "analysis": "22.9 月又被称为“收获月”9 月的节气有: \nA.立秋和处暑 \nB.白露和秋分 \nC.白露和寒露 \nD.小暑和大暑 \n【答案】B \n【解析】第一步,本题考查二十四节气知识。 \n第二步,B 项:二十四节气是中国古代订立的一种用来指导农事的补充历法,每个月有\n两个节气,平均相隔约15 天。白露一般在公历9 月7 日至9 日之间,秋分一般在公历9 月22\n日至24 日之间。因此,9 月的节气是白露和秋分。C 项正确。 \n因此,选择B 选项。 \n【拓展】A 项:立秋一般在公历8 月7 日至9 日之间,处暑一般在公历8 月22 日至24\n日之间,都不在9 月。A 项错误。 \nC 项:白露一般在公历9 月7 日至9 日之间,寒露一般在公历10 月8 日9 日之间,寒露\n在10 月并不在9 月。C 项错误。 \nD 项:小暑一般在公历7 月6 日至8 日之间,大暑一般在公历7 月22 日至24 日之间,\n都不在9 月。D 项错误。",
-      "source_page": 4,
+      "source_page": 5,
       "analysis_page": 24,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "B项:二十四节气是中国古代订立的一种用来指导农事的补充历法,每个月有两个节气,平均相隔约15天。白露一般在公历9月7日至9日之间,秋分一般在公历9月22日至24日之间。因此,9月的节气是白露和秋分。",
+      "status": "已核对",
+      "direct": "白露在公历 9 月上旬，秋分在 9 月下旬，两者都在 9 月，选 B。日期会随年份略有变化。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "农业农村部 二十四节气百科",
+          "url": "https://jgs.agri.gov.cn/twenty/zh/four_solar_terms.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "地理常识"
     },
     {
@@ -2796,13 +2860,13 @@
       "analysis_page": 24,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "C项:手机语音识别是人工智能(AI)技术的一种应用,通过对语音信号的处理和分析,实现语音到文本的转换等功能。",
+      "status": "已核对",
+      "direct": "手机语音识别将声音信号识别为文字或命令，是人工智能的常见应用，选 C。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "科技常识"
     },
     {
@@ -2817,13 +2881,22 @@
       "analysis_page": 25,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "D项:“指鹿为马”,发生在秦二世胡亥统治时期,赵高为了检验朝廷大臣们对自己的忠诚度以及确认自己的权势范围,特意在朝堂上献上一只鹿,却故意声称这是一匹马。大臣们有的沉默不语,有的为了迎合赵高说是马,有的直言是鹿。因此,指鹿为马发生在秦朝末年,并不是南北朝时期,对应错误。",
+      "status": "已核对",
+      "direct": "“指鹿为马”关联秦二世时的赵高，与南北朝相距甚远，选 D。其余三项按典故的常见时代背景判断。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "全国哲学社会科学工作办公室 史记赵高相关记载",
+          "url": "https://www.nopss.gov.cn/n1/2019/0805/c219470-31275419.html"
+        },
+        {
+          "title": "北京市教委 典故历史出处",
+          "url": "https://jw.beijing.gov.cn/language/ywsh/201606/t20160623_1056389.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "文学常识"
     },
     {
@@ -2838,13 +2911,18 @@
       "analysis_page": 26,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "牛顿第二定律即物体加速度的大小跟作用力成正比,跟物体的质量成反比,且与物体质量的倒数成正比;加速度的方向跟作用力的方向相同。用公式表达为:F=ma,其中F表示物体所受的合力,m表示物体的质量,a表示物体的加速度。为达到相同起步速度,越重的车配的发动机马力越大。",
+      "status": "已核对",
+      "direct": "牛顿第二定律是合力等于质量乘加速度。按两车要在相同时间内获得相同速度增量的题意，较重车需要更大的合驱动力，选 D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "OpenStax 牛顿第二定律",
+          "url": "https://openstax.org/books/physics/pages/4-3-newtons-second-law-of-motion"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "科技常识"
     },
     {
@@ -2859,13 +2937,18 @@
       "analysis_page": 26,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "A项:习近平总书记指出,“党的政治建设是党的根本性建设,决定党的建设方向和效果”,强调“保证全党服从中央,坚持党中央权威和集中统一领导,是党的政治建设的首要任务”,“要把准政治方向,坚持党的政治领导,夯实政治根基,涵养政治生态,防范政治风险,永葆政治本色,提高政治能力”。D项:坚持民主集中制是党的建设必须坚决实现的六项基本要求之一。党的建设必须坚决实现的基本要求包括坚持党的基本路线、坚持解放思想,实事求是,与时俱进,求真务实、坚持全心全意为人民服务、坚持民主集中制、坚持从严管党治党。",
+      "status": "已核对",
+      "direct": "政治建设是根本性建设，新时代党的建设另有明确主线，思想建设是基础性建设。坚持民主集中制是党章明确的基本要求，选 AD。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "中国共产党章程",
+          "url": "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/jjyzt_2022/2022_zt17/yw/202210/t20221027_672601.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -2880,13 +2963,13 @@
       "analysis_page": 27,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "A项:外国人入境人次增长意味着旅游等消费需求的增加。C项:端午节假期外国人出入境人次增长,在短期内会增加对我国服务业的需求,如旅游服务、交通服务等,对服务业GDP有一定的刺激作用。D项:外国入境人次增加会使市场参与者增多,包括在酒店、餐饮、旅游等各个服务领域。",
+      "status": "已核对",
+      "direct": "入境人员实际消费可带动本地服务，市场参与者、供需和服务供给变化也可能带来竞争。免签先降低制度摩擦，经济产出变化经后续活动传导，选 ACD。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -2901,13 +2984,18 @@
       "analysis_page": 28,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "A项:根据2024年版《刑法》第十七条规定,已满十四周岁不满十六周岁的人属于相对负刑事责任年龄阶段,因此小王属于相对负刑事责任年龄阶段。B项:根据2024年版《刑法》第十七条规定不满十二周岁的人属于完全无刑事责任年龄阶段,不负刑事责任。D项:根据2024年版《刑法》第十七条第一款规定已满十六周岁的人犯罪,应当负刑事责任。",
+      "status": "已核对",
+      "direct": "刑法第十七条把贩卖毒品列入 14 至不满 16 周岁依法负刑事责任的犯罪。按题设小王参与该行为，15 岁属于相对负刑事责任年龄阶段，反向选 ABD。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "中华人民共和国刑法 第17条",
+          "url": "https://wb.flk.npc.gov.cn/flfg/PDF/25b94caa6d0349dd9651f16148463db4.pdf"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -2922,13 +3010,13 @@
       "analysis_page": 29,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "B项:非程序化决策是针对那些不常发生或例外的非结构化问题而进行的决策,是由于问题的独特性和复杂性,难以用既定的程序和方法来处理。C项:如果目标与执行措施冲突,那么执行越有效,确实会使结果离目标越远。D项:目标管理是通过让组织的成员亲自参加工作目标的制定,实现“自我控制”,并努力完成工作目标的管理活动。",
+      "status": "已核对",
+      "direct": "人本原理以人为中心。非程序化决策应对新问题，执行措施应对准目标，目标管理重视共同协商，选 BCD。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -2943,13 +3031,22 @@
       "analysis_page": 29,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "A项:扬州地处长江与京杭大运河交汇处,是江淮地区的重要城市之一。D项:滁州地处安徽省东部,与江苏省接壤,属于江淮地区。因此,选择ABCD选项。",
+      "status": "已核对",
+      "direct": "这里的江淮地区采用天气预报中的常见地理口径，指长江和淮河之间相应区域，扬州、泰州、合肥和滁州均符合，选 ABCD。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "淮河生态经济带发展规划",
+          "url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=91047"
+        },
+        {
+          "title": "泰州市统计局 泰州区位",
+          "url": "https://stats.taizhou.gov.cn/qjtz/tzgl/tzgk/art/2023/art_95dfe07aef124acebbbf3653a99fcabd.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "地理常识"
     },
     {
@@ -2964,13 +3061,22 @@
       "analysis_page": 30,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "巴黎残奥会开幕后的首个比赛日,中国体育代表团共收获4金1银:在场地自行车男子C1级3000米个人追逐赛决赛中,李樟煜夺得中国体育代表团首金。",
-      "note": "",
-      "references": [],
+      "status": "争议",
+      "direct": "资料判 A，但正式赛果记载决赛日期为 2024 年 8 月 29 日。运动员、奖牌和项目对应，原题把比赛日写成 8 月 9 日，按原句应判错。",
+      "note": "原卷与原解析日期均为 8 月 9 日，国际残奥委会官方赛果为 8 月 29 日。原句日期错误，保留资料答案 A 对照。",
+      "references": [
+        {
+          "title": "国际残奥委会 巴黎2024决赛日战报",
+          "url": "https://www.paralympic.org/paris-2024/news/para-cyclist-caroline-groot-wins-first-gold-medal-games"
+        },
+        {
+          "title": "国际残奥委会 李樟煜 官方赛果",
+          "url": "https://www.paralympic.org/zhangyu-li"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -2985,13 +3091,13 @@
       "analysis_page": 30,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "“砍柴的认为皇帝都挑金扁担”形象地说明了人的认识会受到自身实践水平的限制。砍柴人由于自身的生活环境和实践活动的局限,只能以自己熟悉的砍柴生活为基础去想象皇帝的生活,而无法真正了解皇帝的实际生活状态。这反映出人们的认识往往基于自己的实践经历,当实践水平有限时,认识的广度和深度也会受到相应的限制。",
+      "status": "已核对",
+      "direct": "砍柴人把自己熟悉的劳动经验套到他人生活，说明现实实践的范围和水平会限制认识，选 A。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "马克思主义原理"
     },
     {
@@ -3006,13 +3112,18 @@
       "analysis_page": 30,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "我国社会主义建设分为改革开放前和改革开放后两个历史时期。改革开放前,中国在经济建设、社会发展、国防科技等方面进行了艰苦卓绝的探索,建立起了独立的比较完整的工业体系和国民经济体系,为后来的发展奠定了重要基础。改革开放后,中国以经济建设为中心,实行改革开放政策,极大地解放和发展了社会生产力,推动中国特色社会主义事业不断向前迈进。",
+      "status": "已核对",
+      "direct": "改革开放前后有重大区别，也相互联系。资料把“截然不同”理解为前后阶段有重大区别，侧重两段时期都是党领导人民进行社会主义建设的探索，因此判 A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "关于改革开放前后两个历史时期的讲话",
+          "url": "https://xxgk.zmdsjw.gov.cn/sitesources/zmdjw/page_pc/lzyw/xwtt/article3ae72e8c6a9641dbae053ddd95c0db01.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -3027,13 +3138,18 @@
       "analysis_page": 31,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "衡量文化产业发展质量和水平不能仅仅看经济效益和对经济增长的贡献。文化产业具有双重属性,一方面具有经济属性,能够创造经济价值;另一方面具有文化属性和社会属性,承担着传承文化、引领价值观、满足人民精神文化需求、提升国家文化软实力等重要使命。如果只看重经济效益,可能会导致文化产业过度商业化、低俗化,忽视了文化产业应有的文化内涵和社会价值,不利于文化产业的可持续发展和国家文化建设的长远目标。",
+      "status": "已核对",
+      "direct": "文化产业兼有社会和经济属性。评价发展要把社会效益放在首位，促进两个效益相统一，题干把经济效益放在首位，选 D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "中共中央关于进一步全面深化改革、推进中国式现代化的决定",
+          "url": "https://www.cac.gov.cn/2024-07/21/c_1723275282504292.htm"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -3044,17 +3160,22 @@
       "body": "35、《中国共产党第二十届中央委员会第三次全体会议公报》指出,开放是中国\n式现代化的鲜明标识。",
       "answer": "A",
       "analysis": "35.《中国共产党第二十届中央委员会第三次全体会议公报》指出,开放是中国式现代\n化的鲜明标识。 \n【答案】正确。 \n【解析】第一步,本题考查时事热点。 \n第二步,《中国共产党第二十届中央委员会第三次全体会议公报》提出,开放是中国式\n现代化的鲜明标识。必须坚持对外开放基本国策,坚持以开放促改革,依托我国超大规模市\n场优势,在扩大国际合作中提升开放能力,建设更高水平开放型经济新体制。要稳步扩大制\n度型开放,深化外贸体制改革,深化外商投资和对外投资管理体制改革,优化区域开放布局,\n完善推进高质量共建“一带一路”机制。 \n因此,本题正确。",
-      "source_page": 6,
+      "source_page": 7,
       "analysis_page": 31,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "《中国共产党第二十届中央委员会第三次全体会议公报》提出,开放是中国式现代化的鲜明标识。必须坚持对外开放基本国策,坚持以开放促改革,依托我国超大规模市场优势,在扩大国际合作中提升开放能力,建设更高水平开放型经济新体制。要稳步扩大制度型开放,深化外贸体制改革,深化外商投资和对外投资管理体制改革,优化区域开放布局,完善推进高质量共建“一带一路”机制。",
+      "status": "已核对",
+      "direct": "二十届三中全会公报明确提出，开放是中国式现代化的鲜明标识，选 A。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "中国共产党第二十届中央委员会第三次全体会议公报",
+          "url": "https://www.gdls.gov.cn/qylsxsj/gkmlpt/content/1/1896/post_1896388.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中国特色社会主义"
     },
     {
@@ -3069,13 +3190,18 @@
       "analysis_page": 32,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "纯公共物品就是具有完全的非竞争性和完全的非排他性的物品。一般认为,国防、自然环境、法律秩序等都是最典型的纯公共物品。",
+      "status": "已核对",
+      "direct": "公共国防服务是典型的纯公共物品，受益具有非竞争性和非排他性。题干把两项特征反写，选 D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "OpenStax 公共物品与国防示例",
+          "url": "https://openstax.org/books/principles-economics-2e/pages/13-3-public-goods"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -3090,13 +3216,18 @@
       "analysis_page": 32,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "当美元降息时,其存款利率相对于其他货币(如人民币)下降,降低了美元资产的吸引力。投资者可能会寻求更高利率的货币进行投资,从而增加对人民币等货币的需求。这是因为投资者希望获得更高的投资回报。",
-      "note": "",
-      "references": [],
+      "status": "争议",
+      "direct": "资料判 A。其他条件不变时，美元利率下降可能降低美元资产的相对吸引力，人民币可能相对走强；实际汇率和出口竞争力还受多重因素影响，题干的必然判断证据不足。",
+      "note": "汇率和出口竞争力受多因素影响。资料给出的是在特定假设下可能出现的方向。",
+      "references": [
+        {
+          "title": "美联储 货币政策国际溢出效应",
+          "url": "https://www.federalreserve.gov/econres/notes/feds-notes/international-spillovers-of-tighter-monetary-policy-20221222.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "经济学"
     },
     {
@@ -3111,13 +3242,13 @@
       "analysis_page": 32,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "评价作用1.定义:评价作用是指法作为一种行为规范具有判断、衡量他人行为是否合法或有效的作用。2.对象:评价作用的对象是他人的行为。3.分类:根据评价的主体不同,法的评价作用可以分为专门的评价和一般的评价。",
+      "status": "已核对",
+      "direct": "王某根据法律规范调整自己的行为，体现法律的指引作用；评价作用针对对他人行为作判断，选 D。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -3132,13 +3263,18 @@
       "analysis_page": 32,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "民事公益诉讼的管辖法院主要由侵权行为地或者被告住所地中级人民法院管辖。对于因污染海洋环境提起的公益诉讼,则由污染发生地、损害结果地或者采取预防污染措施地的海事法院管辖。",
-      "note": "",
-      "references": [],
+      "status": "争议",
+      "direct": "资料判 A，套用的是环境民事公益诉讼的管辖规则。题干实际只说明律师为具体受损村民提供法律援助，无法据此确定是法定主体提起的公益诉讼，更不能由此认定必须向中级法院起诉。",
+      "note": "题干不足以确定诉讼属于环境民事公益诉讼，也不足以认定必须由中级法院管辖。",
+      "references": [
+        {
+          "title": "最高人民法院 环境民事公益诉讼司法解释（试卷当时适用规则）",
+          "url": "https://www.court.gov.cn/fabu/xiangqing/13025.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "法律法规"
     },
     {
@@ -3154,12 +3290,12 @@
       "question_material": 5,
       "analysis_material": 5,
       "status": "争议",
-      "direct": "资料判正确A，但“工资福利属于物质激励”无法推出“福利最能体现激励作用”。不同人员与情境下激励效果不同，“最能”缺少比较条件，本题暂不作为掌握依据。",
-      "note": "原题或原解析存在限定条件、表述或论证问题，保留资料答案供核对，暂不计掌握。",
+      "direct": "资料判 A。福利可以发挥激励作用，也可能主要用于满足基本保障需求。哪种奖酬更有效要看员工需求、岗位及考核安排，题干的“最能”缺少比较条件。",
+      "note": "福利可有激励作用，题面未给出足以比较哪项效果最强的条件。",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "逐题整理",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -3174,13 +3310,13 @@
       "analysis_page": 33,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "战略决策通常是涉及组织整体发展方向和长远目标的重大决策。它具有全局性、长远性和根本性的特点,决定了组织在较长时期内的行动方向和资源配置。因此题干中关于“在行政策范畴下,战术决策相较于战略决策范围较窄,是一种在既定方向和内容下对活动方式进行的执行性决策”的表述正确。",
+      "status": "已核对",
+      "direct": "战略决策通常定长远方向和全局目标，战术决策细化阶段性行动和资源安排。题干讲的是相对范围及执行属性，选 A。",
       "note": "",
       "references": [],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "管理学"
     },
     {
@@ -3195,13 +3331,18 @@
       "analysis_page": 33,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "专用公文是指在一定的业务范围内,按照特定需要而专门使用的公文。而某市机关单位内部使用的日常事务性公文多为一般的事务性通知、通报等;法律法规性公文一般指国家法律、法规等具有普遍约束力的规范性文件,它们都不属于专用公文范畴。因此题干中关于“日常事务性公文、法律法规性公文等都属于专用公文”的表述错误。",
+      "status": "已核对",
+      "direct": "专用公文是特定业务领域按专门需要使用的文书。机关内日常通知、通报等可以属于通常公文，不能把题列文件都归为专用公文，选 D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "党政机关公文处理工作条例 第8条",
+          "url": "https://www.miit.gov.cn/xwdt/szyw/art/2020/art_6afb8ee6d07540dcacccbeb47dbc0fd4.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "公文写作"
     },
     {
@@ -3216,13 +3357,22 @@
       "analysis_page": 34,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "“第二个结合”即把马克思主义基本原理同中华优秀传统文化相结合,是习近平总书记提出的重要命题,马克思主义中国化时代化新的飞跃也是在习近平新时代中国特色社会主义思想的指引下实现的。因此题干中关于“在新民主主义革命时期,毛泽东提出了”第二个结合“的命题,实现了马克思主义中国化的第二次历史性飞跃”的表述错误。",
+      "status": "已核对",
+      "direct": "“第二个结合”指马克思主义基本原理同中华优秀传统文化相结合，是习近平总书记提出的重要命题。毛泽东思想对应马克思主义中国化的第一次历史性飞跃，选 D。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "教育部转载 在文化传承发展座谈会上的讲话",
+          "url": "https://hudong.moe.gov.cn/jyb_xwfb/moe_176/202308/t20230831_1077496.html"
+        },
+        {
+          "title": "中共中央关于党的百年奋斗重大成就和历史经验的决议",
+          "url": "https://www.miit.gov.cn/xwdt/szyw/art/2021/art_78a094259245416f951f998cd224d65b.html"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "中共党史"
     },
     {
@@ -3237,13 +3387,18 @@
       "analysis_page": 34,
       "question_material": 5,
       "analysis_material": 5,
-      "status": "待核对",
-      "direct": "蜜蜂传粉和风媒传粉是植物的两种主要传粉方式。这是因为蜜蜂传粉是一种有目的性的行为,蜜蜂会选择花朵中最甜的花粉,并将其传到其他花朵上,从而提高了花粉传递的效率。因此题干中关于“蜜蜂传粉效率通常比风媒性传粉率高”的表述正确。",
+      "status": "已核对",
+      "direct": "在通常的教材比较中，蜜蜂反复访花，可把附着在体表的花粉传到其他花上，比随风扩散更有定向性，选 A。实际效率要看植物种类、环境和采用的指标。",
       "note": "",
-      "references": [],
+      "references": [
+        {
+          "title": "OpenStax 授粉与受精",
+          "url": "https://openstax.org/books/biology-2e/pages/32-2-pollination-and-fertilization"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "原解析要点摘录，待复核",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "科技常识"
     },
     {
@@ -3259,12 +3414,17 @@
       "question_material": 5,
       "analysis_material": 5,
       "status": "争议",
-      "direct": "Win+D的常用功能是显示或隐藏桌面，但前提是系统仍能响应快捷键。题干笼统说“系统卡住”也能迅速返回，无法保证，资料虽判A，本题应保留争议；另需核对题干Wint+D的文字错误。",
-      "note": "快捷键功能与系统完全无响应两种情形不能混为一谈，暂不计掌握。",
-      "references": [],
+      "direct": "Windows 的 Win+D 可显示或隐藏桌面，前提是系统还会处理快捷键。原卷写作“Wint+D”，解析按 Win+D 理解，并把“卡住”笼统判为可快速返回，保留争议。",
+      "note": "原卷写 Wint+D，原解析按 Win+D 解答。快捷键还取决于系统能否响应。",
+      "references": [
+        {
+          "title": "微软 Windows 键盘快捷方式",
+          "url": "https://support.microsoft.com/en-us/accessibility/windows/keyboard-shortcuts-in-windows"
+        }
+      ],
       "image": "",
       "version": 1,
-      "explanation_source": "逐题整理",
+      "explanation_source": "对照原卷与原解析逐项核对",
       "category": "科技常识"
     },
     {
@@ -12933,6 +13093,1253 @@
           "name": "2025年9月21日下午余姚、慈溪、象山、宁海事业单位答案及解析.pdf",
           "page": 10,
           "location": "第38题解析·题干"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30003,
+      "question_id": 24001,
+      "role": "主考点",
+      "position": "A、B、C、D",
+      "reason": "知识卡30003首句给出发布日与模型名称。2024年7月在成都发布的地震波大模型名为“谛听”。",
+      "evidence": "2024年上午卷第1题A、B、C、D，知识卡30003首句给出发布日与模型名称",
+      "status": "已确认",
+      "rule_id": "RULE-SCI-DITING-SEISMIC-MODEL-2024-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 1,
+          "location": "第1题B项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 11,
+          "location": "第1题解析·B项"
+        },
+        "external": "https://www.mem.gov.cn/xw/xwfbh/2024n09y04xwfbh_6209/"
+      }
+    },
+    {
+      "knowledge_id": 30030,
+      "question_id": 24002,
+      "role": "主考点",
+      "position": "A、B、C、D",
+      "reason": "知识卡30030首句列明三项核心内容。“三新”经济涵盖新产业、新业态和新商业模式。",
+      "evidence": "2024年上午卷第2题A、B、C、D，知识卡30030首句列明三项核心内容",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-THREE-NEW-DEFINITION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 1,
+          "location": "第2题C项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 12,
+          "location": "第2题解析·C项"
+        },
+        "external": "https://www.stats.gov.cn/sj/zxfb/202407/t20240730_1955890.html"
+      }
+    },
+    {
+      "knowledge_id": 30031,
+      "question_id": 24003,
+      "role": "主考点",
+      "position": "A",
+      "reason": "知识卡30031首句说明运动不能脱离物质。物质是运动的承担者，运动不能脱离物质。",
+      "evidence": "2024年上午卷第3题A，知识卡30031首句说明运动不能脱离物质",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-MOTION-MATERIAL-CARRIER-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 1,
+          "location": "第3题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 12,
+          "location": "第3题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10143,
+      "question_id": 24003,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "知识卡10143第17条。运动是物质的根本属性和存在方式。相对静止不排斥物质的运动。",
+      "evidence": "2024年上午卷第3题B，知识卡10143第17条",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-MOTION-MATTER-ATTRIBUTE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 1,
+          "location": "第3题B项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 12,
+          "location": "第3题解析·B项（续第13页）"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30031,
+      "question_id": 24003,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡30031首句说明运动形式多样。机械、物理、化学、生命和社会等运动有不同形态，不能把所有变化归为一种形式或简单的机械位移。",
+      "evidence": "2024年上午卷第3题C，知识卡30031首句说明运动形式多样",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-MOTION-FORMS-DIVERSITY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 1,
+          "location": "第3题C项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 13,
+          "location": "第3题解析·C项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10144,
+      "question_id": 24004,
+      "role": "辅助考点",
+      "position": "A、C",
+      "reason": "知识卡10144第24条以发展趋势区分新旧事物。题目把新能源汽车的技术方向作为新事物的发展案例。阶段性阻力或少部分消费者观望不能单独改变它的性质。",
+      "evidence": "2024年上午卷第4题A、C，知识卡10144第24条以发展趋势区分新旧事物",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-NEW-THING-DEVELOPMENT-TREND-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 1,
+          "location": "第4题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 14,
+          "location": "第4题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10144,
+      "question_id": 24004,
+      "role": "主考点",
+      "position": "B",
+      "reason": "知识卡10144第40条区分总趋势和具体道路。总体发展向前，具体过程中会遇到质疑和局部阻力，正好对应发展的前进性和曲折性。",
+      "evidence": "2024年上午卷第4题B，知识卡10144第40条区分总趋势和具体道路",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-DEVELOPMENT-ADVANCE-AND-TWISTS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 1,
+          "location": "第4题B项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 13,
+          "location": "第4题解析·B项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10144,
+      "question_id": 24004,
+      "role": "辅助考点",
+      "position": "D",
+      "reason": "知识卡10144第26、38条量变质变及其关系。原理本身成立。题面没有给出数量累积突破条件并产生性质变化的过程，重点在推进与阻力并存。",
+      "evidence": "2024年上午卷第4题D，知识卡10144第26、38条量变质变及其关系",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-QUANTITY-QUALITY-CHANGE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 1,
+          "location": "第4题D项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 14,
+          "location": "第4题解析·D项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10158,
+      "question_id": 24005,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡10158第168条多党合作的政治前提和保证。坚持中国共产党领导是多党合作健康发展的首要前提和根本保证。",
+      "evidence": "2024年上午卷第5题A，知识卡10158第168条多党合作的政治前提和保证",
+      "status": "已确认",
+      "rule_id": "RULE-POL-MULTIPARTY-CPC-LEADERSHIP-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 1,
+          "location": "第5题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 14,
+          "location": "第5题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10157,
+      "question_id": 24005,
+      "role": "主考点",
+      "position": "B",
+      "reason": "知识卡10157第163条根本政治制度的定位。人民通过民主选举产生代表、组成各级人大，依法行使国家权力，体现这一根本政治制度。",
+      "evidence": "2024年上午卷第5题B，知识卡10157第163条根本政治制度的定位",
+      "status": "已确认",
+      "rule_id": "RULE-POL-PEOPLES-CONGRESS-FUNDAMENTAL-SYSTEM-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第5题B项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 14,
+          "location": "第5题解析·B项"
+        },
+        "external": "https://qhca.miit.gov.cn/zwgk/zcwj/flfg/art/2022/art_0d1d8586107d4363b3f51284c56873c5.html"
+      }
+    },
+    {
+      "knowledge_id": 10158,
+      "question_id": 24005,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡10158第173条政协职能。政治协商、民主监督、参政议政是政协的主要职能，该项张冠李戴。",
+      "evidence": "2024年上午卷第5题C，知识卡10158第173条政协职能",
+      "status": "已确认",
+      "rule_id": "RULE-POL-CPPCC-THREE-FUNCTIONS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第5题C项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 14,
+          "location": "第5题解析·C项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10153,
+      "question_id": 24005,
+      "role": "辅助考点",
+      "position": "D",
+      "reason": "知识卡10153第86条中国特色社会主义最本质的特征。中国特色社会主义最本质的特征是中国共产党领导。",
+      "evidence": "2024年上午卷第5题D，知识卡10153第86条中国特色社会主义最本质的特征",
+      "status": "已确认",
+      "rule_id": "RULE-POL-SOCIALISM-CPC-ESSENTIAL-FEATURE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第5题D项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 14,
+          "location": "第5题解析·D项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10152,
+      "question_id": 24006,
+      "role": "主考点",
+      "position": "A、B、C、D",
+      "reason": "知识卡10152第76条给出核心要义。坚持和发展中国特色社会主义与资料和教材给出的核心要义一致。",
+      "evidence": "2024年上午卷第6题A、B、C、D，知识卡10152第76条给出核心要义",
+      "status": "已确认",
+      "rule_id": "RULE-POL-XI-THOUGHT-CORE-TENET-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第6题D项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 15,
+          "location": "第6题解析·D项"
+        },
+        "external": "https://www.samr.gov.cn/jjz/xxyd/shzysx/art/2023/art_a01cee98b85c4291b777665c1024f485.html"
+      }
+    },
+    {
+      "knowledge_id": 30033,
+      "question_id": 24007,
+      "role": "主考点",
+      "position": "A",
+      "reason": "知识卡30033首句明确制度建设为主线。《决定》明确制度建设为主线；推动高质量发展是进一步全面深化改革的重要要求。",
+      "evidence": "2024年上午卷第7题A，知识卡30033首句明确制度建设为主线",
+      "status": "已确认",
+      "rule_id": "RULE-POL-2024-REFORM-INSTITUTIONAL-MAINLINE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第7题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 15,
+          "location": "第7题解析·A项"
+        },
+        "external": "https://www.cac.gov.cn/2024-07/21/c_1723275282504292.htm"
+      }
+    },
+    {
+      "knowledge_id": 30033,
+      "question_id": 24007,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡30033末句明确党的领导是根本保证。党的领导为进一步全面深化改革、推进中国式现代化提供根本政治保证。",
+      "evidence": "2024年上午卷第7题C，知识卡30033末句明确党的领导是根本保证",
+      "status": "已确认",
+      "rule_id": "RULE-POL-2024-REFORM-PARTY-LEADERSHIP-GUARANTEE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第7题C项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 15,
+          "location": "第7题解析·C项"
+        },
+        "external": "https://www.cac.gov.cn/2024-07/21/c_1723275282504292.htm"
+      }
+    },
+    {
+      "knowledge_id": 10134,
+      "question_id": 24008,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡10134第14条包括价格预期。甲因预计未来打折而推迟下单。场景体现对未来价格的预期，没有发生当期价格变化。",
+      "evidence": "2024年上午卷第8题A，知识卡10134第14条包括价格预期",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-DEMAND-PRICE-EXPECTATIONS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第8题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 16,
+          "location": "第8题解析·A项"
+        },
+        "external": "https://openstax.org/books/principles-economics-2e/pages/3-2-shifts-in-demand-and-supply-for-goods-and-services"
+      }
+    },
+    {
+      "knowledge_id": 10134,
+      "question_id": 24008,
+      "role": "主考点",
+      "position": "C",
+      "reason": "知识卡10134第14—15条列明自身价格及需求量关系。其他条件不变时，商品自身价格下降，需求量增加，表现为沿同一需求曲线移动。",
+      "evidence": "2024年上午卷第8题C，知识卡10134第14—15条列明自身价格及需求量关系",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-DEMAND-QUANTITY-PRICE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第8题C项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 16,
+          "location": "第8题解析·C项"
+        },
+        "external": "https://openstax.org/books/principles-economics-2e/pages/3-2-shifts-in-demand-and-supply-for-goods-and-services"
+      }
+    },
+    {
+      "knowledge_id": 10134,
+      "question_id": 24008,
+      "role": "辅助考点",
+      "position": "D",
+      "reason": "知识卡10134第14条将消费者收入列为影响因素。绩效奖励提高了可支配收入，改变可选择的旅游预算。场景反映收入因素。",
+      "evidence": "2024年上午卷第8题D，知识卡10134第14条将消费者收入列为影响因素",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-DEMAND-INCOME-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第8题D项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 16,
+          "location": "第8题解析·D项"
+        },
+        "external": "https://openstax.org/books/principles-economics-2e/pages/3-2-shifts-in-demand-and-supply-for-goods-and-services"
+      }
+    },
+    {
+      "knowledge_id": 30030,
+      "question_id": 24009,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡30030正文明确应按真实投入结构判断产业类型。产业投入密集度应按实际生产中各要素投入结构判断。",
+      "evidence": "2024年上午卷第9题A，知识卡30030正文明确应按真实投入结构判断产业类型",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-INDUSTRY-CLASSIFICATION-BY-INPUTS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第9题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 16,
+          "location": "第9题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10146,
+      "question_id": 24010,
+      "role": "辅助考点",
+      "position": "A、B",
+      "reason": "知识卡10146第69条货币作为商品交换媒介。“十元”标价有价值尺度功能，选项重点却是用这笔钱实际换来一壶油，主要体现流通手段。",
+      "evidence": "2024年上午卷第10题A、B，知识卡10146第69条货币作为商品交换媒介",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-MONEY-MEDIUM-OF-EXCHANGE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第10题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 17,
+          "location": "第10题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10146,
+      "question_id": 24010,
+      "role": "主考点",
+      "position": "C",
+      "reason": "知识卡10146第68条价值尺度只需观念上的货币。每平方米的价格用货币表达，不必发生一宗买卖即可对比价值的货币表现。",
+      "evidence": "2024年上午卷第10题C，知识卡10146第68条价值尺度只需观念上的货币",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-MONEY-MEASURE-OF-VALUE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 2,
+          "location": "第10题C项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 17,
+          "location": "第10题解析·C项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10137,
+      "question_id": 24011,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡10137第64条明确将提高利率列为紧缩货币工具。提高存款准备金率属于紧缩性货币政策，收紧市场流动性。",
+      "evidence": "2024年上午卷第11题A，知识卡10137第64条明确将提高利率列为紧缩货币工具",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-MONETARY-TIGHT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 3,
+          "location": "第11题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 18,
+          "location": "第11题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 20040,
+      "question_id": 24011,
+      "role": "主考点",
+      "position": "B",
+      "reason": "知识卡20040正文直接列明降低存款准备金率。扩张性货币政策通过降准、降息、降低再贷款利率或公开市场逆回购增加市场货币供应量与流动性。",
+      "evidence": "2024年上午卷第11题B，知识卡20040正文直接列明降低存款准备金率",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-MONETARY-EXPANSION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 3,
+          "location": "第11题B项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 18,
+          "location": "第11题解析·B项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10137,
+      "question_id": 24011,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡10137第58条说明税收的扩张与紧缩方向。在其他条件不变时，增加税收一般会减少私人部门可支配财力。以税收支持扩张支出是另一种组合政策。",
+      "evidence": "2024年上午卷第11题C，知识卡10137第58条说明税收的扩张与紧缩方向",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-FISCAL-EXPANSION-TAX-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 3,
+          "location": "第11题C项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 18,
+          "location": "第11题解析·C项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10137,
+      "question_id": 24011,
+      "role": "辅助考点",
+      "position": "D",
+      "reason": "知识卡10137第58条说明财政支出的扩张与紧缩方向。减少政府购买或转移支出通常减少总需求，题干要找的是在这组措施中有扩张作用的一项。",
+      "evidence": "2024年上午卷第11题D，知识卡10137第58条说明财政支出的扩张与紧缩方向",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-FISCAL-EXPANSION-SPENDING-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 3,
+          "location": "第11题D项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 18,
+          "location": "第11题解析·D项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 20020,
+      "question_id": 24013,
+      "role": "主考点",
+      "position": "A",
+      "reason": "知识卡20020正文明确非法占有、当场胁迫、当场取财。以非法占有为目的，当场胁迫压制反抗并当场取得财物，符合刑法第二百六十三条所涉抢劫行为。",
+      "evidence": "2024年上午卷第13题A，知识卡20020正文明确非法占有、当场胁迫、当场取财",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-ROBBERY-IMMEDIATE-COERCION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 3,
+          "location": "第13题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 19,
+          "location": "第13题解析·A项"
+        },
+        "external": "https://flk.npc.gov.cn/detail?fileId=&id=ff808181796a636a0179822a19640c92&title=&type="
+      }
+    },
+    {
+      "knowledge_id": 30022,
+      "question_id": 24014,
+      "role": "辅助考点",
+      "position": "①",
+      "reason": "知识卡30022首句明确预约约定另行订立正式合同。预约合同约定将来另行订立本约，须区分两者各自的成立与效力条件。",
+      "evidence": "2024年上午卷第14题①，知识卡30022首句明确预约约定另行订立正式合同",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-PREORDER-VS-FINAL-CONTRACT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 3,
+          "location": "第14题①陈述"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 20,
+          "location": "第14题解析·①陈述"
+        },
+        "external": "https://www.court.gov.cn/zixun/xiangqing/419382.html"
+      }
+    },
+    {
+      "knowledge_id": 30022,
+      "question_id": 24014,
+      "role": "主考点",
+      "position": "②",
+      "reason": "知识卡30022正文说明有效订约定金及双倍返还。按预约合同和定金规则，且题面记载开发商自行售罄致无法订约。收受定金方使合同目的不能实现时，买方可就有效定金部分主张双倍返还。原解析支持①，但选项 C 对应的正确项数仍为 1。",
+      "evidence": "2024年上午卷第14题②，知识卡30022正文说明有效订约定金及双倍返还",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-PREORDER-DEPOSIT-DOUBLE-RETURN-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 3,
+          "location": "第14题②陈述"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 20,
+          "location": "第14题解析·②陈述"
+        },
+        "external": "https://www.court.gov.cn/zixun/xiangqing/233181.html"
+      }
+    },
+    {
+      "knowledge_id": 20060,
+      "question_id": 24015,
+      "role": "主考点",
+      "position": "B、D",
+      "reason": "知识卡20060正文列出未来目标、愿景和工作动机。未来目标或承诺用于调动积极性，属于激励的逻辑，不能由此认定所有此类承诺都有效。",
+      "evidence": "2024年上午卷第15题B、D，知识卡20060正文列出未来目标、愿景和工作动机",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-INCENTIVE-MOTIVATION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 3,
+          "location": "第15题B项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 20,
+          "location": "第15题解析·B项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30018,
+      "question_id": 24016,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡30018正文说明由突出特征推断整体。仅凭外貌推断能力、品行等整体表现，属于由局部特征推断整体的晕轮效应。",
+      "evidence": "2024年上午卷第16题A，知识卡30018正文说明由突出特征推断整体",
+      "status": "已确认",
+      "rule_id": "RULE-PSY-HALO-EFFECT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 4,
+          "location": "第16题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 21,
+          "location": "第16题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30018,
+      "question_id": 24016,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "知识卡30018正文指出首因效应重最初印象。题面没有先后接触或第一次印象主导判断的情节。",
+      "evidence": "2024年上午卷第16题B，知识卡30018正文指出首因效应重最初印象",
+      "status": "已确认",
+      "rule_id": "RULE-PSY-PRIMACY-EFFECT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 4,
+          "location": "第16题B项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 21,
+          "location": "第16题解析·B项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30018,
+      "question_id": 24016,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡30018正文指出近因效应重最近信息。一次最新争执压过了以往长期相处信息，体现近因效应。酝酿效应常指暂时搁置问题后思路获得突破。",
+      "evidence": "2024年上午卷第16题C，知识卡30018正文指出近因效应重最近信息",
+      "status": "已确认",
+      "rule_id": "RULE-PSY-RECENCY-EFFECT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 4,
+          "location": "第16题C项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 21,
+          "location": "第16题解析·C项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 30018,
+      "question_id": 24016,
+      "role": "主考点",
+      "position": "D",
+      "reason": "知识卡30018首句说明把自身特征赋予他人。投射是用自己的特点、偏好或动机推断他人，题项所述的方向相反。",
+      "evidence": "2024年上午卷第16题D，知识卡30018首句说明把自身特征赋予他人",
+      "status": "已确认",
+      "rule_id": "RULE-PSY-PROJECTION-EFFECT-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 4,
+          "location": "第16题D项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 21,
+          "location": "第16题解析·D项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 20072,
+      "question_id": 24018,
+      "role": "主考点",
+      "position": "A、B、C、D",
+      "reason": "知识卡20072正文列会议通过、负责人签发和联合行文规则。发文机关负责人签发是题目通常情形下确定成文日期的节点。成文日期与文件规定的另行施行日期可不同。",
+      "evidence": "2024年上午卷第18题A、B、C、D，知识卡20072正文列会议通过、负责人签发和联合行文规则",
+      "status": "已确认",
+      "rule_id": "RULE-DOC-FORMATION-DATE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 4,
+          "location": "第18题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 21,
+          "location": "第18题解析·A项（续第22页）"
+        },
+        "external": "https://www.miit.gov.cn/xwdt/szyw/art/2020/art_6afb8ee6d07540dcacccbeb47dbc0fd4.html"
+      }
+    },
+    {
+      "knowledge_id": 30035,
+      "question_id": 24020,
+      "role": "主考点",
+      "position": "A、B、C、D",
+      "reason": "知识卡30035首句给出威尼斯旅行家及商人身份。威尼斯与其家庭、商旅和生平关系直接。纪念展的主办方也以威尼斯商人的身份介绍他；本题用这条明确联系选出城市。",
+      "evidence": "2024年上午卷第20题A、B、C、D，知识卡30035首句给出威尼斯旅行家及商人身份",
+      "status": "已确认",
+      "rule_id": "RULE-HIST-MARCO-POLO-VENICE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 4,
+          "location": "第20题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 23,
+          "location": "第20题解析·A项"
+        },
+        "external": "https://palazzoducale.visitmuve.it/en/exhibition/the-worlds-of-marco-polo/"
+      }
+    },
+    {
+      "knowledge_id": 10061,
+      "question_id": 24021,
+      "role": "主考点",
+      "position": "A",
+      "reason": "知识卡10061第252、253、256条列出三类不同季风气候。仅热带季风气候就足以否定“只有两种”。地形和海陆位置的差异也形成其他非季风气候类型。",
+      "evidence": "2024年上午卷第21题A，知识卡10061第252、253、256条列出三类不同季风气候",
+      "status": "已确认",
+      "rule_id": "RULE-GEO-CHINA-CLIMATE-DIVERSITY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 4,
+          "location": "第21题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 23,
+          "location": "第21题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10061,
+      "question_id": 24021,
+      "role": "辅助考点",
+      "position": "D",
+      "reason": "知识卡10061第253、256条对比南北季风区冬夏特点。题目用典型的季风气候季节变化判断，全国多数地区的温度和雨量有明显季节差异。地域不同，具体温雨组合也不同。",
+      "evidence": "2024年上午卷第21题D，知识卡10061第253、256条对比南北季风区冬夏特点",
+      "status": "已确认",
+      "rule_id": "RULE-GEO-CHINA-CLIMATE-SEASONALITY-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 4,
+          "location": "第21题D项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 24,
+          "location": "第21题解析·D项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10123,
+      "question_id": 24024,
+      "role": "主考点",
+      "position": "D",
+      "reason": "知识卡10123第559条给出赵高、秦二世。秦二世和赵高处在秦末。人物时代直接排除南北朝的配对。",
+      "evidence": "2024年上午卷第24题D，知识卡10123第559条给出赵高、秦二世",
+      "status": "已确认",
+      "rule_id": "RULE-HIST-ZHAO-GAO-DEER-HORSE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 5,
+          "location": "第24题D项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 25,
+          "location": "第24题解析·D项"
+        },
+        "external": "https://www.nopss.gov.cn/n1/2019/0805/c219470-31275419.html"
+      }
+    },
+    {
+      "knowledge_id": 10077,
+      "question_id": 24025,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡10077正文直接用汽车急刹车时乘客前倾举例。车因制动而减速，乘客身体有保持原运动状态的趋势，因此相对于车向前倾，关键是惯性。",
+      "evidence": "2024年上午卷第25题C，知识卡10077正文直接用汽车急刹车时乘客前倾举例",
+      "status": "已确认",
+      "rule_id": "RULE-SCI-INERTIA-MASS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 5,
+          "location": "第25题C项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 26,
+          "location": "第25题解析·C项"
+        },
+        "external": "https://openstax.org/books/physics/pages/4-3-newtons-second-law-of-motion"
+      }
+    },
+    {
+      "knowledge_id": 10164,
+      "question_id": 24026,
+      "role": "主考点",
+      "position": "A",
+      "reason": "知识卡10164第308条明确政治建设是根本性建设。党的政治建设决定党的建设方向和效果，题项的根本性建设定位正确。",
+      "evidence": "2024年上午卷第26题A，知识卡10164第308条明确政治建设是根本性建设",
+      "status": "已确认",
+      "rule_id": "RULE-POL-PARTY-BUILDING-POLITICAL-FOUNDATION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 5,
+          "location": "第26题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 27,
+          "location": "第26题解析·A项"
+        },
+        "external": "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/jjyzt_2022/2022_zt17/yw/202210/t20221027_672601.html"
+      }
+    },
+    {
+      "knowledge_id": 10164,
+      "question_id": 24026,
+      "role": "辅助考点",
+      "position": "B",
+      "reason": "知识卡10164第301条明确新时代党的建设主线。主线是加强党的长期执政能力建设、先进性和纯洁性建设。改革创新精神是推进党的建设的要求，和主线定位有别。",
+      "evidence": "2024年上午卷第26题B，知识卡10164第301条明确新时代党的建设主线",
+      "status": "已确认",
+      "rule_id": "RULE-POL-PARTY-BUILDING-MAINLINE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 5,
+          "location": "第26题B项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 27,
+          "location": "第26题解析·B项"
+        },
+        "external": "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/jjyzt_2022/2022_zt17/yw/202210/t20221027_672601.html"
+      }
+    },
+    {
+      "knowledge_id": 10165,
+      "question_id": 24026,
+      "role": "辅助考点",
+      "position": "C",
+      "reason": "知识卡10165第316条明确思想建设是基础性建设。基础性建设的位置对应思想建设，廉政建设关系党风廉政和反腐败工作的要求。",
+      "evidence": "2024年上午卷第26题C，知识卡10165第316条明确思想建设是基础性建设",
+      "status": "已确认",
+      "rule_id": "RULE-POL-PARTY-BUILDING-IDEOLOGICAL-BASIS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 5,
+          "location": "第26题C项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 27,
+          "location": "第26题解析·C项"
+        },
+        "external": "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/jjyzt_2022/2022_zt17/yw/202210/t20221027_672601.html"
+      }
+    },
+    {
+      "knowledge_id": 10015,
+      "question_id": 24028,
+      "role": "主考点",
+      "position": "A、B、C",
+      "reason": "知识卡10015刑事责任年龄第(2)项列贩卖毒品。后半句的年龄阶段判断成立，前半句忽略题设的贩卖毒品行为。两者合在一起，选项不成立。",
+      "evidence": "2024年上午卷第28题A、B、C，知识卡10015刑事责任年龄第(2)项列贩卖毒品",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-CRIMINAL-AGE-14-16-DRUG-TRAFFICKING-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 6,
+          "location": "第28题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 28,
+          "location": "第28题解析·A项"
+        },
+        "external": "https://wb.flk.npc.gov.cn/flfg/PDF/25b94caa6d0349dd9651f16148463db4.pdf"
+      }
+    },
+    {
+      "knowledge_id": 10015,
+      "question_id": 24028,
+      "role": "主考点",
+      "position": "D",
+      "reason": "知识卡10015刑事责任年龄第(1)—(2)项区分年龄层。此情形需要负刑事责任，但题中人仅 15 岁。已满 16 岁才适用第一款所述的一般刑事责任年龄规则。",
+      "evidence": "2024年上午卷第28题D，知识卡10015刑事责任年龄第(1)—(2)项区分年龄层",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-CRIMINAL-AGE-16-FULL-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 6,
+          "location": "第28题D项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 29,
+          "location": "第28题解析·D项"
+        },
+        "external": "https://wb.flk.npc.gov.cn/flfg/PDF/25b94caa6d0349dd9651f16148463db4.pdf"
+      }
+    },
+    {
+      "knowledge_id": 30020,
+      "question_id": 24029,
+      "role": "辅助考点",
+      "position": "A",
+      "reason": "知识卡30020首句重视员工需要、贡献与发展。人本管理重视员工的合理需求、贡献与发展。",
+      "evidence": "2024年上午卷第29题A，知识卡30020首句重视员工需要、贡献与发展",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-HUMAN-CENTERED-NEEDS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 6,
+          "location": "第29题A项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 29,
+          "location": "第29题解析·A项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10139,
+      "question_id": 24029,
+      "role": "主考点",
+      "position": "B",
+      "reason": "知识卡10139第17条针对少见、非例行的新问题。当问题缺少适用的既定程序，需要针对新的、非结构化情境作选择时，属于非程序化决策。",
+      "evidence": "2024年上午卷第29题B，知识卡10139第17条针对少见、非例行的新问题",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-NONPROGRAMMED-DECISIONS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 6,
+          "location": "第29题B项"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 29,
+          "location": "第29题解析·B项"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10145,
+      "question_id": 24032,
+      "role": "辅助考点",
+      "position": "判断",
+      "reason": "知识卡10145第44条说明实践是认识的来源和发展动力。实践的范围和水平会影响对事物的认识。",
+      "evidence": "2024年上午卷第32题判断，知识卡10145第44条说明实践是认识的来源和发展动力",
+      "status": "已确认",
+      "rule_id": "RULE-PHIL-COGNITION-PRACTICE-LIMITS-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 6,
+          "location": "第32题题干"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 30,
+          "location": "第32题解析·题干"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10160,
+      "question_id": 24034,
+      "role": "主考点",
+      "position": "判断",
+      "reason": "知识卡10160第212条说明社会效益优先且两者统一。经济贡献是评价因素之一。题目把它作为最重要的标准，偏离文化创作生产制度要求。",
+      "evidence": "2024年上午卷第34题判断，知识卡10160第212条说明社会效益优先且两者统一",
+      "status": "已确认",
+      "rule_id": "RULE-POL-CULTURE-SOCIAL-BENEFITS-FIRST-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 6,
+          "location": "第34题题干"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 31,
+          "location": "第34题解析·题干"
+        },
+        "external": "https://www.cac.gov.cn/2024-07/21/c_1723275282504292.htm"
+      }
+    },
+    {
+      "knowledge_id": 10140,
+      "question_id": 24036,
+      "role": "主考点",
+      "position": "判断",
+      "reason": "知识卡10140第49—50条列明公共产品和纯公共产品的特征。一人受到国防安全保护一般不减少他人受保护，且难以排除境内社会成员。公共物品的含义用来描述整体安全服务，单件军工产品本身仍有可排他占用的属性。",
+      "evidence": "2024年上午卷第36题判断，知识卡10140第49—50条列明公共产品和纯公共产品的特征",
+      "status": "已确认",
+      "rule_id": "RULE-ECON-PURE-PUBLIC-GOOD-NONRIVAL-NONEXCLUDABLE-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 7,
+          "location": "第36题题干"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 32,
+          "location": "第36题解析·题干"
+        },
+        "external": "https://openstax.org/books/principles-economics-2e/pages/13-3-public-goods"
+      }
+    },
+    {
+      "knowledge_id": 10002,
+      "question_id": 24038,
+      "role": "主考点",
+      "position": "判断",
+      "reason": "知识卡10002规范作用段“指引自己、评价他人”。题中他放弃自己的违法意图，关键是规范对自己行为选择的引导。根据法律判断他人的行为是否合法才是题目所说的评价作用。",
+      "evidence": "2024年上午卷第38题判断，知识卡10002规范作用段“指引自己、评价他人”",
+      "status": "已确认",
+      "rule_id": "RULE-LAW-NORMATIVE-GUIDANCE-VS-EVALUATION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 7,
+          "location": "第38题题干"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 32,
+          "location": "第38题解析·题干"
+        }
+      }
+    },
+    {
+      "knowledge_id": 10139,
+      "question_id": 24041,
+      "role": "辅助考点",
+      "position": "判断",
+      "reason": "知识卡10139第15—16条区分决策层次及战略决策特点。战略决策确定全局方向，战术决策把战略细化为较具体的方案。",
+      "evidence": "2024年上午卷第41题判断，知识卡10139第15—16条区分决策层次及战略决策特点",
+      "status": "已确认",
+      "rule_id": "RULE-MGMT-STRATEGIC-VS-TACTICAL-DECISION-01",
+      "source_ref": {
+        "question_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 7,
+          "location": "第41题题干"
+        },
+        "analysis_material": {
+          "id": 5,
+          "name": "2024年9月28日上午慈溪市、奉化区、宁海县、象山县、余姚市五地联考试卷及答案.pdf",
+          "page": 33,
+          "location": "第41题解析·题干"
         }
       }
     }
