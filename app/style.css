@@ -102,6 +102,9 @@ progress::-moz-progress-bar{border-radius:20px;background:var(--accent)}
   position:absolute;z-index:2;right:0;top:100%;width:min(280px,80vw);padding:12px;
   background:#fff;border:1px solid var(--line);border-radius:8px;font-size:14px;color:var(--muted);
 }
+.welcome-note{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px;padding:12px 16px;background:var(--soft);border-radius:8px}
+.welcome-note p{margin:0;color:var(--muted);font-size:14px}
+.welcome-note button{flex-shrink:0}
 .continue-row{
   width:100%;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1.6fr) auto;justify-items:start;
   gap:12px;padding:16px 0;text-align:left;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:var(--ink);
@@ -153,12 +156,19 @@ summary{cursor:pointer;font-size:14px;font-weight:500;padding:8px 0}
 .source-choice{display:grid;justify-items:start;align-content:start;gap:3px;text-align:left}
 .source-choice small{font-size:12px;color:var(--muted)}
 .practice-sources h3{margin:16px 0 8px}
+.mixed-filters{display:grid;gap:14px}
+.mixed-filters fieldset{min-width:0;margin:0;padding:0;border:0}
+.mixed-filters legend{margin-bottom:5px;font-weight:600}
+.filter-options{display:flex;flex-wrap:wrap;gap:8px}
+.unseen-control{display:flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}
 .practice-toolbar{margin-bottom:16px}
 .practice-topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:13px}
 .practice-topline p{color:var(--muted);font-size:14px}
 .practice-topline strong{font-size:28px}
 .practice-topline strong span{color:var(--muted);font-weight:550}
 .practice-tools{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:4px}
+.keyboard-help{display:none}
+@media (min-width:761px) and (hover:hover) and (pointer:fine){.keyboard-help{display:block}}
 .question-grid{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:8px;padding:10px 2px;
   max-height:236px;overflow:auto;margin-top:10px;
@@ -167,16 +177,14 @@ summary{cursor:pointer;font-size:14px;font-weight:500;padding:8px 0}
 .question-grid .answered{background:var(--soft);color:var(--accent)}
 .question-grid [aria-current=step],.question-grid [aria-current=step]:not(:disabled):hover{background:var(--accent);color:#fff}
 .practice-panel{margin-top:0}
-.practice-meta,.qmeta,.analysis-switch{display:flex;align-items:center;gap:7px}
-.practice-meta{justify-content:space-between;gap:12px;margin-bottom:16px}
-.analysis-switch{font-size:12px;color:var(--muted);cursor:pointer}
-.preview-switch,.preview-switch:not(:disabled):hover{
+.qmeta{display:flex;align-items:center;gap:7px;margin-bottom:14px}
+.practice-switch,.practice-switch:not(:disabled):hover{
   position:relative;display:inline-flex;justify-content:flex-start;align-items:center;gap:0;
   width:37px;height:22px;min-height:0;padding:3px;border-radius:20px;background:#727a84;
 }
-.preview-switch[data-state=checked],.preview-switch[data-state=checked]:not(:disabled):hover{background:var(--accent)}
-.preview-switch [data-slot=switch-thumb]{display:block;width:16px;height:16px;background:#fff;border-radius:50%;transform:none}
-.preview-switch [data-state=checked]{transform:translateX(15px)}
+.practice-switch[data-state=checked],.practice-switch[data-state=checked]:not(:disabled):hover{background:var(--accent)}
+.practice-switch [data-slot=switch-thumb]{display:block;width:16px;height:16px;background:#fff;border-radius:50%;transform:none}
+.practice-switch [data-state=checked]{transform:translateX(15px)}
 .practice-panel>p.source{margin-top:8px}
 .practice-option-list{display:grid;gap:8px;margin:14px 0}
 .practice-compact{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
@@ -197,18 +205,21 @@ summary{cursor:pointer;font-size:14px;font-weight:500;padding:8px 0}
 .practice-answers .selected .practice-option-letter{background:var(--accent);color:#fff}
 .practice-answers .option-correct .practice-option-letter{background:var(--green);color:#fff}
 .practice-answers .option-wrong .practice-option-letter{background:var(--red);color:#fff}
-.confidence{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:16px 0 11px;font-size:14px;color:var(--muted)}
-.confidence span{margin-right:5px}
 .result{background:#f1f4f7;border-radius:8px;margin:16px 0;padding:16px}
 .result h3{font-size:20px;color:inherit}
 .result details{border-top:1px solid var(--line);margin-top:8px}
 .result .direct{margin:12px 0}
+.result:has(> .explanation-expanded-replaces[open]) > .explanation-excerpt{display:none}
+.result:has(> .breakdown-details[open]) > .breakdown-focus{display:none}
 .reasons{margin-top:16px}
 .reasons button{border-radius:20px}
 .practice-actions{display:flex;align-items:center;gap:6px;margin-top:16px}
 .practice-actions .primary{margin-left:auto;min-width:112px}
-.practice-actions .skip{color:var(--muted)}
-.practice-actions .submit{min-width:88px}
+.practice-submitters,.practice-next{
+  position:sticky;bottom:0;z-index:5;justify-content:end;
+  margin:16px 0 0;padding:7px 0;background:#fff;border-top:1px solid var(--line);
+}
+.practice-submitters{display:grid;grid-template-columns:repeat(3,minmax(0,112px));gap:6px}
 @media (max-width:760px){
   .shell{display:block}
   .sidebar{display:none}
@@ -248,24 +259,22 @@ summary{cursor:pointer;font-size:14px;font-weight:500;padding:8px 0}
   .panel{padding:14px}
   .filters{grid-template-columns:1fr;gap:0}
   .practice-topline{gap:8px}
-  .practice-tools button,.practice-actions button{padding-inline:8px;min-height:44px}
+  .practice-tools button,.practice-actions button,.practice-submitters button{padding-inline:8px;min-height:44px}
   .practice-tools svg,.practice-actions svg{width:15px}
   .practice-actions{
     position:sticky;bottom:var(--tabs);padding:7px 0;z-index:5;background:#fff;border-top:1px solid var(--line);
   }
-  .practice-actions .submit{min-width:64px}
-  .practice-meta{flex-wrap:wrap}
-  .analysis-switch{flex-shrink:0}
-  .keyboard-hint{display:none}
+  .practice-submitters,.practice-next{bottom:var(--tabs)}
+  .practice-submitters{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 
-.confidence button,.reasons button,.source-choice{
+.reasons button,.source-choice{
   background:#fff;border:1px solid var(--line);color:var(--ink);
 }
-.confidence button[aria-pressed=true],.reasons button[aria-pressed=true],.source-choice[aria-pressed=true]{
+.reasons button[aria-pressed=true],.source-choice[aria-pressed=true]{
   border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);color:var(--accent);
 }
-.confidence button[aria-pressed=true]:not(:disabled):hover,.reasons button[aria-pressed=true]:not(:disabled):hover,.source-choice[aria-pressed=true]:not(:disabled):hover{background:#f2f6fa}
+.reasons button[aria-pressed=true]:not(:disabled):hover,.source-choice[aria-pressed=true]:not(:disabled):hover{background:#f2f6fa}
 .practice-tools > button[aria-expanded]{background:transparent;color:var(--accent)}
 .practice-tools > button[aria-expanded=true]{background:var(--soft)}
 .study-row{width:100%;background:transparent;color:var(--accent);border-radius:0;border-bottom:1px solid var(--line);justify-content:space-between;text-align:left;padding-inline:0}
@@ -276,7 +285,12 @@ summary{cursor:pointer;font-size:14px;font-weight:500;padding:8px 0}
 .review-context{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:-4px 0 12px;font-size:14px;color:var(--muted)}
 .review-day{margin-top:20px}
 .review-day h3 small{color:var(--muted);font-weight:400}
+.review-row>div{min-width:0;overflow-wrap:anywhere}
+.review-row>div>p{margin:0}
+.review-row>:last-child:not(:first-child){flex-shrink:0}
 .review-forecast{margin-top:28px}
+.forecast-summary{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;color:var(--muted);font-size:14px}
+.forecast-summary button{padding-inline:0}
 .review-bars{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
 .review-bars button{display:grid;justify-items:center;grid-template-rows:auto 48px auto;gap:4px;padding:5px 0;border-radius:6px;background:transparent;font-size:12px;font-weight:400}
 .review-bars button:disabled{cursor:default;color:var(--muted);opacity:1}

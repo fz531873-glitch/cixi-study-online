@@ -4,6 +4,7 @@ import simulations from '../data/simulations.json' with { type: 'json' };
 import { memorySnapshot, Rating, reviewMemory, today } from './memory.ts';
 import { storedMistakeReasons } from './mistake-reasons.ts';
 import { reviewBatchLimit, type ReviewBatch } from './review-batch.ts';
+import { breakdownSchema, getQuestionBreakdown } from './breakdown-data.ts';
 
 export { today };
 
@@ -24,6 +25,7 @@ const questionEdit = z.object({body: z.string().trim().min(10).max(16000), answe
   analysis: z.string().trim().min(10).max(30000), direct: z.string().trim().min(12).max(3000),
   type: z.enum(['单选', '多选', '判断']), status, note: z.string().max(3000),
   source_page: id.max(500), analysis_page: id.max(500)});
+const questionSnapshot=questionEdit.extend({breakdown:breakdownSchema.optional()});
 const knowledgeEdit = z.object({title: short, content: z.string().trim().min(5).max(20000),
   question: short, status, source: short, page: id.max(500)});
 const reviewBatchSchema: z.ZodType<ReviewBatch> = z.object({
@@ -39,6 +41,8 @@ export const progressSchema = z.object({tab: z.enum(['今日学习','知识学�
   knowledgeId: id, questionId: id, answer: z.array(z.enum(['A','B','C','D'])).max(4),
   confidence: z.enum(['未选择','确定','犹豫','猜的']), mode: z.enum(['全部','学后','错题','混合']), queue: z.array(id).max(catalog.questions.length), exam: z.string().max(100), submittedId:z.string().uuid().nullable().default(null), knowledgeScope:z.enum(['category','point']).default('category'),
   reviewBatch: reviewBatchSchema.optional(),
+  lastKnowledgeId:id.refine(value=>catalog.knowledge.some(k=>k.id===value),'知识不存在').optional(),
+  introDismissed:z.boolean().optional(),
 });
 export type Progress = z.infer<typeof progressSchema>;
 type Row = Record<string, unknown>;
@@ -55,8 +59,44 @@ export async function content(db: D1Database, user: string) {
   return {questions: [...q.values()], knowledge: [...k.values()]};
 }
 async function decisions(db: D1Database, user: string) {
-  const result = new Map(catalog.links.map(l => [l.knowledge_id+'-'+l.question_id, {...l}]));
-  for (const l of await rows(db, 'SELECT * FROM link_decision WHERE user_id=?', user)) result.set(l.knowledge_id+'-'+l.question_id, {...l} as any);
+  const result = new Map(catalog.links.map(l => {
+    const link = l as { knowledge_id: number; question_id: number; rule_id?: string };
+    const ruleId = link.rule_id || '';
+    return [link.knowledge_id + '-' + link.question_id + (ruleId ? '-' + ruleId : ''), { ...l, rule_id: ruleId }];
+  }));
+  const rawRows = await rows(
+    db,
+    'SELECT * FROM link_decision WHERE user_id=? ORDER BY (CASE WHEN rule_id IS NULL OR rule_id = \'\' THEN 0 ELSE 1 END) ASC',
+    user
+  );
+  // 先应用旧的整卡关联决定（rule_id 为空），再应用具体规则决定（rule_id 非空），确保具体规则始终优先，不受数据库返回顺序影响
+  const legacyDecisions = rawRows.filter(l => !String(l.rule_id ?? '').trim());
+  const specificDecisions = rawRows.filter(l => Boolean(String(l.rule_id ?? '').trim()));
+
+  for (const l of legacyDecisions) {
+    let matched = false;
+    for (const [key, item] of result.entries()) {
+      if ((item as any).knowledge_id === l.knowledge_id && (item as any).question_id === l.question_id) {
+        result.set(key, { ...item, ...l, rule_id: (item as any).rule_id || '' });
+        matched = true;
+      }
+    }
+    if (!matched) {
+      result.set(l.knowledge_id + '-' + l.question_id, { ...l, rule_id: '' } as any);
+    }
+  }
+
+  for (const l of specificDecisions) {
+    const ruleId = String(l.rule_id ?? '').trim();
+    const key = l.knowledge_id + '-' + l.question_id + '-' + ruleId;
+    const existing = result.get(key);
+    if (existing) {
+      result.set(key, { ...existing, ...l, rule_id: ruleId });
+    } else {
+      result.set(key, { ...l, rule_id: ruleId } as any);
+    }
+  }
+
   return [...result.values()];
 }
 function checkAnswer(type: string, value: string) {
@@ -75,22 +115,26 @@ async function schedule(db: D1Database, user: string, kind: 'question' | 'knowle
       memory=excluded.memory`)
     .bind(user, kind, item, next.dueDate, next.memory, previous?.memory ?? null);
 }
-function stripAnswer(q: any) { const {answer, analysis, direct, references, note, ...visible} = q; return visible; }
+function stripAnswer(q: any) { const {answer, analysis, direct, references, note, breakdown, ...visible} = q; return visible; }
 const attemptSchema = z.object({questionId: id, answer, confidence: z.enum(['确定','犹豫','猜的']), requestId: z.string().uuid()});
 const dateString = z.string().refine(s => !isNaN(Date.parse(s)), '日期无效');
 const backups = z.object({format: z.literal('cixi-study-v1'), version: z.literal('1.0.0'), exported_at: dateString,
   catalog: z.object({version: z.literal('1.0.0'), questions: z.array(z.object({id})).min(seed.questions.length).max(catalog.questions.length), knowledge: z.array(z.object({id})).min(seed.knowledge.length).max(catalog.knowledge.length)}).passthrough(),
   records: z.object({
-    attempt: z.array(z.object({id: z.string().uuid(), question_id: id, answer, confidence: z.enum(['确定','犹豫','猜的']), correct: z.number().int().min(0).max(1), disputed: z.number().int().min(0).max(1), error_reason: z.string().max(400), kind: z.enum(['首次','重复']), snapshot: z.string().max(50000).refine(s=>{try{return questionEdit.safeParse(JSON.parse(s)).success}catch{return false}}, '作答快照无效'), created_at: dateString})).max(10000),
+    attempt: z.array(z.object({id: z.string().uuid(), question_id: id, answer, confidence: z.enum(['确定','犹豫','猜的']), correct: z.number().int().min(0).max(1), disputed: z.number().int().min(0).max(1), error_reason: z.string().max(400), kind: z.enum(['首次','重复']), snapshot: z.string().max(50000).refine(s=>{try{return questionSnapshot.safeParse(JSON.parse(s)).success}catch{return false}}, '作答快照无效'), created_at: dateString})).max(10000),
     recall: z.array(z.object({id: z.string().uuid(), knowledge_id: id, rating: z.enum(['记住了','记住一部分','还没记住']), created_at: dateString})).max(10000),
     review: z.array(z.object({kind: z.enum(['question','knowledge']), item_id: id, due_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), stage: z.number().int().min(0).max(3), memory: memorySnapshot.nullish()})).max(contentLimit),
     progress: z.array(z.object({payload: z.string().max(12000).refine(s=>{try{return progressSchema.safeParse(JSON.parse(s)).success}catch{return false}}), updated_at: dateString})).max(1),
     content_edit: z.array(z.object({kind:z.enum(['question','knowledge']), item_id:id, payload:z.string().max(60000), revision:id, updated_at:dateString})).max(contentLimit),
     content_history: z.array(z.object({id:z.string().uuid(), kind:z.enum(['question','knowledge']), item_id:id, payload:z.string().max(60000), reason:short, revision:id, created_at:dateString})).max(5000),
-    link_decision: z.array(z.object({knowledge_id:id, question_id:id, status:z.enum(['已确认','已排除','候选']), reason:short, updated_at:dateString})).max(5000),
+    link_decision: z.array(z.object({knowledge_id:id, question_id:id, rule_id:z.string().default(''), status:z.enum(['已确认','已排除','候选']), reason:short, updated_at:dateString})).max(5000),
   })});
 
-export async function dispatch(db: D1Database, user: string, method: string, path: string, input?: unknown): Promise<any> {
+export type DispatchOptions = {
+  breakdownLookup?: ReadonlyMap<string, import('./breakdown.ts').QuestionBreakdown>;
+};
+
+export async function dispatch(db: D1Database, user: string, method: string, path: string, input?: unknown, options?: DispatchOptions): Promise<any> {
   if (!user) throw new InputError('请先登录', 401);
   const now = new Date().toISOString();
   if (method === 'GET' && path === '/bootstrap') {
@@ -100,9 +144,11 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
       rows(db,'SELECT knowledge_id,MIN(created_at) AS first_at,MAX(created_at) AS last_at FROM recall WHERE user_id=? GROUP BY knowledge_id',user),
       db.prepare('SELECT payload,updated_at FROM progress WHERE user_id=?').bind(user).first<{payload:string;updated_at:string}>(),
     ]);
-    return {questions:questions.map(stripAnswer), knowledge, links, reviews, attempts, recalls, materials:catalog.materials,
+    const confirmedLinks=links.filter(link=>link.status==='已确认').map(({knowledge_id,question_id,status})=>({knowledge_id,question_id,status}));
+    return {questions:questions.map(stripAnswer), knowledge, links:confirmedLinks, reviews, attempts, recalls, materials:catalog.materials,
       progress:progress ? JSON.parse(progress.payload) : null, progress_updated_at:progress?.updated_at, today:today(), version:catalog.version};
   }
+  if (method === 'GET' && path === '/link-audit') return decisions(db,user);
   if (method === 'POST' && path === '/progress') {
     const p = progressSchema.parse(input);
     if (!catalog.questions.some(q=>q.id===p.questionId) || !catalog.knowledge.some(k=>k.id===p.knowledgeId) || !p.queue.every(id=>catalog.questions.some(q=>q.id===id))) throw new InputError('学习位置不存在');
@@ -119,15 +165,17 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
       return {...JSON.parse(existing.snapshot), id:existing.id, questionId:existing.question_id, correct:!!existing.correct, disputed:!!existing.disputed};
     }
     const normalized = [...a.answer].sort().join(''), correct = normalized === [...q.answer].sort().join(''), disputed = q.status === '争议';
+    const breakdown = getQuestionBreakdown(q.id, q.version, options?.breakdownLookup);
+    const snapshotObj = breakdown ? {...q, breakdown} : q;
     const statements = [db.prepare("INSERT INTO attempt(id,user_id,question_id,answer,confidence,correct,disputed,kind,snapshot,created_at) SELECT ?,?,?,?,?,?,?,CASE WHEN EXISTS(SELECT 1 FROM attempt WHERE user_id=? AND question_id=?) THEN '重复' ELSE '首次' END,?,?")
-      .bind(a.requestId,user,q.id,normalized,a.confidence,Number(correct),Number(disputed),user,q.id,JSON.stringify(q),now)];
+      .bind(a.requestId,user,q.id,normalized,a.confidence,Number(correct),Number(disputed),user,q.id,JSON.stringify(snapshotObj),now)];
     if (!disputed) {
       const grade = !correct || a.confidence==='猜的' ? Rating.Again : a.confidence==='犹豫' ? Rating.Hard : Rating.Good;
       const review = await schedule(db,user,'question',q.id,grade,now);
       if (review) statements.push(review);
     }
     await db.batch(statements);
-    return {...q,id:a.requestId,questionId:q.id,correct,disputed};
+    return {...snapshotObj,id:a.requestId,questionId:q.id,correct,disputed};
   }
   if (method === 'POST' && path === '/reason') {
     const a = z.object({id:z.string().uuid(), reason:z.enum(storedMistakeReasons)}).parse(input);
@@ -153,7 +201,7 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
   if (method === 'GET' && /^\/editor\/question\/\d+$/.test(path)) {
     const {questions} = await content(db,user), q = questions.find(q=>q.id===Number(path.split('/').pop()));
     if (!q) throw new InputError('题目不存在',404);
-    return q;
+    return {...q, breakdown: getQuestionBreakdown(q.id, q.version, options?.breakdownLookup)};
   }
   if (method === 'POST' && path === '/edit') {
     const a = z.object({kind:z.enum(['question','knowledge']), itemId:id, version:id, payload:z.unknown(), reason:short}).parse(input);
@@ -173,10 +221,10 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
     return {saved:true,version:a.version+1};
   }
   if (method === 'POST' && path === '/link') {
-    const a = z.object({knowledgeId:id, questionId:id, status:z.enum(['候选','已确认','已排除']), reason:short}).parse(input);
+    const a = z.object({knowledgeId:id, questionId:id, ruleId:z.string().trim().max(100).optional().default(''), status:z.enum(['候选','已确认','已排除']), reason:short}).parse(input);
     if (!catalog.knowledge.some(k=>k.id===a.knowledgeId) || !catalog.questions.some(q=>q.id===a.questionId)) throw new InputError('知识或题目不存在',404);
-    await db.prepare('INSERT INTO link_decision VALUES (?,?,?,?,?,?) ON CONFLICT(user_id,knowledge_id,question_id) DO UPDATE SET status=excluded.status,reason=excluded.reason,updated_at=excluded.updated_at')
-      .bind(user,a.knowledgeId,a.questionId,a.status,a.reason,now).run();
+    await db.prepare('INSERT INTO link_decision(user_id,knowledge_id,question_id,rule_id,status,reason,updated_at) VALUES (?,?,?,?,?,?,?) ON CONFLICT(user_id,knowledge_id,question_id,rule_id) DO UPDATE SET status=excluded.status,reason=excluded.reason,updated_at=excluded.updated_at')
+      .bind(user,a.knowledgeId,a.questionId,a.ruleId,a.status,a.reason,now).run();
     return {saved:true};
   }
   if (method === 'GET' && path === '/history') return rows(db,'SELECT kind,item_id,reason,revision,created_at FROM content_history WHERE user_id=? ORDER BY created_at DESC',user);
@@ -203,7 +251,7 @@ export async function dispatch(db: D1Database, user: string, method: string, pat
       attempt:['id','question_id','answer','confidence','correct','disputed','error_reason','kind','snapshot','created_at'],
       recall:['id','knowledge_id','rating','created_at'],review:['kind','item_id','due_date','stage','memory'],progress:['payload','updated_at'],
       content_edit:['kind','item_id','payload','revision','updated_at'],content_history:['id','kind','item_id','payload','reason','revision','created_at'],
-      link_decision:['knowledge_id','question_id','status','reason','updated_at'],
+      link_decision:['knowledge_id','question_id','rule_id','status','reason','updated_at'],
     };
     const statements = tables.map(t=>db.prepare(`DELETE FROM ${t} WHERE user_id=?`).bind(user));
     for (const t of tables) {

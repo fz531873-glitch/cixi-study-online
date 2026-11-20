@@ -26,5 +26,6 @@ export const history = sqliteTable('content_history', {
 });
 export const links = sqliteTable('link_decision', {
   user_id: text('user_id').notNull(), knowledge_id: integer('knowledge_id').notNull(), question_id: integer('question_id').notNull(),
+  rule_id: text('rule_id').notNull().default(''),
   status: text('status').notNull(), reason: text('reason').notNull(), updated_at: text('updated_at').notNull(),
-}, t => [primaryKey({columns: [t.user_id, t.knowledge_id, t.question_id]})]);
+}, t => [primaryKey({columns: [t.user_id, t.knowledge_id, t.question_id, t.rule_id]})]);

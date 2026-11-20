@@ -1,8 +1,19 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { formatQuestionAnalysis, splitQuestionOptions } from '../lib/question-options.ts';
+import { formatQuestionAnalysis, questionSummary, splitQuestionOptions } from '../lib/question-options.ts';
 import catalog from '../data/catalog.json' with { type: 'json' };
 import simulations from '../data/simulations.json' with { type: 'json' };
+
+test('复习摘要截取题干，避开选项和答案',()=>{
+  assert.equal(questionSummary('12. 货币政策如何调节信贷？\nA. 降息\nB. 加息\nC. 印钞\nD. 减税','单选',12),'货币政策如何调节信贷？');
+  assert.equal(questionSummary('1. 该说法正确。\n【答案】A','判断',1),'该说法正确。');
+  assert.equal(questionSummary('1. 题干 A：甲 B：乙','多选',1),'题干');
+  assert.equal(questionSummary('边界不清的选择题','单选',1),'');
+  assert.equal(questionSummary('法'.repeat(45),'判断',1),'法'.repeat(40)+'…');
+  for(const q of [...catalog.questions,...simulations.questions]){
+    assert.ok(questionSummary(q.body,q.type,q.number),String(q.id));
+  }
+});
 
 test('题干合并 PDF 换行，四个独立选项保持原顺序', () => {
   assert.deepEqual(splitQuestionOptions('阅读材料。\r\n回答问题。\r\nA. 甲\r\n\r\nB、乙\r\nC．丙\r\nD. 丁\r\n'), {
@@ -41,4 +52,21 @@ test('上午卷第13题统一日期、编号和选项，解析不改普通数值
   assert.match(formatQuestionAnalysis(item.analysis), /①错误[\s\S]*②正确/);
   assert.equal(formatQuestionAnalysis('第123错误，1,000元，3.5%。'), '第123错误，1,000元，3.5%。');
   assert.deepEqual(splitQuestionOptions(catalog.questions.find(q => q.id === 19010)!.body)?.choices,['①③④','①②④','①②③','①②③④']);
+});
+
+test('下午卷第5题的选项保留数量，陈述仍显示圈号', () => {
+  const countQuestion = catalog.questions.find(q => q.id === 25105)!;
+  const count = splitQuestionOptions(countQuestion.body, countQuestion.number)!;
+  assert.deepEqual(count.choices, ['1', '2', '3', '4']);
+  assert.match(count.stem, /\n④ 中国外交/);
+  const combinationQuestion = catalog.questions.find(q => q.id === 25106)!;
+  assert.deepEqual(splitQuestionOptions(combinationQuestion.body, combinationQuestion.number)?.choices,
+    ['①②', '③', '②④', '③④']);
+});
+
+test('2024年上午卷第14题按“有几项”显示数量选项和三条陈述', () => {
+  const question = catalog.questions.find(q => q.id === 24014)!;
+  const parsed = splitQuestionOptions(question.body, question.number)!;
+  assert.deepEqual(parsed.choices, ['3', '2', '1', '0']);
+  assert.match(parsed.stem, /有几项[?？][\s\S]*\n① 甲公司[\s\S]*\n② 乙有权[\s\S]*\n③ 乙有权/);
 });
