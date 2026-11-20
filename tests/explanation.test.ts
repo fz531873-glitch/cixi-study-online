@@ -60,6 +60,8 @@ test('多选区分错选和漏选，组合题比较陈述，计数只比较数�
   assert.deepEqual(feedback(13,'A').focus.map(item=>item.label),['漏选 ④']);
   const count=feedback(24014,'D');
   assert.match(count.focus[0].text,/少算 1 项。计入的陈述是 ②。/);
+  assert.match(count.summary,/^原解析以①/);
+  assert.match(feedback(25105,'A').summary,/^逐项核对外交目标/);
   assert.match(count.full,/^第一步/);
   assert.doesNotMatch(count.full,/【答案】C/);
   const dispute=feedback(24031,'D');
@@ -82,4 +84,16 @@ test('模拟题从已有解析抽出考点和错选原因，支持未拆分题�
 test('解析合并 PDF 行尾断词，保留段落、圈号和数字标点',()=>{
   assert.equal(formatQuestionAnalysis('公\n开报道显示改革,保障民生。\n1正确，金额1,000元。\n\n另一段。'),
     '公开报道显示改革，保障民生。\n\n①正确，金额1,000元。\n\n另一段。');
+});
+
+test('全题库的旧答案行不在详情中重复，保留同一行的有效解析',()=>{
+  const repeatedHeader=/^(?:\d+[、.．]\s*)?(?:【(?:参考答案|答案)】|(?:参考答案|答案)[：:])/u;
+  for(const q of [...catalog.questions,...simulations.questions]){
+    const view=practiceExplanation(q.direct,q.analysis,q.answer,'');
+    assert.ok(view.summary,q.id.toString());
+    assert.doesNotMatch(view.full,repeatedHeader,q.id.toString());
+  }
+  assert.match(feedback(23006,'A').full,/^第一步.*考查/u);
+  assert.match(feedback(23036,'D').full,/国际宇航/u);
+  assert.match(feedback(25129,'AD').full,/工伤/u);
 });

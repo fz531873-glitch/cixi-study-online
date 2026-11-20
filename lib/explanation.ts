@@ -32,7 +32,7 @@ export function explanationParts(direct:string, analysis:string) {
   return {summary,takeaway,full,isExcerpt};
 }
 
-const answerLine=/(?:^|\n)[ \t]*(?:\d+[、.．]\s*)?(?:【(?:参考答案|答案)】[ \t]*[：:]?|(?:参考答案|答案)[：:])[ \t]*(?:[A-DＡ-Ｄ]+|正确|错误)[ \t]*[。.．]?[ \t]*(?=\n|$|【解析】)/u;
+const answerLine=/(?:^|\n)[ \t]*(?:\d+[、.．][ \t]*)?(?:【(?:参考答案|答案)】[ \t]*[：:]?|(?:参考答案|答案)[：:])[ \t]*(?:[A-DＡ-Ｄ]+|正确|错误|[√×✓✔✗✘])(?:[ \t]*[（(]争议题[）)])?[ \t]*(?:[。.．]|(?=\n|$|【解析】|解析[：:]))/u;
 const quickTip=/(?:^|\n)[ \t]*(?:【快速解题思路】|快速解题思路[：:])[ \t]*([\s\S]*?)(?=\n[ \t]*(?:【[^】\n]+】|(?:拓展|知识拓展|易错提醒|参考资料)[：:])|$)/u;
 
 export function practiceExplanation(direct:string, analysis:string, answer:string, chosen:string, breakdown?:QuestionBreakdown|null) {
@@ -48,7 +48,9 @@ export function practiceExplanation(direct:string, analysis:string, answer:strin
   const isWrong=!!chosen&&[...chosen].sort().join('')!==[...answer].sort().join('');
   const focus:{label:string;text:string}[]=[];
   const items=breakdown?.items??[];
-  let summary=parts.summary;
+  let summary=breakdown?.count_options
+    ?parts.summary.replace(/^(?:共有|符合设问的有)\s*\d+\s*项(?:正确)?[，,]\s*选\s*[A-D]。\s*(?=\S)/u,'')
+    :parts.summary;
   let extra=items.map(item=>({key:item.key,text:item.basis}));
   if(breakdown&&breakdown.status!=='争议'&&isWrong){
     if(breakdown.count_options){

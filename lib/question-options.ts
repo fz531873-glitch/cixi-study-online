@@ -37,7 +37,7 @@ export function formatQuestionText(body: string, number?: number) {
 export function formatQuestionAnalysis(text: string) {
   const numbered = text.replace(/\r\n?/g, '\n').replace(/([1-9])(?:[.、])?(?=(?:选项)?(?:正确|错误))/g,
     (match, digit, offset, input) => /\d/.test(input[offset - 1] ?? '') ? match : circled[Number(digit) - 1]);
-  const paragraphs = numbered.replace(/\n[ \t]*(?=【|第[一二三四五六七八九十\d]+步[：:，,]|[A-D][ \t]*(?:项|[.．、：:]|正确|错误)|[①-⑨]|[（(][一二三四五六七八九十\d]+[）)]|(?:拓展|快速解题思路)[：:])/gu, '\n\n');
+  const paragraphs = numbered.replace(/\n[ \t]*(?=【|第[一二三四五六七八九十\d]+步[：:，,]|[A-D][ \t]*(?:项|[.．、：:]|正确|错误)|[①-⑨]|[（(][一二三四五六七八九十\d]+[）)]|(?:拓展|快速解题思路)(?:[：:]|[ \t]*(?:\n|$)))/gu, '\n\n');
   return punctuation(cleanQuestionText(joinLines(paragraphs)));
 }
 
