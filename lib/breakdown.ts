@@ -54,7 +54,7 @@ export interface AnswerFeedback {
   disputed: boolean;
 }
 
-function expandKeys(breakdown: QuestionBreakdown, answerLetters: string): string[] {
+export function expandKeys(breakdown: QuestionBreakdown, answerLetters: string): string[] {
   const letters = [...answerLetters].filter(Boolean);
   if (breakdown.combination_map) {
     const keys: string[] = [];

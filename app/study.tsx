@@ -8,8 +8,8 @@ import {groupReviewDates, nextDate, oldestOverdueDays, reviewBatchLimit, reviewD
 import type {Progress} from '../lib/study';
 import {dailyQuote} from '../lib/daily-quote';
 import {dailyPlan} from '../lib/daily-plan';
-import {explanationParts} from '../lib/explanation';
-import {buildAnswerFeedback, type AnswerFeedback, type QuestionBreakdown} from '../lib/breakdown';
+import {practiceExplanation} from '../lib/explanation';
+import type {QuestionBreakdown} from '../lib/breakdown';
 import {mistakeReasons, storedMistakeReasons} from '../lib/mistake-reasons';
 import {formatQuestionAnalysis, formatQuestionText, optionLetters, questionSummary, splitQuestionOptions} from '../lib/question-options';
 import {mixedCounts, questionsForMix, questionsForPaper, questionTypes, sampleQuestions} from '../lib/practice-selection';
@@ -20,7 +20,7 @@ type Link = {knowledge_id:number; question_id:number; status:string; reason?:str
 type Attempt = {id:string; question_id:number; answer:string; confidence:string; correct:number; disputed:number; error_reason:string; kind:string; created_at:string};
 type Boot = {questions:Q[]; knowledge:K[]; links:Link[]; materials:{id:number;name:string;url:string}[]; reviews:(ReviewItem&{due_date:string;stage:number})[]; attempts:Attempt[]; recalls:{knowledge_id:number;first_at:string;last_at:string}[]; progress:Progress|null; progress_updated_at?:string; today:string};
 type Result = Omit<Q,'id'> & {id:string; questionId:number; correct:boolean; disputed:boolean; answer:string; direct:string; analysis:string; references:{title:string;url:string}[]; breakdown?:QuestionBreakdown|null};
-type Preview = Q & {answer:string; direct:string; analysis:string; breakdown?:QuestionBreakdown|null};
+type Preview = Q & {answer:string; direct:string; analysis:string; references?:Result['references']; breakdown?:QuestionBreakdown|null};
 const confidenceLevels = ['确定','犹豫','猜的'] as const;
 type Submission = {questionId:number; answer:string; confidence:typeof confidenceLevels[number]; requestId:string};
 const initial:Progress = {tab:'今日学习',knowledgeId:20002,questionId:13,answer:[],confidence:'未选择',mode:'全部',queue:[],exam:'2025年上午卷',submittedId:null,knowledgeScope:'category'};
@@ -33,42 +33,94 @@ const reviewTab=(item:ReviewItem)=>item.kind==='question'?'真题练习':'知识
 const tabName=(tab:string)=>tab==='真题练习'?'题库练习':tab;
 const categoryNames:Record<string,string>={'经济学':'经济','管理学':'管理','马克思主义原理':'马原'};
 const categoryName=(category:string)=>categoryNames[category]||category;
-function BreakdownDetails({feedback,status}:{feedback:AnswerFeedback;status:QuestionBreakdown['status']}) {
-  return <details className="breakdown-details">
-    <summary>逐项讲解{status==='待核对'?'（待核对）':''}</summary>
-    <div className="breakdown-box">
-      <p className="direct"><b>{feedback.headline}</b>：{feedback.summary}</p>
-      {feedback.sections.map(sec=><div key={sec.title}>
-        <p className="source"><b>{sec.title}</b></p>
-        {sec.items.map(item=><div className="breakdown-item" key={item.key}>
-          <p><b>{item.key}</b> · {item.statement}</p>
-          <p>{item.verdict}（{item.statement_truth===null?'陈述存疑':item.statement_truth?'陈述成立':'陈述不成立'} / {item.matches_stem===null?'设问存疑':item.matches_stem?'符合设问':'不符合设问'}）</p>
-          <p>{item.basis}</p>
-          {item.dispute_note&&<p className="notice">{item.dispute_note}</p>}
-          <p className="source">规则{item.rule_statement!==item.basis&&`：${item.rule_statement}`}（{item.rule_id}{item.knowledge_gap?' · 知识卡缺口':item.knowledge_id?' · 知识卡 #'+item.knowledge_id:''}）</p>
-          <p className="source">定位：原题第{item.source_ref.question_material.page}页（{item.source_ref.question_material.location}） / 解析第{item.source_ref.analysis_material.page}页（{item.source_ref.analysis_material.location}）</p>
-        </div>)}
-      </div>)}
+function QuestionExplanation({question,chosen='',confidence,reviewLabel,cards,pdf,onFeedback,onStudy,busy,children}:{
+  question:Result|Preview; chosen?:string; confidence?:Progress['confidence']; reviewLabel?:string;
+  cards:K[]; pdf:(id:number,page:number)=>string; onFeedback:()=>void; onStudy?:(id:number)=>void; busy:boolean; children?:ReactNode;
+}) {
+  const disputed=question.status==='争议';
+  const {summary,focus,thinking,extra,full}=practiceExplanation(question.direct,question.analysis,question.answer,chosen,question.breakdown);
+  const [card,setCard]=useState<K|null>(null);
+  const resultPanel=useRef<HTMLDivElement>(null);
+  const dialog=useRef<HTMLDialogElement>(null);
+  useEffect(()=>{
+    const panel=resultPanel.current;
+    if(panel&&panel.getBoundingClientRect().bottom>window.innerHeight-72){
+      panel.scrollIntoView({block:'start'});
+    }
+  },[]);
+  const sourceGroups=[
+    {label:question.kind==='模拟题'?'参考真题':'原卷',material:question.question_material,page:question.source_page,field:'question_material'},
+    {label:question.kind==='模拟题'?'参考解析':'原解析',material:question.analysis_material,page:question.analysis_page,field:'analysis_material'},
+  ] as const;
+  const sources=sourceGroups.map(group=>{
+    const pages=new Map<string,{id:number;page:number}>();
+    pages.set(group.material+':'+group.page,{id:group.material,page:group.page});
+    for(const item of question.breakdown?.items??[]){
+      const ref=item.source_ref[group.field];
+      pages.set(ref.id+':'+ref.page,ref);
+      const continued=ref.location.match(/续第\s*(\d+)\s*页/u)?.[1];
+      if(continued)pages.set(ref.id+':'+continued,{id:ref.id,page:Number(continued)});
+    }
+    return {...group,pages:[...pages.values()].sort((a,b)=>a.page-b.page)};
+  });
+  const disputeNotes=[...new Set([question.note,...(question.breakdown?.items.map(item=>item.dispute_note)??[])])]
+    .filter((note):note is string=>!!note&&!summary.includes(note));
+  return <div ref={resultPanel} className={'practice-result'+(disputed?' disputed':'')}>
+    <div className="result-heading" role="status">
+      <div className="result-answer">
+        <h3>{disputed?'资料参考答案':'正确答案'} {question.answer}{question.type==='判断'?(question.answer==='A'?'（正确）':'（错误）'):''}</h3>
+        {chosen&&<span className="muted">你选了 {chosen}（{confidence}）</span>}
+      </div>
+      {reviewLabel&&<span className="review-confirmation"><CalendarDays size={14} aria-hidden="true"/>{reviewLabel}</span>}
     </div>
-  </details>;
-}
-function QuestionExplanation({direct,analysis,breakdown,userAnswer,correctAnswer,children}:{direct:string;analysis:string;breakdown?:QuestionBreakdown|null;userAnswer?:string;correctAnswer?:string;children?:ReactNode}) {
-  const {summary,takeaway,full,isExcerpt}=explanationParts(direct,analysis);
-  const feedback=breakdown&&correctAnswer?buildAnswerFeedback(breakdown,userAnswer??'',correctAnswer):null;
-  const focus=feedback&&!feedback.disputed&&!breakdown?.count_options&&userAnswer&&
-    [...userAnswer].sort().join('')!==[...(correctAnswer??'')].sort().join('')
-    ?feedback.sections[0]?.items[0]:undefined;
-  return <>
-    {focus&&feedback?<p className="direct breakdown-focus"><b>{feedback.sections[0].title}</b>　{focus.basis}</p>:
-      summary&&<p className={isExcerpt?'direct explanation-excerpt':'direct'}>{formatQuestionAnalysis(summary)}</p>}
-    {takeaway&&<p className="remember"><b>记住</b> {formatQuestionAnalysis(takeaway)}</p>}
+    <div className="result-summary">
+      {summary&&<p><b>{disputed?'存疑说明':'核心考点'}</b> {formatQuestionAnalysis(summary)}</p>}
+      {cards.length>0&&<div className="result-cards">
+        {cards.map(k=><button key={k.id} aria-haspopup="dialog" onClick={()=>{setCard(k);dialog.current?.showModal()}}><BookOpen size={15} aria-hidden="true"/>{k.title}</button>)}
+        <dialog ref={dialog} className="result-card-dialog" aria-label={card?.title??'知识卡'}>
+          {card&&<>
+            <h3>{card.title}</h3>
+            <div className="question">{card.content}</div>
+            <div className="buttons">
+              <button autoFocus onClick={()=>dialog.current?.close()}>关闭</button>
+              {onStudy&&<button className="text-link" onClick={()=>{dialog.current?.close();onStudy(card.id)}}>进入知识学习 <ArrowRight size={16}/></button>}
+            </div>
+          </>}
+        </dialog>
+      </div>}
+      {focus.map(item=><p key={item.label}><b>{item.label}</b> {formatQuestionAnalysis(item.text)}</p>)}
+      {thinking&&<p><b>解题思路</b> {formatQuestionAnalysis(thinking)}</p>}
+    </div>
     {children}
-    {feedback&&breakdown&&<BreakdownDetails feedback={feedback} status={breakdown.status}/>}
-    {full&&<details className={isExcerpt?'explanation-expanded-replaces':undefined}>
-      <summary>完整解析</summary>
-      <div className="question">{formatQuestionAnalysis(full)}</div>
-    </details>}
-  </>;
+    <div className="result-footer">
+      <details>
+        <summary>
+          {full?'查看完整原解析与出处':extra.length?'查看更多依据与出处':'查看出处'}
+          <span className="result-source-meta">
+            {sources.map(group=><span key={group.field}>{group.label} {group.pages.map(ref=>'P'+ref.page).join('、')}</span>)}
+            {question.status==='已核对'&&question.kind!=='模拟题'&&<span className="result-verified"><Check size={13} aria-hidden="true"/>已核对原卷</span>}
+          </span>
+        </summary>
+        <div className="result-details">
+          {extra.length>0&&<section aria-label="逐项依据">
+            <h4>逐项依据</h4>
+            <ul>{extra.map(item=><li key={item.key}><b>{item.key==='判断'?'判断依据':item.key}</b> {formatQuestionAnalysis(item.text)}</li>)}</ul>
+          </section>}
+          {full&&<section aria-label="原解析">
+            <h4>{question.kind==='模拟题'?'参考解析':'原解析'}</h4>
+            <div className="question">{formatQuestionAnalysis(full)}</div>
+          </section>}
+          <section aria-label="出处" className="source">
+            <h4>出处</h4>
+            {sources.map(group=><p className="result-source-links" key={group.field}><b>{group.label}</b>{group.pages.map(ref=><a key={ref.id+':'+ref.page} href={pdf(ref.id,ref.page)} target="_blank" rel="noreferrer" aria-label={group.label+'第'+ref.page+'页'}>P{ref.page}</a>)}</p>)}
+            {disputeNotes.map(note=><p key={note}>{formatQuestionAnalysis(note)}</p>)}
+            {question.references?.map(r=><p key={r.url}><a href={r.url} target="_blank" rel="noreferrer">{r.title}</a></p>)}
+          </section>
+        </div>
+      </details>
+      <button className="text-link result-report" disabled={busy} onClick={onFeedback}>解析有疑问</button>
+    </div>
+  </div>;
 }
 const toggleSelection=(values:string[],value:string)=>values.includes(value)?values.filter(item=>item!==value):[...values,value];
 const recentPerformance=(attempt?:Attempt)=>{
@@ -104,6 +156,7 @@ export default function Study({userName}:{userName:string}) {
   const [daily,setDaily]=useState<ReturnType<typeof dailyQuote>|null>(null);
   const [search,setSearch]=useState(''), [future,setFuture]=useState(false), [material,setMaterial]=useState(0);
   const [editKind,setEditKind]=useState<'question'|'knowledge'>('question'), [editor,setEditor]=useState<any>(null), [reason,setReason]=useState('');
+  const [editingFromPractice,setEditingFromPractice]=useState(false);
   const [linkQ,setLinkQ]=useState(24012), [linkReason,setLinkReason]=useState(''), [linkAudit,setLinkAudit]=useState<Link[]>([]), [pending,setPending]=useState<any>(null);
   const [history,setHistory]=useState<any[]>([]), pendingSubmission=useRef<Submission|null>(null), progressRef=useRef(p), dirty=useRef(false);
   const storageKey='cixi-v1-progress:'+userName;
@@ -249,7 +302,15 @@ export default function Study({userName}:{userName:string}) {
   const weak=[...latest.values()].filter(a=>!a.disputed&&(!a.correct||a.confidence!=='确定')).map(a=>a.question_id);
   const label=(qid:number)=>{const q=data.questions.find(q=>q.id===qid);return q?`${paperName(q.exam)} · 第${q.number}题 · ${q.type}`:'题目不存在'};
   const pdf=(id:number,page:number)=>`${data.materials.find(m=>m.id===id)?.url||''}#page=${page}`;
-  const questionSource=<a href={pdf(question.question_material,question.source_page)} target="_blank" rel="noreferrer">{question.kind==='模拟题'?'关联真题':'原试卷'}第{question.source_page}页</a>;
+  const explanation=result??(!hideAnalysis&&preview?.id===question.id?preview:null);
+  const linkedCardIds=new Set(explanation?data.links.filter(link=>link.question_id===question.id&&link.status==='已确认').map(link=>link.knowledge_id):[]);
+  const keyCards=new Set(explanation?.breakdown?.items.filter(item=>item.matches_stem===true).map(item=>item.knowledge_id));
+  const explanationCards=data.knowledge.filter(card=>linkedCardIds.has(card.id)).sort((a,b)=>Number(keyCards.has(b.id))-Number(keyCards.has(a.id)));
+  const openPracticeEditor=()=>run(async()=>{
+    const current=await api<Preview>('/editor/question/'+question.id);
+    setEditKind('question');setEditor(current);setReason('');setEditingFromPractice(true);
+    patch({tab:'资料纠错'});window.scrollTo(0,0);
+  });
   const startLinked=()=>{if(!related.length){setMessage('题库暂未覆盖当前知识的已确认关联，可以先完成回忆。');return}go(related[0].id,{mode:'学后',queue:related.map(q=>q.id)})};
   const papers=[...new Set(data.questions.filter(q=>q.kind!=='模拟题').map(q=>q.exam))].sort((a,b)=>b.localeCompare(a,'zh-CN'));
   const selectedPaper=papers.includes(setupExam)?setupExam:papers[0];
@@ -305,6 +366,7 @@ export default function Study({userName}:{userName:string}) {
     if(ids.length)go(ids[0],{mode:'混合',queue:ids,exam:''});else openSetup();
   };
   const tabTo=(tab:Progress['tab'])=>{
+    setEditingFromPractice(false);
     if(tab==='真题练习')openSetup();
     else {
       patch({tab,...(tab==='资料纠错'?{reviewBatch:undefined}:tab==='知识学习'?{lastKnowledgeId:p.knowledgeId}:{})});
@@ -491,37 +553,18 @@ export default function Study({userName}:{userName:string}) {
       {question.type==='多选'&&!result&&hideAnalysis&&<p className="source">可选择多个选项。</p>}
       {canSubmit&&!reviewingQuestion&&<button className="text-link" disabled={busy||!!pendingSubmission.current} onClick={()=>setHideAnalysis(false)}>不会，看解析</button>}
       {hideAnalysis&&previewed&&!result&&<p className="notice">本次已查看解析，可以前往下一题。</p>}
-      {!hideAnalysis&&!result&&<div className="result" aria-live="polite">
-        <p className="source">查看解析期间无法提交作答。</p>
-        {preview?.id===question.id?<><h3>{question.status==='争议'?'资料参考答案':'正确答案'} {preview.answer}</h3><QuestionExplanation direct={preview.direct} analysis={preview.analysis} breakdown={preview.breakdown} userAnswer="" correctAnswer={preview.answer}/><details><summary>出处与核对信息</summary><p className="source">{questionSource} · {question.status}</p></details></>:<p>正在读取解析…</p>}
-      </div>}
-      {result&&<div className={'result practice-result '+(result.disputed?'disputed':'')}>
-        <div role="status">
-          <h3>{result.disputed?'资料参考答案':'正确答案'} {result.answer}{question.type==='判断'?(result.answer==='A'?'（正确）':'（错误）'):''}</h3>
-          <p className="muted">{result.disputed?'争议题 · ':''}你选了 {p.answer.join('')} · {p.confidence}</p>
-        </div>
-        <QuestionExplanation direct={result.direct} analysis={result.analysis} breakdown={result.breakdown} userAnswer={p.answer.join("")} correctAnswer={result.answer}>
-        {nextScheduled&&<p className="review-confirmation"><CalendarDays size={16}/> {nextScheduled>date?'下次复习 · '+reviewDateLabel(nextScheduled,date):'本题仍在到期复习中'}</p>}
-        {(!result.correct||p.confidence!=='确定')&&!result.disputed&&<div className="reasons" role="group" aria-label="错因">
+      {!hideAnalysis&&!explanation&&<p className="source" role="status">正在读取解析…</p>}
+      {explanation&&<QuestionExplanation key={explanation.id} question={explanation} chosen={result?p.answer.join(''):''} confidence={p.confidence}
+        reviewLabel={nextScheduled?(nextScheduled>date?'下次复习 · '+reviewDateLabel(nextScheduled,date):'仍在到期复习'):undefined}
+        cards={explanationCards} pdf={pdf} onFeedback={openPracticeEditor} onStudy={reviewingQuestion?undefined:chooseK} busy={busy}>
+        {result&&(!result.correct||p.confidence!=='确定')&&!result.disputed&&<div className="reasons" role="group" aria-label="错因">
           <h4>{result.correct?'哪里没把握':'这次卡在哪里'}</h4>
           <div className="buttons">{mistakeReasons.map(reason=>{
             const selected=data.attempts.find(a=>a.id===result.id)?.error_reason===reason;
             return <button key={reason} className={selected?'selected':''} aria-pressed={selected} disabled={busy} onClick={()=>run(async()=>{await api('/reason',{id:result.id,reason});await refresh();setMessage('原因已记录。')})}>{reason}</button>;
           })}</div>
         </div>}
-        </QuestionExplanation>
-        <details><summary>出处与核对信息</summary>
-          <p className="source">{question.status} · 解析来源 {result.explanation_source} · 版本 {result.version}</p>
-          {question.kind==='模拟题'&&question.simulation_id&&<p className="source">模拟题编号 {question.simulation_id}</p>}
-          {result.note&&<p className="source">{result.note}</p>}
-          <p className="source">{questionSource} · <a href={pdf(result.analysis_material,result.analysis_page)} target="_blank" rel="noreferrer">{question.kind==='模拟题'?'关联真题解析':'解析原文'}第{result.analysis_page}页</a></p>
-          {result.references?.map(r=><p className="source" key={r.url}><a href={r.url} target="_blank" rel="noreferrer">{r.title}</a></p>)}
-          {!reviewingQuestion&&<div className="buttons">
-            {[...new Map(data.links.filter(l=>l.question_id===p.questionId&&l.status==='已确认').map(l=>[l.knowledge_id, l])).values()].map(l=><button className="text-link" key={l.knowledge_id} onClick={()=>chooseK(l.knowledge_id)}>{data.knowledge.find(k=>k.id===l.knowledge_id)?.title} <ArrowRight size={16}/></button>)}
-            <button className="text-link" onClick={()=>{tabTo('资料纠错');setEditKind('question');setEditor(null)}}>解析有疑问</button>
-          </div>}
-        </details>
-      </div>}
+      </QuestionExplanation>}
       {canSubmit?
         <div className="practice-submitters" role="group" aria-label="选择把握程度并提交" aria-busy={busy}>
           {confidenceLevels.map(level=><button key={level} className="primary" disabled={busy||!p.answer.length} onClick={()=>submit(level)}>{level}</button>)}
@@ -564,7 +607,7 @@ export default function Study({userName}:{userName:string}) {
   {p.tab==='学习记录'&&<><section className="panel"><h2>学习记录</h2><p>累计作答 {data.attempts.length} 次 · 首次 {first.length} 次 · 重做 {valid.length-first.length} 次 · 争议题 {data.attempts.length-valid.length} 次</p><h3>常见错因</h3>{storedMistakeReasons.map(r=>{const n=data.attempts.filter(a=>a.error_reason===r).length;return n?<p key={r}>{r}：{n}次</p>:null})}<details><summary>最近作答记录</summary>{data.attempts.slice(0,50).map(a=><div className="row" key={a.id}><div><b>{label(a.question_id)}</b><p>{a.kind} · 答案{a.answer} · {a.confidence} · {a.disputed?'争议题':a.correct?'答对':'答错'} · {a.error_reason}</p></div><button onClick={()=>go(a.question_id,{mode:'全部',queue:[],exam:data.questions.find(q=>q.id===a.question_id)?.exam||''})}>复练</button></div>)}</details></section>
   <section className="panel"><details><summary>资料维护</summary><button className="text-link" onClick={()=>tabTo('资料纠错')}>资料纠错 <ArrowRight size={16}/></button></details></section>
   <section className="panel"><h2>备份与恢复</h2><p className="muted">备份包含题库文本、解析、知识、关联、学习记录、草稿和修改历史。PDF保留在原资料中，不包含在下载的JSON里。</p><button onClick={()=>run(async()=>{await backup();setMessage('备份已生成，请保留下载文件。')})}>下载完整学习备份</button><label className="field">从备份恢复<input type="file" accept=".json,application/json" onChange={e=>run(async()=>{const file=e.target.files?.[0];if(!file)return;if(file.size>8_000_000)throw new Error('备份大于8MB，请联系维护者处理。');const value=JSON.parse(await file.text());if(value.format!=='cixi-study-v1')throw new Error('这不是慈溪备考备份。');setPending(value)})}/></label>{pending&&<div className="notice"><p>将恢复{pending.exported_at}的备份，覆盖当前账号学习记录和纠错内容。恢复前会先下载当前数据备份。</p><div className="buttons"><button disabled={busy} onClick={()=>run(async()=>{await backup();await api('/restore',pending);setPending(null);setResult(null);const b=await refresh();setP(b.progress||initial);setMessage('恢复完成。')})}>确认恢复这份备份</button><button onClick={()=>setPending(null)}>取消</button></div></div>}</section></>}
-  {p.tab==='资料纠错'&&<><section className="panel"><h2>核对与修订内容</h2><p className="muted">打开题目修订会显示参考答案。修订仅作用于你的学习空间；旧作答保留当时依据。</p><label className="field">内容类型<select value={editKind} onChange={e=>{setEditKind(e.target.value as any);setEditor(null)}}><option value="question">题目与解析</option><option value="knowledge">知识卡片</option></select></label>{editKind==='question'?<label className="field">题目<select value={p.questionId} onChange={e=>{patch({questionId:Number(e.target.value),answer:[],submittedId:null,mode:'全部',queue:[],exam:data.questions.find(q=>q.id===Number(e.target.value))?.exam||''});setResult(null);setEditor(null)}}>{data.questions.map(q=><option key={q.id} value={q.id}>{label(q.id)}</option>)}</select></label>:<label className="field">知识<select value={p.knowledgeId} onChange={e=>{patch({knowledgeId:Number(e.target.value)});setEditor(null)}}>{data.knowledge.map(k=><option key={k.id} value={k.id}>{k.title}</option>)}</select></label>}<button disabled={busy} onClick={openEditor}>打开待核对内容</button>
+  {p.tab==='资料纠错'&&<><section className="panel">{editingFromPractice&&<button className="back-link" onClick={()=>{patch({tab:'真题练习'});setEditor(null);setSetup(false);setEditingFromPractice(false)}}><ArrowLeft size={16}/> 返回本题</button>}<h2>核对与修订内容</h2><p className="muted">打开题目修订会显示参考答案。修订仅作用于你的学习空间；旧作答保留当时依据。</p><label className="field">内容类型<select value={editKind} onChange={e=>{setEditKind(e.target.value as any);setEditor(null)}}><option value="question">题目与解析</option><option value="knowledge">知识卡片</option></select></label>{editKind==='question'?<label className="field">题目<select value={p.questionId} onChange={e=>{patch({questionId:Number(e.target.value),answer:[],submittedId:null,mode:'全部',queue:[],exam:data.questions.find(q=>q.id===Number(e.target.value))?.exam||''});setResult(null);setEditor(null)}}>{data.questions.map(q=><option key={q.id} value={q.id}>{label(q.id)}</option>)}</select></label>:<label className="field">知识<select value={p.knowledgeId} onChange={e=>{patch({knowledgeId:Number(e.target.value)});setEditor(null)}}>{data.knowledge.map(k=><option key={k.id} value={k.id}>{k.title}</option>)}</select></label>}<button disabled={busy} onClick={openEditor}>打开待核对内容</button>
   {editor&&<div className="editor"><p className="source">当前版本{editor.version}</p>{(editKind==='question'?[['题干与选项','body'],['简要解析','direct'],['完整解析','analysis'],['争议说明','note']]:[['标题','title'],['核心要点','content'],['回忆问题','question'],['出处','source']]).map(([label,key])=><label className="field" key={key}>{label}<textarea rows={key==='body'||key==='analysis'||key==='content'?7:3} value={editor[key]||''} onChange={e=>setEditor({...editor,[key]:e.target.value})}/></label>)}{editKind==='question'&&<div className="filters"><label className="field">题型<select value={editor.type} onChange={e=>setEditor({...editor,type:e.target.value})}>{['单选','多选','判断'].map(t=><option key={t}>{t}</option>)}</select></label><label className="field">参考答案<input value={editor.answer} maxLength={4} onChange={e=>setEditor({...editor,answer:e.target.value.toUpperCase()})}/></label></div>}<label className="field">核对状态<select value={editor.status} onChange={e=>setEditor({...editor,status:e.target.value})}>{['待核对','已核对','争议'].map(t=><option key={t}>{t}</option>)}</select></label><div className="filters">{(editKind==='question'?[['试题页码','source_page'],['解析页码','analysis_page']]:[['原文页码','page']]).map(([label,key])=><label className="field" key={key}>{label}<input type="number" min={1} max={500} value={editor[key]} onChange={e=>setEditor({...editor,[key]:Number(e.target.value)})}/></label>)}</div><label className="field">修改理由<input value={reason} maxLength={400} onChange={e=>setReason(e.target.value)} placeholder="注明核对依据与改动原因"/></label><button className="primary" disabled={busy||!reason.trim()} onClick={()=>run(async()=>{await api('/edit',{kind:editKind,itemId:editor.id,version:editor.version,payload:editor,reason});setEditor(null);setResult(null);patch({submittedId:null,answer:[]});await refresh();setMessage('修订已保存；历史作答依据保持完整。')})}>保存修订与版本记录</button></div>}</section>
   <section className="panel"><h2>知识与题目关联</h2><label className="field">知识<select value={p.knowledgeId} onChange={e=>patch({knowledgeId:Number(e.target.value)})}>{data.knowledge.map(k=><option key={k.id} value={k.id}>{k.title}</option>)}</select></label>{linkAudit.filter(l=>l.knowledge_id===p.knowledgeId).map(l=><div className="row" key={`${l.question_id}-${l.rule_id || ''}`}><div><b>{label(l.question_id)} · {l.status}{l.role?' · '+l.role:''}</b><p>{l.rule_id&&<>{l.rule_id} · </>}{l.reason}</p></div><button disabled={busy} onClick={()=>run(async()=>{await api('/link',{knowledgeId:p.knowledgeId,questionId:l.question_id,ruleId:l.rule_id||'',status:l.status==='已确认'?'已排除':'已确认',reason:l.reason||'人工复核关联'});await refresh();setLinkAudit(await api<Link[]>('/link-audit'))})}>{l.status==='已确认'?'排除关联':l.status==='候选'?'确认关联':'重新确认'}</button></div>)}<label className="field">补充关联题<select value={linkQ} onChange={e=>setLinkQ(Number(e.target.value))}>{data.questions.map(q=><option key={q.id} value={q.id}>{label(q.id)}</option>)}</select></label><label className="field">关联依据<input value={linkReason} onChange={e=>setLinkReason(e.target.value)} maxLength={400} placeholder="核对题目、原解析和当前知识后填写"/></label><button disabled={busy||!linkReason.trim()} onClick={()=>run(async()=>{await api('/link',{knowledgeId:p.knowledgeId,questionId:linkQ,status:'候选',reason:linkReason});await refresh();setLinkAudit(await api<Link[]>('/link-audit'));setLinkReason('');setMessage('候选关联已保存，确认后才用于学后找题。')})}>保存候选关联</button><p className="source">候选关联须核对具体规则后确认；无匹配卡时记录知识卡缺口。</p></section><section className="panel"><button onClick={()=>run(async()=>setHistory(await api('/history')))}>查看内容修订记录</button>{history.map((h,i)=><p className="source" key={i}>{h.created_at} · {h.kind==='question'?label(h.item_id):data.knowledge.find(k=>k.id===h.item_id)?.title} · 从版本{h.revision}修订 · {h.reason}</p>)}</section></>}
   {p.tab==='原始资料'&&<section className="panel"><h2>原始资料</h2><label className="field">选择资料<select value={material} onChange={e=>setMaterial(Number(e.target.value))}>{data.materials.map(m=><option key={m.id} value={m.id}>{m.name}</option>)}</select></label><p><a href={data.materials.find(m=>m.id===material)?.url} target="_blank" rel="noreferrer">打开或下载原始PDF</a></p><iframe className="pdf" title="原始资料PDF" src={data.materials.find(m=>m.id===material)?.url}/></section>}
